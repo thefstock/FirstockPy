@@ -9,7 +9,7 @@ from .common import create_login_model
 class TestUserModule(unittest.TestCase):
 
   def setUp(self) -> None:
-    self.client = Client(os.getenv('API_URL'))
+    self.client = Client(os.getenv('API_URL'), os.getenv('SOCKET_URL'))
     # login
     self.credentials = create_login_model()
     self.user = self.client.login(self.credentials)
