@@ -2,6 +2,7 @@
 The client combines all the modules and abstracts the inner logic
 """
 
+from py_client.websocket.client import NorenWebsocketClient
 from .modules.users import LoginRequestModel, LogoutRequestModel
 from .modules.users import UserDataSource
 from .modules.watchlists import WatchListDataSource
@@ -19,7 +20,7 @@ class Client(Stateful):
   """
   The python client for communicating with external api
   """
-  def __init__(self, base_url: str = None) -> None:
+  def __init__(self, api_url: str, socket_url: str) -> None:
     """
     Initialize the client
 
@@ -30,19 +31,27 @@ class Client(Stateful):
       "token": None
     })
     self.__setup__()
-    self.__users = UserDataSource(base_url, interceptors=self._interceptors, state = self.state)
-    self.__watchlists = WatchListDataSource(base_url, interceptors=self._interceptors, state=self.state)
-    self.__orders = OrdersDataSource(base_url, interceptors=self._interceptors, state=self.state)
-    self.__markets = MarketsDataSource(base_url, interceptors=self._interceptors, state=self.state)
-    self.__alerts = AlertsDataSource(base_url, interceptors=self._interceptors, state=self.state)
-    self.__funds = FundsDataSource(base_url, interceptors=self._interceptors, state=self.state)
-    self.__hl = HoldingsLimitsDataSource(base_url, interceptors=self._interceptors, state=self.state)
+    self.__users = UserDataSource(api_url, interceptors=self._interceptors, state = self.state)
+    self.__watchlists = WatchListDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__orders = OrdersDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__markets = MarketsDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__alerts = AlertsDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__funds = FundsDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__hl = HoldingsLimitsDataSource(api_url, interceptors=self._interceptors, state=self.state)
+    self.__ws = NorenWebsocketClient(socket_url, state=self.state)
 
   def __setup__(self) -> None:
     """
     Initial setup for the client
     """
     self._interceptors = []
+
+  @property
+  def ws(self):
+    """
+    The websocket client
+    """
+    return self.__ws
 
   @property
   def state(self):

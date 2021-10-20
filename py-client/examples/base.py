@@ -17,7 +17,7 @@ class Example(ABC):
   def __init__(self) -> None:
     # base_url = 'https://norenapi.thefirstock.com/NorenWClient'
     base_url = 'https://rama.kambala.co.in/NorenWClientTP/'
-    self.client = Client(base_url=base_url)
+    self.client = Client(api_url=base_url)
     self.parse_args()
 
   def print_output(self, payload: str, response: str, title: str = 'JSON'):

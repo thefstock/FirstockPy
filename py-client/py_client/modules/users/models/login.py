@@ -45,7 +45,7 @@ class LoginRequestModel(BaseModel):
   """The IP address of the system"""
   source: Optional[RequestSourceType]
   """Access Type"""
-  @root_validator
+  @root_validator(allow_reuse=True)
   def validate(cls, values: dict):
     """
     Validate the model. The model should contain either of 'pwd' or 'dpin'
