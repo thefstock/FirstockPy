@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>py_client.modules.holdings_limits.models.limits API documentation</title>
+<meta name="description" content="Request and response models for limits request" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>py_client.modules.holdings_limits.models.limits</code></h1>
+</header>
+<section id="section-intro">
+<p>Request and response models for limits request</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Request and response models for limits request
+&#34;&#34;&#34;
+from typing import Optional
+from pydantic import BaseModel
+from datetime import datetime
+
+from ....common.enums import ResponseStatus
+from ....utils.decoders import build_loader, datetime_decoder
+
+__all__ = [&#39;LimitsRequestModel&#39;, &#39;LimitsResponseModel&#39;]
+
+class LimitsRequestModel(BaseModel):
+  &#34;&#34;&#34;
+  The request model for limits endpoint
+  &#34;&#34;&#34;
+  uid: str
+  &#34;&#34;&#34;The user id of the login user&#34;&#34;&#34;
+  actid: str
+  &#34;&#34;&#34;Account id of the logged in user.&#34;&#34;&#34;
+  prd: Optional[str]
+  &#34;&#34;&#34;Product name&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;CM / FO / FX - Segment&#34;&#34;&#34;
+
+class LimitsResponseModel(BaseModel):
+  &#34;&#34;&#34;
+  The response model for limits endpoint
+  &#34;&#34;&#34;
+  stat: ResponseStatus
+  &#34;&#34;&#34;The limits success or failure status&#34;&#34;&#34;
+  request_time: Optional[datetime]
+  &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
+  actid: Optional[str]
+  &#34;&#34;&#34;Account id of the logged in user.&#34;&#34;&#34;
+  prd: Optional[str]
+  &#34;&#34;&#34;Product name&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;CM / FO / FX - Segment&#34;&#34;&#34;
+  cash: Optional[float]
+  &#34;&#34;&#34;Cash Margin available&#34;&#34;&#34;
+  payin: Optional[float]
+  &#34;&#34;&#34;Total Amount transferred using Payins today&#34;&#34;&#34;
+  payout: Optional[float]
+  &#34;&#34;&#34;Total amount requested for withdrawal today&#34;&#34;&#34;
+  brkcollamt: Optional[float]
+  &#34;&#34;&#34;Prevalued Collateral Amount&#34;&#34;&#34;
+  unclearedcash: Optional[float]
+  &#34;&#34;&#34;Uncleared Cash (Payin through cheques)&#34;&#34;&#34;
+  daycash: Optional[float]
+  &#34;&#34;&#34;Additional leverage amount / Amount added to handle system errors - by broker.&#34;&#34;&#34;
+  marginused: Optional[float]
+  &#34;&#34;&#34;Total margin / fund used today&#34;&#34;&#34;
+  mtomcurper: Optional[str]
+  &#34;&#34;&#34;Mtom current percentage&#34;&#34;&#34;
+
+  cbu: Optional[str]
+  &#34;&#34;&#34;CAC Buy used&#34;&#34;&#34;
+  csc: Optional[str]
+  &#34;&#34;&#34;CAC Sell Credits&#34;&#34;&#34;
+  rpnl: Optional[str]
+  &#34;&#34;&#34;Current realized PNL&#34;&#34;&#34;
+  unmtom: Optional[str]
+  &#34;&#34;&#34;Current unrealized mtom&#34;&#34;&#34;
+  marprt: Optional[str]
+  &#34;&#34;&#34;Covered Product margins&#34;&#34;&#34;
+  span: Optional[str]
+  &#34;&#34;&#34;Span used&#34;&#34;&#34;
+  expo: Optional[str]
+  &#34;&#34;&#34;Exposure margin&#34;&#34;&#34;
+  premium: Optional[str]
+  &#34;&#34;&#34;Premium used&#34;&#34;&#34;
+  varelm: Optional[str]
+  &#34;&#34;&#34;Var Elm Margin&#34;&#34;&#34;
+  grexpo: Optional[str]
+  &#34;&#34;&#34;Gross Exposure&#34;&#34;&#34;
+  greexpo_d: Optional[str]
+  &#34;&#34;&#34;Gross Exposure derivative&#34;&#34;&#34;
+  scripbskmar: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin&#34;&#34;&#34;
+  addscripbskmrg: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin&#34;&#34;&#34;
+  brokerage: Optional[str]
+  &#34;&#34;&#34;Brokerage amount&#34;&#34;&#34;
+  collateral: Optional[str]
+  &#34;&#34;&#34;Collateral calculated based on uploaded holdings&#34;&#34;&#34;
+  grcoll: Optional[str]
+  &#34;&#34;&#34;Valuation of uploaded holding pre haircut&#34;&#34;&#34;
+  turnoverlmt: Optional[str]
+  &#34;&#34;&#34;Turnover Limit&#34;&#34;&#34;
+  pendordvallmt: Optional[str]
+  &#34;&#34;&#34;Pending order value limit&#34;&#34;&#34;
+  turnover: Optional[str]
+  &#34;&#34;&#34;Turnover&#34;&#34;&#34;
+  pendordval: Optional[str]
+  &#34;&#34;&#34;Pending Order value &#34;&#34;&#34;
+  rzpnl_e_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Intraday)&#34;&#34;&#34;
+  rzpnl_e_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Margin)&#34;&#34;&#34;
+  rzpnl_e_c: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Cash n Carry)&#34;&#34;&#34;
+  rzpnl_d_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Derivative Intraday)&#34;&#34;&#34;
+  rzpnl_d_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Derivative Margin)&#34;&#34;&#34;
+  rzpnl_f_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (FX Intraday)&#34;&#34;&#34;
+  rzpnl_f_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (FX Margin)&#34;&#34;&#34;
+  rzpnl_c_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Commodity Intraday)&#34;&#34;&#34;
+  rzpnl_c_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Commodity Margin)&#34;&#34;&#34;
+  uzpnl_e_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Intraday)&#34;&#34;&#34;
+  uzpnl_e_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Margin)&#34;&#34;&#34;
+  uzpnl_e_c: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Cash n Carry)&#34;&#34;&#34;
+  uzpnl_d_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Derivative Intraday)&#34;&#34;&#34;
+  uzpnl_d_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Derivative Margin)&#34;&#34;&#34;
+  uzpnl_f_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (FX Intraday)&#34;&#34;&#34;
+  uzpnl_f_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (FX Margin)&#34;&#34;&#34;
+  uzpnl_c_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Commodity Intraday)&#34;&#34;&#34;
+  uzpnl_c_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Commodity Margin)&#34;&#34;&#34;
+  span_d_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (Derivative Intraday)&#34;&#34;&#34;
+  span_d_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (Derivative Margin)&#34;&#34;&#34;
+  span_f_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (FX Intraday)&#34;&#34;&#34;
+  span_f_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (FX Margin)&#34;&#34;&#34;
+  span_c_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (Commodity Intraday)&#34;&#34;&#34;
+  span_c_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (Commodity Margin)&#34;&#34;&#34;
+  expo_d_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Derivative Intraday)&#34;&#34;&#34;
+  expo_d_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Derivative Margin)&#34;&#34;&#34;
+  expo_f_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (FX Intraday)&#34;&#34;&#34;
+  expo_f_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (FX Margin)&#34;&#34;&#34;
+  expo_c_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Commodity Intraday)&#34;&#34;&#34;
+  expo_c_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Commodity Margin)&#34;&#34;&#34;
+  premium_d_i: Optional[str]
+  &#34;&#34;&#34;Option premium (Derivative Intraday)&#34;&#34;&#34;
+  premium_d_m: Optional[str]
+  &#34;&#34;&#34;Option premium (Derivative Margin)&#34;&#34;&#34;
+  premium_f_i: Optional[str]
+  &#34;&#34;&#34;Option premium (FX Intraday)&#34;&#34;&#34;
+  premium_f_m: Optional[str]
+  &#34;&#34;&#34;Option premium (FX Margin)&#34;&#34;&#34;
+  premium_c_i: Optional[str]
+  &#34;&#34;&#34;Option premium (Commodity Intraday)&#34;&#34;&#34;
+  premium_c_m: Optional[str]
+  &#34;&#34;&#34;Option premium (Commodity Margin)&#34;&#34;&#34;
+  varelm_e_i: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Intraday)&#34;&#34;&#34;
+  varelm_e_m: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Margin)&#34;&#34;&#34;
+  varelm_e_c: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Cash n Carry)&#34;&#34;&#34;
+  marprt_e_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Equity High leverage)&#34;&#34;&#34;
+  marprt_e_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Equity Bracket Order)&#34;&#34;&#34;
+  marprt_d_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Derivative High leverage)&#34;&#34;&#34;
+  marprt_d_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Derivative Bracket Order)&#34;&#34;&#34;
+  marprt_f_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (FX High leverage)&#34;&#34;&#34;
+  marprt_f_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (FX Bracket Order)&#34;&#34;&#34;
+  marprt_c_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Commodity High leverage)&#34;&#34;&#34;
+  marprt_c_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Commodity Bracket Order)&#34;&#34;&#34;
+  scripbskmar_e_i: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Intraday)&#34;&#34;&#34;
+  scripbskmar_e_m: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Margin)&#34;&#34;&#34;
+  scripbskmar_e_c: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Cash n Carry)&#34;&#34;&#34;
+  addscripbskmrg_d_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Derivative Intraday)&#34;&#34;&#34;
+  addscripbskmrg_d_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Derivative Margin)&#34;&#34;&#34;
+  addscripbskmrg_f_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (FX Intraday)&#34;&#34;&#34;
+  addscripbskmrg_f_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (FX Margin)&#34;&#34;&#34;
+  addscripbskmrg_c_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Commodity Intraday)&#34;&#34;&#34;
+  addscripbskmrg_c_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Commodity Margin)&#34;&#34;&#34;
+  brkage_e_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Intraday)&#34;&#34;&#34;
+  brkage_e_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Margin)&#34;&#34;&#34;
+  brkage_e_c: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity CAC)&#34;&#34;&#34;
+  brkage_e_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity High Leverage)&#34;&#34;&#34;
+  brkage_e_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Bracket Order)&#34;&#34;&#34;
+  brkage_d_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Intraday)&#34;&#34;&#34;
+  brkage_d_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Margin)&#34;&#34;&#34;
+  brkage_d_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative High Leverage)&#34;&#34;&#34;
+  brkage_d_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Bracket Order)&#34;&#34;&#34;
+  brkage_f_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Intraday)&#34;&#34;&#34;
+  brkage_f_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Margin)&#34;&#34;&#34;
+  brkage_f_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX High Leverage)&#34;&#34;&#34;
+  brkage_f_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Bracket Order)&#34;&#34;&#34;
+  brkage_c_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Intraday)&#34;&#34;&#34;
+  brkage_c_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Margin)&#34;&#34;&#34;
+  brkage_c_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity High Leverage)&#34;&#34;&#34;
+  brkage_c_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Bracket Order)&#34;&#34;&#34;
+  emsg: Optional[str]
+  &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
+
+  class Config:
+    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
+    json_loads = build_loader({
+      &#34;request_time&#34;: datetime_decoder()
+    })</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel"><code class="flex name class">
+<span>class <span class="ident">LimitsRequestModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The request model for limits endpoint</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LimitsRequestModel(BaseModel):
+  &#34;&#34;&#34;
+  The request model for limits endpoint
+  &#34;&#34;&#34;
+  uid: str
+  &#34;&#34;&#34;The user id of the login user&#34;&#34;&#34;
+  actid: str
+  &#34;&#34;&#34;Account id of the logged in user.&#34;&#34;&#34;
+  prd: Optional[str]
+  &#34;&#34;&#34;Product name&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;CM / FO / FX - Segment&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Account id of the logged in user.</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Product name</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>CM / FO / FX - Segment</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel"><code class="flex name class">
+<span>class <span class="ident">LimitsResponseModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The response model for limits endpoint</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LimitsResponseModel(BaseModel):
+  &#34;&#34;&#34;
+  The response model for limits endpoint
+  &#34;&#34;&#34;
+  stat: ResponseStatus
+  &#34;&#34;&#34;The limits success or failure status&#34;&#34;&#34;
+  request_time: Optional[datetime]
+  &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
+  actid: Optional[str]
+  &#34;&#34;&#34;Account id of the logged in user.&#34;&#34;&#34;
+  prd: Optional[str]
+  &#34;&#34;&#34;Product name&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;CM / FO / FX - Segment&#34;&#34;&#34;
+  cash: Optional[float]
+  &#34;&#34;&#34;Cash Margin available&#34;&#34;&#34;
+  payin: Optional[float]
+  &#34;&#34;&#34;Total Amount transferred using Payins today&#34;&#34;&#34;
+  payout: Optional[float]
+  &#34;&#34;&#34;Total amount requested for withdrawal today&#34;&#34;&#34;
+  brkcollamt: Optional[float]
+  &#34;&#34;&#34;Prevalued Collateral Amount&#34;&#34;&#34;
+  unclearedcash: Optional[float]
+  &#34;&#34;&#34;Uncleared Cash (Payin through cheques)&#34;&#34;&#34;
+  daycash: Optional[float]
+  &#34;&#34;&#34;Additional leverage amount / Amount added to handle system errors - by broker.&#34;&#34;&#34;
+  marginused: Optional[float]
+  &#34;&#34;&#34;Total margin / fund used today&#34;&#34;&#34;
+  mtomcurper: Optional[str]
+  &#34;&#34;&#34;Mtom current percentage&#34;&#34;&#34;
+
+  cbu: Optional[str]
+  &#34;&#34;&#34;CAC Buy used&#34;&#34;&#34;
+  csc: Optional[str]
+  &#34;&#34;&#34;CAC Sell Credits&#34;&#34;&#34;
+  rpnl: Optional[str]
+  &#34;&#34;&#34;Current realized PNL&#34;&#34;&#34;
+  unmtom: Optional[str]
+  &#34;&#34;&#34;Current unrealized mtom&#34;&#34;&#34;
+  marprt: Optional[str]
+  &#34;&#34;&#34;Covered Product margins&#34;&#34;&#34;
+  span: Optional[str]
+  &#34;&#34;&#34;Span used&#34;&#34;&#34;
+  expo: Optional[str]
+  &#34;&#34;&#34;Exposure margin&#34;&#34;&#34;
+  premium: Optional[str]
+  &#34;&#34;&#34;Premium used&#34;&#34;&#34;
+  varelm: Optional[str]
+  &#34;&#34;&#34;Var Elm Margin&#34;&#34;&#34;
+  grexpo: Optional[str]
+  &#34;&#34;&#34;Gross Exposure&#34;&#34;&#34;
+  greexpo_d: Optional[str]
+  &#34;&#34;&#34;Gross Exposure derivative&#34;&#34;&#34;
+  scripbskmar: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin&#34;&#34;&#34;
+  addscripbskmrg: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin&#34;&#34;&#34;
+  brokerage: Optional[str]
+  &#34;&#34;&#34;Brokerage amount&#34;&#34;&#34;
+  collateral: Optional[str]
+  &#34;&#34;&#34;Collateral calculated based on uploaded holdings&#34;&#34;&#34;
+  grcoll: Optional[str]
+  &#34;&#34;&#34;Valuation of uploaded holding pre haircut&#34;&#34;&#34;
+  turnoverlmt: Optional[str]
+  &#34;&#34;&#34;Turnover Limit&#34;&#34;&#34;
+  pendordvallmt: Optional[str]
+  &#34;&#34;&#34;Pending order value limit&#34;&#34;&#34;
+  turnover: Optional[str]
+  &#34;&#34;&#34;Turnover&#34;&#34;&#34;
+  pendordval: Optional[str]
+  &#34;&#34;&#34;Pending Order value &#34;&#34;&#34;
+  rzpnl_e_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Intraday)&#34;&#34;&#34;
+  rzpnl_e_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Margin)&#34;&#34;&#34;
+  rzpnl_e_c: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Equity Cash n Carry)&#34;&#34;&#34;
+  rzpnl_d_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Derivative Intraday)&#34;&#34;&#34;
+  rzpnl_d_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Derivative Margin)&#34;&#34;&#34;
+  rzpnl_f_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (FX Intraday)&#34;&#34;&#34;
+  rzpnl_f_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (FX Margin)&#34;&#34;&#34;
+  rzpnl_c_i: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Commodity Intraday)&#34;&#34;&#34;
+  rzpnl_c_m: Optional[str]
+  &#34;&#34;&#34;Current realized PNL (Commodity Margin)&#34;&#34;&#34;
+  uzpnl_e_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Intraday)&#34;&#34;&#34;
+  uzpnl_e_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Margin)&#34;&#34;&#34;
+  uzpnl_e_c: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Equity Cash n Carry)&#34;&#34;&#34;
+  uzpnl_d_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Derivative Intraday)&#34;&#34;&#34;
+  uzpnl_d_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Derivative Margin)&#34;&#34;&#34;
+  uzpnl_f_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (FX Intraday)&#34;&#34;&#34;
+  uzpnl_f_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (FX Margin)&#34;&#34;&#34;
+  uzpnl_c_i: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Commodity Intraday)&#34;&#34;&#34;
+  uzpnl_c_m: Optional[str]
+  &#34;&#34;&#34;Current unrealized MTOM (Commodity Margin)&#34;&#34;&#34;
+  span_d_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (Derivative Intraday)&#34;&#34;&#34;
+  span_d_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (Derivative Margin)&#34;&#34;&#34;
+  span_f_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (FX Intraday)&#34;&#34;&#34;
+  span_f_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (FX Margin)&#34;&#34;&#34;
+  span_c_i: Optional[str]
+  &#34;&#34;&#34;Span Margin (Commodity Intraday)&#34;&#34;&#34;
+  span_c_m: Optional[str]
+  &#34;&#34;&#34;Span Margin (Commodity Margin)&#34;&#34;&#34;
+  expo_d_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Derivative Intraday)&#34;&#34;&#34;
+  expo_d_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Derivative Margin)&#34;&#34;&#34;
+  expo_f_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (FX Intraday)&#34;&#34;&#34;
+  expo_f_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (FX Margin)&#34;&#34;&#34;
+  expo_c_i: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Commodity Intraday)&#34;&#34;&#34;
+  expo_c_m: Optional[str]
+  &#34;&#34;&#34;Exposure Margin (Commodity Margin)&#34;&#34;&#34;
+  premium_d_i: Optional[str]
+  &#34;&#34;&#34;Option premium (Derivative Intraday)&#34;&#34;&#34;
+  premium_d_m: Optional[str]
+  &#34;&#34;&#34;Option premium (Derivative Margin)&#34;&#34;&#34;
+  premium_f_i: Optional[str]
+  &#34;&#34;&#34;Option premium (FX Intraday)&#34;&#34;&#34;
+  premium_f_m: Optional[str]
+  &#34;&#34;&#34;Option premium (FX Margin)&#34;&#34;&#34;
+  premium_c_i: Optional[str]
+  &#34;&#34;&#34;Option premium (Commodity Intraday)&#34;&#34;&#34;
+  premium_c_m: Optional[str]
+  &#34;&#34;&#34;Option premium (Commodity Margin)&#34;&#34;&#34;
+  varelm_e_i: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Intraday)&#34;&#34;&#34;
+  varelm_e_m: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Margin)&#34;&#34;&#34;
+  varelm_e_c: Optional[str]
+  &#34;&#34;&#34;Var Elm (Equity Cash n Carry)&#34;&#34;&#34;
+  marprt_e_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Equity High leverage)&#34;&#34;&#34;
+  marprt_e_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Equity Bracket Order)&#34;&#34;&#34;
+  marprt_d_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Derivative High leverage)&#34;&#34;&#34;
+  marprt_d_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Derivative Bracket Order)&#34;&#34;&#34;
+  marprt_f_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (FX High leverage)&#34;&#34;&#34;
+  marprt_f_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (FX Bracket Order)&#34;&#34;&#34;
+  marprt_c_h: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Commodity High leverage)&#34;&#34;&#34;
+  marprt_c_b: Optional[str]
+  &#34;&#34;&#34;Covered Product margins (Commodity Bracket Order)&#34;&#34;&#34;
+  scripbskmar_e_i: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Intraday)&#34;&#34;&#34;
+  scripbskmar_e_m: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Margin)&#34;&#34;&#34;
+  scripbskmar_e_c: Optional[str]
+  &#34;&#34;&#34;Scrip basket margin (Equity Cash n Carry)&#34;&#34;&#34;
+  addscripbskmrg_d_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Derivative Intraday)&#34;&#34;&#34;
+  addscripbskmrg_d_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Derivative Margin)&#34;&#34;&#34;
+  addscripbskmrg_f_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (FX Intraday)&#34;&#34;&#34;
+  addscripbskmrg_f_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (FX Margin)&#34;&#34;&#34;
+  addscripbskmrg_c_i: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Commodity Intraday)&#34;&#34;&#34;
+  addscripbskmrg_c_m: Optional[str]
+  &#34;&#34;&#34;Additional scrip basket margin (Commodity Margin)&#34;&#34;&#34;
+  brkage_e_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Intraday)&#34;&#34;&#34;
+  brkage_e_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Margin)&#34;&#34;&#34;
+  brkage_e_c: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity CAC)&#34;&#34;&#34;
+  brkage_e_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity High Leverage)&#34;&#34;&#34;
+  brkage_e_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Equity Bracket Order)&#34;&#34;&#34;
+  brkage_d_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Intraday)&#34;&#34;&#34;
+  brkage_d_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Margin)&#34;&#34;&#34;
+  brkage_d_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative High Leverage)&#34;&#34;&#34;
+  brkage_d_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Derivative Bracket Order)&#34;&#34;&#34;
+  brkage_f_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Intraday)&#34;&#34;&#34;
+  brkage_f_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Margin)&#34;&#34;&#34;
+  brkage_f_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX High Leverage)&#34;&#34;&#34;
+  brkage_f_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (FX Bracket Order)&#34;&#34;&#34;
+  brkage_c_i: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Intraday)&#34;&#34;&#34;
+  brkage_c_m: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Margin)&#34;&#34;&#34;
+  brkage_c_h: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity High Leverage)&#34;&#34;&#34;
+  brkage_c_b: Optional[str]
+  &#34;&#34;&#34;Brokerage (Commodity Bracket Order)&#34;&#34;&#34;
+  emsg: Optional[str]
+  &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
+
+  class Config:
+    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
+    json_loads = build_loader({
+      &#34;request_time&#34;: datetime_decoder()
+    })</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Account id of the logged in user.</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg"><code class="name">var <span class="ident">addscripbskmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_i"><code class="name">var <span class="ident">addscripbskmrg_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_m"><code class="name">var <span class="ident">addscripbskmrg_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_i"><code class="name">var <span class="ident">addscripbskmrg_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_m"><code class="name">var <span class="ident">addscripbskmrg_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_i"><code class="name">var <span class="ident">addscripbskmrg_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_m"><code class="name">var <span class="ident">addscripbskmrg_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Additional scrip basket margin (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_b"><code class="name">var <span class="ident">brkage_c_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Commodity Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_h"><code class="name">var <span class="ident">brkage_c_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Commodity High Leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_i"><code class="name">var <span class="ident">brkage_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_m"><code class="name">var <span class="ident">brkage_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_b"><code class="name">var <span class="ident">brkage_d_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Derivative Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_h"><code class="name">var <span class="ident">brkage_d_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Derivative High Leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_i"><code class="name">var <span class="ident">brkage_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_m"><code class="name">var <span class="ident">brkage_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_b"><code class="name">var <span class="ident">brkage_e_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Equity Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_c"><code class="name">var <span class="ident">brkage_e_c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Equity CAC)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_h"><code class="name">var <span class="ident">brkage_e_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Equity High Leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_i"><code class="name">var <span class="ident">brkage_e_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Equity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_m"><code class="name">var <span class="ident">brkage_e_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (Equity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_b"><code class="name">var <span class="ident">brkage_f_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (FX Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_h"><code class="name">var <span class="ident">brkage_f_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (FX High Leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_i"><code class="name">var <span class="ident">brkage_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_m"><code class="name">var <span class="ident">brkage_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkcollamt"><code class="name">var <span class="ident">brkcollamt</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Prevalued Collateral Amount</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brokerage"><code class="name">var <span class="ident">brokerage</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Brokerage amount</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cash"><code class="name">var <span class="ident">cash</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Cash Margin available</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cbu"><code class="name">var <span class="ident">cbu</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>CAC Buy used</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.collateral"><code class="name">var <span class="ident">collateral</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Collateral calculated based on uploaded holdings</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.csc"><code class="name">var <span class="ident">csc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>CAC Sell Credits</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.daycash"><code class="name">var <span class="ident">daycash</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Additional leverage amount / Amount added to handle system errors - by broker.</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo"><code class="name">var <span class="ident">expo</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure margin</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_i"><code class="name">var <span class="ident">expo_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_m"><code class="name">var <span class="ident">expo_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_i"><code class="name">var <span class="ident">expo_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_m"><code class="name">var <span class="ident">expo_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_i"><code class="name">var <span class="ident">expo_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_m"><code class="name">var <span class="ident">expo_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grcoll"><code class="name">var <span class="ident">grcoll</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Valuation of uploaded holding pre haircut</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.greexpo_d"><code class="name">var <span class="ident">greexpo_d</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Gross Exposure derivative</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grexpo"><code class="name">var <span class="ident">grexpo</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Gross Exposure</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marginused"><code class="name">var <span class="ident">marginused</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Total margin / fund used today</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt"><code class="name">var <span class="ident">marprt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_b"><code class="name">var <span class="ident">marprt_c_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Commodity Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_h"><code class="name">var <span class="ident">marprt_c_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Commodity High leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_b"><code class="name">var <span class="ident">marprt_d_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Derivative Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_h"><code class="name">var <span class="ident">marprt_d_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Derivative High leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_b"><code class="name">var <span class="ident">marprt_e_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Equity Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_h"><code class="name">var <span class="ident">marprt_e_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (Equity High leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_b"><code class="name">var <span class="ident">marprt_f_b</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (FX Bracket Order)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_h"><code class="name">var <span class="ident">marprt_f_h</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Covered Product margins (FX High leverage)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.mtomcurper"><code class="name">var <span class="ident">mtomcurper</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Mtom current percentage</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payin"><code class="name">var <span class="ident">payin</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Total Amount transferred using Payins today</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payout"><code class="name">var <span class="ident">payout</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Total amount requested for withdrawal today</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordval"><code class="name">var <span class="ident">pendordval</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Pending Order value</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordvallmt"><code class="name">var <span class="ident">pendordvallmt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Pending order value limit</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Product name</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium"><code class="name">var <span class="ident">premium</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Premium used</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_i"><code class="name">var <span class="ident">premium_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_m"><code class="name">var <span class="ident">premium_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_i"><code class="name">var <span class="ident">premium_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_m"><code class="name">var <span class="ident">premium_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_i"><code class="name">var <span class="ident">premium_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_m"><code class="name">var <span class="ident">premium_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option premium (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rpnl"><code class="name">var <span class="ident">rpnl</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_i"><code class="name">var <span class="ident">rzpnl_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_m"><code class="name">var <span class="ident">rzpnl_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_i"><code class="name">var <span class="ident">rzpnl_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_m"><code class="name">var <span class="ident">rzpnl_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_c"><code class="name">var <span class="ident">rzpnl_e_c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Equity Cash n Carry)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_i"><code class="name">var <span class="ident">rzpnl_e_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Equity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_m"><code class="name">var <span class="ident">rzpnl_e_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (Equity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_i"><code class="name">var <span class="ident">rzpnl_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_m"><code class="name">var <span class="ident">rzpnl_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current realized PNL (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar"><code class="name">var <span class="ident">scripbskmar</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Scrip basket margin</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_c"><code class="name">var <span class="ident">scripbskmar_e_c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Scrip basket margin (Equity Cash n Carry)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_i"><code class="name">var <span class="ident">scripbskmar_e_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Scrip basket margin (Equity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_m"><code class="name">var <span class="ident">scripbskmar_e_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Scrip basket margin (Equity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>CM / FO / FX - Segment</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span"><code class="name">var <span class="ident">span</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span used</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_i"><code class="name">var <span class="ident">span_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_m"><code class="name">var <span class="ident">span_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_i"><code class="name">var <span class="ident">span_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_m"><code class="name">var <span class="ident">span_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_i"><code class="name">var <span class="ident">span_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_m"><code class="name">var <span class="ident">span_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Span Margin (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The limits success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnover"><code class="name">var <span class="ident">turnover</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Turnover</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnoverlmt"><code class="name">var <span class="ident">turnoverlmt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Turnover Limit</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unclearedcash"><code class="name">var <span class="ident">unclearedcash</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Uncleared Cash (Payin through cheques)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unmtom"><code class="name">var <span class="ident">unmtom</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized mtom</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_i"><code class="name">var <span class="ident">uzpnl_c_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Commodity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_m"><code class="name">var <span class="ident">uzpnl_c_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Commodity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_i"><code class="name">var <span class="ident">uzpnl_d_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Derivative Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_m"><code class="name">var <span class="ident">uzpnl_d_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Derivative Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_c"><code class="name">var <span class="ident">uzpnl_e_c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Equity Cash n Carry)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_i"><code class="name">var <span class="ident">uzpnl_e_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Equity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_m"><code class="name">var <span class="ident">uzpnl_e_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (Equity Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_i"><code class="name">var <span class="ident">uzpnl_f_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (FX Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_m"><code class="name">var <span class="ident">uzpnl_f_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Current unrealized MTOM (FX Margin)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm"><code class="name">var <span class="ident">varelm</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Var Elm Margin</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_c"><code class="name">var <span class="ident">varelm_e_c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Var Elm (Equity Cash n Carry)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_i"><code class="name">var <span class="ident">varelm_e_i</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Var Elm (Equity Intraday)</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_m"><code class="name">var <span class="ident">varelm_e_m</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Var Elm (Equity Margin)</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="py_client.modules.holdings_limits.models" href="index.html">py_client.modules.holdings_limits.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel">LimitsRequestModel</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.actid" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.exch" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.prd" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.seg" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel.seg">seg</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel.uid" href="#py_client.modules.holdings_limits.models.limits.LimitsRequestModel.uid">uid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel">LimitsResponseModel</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.Config" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.actid" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg">addscripbskmrg</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_i">addscripbskmrg_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_c_m">addscripbskmrg_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_i">addscripbskmrg_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_d_m">addscripbskmrg_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_i">addscripbskmrg_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.addscripbskmrg_f_m">addscripbskmrg_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_b">brkage_c_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_h">brkage_c_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_i">brkage_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_c_m">brkage_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_b">brkage_d_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_h">brkage_d_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_i">brkage_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_d_m">brkage_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_b">brkage_e_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_c" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_c">brkage_e_c</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_h">brkage_e_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_i">brkage_e_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_e_m">brkage_e_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_b">brkage_f_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_h">brkage_f_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_i">brkage_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkage_f_m">brkage_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkcollamt" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brkcollamt">brkcollamt</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brokerage" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.brokerage">brokerage</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cash" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cash">cash</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cbu" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.cbu">cbu</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.collateral" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.collateral">collateral</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.csc" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.csc">csc</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.daycash" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.daycash">daycash</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.emsg" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.exch" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo">expo</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_i">expo_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_c_m">expo_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_i">expo_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_d_m">expo_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_i">expo_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.expo_f_m">expo_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grcoll" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grcoll">grcoll</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.greexpo_d" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.greexpo_d">greexpo_d</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grexpo" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.grexpo">grexpo</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marginused" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marginused">marginused</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt">marprt</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_b">marprt_c_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_c_h">marprt_c_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_b">marprt_d_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_d_h">marprt_d_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_b">marprt_e_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_e_h">marprt_e_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_b" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_b">marprt_f_b</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_h" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.marprt_f_h">marprt_f_h</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.mtomcurper" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.mtomcurper">mtomcurper</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payin" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payin">payin</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payout" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.payout">payout</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordval" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordval">pendordval</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordvallmt" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.pendordvallmt">pendordvallmt</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.prd" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium">premium</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_i">premium_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_c_m">premium_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_i">premium_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_d_m">premium_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_i">premium_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.premium_f_m">premium_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.request_time" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rpnl" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rpnl">rpnl</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_i">rzpnl_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_c_m">rzpnl_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_i">rzpnl_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_d_m">rzpnl_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_c" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_c">rzpnl_e_c</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_i">rzpnl_e_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_e_m">rzpnl_e_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_i">rzpnl_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.rzpnl_f_m">rzpnl_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar">scripbskmar</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_c" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_c">scripbskmar_e_c</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_i">scripbskmar_e_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.scripbskmar_e_m">scripbskmar_e_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.seg" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.seg">seg</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span">span</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_i">span_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_c_m">span_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_i">span_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_d_m">span_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_i">span_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.span_f_m">span_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.stat" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnover" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnover">turnover</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnoverlmt" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.turnoverlmt">turnoverlmt</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unclearedcash" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unclearedcash">unclearedcash</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unmtom" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.unmtom">unmtom</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_i">uzpnl_c_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_c_m">uzpnl_c_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_i">uzpnl_d_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_d_m">uzpnl_d_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_c" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_c">uzpnl_e_c</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_i">uzpnl_e_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_e_m">uzpnl_e_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_i">uzpnl_f_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.uzpnl_f_m">uzpnl_f_m</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm">varelm</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_c" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_c">varelm_e_c</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_i" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_i">varelm_e_i</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_m" href="#py_client.modules.holdings_limits.models.limits.LimitsResponseModel.varelm_e_m">varelm_e_m</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

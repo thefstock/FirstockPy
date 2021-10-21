@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>py_client API documentation</title>
+<meta name="description" content="The py_client library abstracts away the REST communication logic by exposing a set of classes and
+methods to effectively execute the tasks …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>py_client</code></h1>
+</header>
+<section id="section-intro">
+<p>The py_client library abstracts away the REST communication logic by exposing a set of classes and
+methods to effectively execute the tasks.</p>
+<p>Library exposes a <strong>Client</strong> which abstracts the underlying logic by providing methods and submodules
+to communicate with the server.</p>
+<pre><code class="language-py">from py_client import Client, LoginRequestModel, HttpException
+
+client = Client(base_url='http://&lt;HOST&gt;:&lt;PORT&gt;')
+
+login_model = LoginRequestModel(...)
+
+try:
+  response = client.login(login_model)
+  print('Success')
+  print(response.json(exclude_unset=True))
+except HttpException as e:
+  print('Failed: ', e.reason)
+except:
+  print('Connection failed')
+</code></pre>
+<p>The library uses <strong>requests</strong> library under the hood to interface with the REST API.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="client">Client</h3>
+<p>The client is the main access point for all operations in every module.
+The client syncs the state between all the modules to use a shared application state.</p>
+<h4 id="initialize-the-client">Initialize the Client.</h4>
+<p>Initialize the client with an <code>api_url</code> and a <code>socket_url</code></p>
+<pre><code class="language-py">import os
+from py_client import Client
+
+# We assume that the api_url and socket_url comes from env.
+API_URL = os.getenv('API_URL')
+SOCKET_URL = os.getenv('SOCKET_URL')
+
+client = Client(api_url=API_URL, socket_url=SOCKET_URL)
+</code></pre>
+<blockquote>
+<p>The <code>socket_url</code> is used to make the websocket connection from the client</p>
+</blockquote>
+<h4 id="login-user">Login user</h4>
+<p>Since most of the methods requires the user to login. First you should login user with the <code>login</code> method of client.
+Inorder to do that we need to import the <code>LoginRequestModel</code> to encapsulate the data.</p>
+<pre><code class="language-py">from py_client.common import RequestSourceType, ResponseStatus
+from py_client.models import LoginRequestModel
+
+credentials = LoginRequestModel(
+  apkversion = os.getenv('APK_VERSION'),
+  appkey = os.getenv('APP_KEY'),
+  vc = os.getenv('VC'),
+  uid = os.getenv('UID'),
+  pwd = os.getenv('PASSWORD'),
+  factor2 = os.getenv('FACTOR2'),
+  imei = os.getenv('imei'),
+  source = RequestSourceType.API
+)
+
+response = client.login(credentials)
+# response is of type `LoginResponseModel`
+if response.stat == ResponseStatus.OK:
+  print('Login Successful')
+else:
+  print('Login Failed')
+  print(response.emsg)
+# You can store the session token in a variable if needed
+# token = response.susertoken
+</code></pre>
+<blockquote>
+<p>The request and response models does a minimum level of validation and transformation to send proper data in proper format required by the server.</p>
+</blockquote>
+<h4 id="sending-request-for-protected-content">Sending Request for protected content</h4>
+<p>After logging in, now we are able to request contents that requires authentication.
+These methods requires us to provide as key the <code>susertoken</code> recieved in login response.
+You can store the token in a variable and reuse everywhere the key is required.
+The <code><a title="py_client.client" href="client.html">py_client.client</a></code> already do this under the hood by using a shared state to hold the session token and reusing it wherever necessary.</p>
+<p>Request for user details after client login:</p>
+<pre><code class="language-py">from py_client.models import UserDetailsRequestModel
+
+model = UserDetailsRequestModel(uid=self.args.uid)
+details = client.users.user_details(model)
+# The user details method also takes an optional `key` argument.
+# to provide the session token in case login request is not done by the client.
+</code></pre>
+<h4 id="logout">Logout</h4>
+<p>To logout a logged in user, use the <code>logout</code> method of the client.
+This sends a logout request to the server and also clears the session token from client state.</p>
+<pre><code class="language-py">response = client.logout()
+if response.stat == ResponseStatus.OK:
+  print('Logout successful')
+else:
+  print('Logout Failed')
+  print(response.emsg)
+</code></pre>
+<h3 id="websockets">Websockets</h3>
+<p>The master client also manages a websocket client to handle websocket requests.
+The master client shares its state with the websocket client.
+The websocket connection is not made by the client.
+This is to avoid making unnecessary connections where websocket operations might not be required.</p>
+<p>The websocket client is decoupled from the master client but is kept as part of the master client to abstract the state management.</p>
+<p>To start using websockets, first we need to <a href="#initialize-the-client">initialize the client</a> and complete a <a href="#login-user">login</a> request.</p>
+<h4 id="creating-the-connection">Creating the connection</h4>
+<pre><code class="language-py"># ... imports
+# ... initialize client
+# ... login
+
+ws = client.ws
+
+ws.connect(uid=os.getenv('UID'), actid=os.getenv('ACTID'))
+ws.run_forever()
+</code></pre>
+<h4 id="adding-event-handlers">Adding event handlers</h4>
+<p>Just creating the connection does not serve the purpose of the websocket. We should be able to send and recieve messages.</p>
+<p>The websocket client exposes three decorator methods to listen to events on the websocket:
+- <code>on_connect</code> : Runs once the connection is made and ack is recieved.
+- <code>on_message(topic)</code>: Runs when a message is recieved on the given topic.
+- <code>on_close</code>: Runs once the connection is closed.</p>
+<p>Let's add an on_connect listener to our websocket client</p>
+<pre><code class="language-py">ws = client.ws
+
+# the event handlers are added before the connection is made
+@ws.on_connect
+def connected(client, message):
+  if message.get('s') == 'OK':
+    print('Connected to server')
+
+@ws.on_close
+def closed(client):
+  print('Closed')
+
+ws.connect(uid=os.getenv('UID'), actid=os.getenv('ACTID'))
+ws.run_forever()
+</code></pre>
+<h4 id="subscribing-unsubscribing">Subscribing &amp; Unsubscribing</h4>
+<p>The websocket client can be used to subscribe to multiple topics.
+Once subscribed, the client recieves the updates from these topics as feeds.
+When you no longer requires updates from a topic, you can also unsubscribe from these topics.</p>
+<p>The websocket client exposes methods to subscribe and unsubscribe for the following topics:</p>
+<ul>
+<li>Touchline</li>
+<li><code>subscribe_touchline</code></li>
+<li><code>unsubscribe_touchline</code></li>
+<li>Depth</li>
+<li><code>subscribe_depth</code></li>
+<li><code>unsubscribe_depth</code></li>
+<li>Order update</li>
+<li><code>subscribe_order</code></li>
+<li><code>unsubscribe_order</code></li>
+</ul>
+<pre><code class="language-py">ws = client.ws
+
+@ws.on_connect
+def connected(client, message):
+  if message.get('s') == 'OK':
+    print('Connected to server')
+    client.subscribe_touchline('NSE', 'NIFTY')
+
+@ws.on_close
+def closed(client):
+  print('Closed')
+  client.unsubscribe_toucline('NSE', 'NIFTY')
+
+ws.connect(uid=os.getenv('UID'), actid=os.getenv('ACTID'))
+ws.run_forever()
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: The subscriptions are always done after the connection is made to avoid packet loss.</p>
+</blockquote>
+<h4 id="listening-to-messages-from-topics">Listening to messages from topics</h4>
+<p>We were able to subscribe to a topic but how to handle the incoming messages.
+Every message from the server - be it acknowledgements or updates - can be handled by registering an <code>on_message</code> handler.
+Unlike <code>on_close</code> and <code>on_connect</code>, the <code>on_message</code> method requires to provide a <code>MessageTopic</code> and the handler only processes the messages from that topic.</p>
+<p>The touchline, depth and order update topics will have seperate message topics for <code>ACK</code> and <code>FEED</code>.</p>
+<pre><code class="language-py">from py_client.websocket import MessageTopic
+
+ws = client.ws
+
+@ws.on_connect
+def connected(client, message):
+  if message.get('s') == 'OK':
+    print('Connected to server')
+    client.subscribe_touchline('NSE', 'NIFTY')
+
+@ws.on_close
+def closed(client):
+  print('Closed')
+  client.unsubscribe_toucline('NSE', 'NIFTY')
+
+@ws.on_message(MessageTopic.TOUCHLINE_SUB_ACK)
+def subscribed(client, message):
+  if message.get('s') == 'OK':
+    print('Subscribed to touchline')
+
+@ws.on_message(MessageTopic.TOUCHLINE_UNSUB_ACK)
+def unsubscribed(client, message):
+  if message.get('s') == 'OK':
+    print('Unsibscribed from touchline')
+
+@ws.on_message(MessageTopic.TOUCHLINE_FEED)
+def touchline_updates(client, message):
+  print(message)
+
+ws.connect(uid=os.getenv('UID'), actid=os.getenv('ACTID'))
+ws.run_forever()
+</code></pre>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+The py_client library abstracts away the REST communication logic by exposing a set of classes and
+methods to effectively execute the tasks.
+
+Library exposes a **Client** which abstracts the underlying logic by providing methods and submodules
+to communicate with the server.
+
+```py
+from py_client import Client, LoginRequestModel, HttpException
+
+client = Client(base_url=&#39;http://&lt;HOST&gt;:&lt;PORT&gt;&#39;)
+
+login_model = LoginRequestModel(...)
+
+try:
+  response = client.login(login_model)
+  print(&#39;Success&#39;)
+  print(response.json(exclude_unset=True))
+except HttpException as e:
+  print(&#39;Failed: &#39;, e.reason)
+except:
+  print(&#39;Connection failed&#39;)
+```
+
+The library uses **requests** library under the hood to interface with the REST API.
+
+.. include:: ./documentation.md
+&#34;&#34;&#34;
+__version__ = &#39;0.1.0&#39;
+
+from .common import *
+from .websocket import *
+from .client import *</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="py_client.client" href="client.html">py_client.client</a></code></dt>
+<dd>
+<div class="desc"><p>The client combines all the modules and abstracts the inner logic</p></div>
+</dd>
+<dt><code class="name"><a title="py_client.common" href="common/index.html">py_client.common</a></code></dt>
+<dd>
+<div class="desc"><p>The commonly used datastructures, methods, classes etc.</p></div>
+</dd>
+<dt><code class="name"><a title="py_client.models" href="models.html">py_client.models</a></code></dt>
+<dd>
+<div class="desc"><p>Easy access to all the request and response models used in client …</p></div>
+</dd>
+<dt><code class="name"><a title="py_client.modules" href="modules/index.html">py_client.modules</a></code></dt>
+<dd>
+<div class="desc"><p>All the modules in this library</p></div>
+</dd>
+<dt><code class="name"><a title="py_client.utils" href="utils/index.html">py_client.utils</a></code></dt>
+<dd>
+<div class="desc"><p>The utility services used by the module</p></div>
+</dd>
+<dt><code class="name"><a title="py_client.websocket" href="websocket/index.html">py_client.websocket</a></code></dt>
+<dd>
+<div class="desc"><p>The websocket client to connect to websocket to recieve realtime feeds.
+The NorenWebsockerClient contains decorators to assign handlers for listening …</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#client">Client</a><ul>
+<li><a href="#initialize-the-client">Initialize the Client.</a></li>
+<li><a href="#login-user">Login user</a></li>
+<li><a href="#sending-request-for-protected-content">Sending Request for protected content</a></li>
+<li><a href="#logout">Logout</a></li>
+</ul>
+</li>
+<li><a href="#websockets">Websockets</a><ul>
+<li><a href="#creating-the-connection">Creating the connection</a></li>
+<li><a href="#adding-event-handlers">Adding event handlers</a></li>
+<li><a href="#subscribing-unsubscribing">Subscribing &amp; Unsubscribing</a></li>
+<li><a href="#listening-to-messages-from-topics">Listening to messages from topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="py_client.client" href="client.html">py_client.client</a></code></li>
+<li><code><a title="py_client.common" href="common/index.html">py_client.common</a></code></li>
+<li><code><a title="py_client.models" href="models.html">py_client.models</a></code></li>
+<li><code><a title="py_client.modules" href="modules/index.html">py_client.modules</a></code></li>
+<li><code><a title="py_client.utils" href="utils/index.html">py_client.utils</a></code></li>
+<li><code><a title="py_client.websocket" href="websocket/index.html">py_client.websocket</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

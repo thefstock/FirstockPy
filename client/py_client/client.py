@@ -2,6 +2,7 @@
 The client combines all the modules and abstracts the inner logic
 """
 
+from py_client.common.enums import ResponseStatus
 from py_client.websocket.client import NorenWebsocketClient
 from .modules.users import LoginRequestModel, LogoutRequestModel
 from .modules.users import UserDataSource
@@ -127,7 +128,11 @@ class Client(Stateful):
     Returns:
       LogoutResponseModel: The response from logout request as LogoutResponseModel instance
     """
-    return self.__users.logout(model, key)
+    response = self.__users.logout(model, key)
+    if response.stat == ResponseStatus.OK:
+      # clear the session token from state
+      self.set_state('token', None)
+    return response
 
   def holdings(self, model: HoldingsRequestModel, key: str):
     """
