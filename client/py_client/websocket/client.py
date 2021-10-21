@@ -33,29 +33,29 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
     self.__on_close_handlers = []
     self.__on_message_handlers: Dict[MessageTopic, Callable] = defaultdict(lambda: [])
 
-  def on_connect(self, handler: Callable):
+  def on_connect(self, handler: Callable[['NorenWebsocketClient', Dict[str, Any]], None]):
     """
     Add on open handler
 
     Args:
-      handler (Callable): The handler to run on connection opened
+      handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
 
     Usage:
       Should be used as decorator
       ```python
       @ws.on_connect
-      def on_connect(client, ack):
+      def on_connect(client, ack: Dict[str, Any]):
         print('Connected: ', ack)
       ```
     """
     self.__on_connect_handlers.append(handler)
 
-  def on_close(self, handler: Callable):
+  def on_close(self, handler: Callable[['NorenWebsocketClient'], None]):
     """
     Add on close handler
 
     Args:
-      handler (Callable): The handler to run on connection closed
+      handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
     
     Usage:
       Should be used as decorator
@@ -74,15 +74,18 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
     Args:
       topic (MessageTopic): The handler to run when a new message is recieved
 
+    Returns:
+      Callable[[Callable[['NorenWebsocketClient', Dict[str, Any]], None]], None]
+
     Usage:
       Should be used as decorator
       ```python
       @ws.on_message(MessageTopic.DEPTH_FEED)
-      def on_depth_feed(client, message):
+      def on_depth_feed(client, message: Dict[str, Any]):
         print(message)
       ```
     """
-    def register(handler):
+    def register(handler: Callable[['NorenWebsocketClient', Dict[str, Any]], None]):
       self.__on_message_handlers[topic].append(handler)
     return register
 

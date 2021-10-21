@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>py_client.modules.watchlists.models.get_quotes API documentation</title>
+<meta name="description" content="The request and response models for get quotes request" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>py_client.modules.watchlists.models.get_quotes</code></h1>
+</header>
+<section id="section-intro">
+<p>The request and response models for get quotes request</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+The request and response models for get quotes request
+&#34;&#34;&#34;
+
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel
+
+from ....common.enums import ResponseStatus
+from ....utils.decoders import build_loader, datetime_decoder
+
+__all__ = [&#39;GetQuotesRequestModel&#39;, &#39;GetQuotesResponseModel&#39;]
+
+class GetQuotesRequestModel(BaseModel):
+  &#34;&#34;&#34;
+  The request model for get quotes endpoint
+  &#34;&#34;&#34;
+  uid: str
+  &#34;&#34;&#34;The user id of the login user&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Contract Token&#34;&#34;&#34;
+
+class GetQuotesResponseModel(BaseModel):
+  &#34;&#34;&#34;
+  The response model for get quotes endpoint
+  &#34;&#34;&#34;
+  stat: ResponseStatus
+  &#34;&#34;&#34;The get scrips success or failure status&#34;&#34;&#34;
+  request_time: Optional[datetime]
+  &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
+  emsg: Optional[str]
+  &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  tsym: Optional[str]
+  &#34;&#34;&#34;Trading Symbol&#34;&#34;&#34;
+  cname: Optional[str]
+  &#34;&#34;&#34;Company Name&#34;&#34;&#34;
+  symnam: Optional[str]
+  &#34;&#34;&#34;Symbol Name&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;Segment&#34;&#34;&#34;
+  instname: Optional[str]
+  &#34;&#34;&#34;Intrument Name&#34;&#34;&#34;
+  isin: Optional[str]
+  &#34;&#34;&#34;ISIN&#34;&#34;&#34;
+  ti: Optional[float]
+  &#34;&#34;&#34;Tick Size&#34;&#34;&#34;
+  ls: Optional[float]
+  &#34;&#34;&#34;Lot Size&#34;&#34;&#34;
+  pp: Optional[float]
+  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
+  mult: Optional[float]
+  &#34;&#34;&#34;Multiplier&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Contract Token&#34;&#34;&#34;
+  prcftr_d: Optional[str]
+  &#34;&#34;&#34;((GN / GD) * (PN/PD))&#34;&#34;&#34;
+  uc: Optional[float]
+  &#34;&#34;&#34;Upper circuit limit&#34;&#34;&#34;
+  lc: Optional[float]
+  &#34;&#34;&#34;Lower circuit limit&#34;&#34;&#34;
+  lp: Optional[float]
+  &#34;&#34;&#34;LTP&#34;&#34;&#34;
+  h: Optional[float]
+  &#34;&#34;&#34;Day High Price&#34;&#34;&#34;
+  l: Optional[float]
+  &#34;&#34;&#34;Day Low Price&#34;&#34;&#34;
+  v: Optional[float]
+  &#34;&#34;&#34;Volume&#34;&#34;&#34;
+  ltq: Optional[float]
+  &#34;&#34;&#34;Last trade quantity&#34;&#34;&#34;
+  ltt: Optional[str]
+  &#34;&#34;&#34;Last trade time&#34;&#34;&#34;
+  bp1: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp1: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp2: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp2: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp3: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp3: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp4: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp4: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp5: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp5: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bq1: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq1: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq2: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq2: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq3: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq3: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq4: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq4: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq5: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq5: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bo1: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so1: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo2: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so2: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo3: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so3: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo4: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so4: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo5: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so5: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  class Config:
+    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
+    json_loads = build_loader({
+      &#34;request_time&#34;: datetime_decoder()
+    })</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel"><code class="flex name class">
+<span>class <span class="ident">GetQuotesRequestModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The request model for get quotes endpoint</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetQuotesRequestModel(BaseModel):
+  &#34;&#34;&#34;
+  The request model for get quotes endpoint
+  &#34;&#34;&#34;
+  uid: str
+  &#34;&#34;&#34;The user id of the login user&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Contract Token&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Contract Token</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel"><code class="flex name class">
+<span>class <span class="ident">GetQuotesResponseModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The response model for get quotes endpoint</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetQuotesResponseModel(BaseModel):
+  &#34;&#34;&#34;
+  The response model for get quotes endpoint
+  &#34;&#34;&#34;
+  stat: ResponseStatus
+  &#34;&#34;&#34;The get scrips success or failure status&#34;&#34;&#34;
+  request_time: Optional[datetime]
+  &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
+  emsg: Optional[str]
+  &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  tsym: Optional[str]
+  &#34;&#34;&#34;Trading Symbol&#34;&#34;&#34;
+  cname: Optional[str]
+  &#34;&#34;&#34;Company Name&#34;&#34;&#34;
+  symnam: Optional[str]
+  &#34;&#34;&#34;Symbol Name&#34;&#34;&#34;
+  seg: Optional[str]
+  &#34;&#34;&#34;Segment&#34;&#34;&#34;
+  instname: Optional[str]
+  &#34;&#34;&#34;Intrument Name&#34;&#34;&#34;
+  isin: Optional[str]
+  &#34;&#34;&#34;ISIN&#34;&#34;&#34;
+  ti: Optional[float]
+  &#34;&#34;&#34;Tick Size&#34;&#34;&#34;
+  ls: Optional[float]
+  &#34;&#34;&#34;Lot Size&#34;&#34;&#34;
+  pp: Optional[float]
+  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
+  mult: Optional[float]
+  &#34;&#34;&#34;Multiplier&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Contract Token&#34;&#34;&#34;
+  prcftr_d: Optional[str]
+  &#34;&#34;&#34;((GN / GD) * (PN/PD))&#34;&#34;&#34;
+  uc: Optional[float]
+  &#34;&#34;&#34;Upper circuit limit&#34;&#34;&#34;
+  lc: Optional[float]
+  &#34;&#34;&#34;Lower circuit limit&#34;&#34;&#34;
+  lp: Optional[float]
+  &#34;&#34;&#34;LTP&#34;&#34;&#34;
+  h: Optional[float]
+  &#34;&#34;&#34;Day High Price&#34;&#34;&#34;
+  l: Optional[float]
+  &#34;&#34;&#34;Day Low Price&#34;&#34;&#34;
+  v: Optional[float]
+  &#34;&#34;&#34;Volume&#34;&#34;&#34;
+  ltq: Optional[float]
+  &#34;&#34;&#34;Last trade quantity&#34;&#34;&#34;
+  ltt: Optional[str]
+  &#34;&#34;&#34;Last trade time&#34;&#34;&#34;
+  bp1: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp1: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp2: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp2: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp3: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp3: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp4: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp4: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bp5: Optional[float]
+  &#34;&#34;&#34;Best Buy Price&#34;&#34;&#34;
+  sp5: Optional[float]
+  &#34;&#34;&#34;Best Sell Price&#34;&#34;&#34;
+  bq1: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq1: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq2: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq2: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq3: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq3: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq4: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq4: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bq5: Optional[float]
+  &#34;&#34;&#34;Best Buy Quantity&#34;&#34;&#34;
+  sq5: Optional[float]
+  &#34;&#34;&#34;Best Sell Quantity&#34;&#34;&#34;
+  bo1: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so1: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo2: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so2: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo3: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so3: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo4: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so4: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  bo5: Optional[float]
+  &#34;&#34;&#34;Best Buy Orders&#34;&#34;&#34;
+  so5: Optional[float]
+  &#34;&#34;&#34;Best Sell Orders&#34;&#34;&#34;
+  class Config:
+    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
+    json_loads = build_loader({
+      &#34;request_time&#34;: datetime_decoder()
+    })</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1"><code class="name">var <span class="ident">bo1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2"><code class="name">var <span class="ident">bo2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3"><code class="name">var <span class="ident">bo3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4"><code class="name">var <span class="ident">bo4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5"><code class="name">var <span class="ident">bo5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1"><code class="name">var <span class="ident">bp1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2"><code class="name">var <span class="ident">bp2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3"><code class="name">var <span class="ident">bp3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4"><code class="name">var <span class="ident">bp4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5"><code class="name">var <span class="ident">bp5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1"><code class="name">var <span class="ident">bq1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2"><code class="name">var <span class="ident">bq2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3"><code class="name">var <span class="ident">bq3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4"><code class="name">var <span class="ident">bq4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5"><code class="name">var <span class="ident">bq5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname"><code class="name">var <span class="ident">cname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Company Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h"><code class="name">var <span class="ident">h</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Day High Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Intrument Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.isin"><code class="name">var <span class="ident">isin</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>ISIN</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l"><code class="name">var <span class="ident">l</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Day Low Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc"><code class="name">var <span class="ident">lc</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lower circuit limit</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lp"><code class="name">var <span class="ident">lp</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>LTP</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lot Size</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq"><code class="name">var <span class="ident">ltq</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Last trade quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltt"><code class="name">var <span class="ident">ltt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Last trade time</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Multiplier</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d"><code class="name">var <span class="ident">prcftr_d</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>((GN / GD) * (PN/PD))</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Segment</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1"><code class="name">var <span class="ident">so1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2"><code class="name">var <span class="ident">so2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3"><code class="name">var <span class="ident">so3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4"><code class="name">var <span class="ident">so4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5"><code class="name">var <span class="ident">so5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1"><code class="name">var <span class="ident">sp1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2"><code class="name">var <span class="ident">sp2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3"><code class="name">var <span class="ident">sp3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4"><code class="name">var <span class="ident">sp4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5"><code class="name">var <span class="ident">sp5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1"><code class="name">var <span class="ident">sq1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2"><code class="name">var <span class="ident">sq2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3"><code class="name">var <span class="ident">sq3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4"><code class="name">var <span class="ident">sq4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5"><code class="name">var <span class="ident">sq5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The get scrips success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam"><code class="name">var <span class="ident">symnam</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Symbol Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Tick Size</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Contract Token</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading Symbol</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc"><code class="name">var <span class="ident">uc</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Upper circuit limit</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v"><code class="name">var <span class="ident">v</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Volume</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="py_client.modules.watchlists.models" href="index.html">py_client.modules.watchlists.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel">GetQuotesRequestModel</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid">uid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel">GetQuotesResponseModel</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1">bo1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2">bo2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3">bo3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4">bo4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5">bo5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1">bp1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2">bp2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3">bp3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4">bp4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5">bp5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1">bq1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2">bq2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3">bq3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4">bq4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5">bq5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname">cname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.exch" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h">h</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname">instname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.isin" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.isin">isin</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l">l</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc">lc</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lp" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lp">lp</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq">ltq</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltt" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltt">ltt</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult">mult</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp">pp</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d">prcftr_d</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg">seg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1">so1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2">so2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3">so3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4">so4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5">so5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1">sp1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2">sp2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3">sp3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4">sp4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5">sp5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1">sq1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2">sq2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3">sq3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4">sq4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5">sq5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam">symnam</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti">ti</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc">uc</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v">v</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

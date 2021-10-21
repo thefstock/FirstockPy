@@ -51,6 +51,8 @@ ws.subscribe_touchline('NSE', 'NIFTY')
 ws.run_forever()
 ```
 
+> Note: It uses ws4py under the hood to connect to websocket
 """
 from .client import *
 from .models import *
+from .enums import *

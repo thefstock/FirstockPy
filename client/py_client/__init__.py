@@ -23,11 +23,11 @@ except:
 ```
 
 The library uses **requests** library under the hood to interface with the REST API.
+
+.. include:: ./documentation.md
 """
 __version__ = '0.1.0'
 
 from .common import *
-from .modules import *
-from .utils import *
 from .websocket import *
 from .client import *
