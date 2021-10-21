@@ -1,5 +1,9 @@
 # Firstock Python Library Client
 
+## License
+
+This library is distributed under MIT License.
+
 ## Get Started
 
 The python project is housed inside the ```client/py_client``` directory.
