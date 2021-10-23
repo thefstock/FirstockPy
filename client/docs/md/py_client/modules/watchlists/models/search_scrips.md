@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
-    `exch: Optional[str]`
-    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
+    `uid: str`
+    :   The user id of the login user
 
     `stext: str`
     :   Search Text
 
-    `uid: str`
-    :   The user id of the login user
+    `exch: Optional[str]`
+    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
 
 `SearchScripsResponseModel(**data: Any)`
 :   The response model for search scrip endpoint
@@ -42,17 +42,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The search scrips success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The search scrips success or failure status
-
     `values: List[py_client.common.models.Scrip]`
     :   Watch List names as a json array of strings.
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

@@ -87,6 +87,26 @@ else:
   print(response.emsg)
 ```
 
+#### Data Sources / Modules
+
+The client comprises of datasources/modules to group the available methods.
+All the available datasources can be accessed from client by the corresponding property:
+
+| Property   | Data Source                                                   |
+| ---------- | ------------------------------------------------------------- |
+| alerts     | `py_client.modules.alerts.datasource.AlertsDataSource`        |
+| funds      | `py_client.modules.funds.datasource.FundsDataSource`          |
+| markets    | `py_client.modules.markets.datasource.MarketsDataSource`      |
+| orders     | `py_client.modules.orders.datasource.OrdersDataSource`        |
+| users      | `py_client.modules.users.datasource.UserDataSource`           |
+| watchlists | `py_client.modules.watchlists.datasource.WatchListDataSource` |
+
+**Example:**
+```py
+# To access the `get_index_list` method of `MarketsDataSource`, we can use:
+indexes = client.markets.get_index_list(...)
+```
+
 ### Websockets
 
 The master client also manages a websocket client to handle websocket requests.

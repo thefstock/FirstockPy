@@ -19,17 +19,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `scrips: List[str]`
-    :   List of scrips
-
     `uid: str`
     :   The user id of the login user
 
     `wlname: str`
     :   Name of the Watchlist, for which scrip list is required
+
+    `scrips: List[str]`
+    :   List of scrips
+
+    `Config`
+    :   model configuration
 
 `DeleteScripsResponseModel(**data: Any)`
 :   The response model for delete scrips from watchlist endpoint
@@ -45,14 +45,14 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The delete scrips success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The delete scrips success or failure status
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

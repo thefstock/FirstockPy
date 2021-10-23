@@ -178,13 +178,21 @@ class UserDetailsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The logout success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr"><code class="name">var <span class="ident">exarr</span> : Optional[List[str]]</code></dt>
 <dd>
-<div class="desc"><p>Account Id</p></div>
+<div class="desc"><p>List of strings with enabled exchange names</p></div>
+</dd>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr"><code class="name">var <span class="ident">orarr</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"><p>List of strings with enabled price types for user</p></div>
+</dd>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr"><code class="name">var <span class="ident">prarr</span> : Optional[List[<a title="py_client.common.models.Product" href="../../../common/models.html#py_client.common.models.Product">Product</a>]]</code></dt>
+<dd>
+<div class="desc"><p>List of Product Obj with enabled products, as defined below.</p></div>
 </dd>
 <dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.brkname"><code class="name">var <span class="ident">brkname</span> : Optional[str]</code></dt>
 <dd>
@@ -198,37 +206,29 @@ class UserDetailsResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Email Id</p></div>
 </dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr"><code class="name">var <span class="ident">exarr</span> : Optional[List[str]]</code></dt>
-<dd>
-<div class="desc"><p>List of strings with enabled exchange names</p></div>
+<div class="desc"><p>Account Id</p></div>
 </dd>
 <dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.m_num"><code class="name">var <span class="ident">m_num</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Mobile Number</p></div>
 </dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr"><code class="name">var <span class="ident">orarr</span> : Optional[List[str]]</code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.u_prev"><code class="name">var <span class="ident">u_prev</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>List of strings with enabled price types for user</p></div>
-</dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr"><code class="name">var <span class="ident">prarr</span> : Optional[List[<a title="py_client.common.models.Product" href="../../../common/models.html#py_client.common.models.Product">Product</a>]]</code></dt>
-<dd>
-<div class="desc"><p>List of Product Obj with enabled products, as defined below.</p></div>
+<div class="desc"><p>Always it will be an INVESTOR, other types of user not allowed to login using this API.</p></div>
 </dd>
 <dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
 <div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The logout success or failure status</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.u_prev"><code class="name">var <span class="ident">u_prev</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.users.models.user_details.UserDetailsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>Always it will be an INVESTOR, other types of user not allowed to login using this API.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -257,19 +257,19 @@ class UserDetailsResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel">UserDetailsResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.Config" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.actid" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.stat" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr">exarr</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr">orarr</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr">prarr</a></code></li>
 <li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.brkname" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.brkname">brkname</a></code></li>
 <li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.brnchid" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.brnchid">brnchid</a></code></li>
 <li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.email" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.email">email</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.exarr">exarr</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.actid" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.actid">actid</a></code></li>
 <li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.m_num" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.m_num">m_num</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.orarr">orarr</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.prarr">prarr</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.request_time" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.stat" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.stat">stat</a></code></li>
 <li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.u_prev" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.u_prev">u_prev</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.request_time" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.users.models.user_details.UserDetailsResponseModel.Config" href="#py_client.modules.users.models.user_details.UserDetailsResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

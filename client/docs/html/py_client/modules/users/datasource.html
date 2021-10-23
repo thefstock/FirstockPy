@@ -408,154 +408,6 @@ class UserDataSource(NorenRestDataSource):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.modules.users.datasource.UserDataSource.change_password"><code class="name flex">
-<span>def <span class="ident">change_password</span></span>(<span>self, model: <a title="py_client.modules.users.models.change_password.ChangePasswordRequestModel" href="models/change_password.html#py_client.modules.users.models.change_password.ChangePasswordRequestModel">ChangePasswordRequestModel</a>) ‑> <a title="py_client.modules.users.models.change_password.ChangePasswordResponseModel" href="models/change_password.html#py_client.modules.users.models.change_password.ChangePasswordResponseModel">ChangePasswordResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Change current password</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ChangePasswordRequestModel</code></dt>
-<dd>The data to be sand as ChangePasswordRequestModel</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ChangePasswordResponseModel</code></dt>
-<dd>The response as ForgotPasswordResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def change_password(self, model: ChangePasswordRequestModel) -&gt; ChangePasswordResponseModel:
-  &#34;&#34;&#34;
-  Change current password
-
-  Args:
-    model (ChangePasswordRequestModel): The data to be sand as ChangePasswordRequestModel
-
-  Returns:
-    ChangePasswordResponseModel: The response as ForgotPasswordResponseModel.
-  &#34;&#34;&#34;
-  # convert request model to json string
-  request_json = model.json(exclude_unset=True)
-  # send the post request to get the json response
-  response_json = self.post(endpoints.CHANGE_PASSWORD, f&#34;jData={request_json}&#34;)
-  # convert the request to response model
-  return ChangePasswordResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.users.datasource.UserDataSource.client_details"><code class="name flex">
-<span>def <span class="ident">client_details</span></span>(<span>self, model: <a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel" href="models/client_details.html#py_client.modules.users.models.client_details.ClientDetailsRequestModel">ClientDetailsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel" href="models/client_details.html#py_client.modules.users.models.client_details.ClientDetailsResponseModel">ClientDetailsResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Fetch client details for the logged in user</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ClientDetailsRequestModel</code></dt>
-<dd>The data to be send as ClientDetailsRequestModel</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ClientDetailsResponseModel</code></dt>
-<dd>The response as ClientDetailsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def client_details(self, model: ClientDetailsRequestModel, key: str = None) -&gt; ClientDetailsResponseModel:
-  &#34;&#34;&#34;
-  Fetch client details for the logged in user
-
-  Args:
-    model (ClientDetailsRequestModel): The data to be send as ClientDetailsRequestModel
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    ClientDetailsResponseModel: The response as ClientDetailsResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.CLIENT_DETAILS, key)
-  # convert the request to response model
-  return ClientDetailsResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.users.datasource.UserDataSource.forgot_password"><code class="name flex">
-<span>def <span class="ident">forgot_password</span></span>(<span>self, model: <a title="py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel" href="models/forgot_password.html#py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel">ForgotPasswordRequestModel</a>) ‑> <a title="py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel" href="models/forgot_password.html#py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel">ForgotPasswordResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Send a forgot password request to reset password</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ForgotPasswordRequestModel</code></dt>
-<dd>The data to be send as ForgotPasswordRequestModel.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ForgotPasswordResponseModel</code></dt>
-<dd>The response from forgot password request as ForgotPasswordResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def forgot_password(self, model: ForgotPasswordRequestModel) -&gt; ForgotPasswordResponseModel:
-  &#34;&#34;&#34;
-  Send a forgot password request to reset password
-
-  Args:
-    model (ForgotPasswordRequestModel): The data to be send as ForgotPasswordRequestModel.
-
-  Returns:
-    ForgotPasswordResponseModel: The response from forgot password request as ForgotPasswordResponseModel.
-  &#34;&#34;&#34;
-  # convert request model to json string
-  request_json = model.json(exclude_unset=True)
-  # send the post request to get the json response
-  response_json = self.post(endpoints.FORGOT_PASSWORD, f&#34;jData={request_json}&#34;)
-  # convert the request to response model
-  return ForgotPasswordResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.users.datasource.UserDataSource.get_hs_token"><code class="name flex">
-<span>def <span class="ident">get_hs_token</span></span>(<span>self, model: <a title="py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel" href="models/get_hs_token.html#py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel">GetHsTokenRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel" href="models/get_hs_token.html#py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel">GetHsTokenResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get one time hs token</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetHsTokenRequestModel</code></dt>
-<dd>The data to be send as GetHsTokenRequestModel</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetHsTokenResponseModel</code></dt>
-<dd>The response as GetHsTokenResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_hs_token(self, model: GetHsTokenRequestModel, key: str = None) -&gt; GetHsTokenResponseModel:
-  &#34;&#34;&#34;
-  Get one time hs token
-
-  Args:
-    model (GetHsTokenRequestModel): The data to be send as GetHsTokenRequestModel
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetHsTokenResponseModel: The response as GetHsTokenResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_HS_TOKEN, key)
-  # convert the request to response model
-  return GetHsTokenResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 <dt id="py_client.modules.users.datasource.UserDataSource.login"><code class="name flex">
 <span>def <span class="ident">login</span></span>(<span>self, model: <a title="py_client.modules.users.models.login.LoginRequestModel" href="models/login.html#py_client.modules.users.models.login.LoginRequestModel">LoginRequestModel</a>) ‑> <a title="py_client.modules.users.models.login.LoginResponseModel" href="models/login.html#py_client.modules.users.models.login.LoginResponseModel">LoginResponseModel</a></span>
 </code></dt>
@@ -636,41 +488,78 @@ class UserDataSource(NorenRestDataSource):
   return LogoutResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.users.datasource.UserDataSource.save_fcm_token"><code class="name flex">
-<span>def <span class="ident">save_fcm_token</span></span>(<span>self, model: <a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel" href="models/save_fcm_token.html#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel">SaveFCMTokenRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel" href="models/save_fcm_token.html#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel">SaveFCMTokenResponseModel</a></span>
+<dt id="py_client.modules.users.datasource.UserDataSource.forgot_password"><code class="name flex">
+<span>def <span class="ident">forgot_password</span></span>(<span>self, model: <a title="py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel" href="models/forgot_password.html#py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel">ForgotPasswordRequestModel</a>) ‑> <a title="py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel" href="models/forgot_password.html#py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel">ForgotPasswordResponseModel</a></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Send request to save FCM token</p>
+<div class="desc"><p>Send a forgot password request to reset password</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>SaveFCMTokenRequestModel</code></dt>
-<dd>The data to be send as SaveFCMTokenRequestModel</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+<dt><strong><code>model</code></strong> :&ensp;<code>ForgotPasswordRequestModel</code></dt>
+<dd>The data to be send as ForgotPasswordRequestModel.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>SaveFCMTokenResponseModel</code></dt>
-<dd>The response as SaveFCMTokenResponseModel.</dd>
+<dt><code>ForgotPasswordResponseModel</code></dt>
+<dd>The response from forgot password request as ForgotPasswordResponseModel.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def save_fcm_token(self, model: SaveFCMTokenRequestModel, key: str = None) -&gt; SaveFCMTokenResponseModel:
+<pre><code class="python">def forgot_password(self, model: ForgotPasswordRequestModel) -&gt; ForgotPasswordResponseModel:
   &#34;&#34;&#34;
-  Send request to save FCM token
+  Send a forgot password request to reset password
 
   Args:
-    model (SaveFCMTokenRequestModel): The data to be send as SaveFCMTokenRequestModel
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+    model (ForgotPasswordRequestModel): The data to be send as ForgotPasswordRequestModel.
 
   Returns:
-    SaveFCMTokenResponseModel: The response as SaveFCMTokenResponseModel.
+    ForgotPasswordResponseModel: The response from forgot password request as ForgotPasswordResponseModel.
   &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.SAVE_FCM_TOKEN, key)
+  # convert request model to json string
+  request_json = model.json(exclude_unset=True)
+  # send the post request to get the json response
+  response_json = self.post(endpoints.FORGOT_PASSWORD, f&#34;jData={request_json}&#34;)
   # convert the request to response model
-  return SaveFCMTokenResponseModel.parse_raw(response_json)</code></pre>
+  return ForgotPasswordResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.users.datasource.UserDataSource.change_password"><code class="name flex">
+<span>def <span class="ident">change_password</span></span>(<span>self, model: <a title="py_client.modules.users.models.change_password.ChangePasswordRequestModel" href="models/change_password.html#py_client.modules.users.models.change_password.ChangePasswordRequestModel">ChangePasswordRequestModel</a>) ‑> <a title="py_client.modules.users.models.change_password.ChangePasswordResponseModel" href="models/change_password.html#py_client.modules.users.models.change_password.ChangePasswordResponseModel">ChangePasswordResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change current password</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ChangePasswordRequestModel</code></dt>
+<dd>The data to be sand as ChangePasswordRequestModel</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ChangePasswordResponseModel</code></dt>
+<dd>The response as ForgotPasswordResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_password(self, model: ChangePasswordRequestModel) -&gt; ChangePasswordResponseModel:
+  &#34;&#34;&#34;
+  Change current password
+
+  Args:
+    model (ChangePasswordRequestModel): The data to be sand as ChangePasswordRequestModel
+
+  Returns:
+    ChangePasswordResponseModel: The response as ForgotPasswordResponseModel.
+  &#34;&#34;&#34;
+  # convert request model to json string
+  request_json = model.json(exclude_unset=True)
+  # send the post request to get the json response
+  response_json = self.post(endpoints.CHANGE_PASSWORD, f&#34;jData={request_json}&#34;)
+  # convert the request to response model
+  return ChangePasswordResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.users.datasource.UserDataSource.set_device_pin"><code class="name flex">
@@ -710,41 +599,41 @@ class UserDataSource(NorenRestDataSource):
   return SetDevicePinResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.users.datasource.UserDataSource.user_details"><code class="name flex">
-<span>def <span class="ident">user_details</span></span>(<span>self, model: <a title="py_client.modules.users.models.user_details.UserDetailsRequestModel" href="models/user_details.html#py_client.modules.users.models.user_details.UserDetailsRequestModel">UserDetailsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.user_details.UserDetailsResponseModel" href="models/user_details.html#py_client.modules.users.models.user_details.UserDetailsResponseModel">UserDetailsResponseModel</a></span>
+<dt id="py_client.modules.users.datasource.UserDataSource.get_hs_token"><code class="name flex">
+<span>def <span class="ident">get_hs_token</span></span>(<span>self, model: <a title="py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel" href="models/get_hs_token.html#py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel">GetHsTokenRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel" href="models/get_hs_token.html#py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel">GetHsTokenResponseModel</a></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Fetch details of the logged in user</p>
+<div class="desc"><p>Get one time hs token</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>UserDetailsRequestModel</code></dt>
-<dd>The data to be send as UserDetailsRequestModel</dd>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetHsTokenRequestModel</code></dt>
+<dd>The data to be send as GetHsTokenRequestModel</dd>
 <dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>UserDetailsResponseModel</code></dt>
-<dd>The response as UserDetailsResponseModel.</dd>
+<dt><code>GetHsTokenResponseModel</code></dt>
+<dd>The response as GetHsTokenResponseModel.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def user_details(self, model: UserDetailsRequestModel, key: str = None) -&gt; UserDetailsResponseModel:
+<pre><code class="python">def get_hs_token(self, model: GetHsTokenRequestModel, key: str = None) -&gt; GetHsTokenResponseModel:
   &#34;&#34;&#34;
-  Fetch details of the logged in user
+  Get one time hs token
 
   Args:
-    model (UserDetailsRequestModel): The data to be send as UserDetailsRequestModel
+    model (GetHsTokenRequestModel): The data to be send as GetHsTokenRequestModel
     key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
 
   Returns:
-    UserDetailsResponseModel: The response as UserDetailsResponseModel.
+    GetHsTokenResponseModel: The response as GetHsTokenResponseModel.
   &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.USER_DETAILS, key)
+  response_json = self._run_request(model, endpoints.GET_HS_TOKEN, key)
   # convert the request to response model
-  return UserDetailsResponseModel.parse_raw(response_json)</code></pre>
+  return GetHsTokenResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.users.datasource.UserDataSource.validate_hs_token"><code class="name flex">
@@ -785,6 +674,117 @@ class UserDataSource(NorenRestDataSource):
   return response.strip() == &#39;TRUE&#39;</code></pre>
 </details>
 </dd>
+<dt id="py_client.modules.users.datasource.UserDataSource.user_details"><code class="name flex">
+<span>def <span class="ident">user_details</span></span>(<span>self, model: <a title="py_client.modules.users.models.user_details.UserDetailsRequestModel" href="models/user_details.html#py_client.modules.users.models.user_details.UserDetailsRequestModel">UserDetailsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.user_details.UserDetailsResponseModel" href="models/user_details.html#py_client.modules.users.models.user_details.UserDetailsResponseModel">UserDetailsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fetch details of the logged in user</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>UserDetailsRequestModel</code></dt>
+<dd>The data to be send as UserDetailsRequestModel</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>UserDetailsResponseModel</code></dt>
+<dd>The response as UserDetailsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def user_details(self, model: UserDetailsRequestModel, key: str = None) -&gt; UserDetailsResponseModel:
+  &#34;&#34;&#34;
+  Fetch details of the logged in user
+
+  Args:
+    model (UserDetailsRequestModel): The data to be send as UserDetailsRequestModel
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    UserDetailsResponseModel: The response as UserDetailsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.USER_DETAILS, key)
+  # convert the request to response model
+  return UserDetailsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.users.datasource.UserDataSource.client_details"><code class="name flex">
+<span>def <span class="ident">client_details</span></span>(<span>self, model: <a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel" href="models/client_details.html#py_client.modules.users.models.client_details.ClientDetailsRequestModel">ClientDetailsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel" href="models/client_details.html#py_client.modules.users.models.client_details.ClientDetailsResponseModel">ClientDetailsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fetch client details for the logged in user</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ClientDetailsRequestModel</code></dt>
+<dd>The data to be send as ClientDetailsRequestModel</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ClientDetailsResponseModel</code></dt>
+<dd>The response as ClientDetailsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def client_details(self, model: ClientDetailsRequestModel, key: str = None) -&gt; ClientDetailsResponseModel:
+  &#34;&#34;&#34;
+  Fetch client details for the logged in user
+
+  Args:
+    model (ClientDetailsRequestModel): The data to be send as ClientDetailsRequestModel
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    ClientDetailsResponseModel: The response as ClientDetailsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.CLIENT_DETAILS, key)
+  # convert the request to response model
+  return ClientDetailsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.users.datasource.UserDataSource.save_fcm_token"><code class="name flex">
+<span>def <span class="ident">save_fcm_token</span></span>(<span>self, model: <a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel" href="models/save_fcm_token.html#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel">SaveFCMTokenRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel" href="models/save_fcm_token.html#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel">SaveFCMTokenResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send request to save FCM token</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>SaveFCMTokenRequestModel</code></dt>
+<dd>The data to be send as SaveFCMTokenRequestModel</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>SaveFCMTokenResponseModel</code></dt>
+<dd>The response as SaveFCMTokenResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_fcm_token(self, model: SaveFCMTokenRequestModel, key: str = None) -&gt; SaveFCMTokenResponseModel:
+  &#34;&#34;&#34;
+  Send request to save FCM token
+
+  Args:
+    model (SaveFCMTokenRequestModel): The data to be send as SaveFCMTokenRequestModel
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    SaveFCMTokenResponseModel: The response as SaveFCMTokenResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.SAVE_FCM_TOKEN, key)
+  # convert the request to response model
+  return SaveFCMTokenResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
 </dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -817,16 +817,16 @@ class UserDataSource(NorenRestDataSource):
 <li>
 <h4><code><a title="py_client.modules.users.datasource.UserDataSource" href="#py_client.modules.users.datasource.UserDataSource">UserDataSource</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.change_password" href="#py_client.modules.users.datasource.UserDataSource.change_password">change_password</a></code></li>
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.client_details" href="#py_client.modules.users.datasource.UserDataSource.client_details">client_details</a></code></li>
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.forgot_password" href="#py_client.modules.users.datasource.UserDataSource.forgot_password">forgot_password</a></code></li>
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.get_hs_token" href="#py_client.modules.users.datasource.UserDataSource.get_hs_token">get_hs_token</a></code></li>
 <li><code><a title="py_client.modules.users.datasource.UserDataSource.login" href="#py_client.modules.users.datasource.UserDataSource.login">login</a></code></li>
 <li><code><a title="py_client.modules.users.datasource.UserDataSource.logout" href="#py_client.modules.users.datasource.UserDataSource.logout">logout</a></code></li>
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.save_fcm_token" href="#py_client.modules.users.datasource.UserDataSource.save_fcm_token">save_fcm_token</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.forgot_password" href="#py_client.modules.users.datasource.UserDataSource.forgot_password">forgot_password</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.change_password" href="#py_client.modules.users.datasource.UserDataSource.change_password">change_password</a></code></li>
 <li><code><a title="py_client.modules.users.datasource.UserDataSource.set_device_pin" href="#py_client.modules.users.datasource.UserDataSource.set_device_pin">set_device_pin</a></code></li>
-<li><code><a title="py_client.modules.users.datasource.UserDataSource.user_details" href="#py_client.modules.users.datasource.UserDataSource.user_details">user_details</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.get_hs_token" href="#py_client.modules.users.datasource.UserDataSource.get_hs_token">get_hs_token</a></code></li>
 <li><code><a title="py_client.modules.users.datasource.UserDataSource.validate_hs_token" href="#py_client.modules.users.datasource.UserDataSource.validate_hs_token">validate_hs_token</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.user_details" href="#py_client.modules.users.datasource.UserDataSource.user_details">user_details</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.client_details" href="#py_client.modules.users.datasource.UserDataSource.client_details">client_details</a></code></li>
+<li><code><a title="py_client.modules.users.datasource.UserDataSource.save_fcm_token" href="#py_client.modules.users.datasource.UserDataSource.save_fcm_token">save_fcm_token</a></code></li>
 </ul>
 </li>
 </ul>

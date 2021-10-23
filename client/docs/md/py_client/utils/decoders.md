@@ -6,13 +6,6 @@ Functions
 ---------
 
     
-`build_loader(decoders: Dict[str, Callable[[Any], Any]])`
-:   Build a json loader function from a map of decoders for fields that needs to be loaded differently.
-    
-    Args:
-      decoders (Dict[str, Callable[[Any], Any]]): The docoder map
-
-    
 `datetime_decoder(transform: Callable[[datetime.datetime], Any] = None, **kwargs)`
 :   Creates a datetime decoder for a given format.
     
@@ -28,3 +21,10 @@ Functions
     
     Returns:
       Callable[[Union[str,int]], datetime]: The datetime decoder
+
+    
+`build_loader(decoders: Dict[str, Callable[[Any], Any]])`
+:   Build a json loader function from a map of decoders for fields that needs to be loaded differently.
+    
+    Args:
+      decoders (Dict[str, Callable[[Any], Any]]): The docoder map

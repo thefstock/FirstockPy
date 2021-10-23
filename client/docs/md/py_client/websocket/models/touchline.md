@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   The model config
+    `t: py_client.websocket.enums.MessageTopic`
+    :   Always 't' for touchline task
 
     `k: List[str]`
     :   One or more scriplist for subscription
 
-    `t: py_client.websocket.enums.MessageTopic`
-    :   Always 't' for touchline task
+    `Config`
+    :   The model config
 
 `TouchlineUnsubscribeModel(**data: Any)`
 :   The touchline subscription request model
@@ -42,11 +42,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   The model config
+    `t: py_client.websocket.enums.MessageTopic`
+    :   Always 'u' for unsubscribe touchline task
 
     `k: List[str]`
     :   One or more scriplist for unsubscription
 
-    `t: py_client.websocket.enums.MessageTopic`
-    :   Always 'u' for unsubscribe touchline task
+    `Config`
+    :   The model config

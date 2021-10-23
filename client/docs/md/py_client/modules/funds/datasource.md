@@ -24,6 +24,16 @@ Classes
 
     ### Methods
 
+    `get_max_payout_amount(self, model: py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel, key: str = None) ‑> py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel`
+    :   Get max payout amount
+        
+        Args:
+          model (GetMaxPayoutAmountRequestModel): The data to be send as GetMaxPayoutAmountRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          GetMaxPayoutAmountResponseModel: The response as GetMaxPayoutAmountResponseModel.
+
     `get_content_basket(self, model: py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel, key: str = None) ‑> py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel`
     :   Get content basket
         
@@ -43,13 +53,3 @@ Classes
         
         Returns:
           GetContentListResponseModel: The response as GetContentListResponseModel.
-
-    `get_max_payout_amount(self, model: py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel, key: str = None) ‑> py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel`
-    :   Get max payout amount
-        
-        Args:
-          model (GetMaxPayoutAmountRequestModel): The data to be send as GetMaxPayoutAmountRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetMaxPayoutAmountResponseModel: The response as GetMaxPayoutAmountResponseModel.

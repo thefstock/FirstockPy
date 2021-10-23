@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
+    `uid: str`
+    :   The user id of the login user
+
     `exch: Optional[str]`
     :   Exchange
 
     `token: Optional[str]`
     :   Contract Token
-
-    `uid: str`
-    :   The user id of the login user
 
 `GetQuotesResponseModel(**data: Any)`
 :   The response model for get quotes endpoint
@@ -42,56 +42,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get scrips success or failure status
 
-    `bo1: Optional[float]`
-    :   Best Buy Orders
-
-    `bo2: Optional[float]`
-    :   Best Buy Orders
-
-    `bo3: Optional[float]`
-    :   Best Buy Orders
-
-    `bo4: Optional[float]`
-    :   Best Buy Orders
-
-    `bo5: Optional[float]`
-    :   Best Buy Orders
-
-    `bp1: Optional[float]`
-    :   Best Buy Price
-
-    `bp2: Optional[float]`
-    :   Best Buy Price
-
-    `bp3: Optional[float]`
-    :   Best Buy Price
-
-    `bp4: Optional[float]`
-    :   Best Buy Price
-
-    `bp5: Optional[float]`
-    :   Best Buy Price
-
-    `bq1: Optional[float]`
-    :   Best Buy Quantity
-
-    `bq2: Optional[float]`
-    :   Best Buy Quantity
-
-    `bq3: Optional[float]`
-    :   Best Buy Quantity
-
-    `bq4: Optional[float]`
-    :   Best Buy Quantity
-
-    `bq5: Optional[float]`
-    :   Best Buy Quantity
-
-    `cname: Optional[str]`
-    :   Company Name
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `emsg: Optional[str]`
     :   Error message if the request failed
@@ -99,8 +54,17 @@ Classes
     `exch: Optional[str]`
     :   Exchange
 
-    `h: Optional[float]`
-    :   Day High Price
+    `tsym: Optional[str]`
+    :   Trading Symbol
+
+    `cname: Optional[str]`
+    :   Company Name
+
+    `symnam: Optional[str]`
+    :   Symbol Name
+
+    `seg: Optional[str]`
+    :   Segment
 
     `instname: Optional[str]`
     :   Intrument Name
@@ -108,8 +72,26 @@ Classes
     `isin: Optional[str]`
     :   ISIN
 
-    `l: Optional[float]`
-    :   Day Low Price
+    `ti: Optional[float]`
+    :   Tick Size
+
+    `ls: Optional[float]`
+    :   Lot Size
+
+    `pp: Optional[float]`
+    :   Price precision
+
+    `mult: Optional[float]`
+    :   Multiplier
+
+    `token: Optional[str]`
+    :   Contract Token
+
+    `prcftr_d: Optional[str]`
+    :   ((GN / GD) * (PN/PD))
+
+    `uc: Optional[float]`
+    :   Upper circuit limit
 
     `lc: Optional[float]`
     :   Lower circuit limit
@@ -117,8 +99,14 @@ Classes
     `lp: Optional[float]`
     :   LTP
 
-    `ls: Optional[float]`
-    :   Lot Size
+    `h: Optional[float]`
+    :   Day High Price
+
+    `l: Optional[float]`
+    :   Day Low Price
+
+    `v: Optional[float]`
+    :   Volume
 
     `ltq: Optional[float]`
     :   Last trade quantity
@@ -126,83 +114,95 @@ Classes
     `ltt: Optional[str]`
     :   Last trade time
 
-    `mult: Optional[float]`
-    :   Multiplier
-
-    `pp: Optional[float]`
-    :   Price precision
-
-    `prcftr_d: Optional[str]`
-    :   ((GN / GD) * (PN/PD))
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `seg: Optional[str]`
-    :   Segment
-
-    `so1: Optional[float]`
-    :   Best Sell Orders
-
-    `so2: Optional[float]`
-    :   Best Sell Orders
-
-    `so3: Optional[float]`
-    :   Best Sell Orders
-
-    `so4: Optional[float]`
-    :   Best Sell Orders
-
-    `so5: Optional[float]`
-    :   Best Sell Orders
+    `bp1: Optional[float]`
+    :   Best Buy Price
 
     `sp1: Optional[float]`
     :   Best Sell Price
 
+    `bp2: Optional[float]`
+    :   Best Buy Price
+
     `sp2: Optional[float]`
     :   Best Sell Price
+
+    `bp3: Optional[float]`
+    :   Best Buy Price
 
     `sp3: Optional[float]`
     :   Best Sell Price
 
+    `bp4: Optional[float]`
+    :   Best Buy Price
+
     `sp4: Optional[float]`
     :   Best Sell Price
+
+    `bp5: Optional[float]`
+    :   Best Buy Price
 
     `sp5: Optional[float]`
     :   Best Sell Price
 
+    `bq1: Optional[float]`
+    :   Best Buy Quantity
+
     `sq1: Optional[float]`
     :   Best Sell Quantity
+
+    `bq2: Optional[float]`
+    :   Best Buy Quantity
 
     `sq2: Optional[float]`
     :   Best Sell Quantity
 
+    `bq3: Optional[float]`
+    :   Best Buy Quantity
+
     `sq3: Optional[float]`
     :   Best Sell Quantity
+
+    `bq4: Optional[float]`
+    :   Best Buy Quantity
 
     `sq4: Optional[float]`
     :   Best Sell Quantity
 
+    `bq5: Optional[float]`
+    :   Best Buy Quantity
+
     `sq5: Optional[float]`
     :   Best Sell Quantity
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get scrips success or failure status
+    `bo1: Optional[float]`
+    :   Best Buy Orders
 
-    `symnam: Optional[str]`
-    :   Symbol Name
+    `so1: Optional[float]`
+    :   Best Sell Orders
 
-    `ti: Optional[float]`
-    :   Tick Size
+    `bo2: Optional[float]`
+    :   Best Buy Orders
 
-    `token: Optional[str]`
-    :   Contract Token
+    `so2: Optional[float]`
+    :   Best Sell Orders
 
-    `tsym: Optional[str]`
-    :   Trading Symbol
+    `bo3: Optional[float]`
+    :   Best Buy Orders
 
-    `uc: Optional[float]`
-    :   Upper circuit limit
+    `so3: Optional[float]`
+    :   Best Sell Orders
 
-    `v: Optional[float]`
-    :   Volume
+    `bo4: Optional[float]`
+    :   Best Buy Orders
+
+    `so4: Optional[float]`
+    :   Best Sell Orders
+
+    `bo5: Optional[float]`
+    :   Best Buy Orders
+
+    `so5: Optional[float]`
+    :   Best Sell Orders
+
+    `Config`
+    :   model configuration

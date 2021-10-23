@@ -24,44 +24,6 @@ Classes
 
     ### Methods
 
-    `change_password(self, model: py_client.modules.users.models.change_password.ChangePasswordRequestModel) ‑> py_client.modules.users.models.change_password.ChangePasswordResponseModel`
-    :   Change current password
-        
-        Args:
-          model (ChangePasswordRequestModel): The data to be sand as ChangePasswordRequestModel
-        
-        Returns:
-          ChangePasswordResponseModel: The response as ForgotPasswordResponseModel.
-
-    `client_details(self, model: py_client.modules.users.models.client_details.ClientDetailsRequestModel, key: str = None) ‑> py_client.modules.users.models.client_details.ClientDetailsResponseModel`
-    :   Fetch client details for the logged in user
-        
-        Args:
-          model (ClientDetailsRequestModel): The data to be send as ClientDetailsRequestModel
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          ClientDetailsResponseModel: The response as ClientDetailsResponseModel.
-
-    `forgot_password(self, model: py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel) ‑> py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel`
-    :   Send a forgot password request to reset password
-        
-        Args:
-          model (ForgotPasswordRequestModel): The data to be send as ForgotPasswordRequestModel.
-        
-        Returns:
-          ForgotPasswordResponseModel: The response from forgot password request as ForgotPasswordResponseModel.
-
-    `get_hs_token(self, model: py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel, key: str = None) ‑> py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel`
-    :   Get one time hs token
-        
-        Args:
-          model (GetHsTokenRequestModel): The data to be send as GetHsTokenRequestModel
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetHsTokenResponseModel: The response as GetHsTokenResponseModel.
-
     `login(self, model: py_client.modules.users.models.login.LoginRequestModel) ‑> py_client.modules.users.models.login.LoginResponseModel`
     :   Login to the system using password or device pin.
           - If model contains the 'pwd' value login using normal login request.
@@ -83,15 +45,23 @@ Classes
         Returns:
           LogoutResponseModel: The response from logout request as LogoutResponseModel.
 
-    `save_fcm_token(self, model: py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel, key: str = None) ‑> py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel`
-    :   Send request to save FCM token
+    `forgot_password(self, model: py_client.modules.users.models.forgot_password.ForgotPasswordRequestModel) ‑> py_client.modules.users.models.forgot_password.ForgotPasswordResponseModel`
+    :   Send a forgot password request to reset password
         
         Args:
-          model (SaveFCMTokenRequestModel): The data to be send as SaveFCMTokenRequestModel
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+          model (ForgotPasswordRequestModel): The data to be send as ForgotPasswordRequestModel.
         
         Returns:
-          SaveFCMTokenResponseModel: The response as SaveFCMTokenResponseModel.
+          ForgotPasswordResponseModel: The response from forgot password request as ForgotPasswordResponseModel.
+
+    `change_password(self, model: py_client.modules.users.models.change_password.ChangePasswordRequestModel) ‑> py_client.modules.users.models.change_password.ChangePasswordResponseModel`
+    :   Change current password
+        
+        Args:
+          model (ChangePasswordRequestModel): The data to be sand as ChangePasswordRequestModel
+        
+        Returns:
+          ChangePasswordResponseModel: The response as ForgotPasswordResponseModel.
 
     `set_device_pin(self, model: py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel, key: str = None) ‑> py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel`
     :   Set device pin
@@ -103,15 +73,15 @@ Classes
         Returns:
           SetDevicePinResponseModel: The response as SetDevicePinResponseModel.
 
-    `user_details(self, model: py_client.modules.users.models.user_details.UserDetailsRequestModel, key: str = None) ‑> py_client.modules.users.models.user_details.UserDetailsResponseModel`
-    :   Fetch details of the logged in user
+    `get_hs_token(self, model: py_client.modules.users.models.get_hs_token.GetHsTokenRequestModel, key: str = None) ‑> py_client.modules.users.models.get_hs_token.GetHsTokenResponseModel`
+    :   Get one time hs token
         
         Args:
-          model (UserDetailsRequestModel): The data to be send as UserDetailsRequestModel
+          model (GetHsTokenRequestModel): The data to be send as GetHsTokenRequestModel
           key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
         
         Returns:
-          UserDetailsResponseModel: The response as UserDetailsResponseModel.
+          GetHsTokenResponseModel: The response as GetHsTokenResponseModel.
 
     `validate_hs_token(self, login_id: str, token: str) ‑> bool`
     :   Check if the given HS token is valid or not
@@ -122,3 +92,33 @@ Classes
         
         Returns:
           bool: Whether the given token is valid or not
+
+    `user_details(self, model: py_client.modules.users.models.user_details.UserDetailsRequestModel, key: str = None) ‑> py_client.modules.users.models.user_details.UserDetailsResponseModel`
+    :   Fetch details of the logged in user
+        
+        Args:
+          model (UserDetailsRequestModel): The data to be send as UserDetailsRequestModel
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          UserDetailsResponseModel: The response as UserDetailsResponseModel.
+
+    `client_details(self, model: py_client.modules.users.models.client_details.ClientDetailsRequestModel, key: str = None) ‑> py_client.modules.users.models.client_details.ClientDetailsResponseModel`
+    :   Fetch client details for the logged in user
+        
+        Args:
+          model (ClientDetailsRequestModel): The data to be send as ClientDetailsRequestModel
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          ClientDetailsResponseModel: The response as ClientDetailsResponseModel.
+
+    `save_fcm_token(self, model: py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel, key: str = None) ‑> py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel`
+    :   Send request to save FCM token
+        
+        Args:
+          model (SaveFCMTokenRequestModel): The data to be send as SaveFCMTokenRequestModel
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          SaveFCMTokenResponseModel: The response as SaveFCMTokenResponseModel.

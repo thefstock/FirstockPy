@@ -36,17 +36,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get unsettled trading date success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get unsettled trading date success or failure status
-
     `trd_date: Optional[List[py_client.common.models.TradeDate]]`
     :   The list of trade date items
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

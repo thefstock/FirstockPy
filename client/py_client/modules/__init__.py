@@ -6,4 +6,5 @@ from .watchlists import *
 from .markets import *
 from .alerts import *
 from .funds import *
+from .orders import *
 from .holdings_limits import *

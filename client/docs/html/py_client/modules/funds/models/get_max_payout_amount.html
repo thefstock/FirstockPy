@@ -107,13 +107,13 @@ class GetMaxPayoutAmountResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The account id</p></div>
-</dd>
 <dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>The user id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The account id</p></div>
 </dd>
 </dl>
 </dd>
@@ -157,29 +157,29 @@ class GetMaxPayoutAmountResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
-</dd>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Account Id</p></div>
-</dd>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout"><code class="name">var <span class="ident">payout</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Maximum payout amount</p></div>
+<div class="desc"><p>The get max payout amount success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
 <div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The get max payout amount success or failure status</p></div>
+<div class="desc"><p>Account Id</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout"><code class="name">var <span class="ident">payout</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Maximum payout amount</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -202,19 +202,19 @@ class GetMaxPayoutAmountResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel">GetMaxPayoutAmountRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid">actid</a></code></li>
 <li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.uid" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountRequestModel.actid">actid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel">GetMaxPayoutAmountResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout">payout</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.request_time" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.stat" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.request_time" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.payout">payout</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config" href="#py_client.modules.funds.models.get_max_payout_amount.GetMaxPayoutAmountResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

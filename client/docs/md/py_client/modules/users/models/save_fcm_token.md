@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `fcmtkn: str`
-    :   FCM token collected from device
-
     `uid: str`
     :   The user id of the login user
+
+    `fcmtkn: str`
+    :   FCM token collected from device
 
 `SaveFCMTokenResponseModel(**data: Any)`
 :   The response model for logout endpoint
@@ -39,14 +39,14 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The logout success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The logout success or failure status
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

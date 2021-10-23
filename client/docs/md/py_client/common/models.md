@@ -5,8 +5,8 @@ Common models used across the project
 Classes
 -------
 
-`AlertType(**data: Any)`
-:   The alert type model
+`Product(**data: Any)`
+:   The product model
     
     Create a new model by parsing and validating input data from keyword arguments.
     
@@ -19,8 +19,14 @@ Classes
 
     ### Class variables
 
-    `ai_t: str`
-    :   Alert type
+    `prd: str`
+    :   The product name
+
+    `s_prdt_ali: str`
+    :   The product display name
+
+    `exch: List[str]`
+    :   List of strings with enabled, allowed exchange names
 
 `BankDetails(**data: Any)`
 :   The bank details model
@@ -36,69 +42,11 @@ Classes
 
     ### Class variables
 
-    `acctnum: Optional[str]`
-    :   Account Number
-
     `bankn: Optional[str]`
     :   Bank Name
 
-`BasketCriteriaPair(**data: Any)`
-:   The basket criteria pair
-    
-    Create a new model by parsing and validating input data from keyword arguments.
-    
-    Raises ValidationError if the input data cannot be parsed to form a valid model.
-
-    ### Ancestors (in MRO)
-
-    * pydantic.main.BaseModel
-    * pydantic.utils.Representation
-
-    ### Class variables
-
-    `bskt: str`
-    :   The basket name
-
-    `crt: str`
-    :   The criteria
-
-`BasketList(**data: Any)`
-:   The basketlist model
-    
-    Create a new model by parsing and validating input data from keyword arguments.
-    
-    Raises ValidationError if the input data cannot be parsed to form a valid model.
-
-    ### Ancestors (in MRO)
-
-    * pydantic.main.BaseModel
-    * pydantic.utils.Representation
-
-    ### Class variables
-
-    `exch: str`
-    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
-
-    `prc: str`
-    :   Order Price
-
-    `prctyp: py_client.common.enums.PriceType`
-    :   LMT / MKT / SL-LMT/ SL-MKT
-
-    `prd: str`
-    :   C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)
-
-    `qty: str`
-    :   Order Quantity
-
-    `trantype: py_client.common.enums.TransactionType`
-    :   BUY or SELL
-
-    `trgprc: Optional[str]`
-    :   Only to be sent in case of SL / SL-M order.
-
-    `tsym: str`
-    :   Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&M)
+    `acctnum: Optional[str]`
+    :   Account Number
 
 `DpAccountNumber(**data: Any)`
 :   The dp account number model
@@ -117,8 +65,8 @@ Classes
     `dpnum: Optional[str]`
     :
 
-`ExchTsym(**data: Any)`
-:   The exch_tsym model
+`Scrip(**data: Any)`
+:   The scrip model
     
     Create a new model by parsing and validating input data from keyword arguments.
     
@@ -132,22 +80,60 @@ Classes
     ### Class variables
 
     `exch: Optional[str]`
-    :   NSE, BSE, NFO ... Exchange
+    :   Exchange
 
-    `ls: Optional[float]`
-    :   Lot size
+    `tsym: Optional[str]`
+    :   Trading symbol of the scrip (contract)
 
-    `pp: Optional[str]`
+    `token: Optional[str]`
+    :   Token of the scrip (contract)
+
+    `pp: Optional[float]`
     :   Price precision
 
     `ti: Optional[float]`
     :   Tick size
 
-    `token: Optional[str]`
-    :   Token of the scrip (contract)
+    `ls: Optional[float]`
+    :   Lot size
 
-    `tsym: Optional[str]`
-    :   Trading symbol of the scrip (contract)
+`BasketList(**data: Any)`
+:   The basketlist model
+    
+    Create a new model by parsing and validating input data from keyword arguments.
+    
+    Raises ValidationError if the input data cannot be parsed to form a valid model.
+
+    ### Ancestors (in MRO)
+
+    * pydantic.main.BaseModel
+    * pydantic.utils.Representation
+
+    ### Class variables
+
+    `exch: str`
+    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
+
+    `tsym: str`
+    :   Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&M)
+
+    `qty: str`
+    :   Order Quantity
+
+    `prc: str`
+    :   Order Price
+
+    `trgprc: Optional[str]`
+    :   Only to be sent in case of SL / SL-M order.
+
+    `prd: str`
+    :   C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)
+
+    `trantype: py_client.common.enums.TransactionType`
+    :   BUY or SELL
+
+    `prctyp: py_client.common.enums.PriceType`
+    :   LMT / MKT / SL-LMT/ SL-MKT
 
 `IndexTokenPair(**data: Any)`
 :   The basket criteria pair
@@ -169,8 +155,8 @@ Classes
     `token: str`
     :   Index token used to subscribe
 
-`Product(**data: Any)`
-:   The product model
+`BasketCriteriaPair(**data: Any)`
+:   The basket criteria pair
     
     Create a new model by parsing and validating input data from keyword arguments.
     
@@ -183,46 +169,11 @@ Classes
 
     ### Class variables
 
-    `exch: List[str]`
-    :   List of strings with enabled, allowed exchange names
+    `bskt: str`
+    :   The basket name
 
-    `prd: str`
-    :   The product name
-
-    `s_prdt_ali: str`
-    :   The product display name
-
-`Scrip(**data: Any)`
-:   The scrip model
-    
-    Create a new model by parsing and validating input data from keyword arguments.
-    
-    Raises ValidationError if the input data cannot be parsed to form a valid model.
-
-    ### Ancestors (in MRO)
-
-    * pydantic.main.BaseModel
-    * pydantic.utils.Representation
-
-    ### Class variables
-
-    `exch: Optional[str]`
-    :   Exchange
-
-    `ls: Optional[float]`
-    :   Lot size
-
-    `pp: Optional[float]`
-    :   Price precision
-
-    `ti: Optional[float]`
-    :   Tick size
-
-    `token: Optional[str]`
-    :   Token of the scrip (contract)
-
-    `tsym: Optional[str]`
-    :   Trading symbol of the scrip (contract)
+    `crt: str`
+    :   The criteria
 
 `TBContract(**data: Any)`
 :   Top/Bottom contract
@@ -238,11 +189,20 @@ Classes
 
     ### Class variables
 
-    `c: Optional[str]`
-    :   Previous Close price
+    `tsym: Optional[str]`
+    :   Trading symbol
 
     `lp: Optional[str]`
     :   LTP
+
+    `c: Optional[str]`
+    :   Previous Close price
+
+    `v: Optional[str]`
+    :   volume
+
+    `value: Optional[str]`
+    :   Total traded value
 
     `oi: Optional[str]`
     :   Open interest
@@ -250,14 +210,22 @@ Classes
     `pc: Optional[str]`
     :   LTP percentage change
 
-    `tsym: Optional[str]`
-    :   Trading symbol
+`AlertType(**data: Any)`
+:   The alert type model
+    
+    Create a new model by parsing and validating input data from keyword arguments.
+    
+    Raises ValidationError if the input data cannot be parsed to form a valid model.
 
-    `v: Optional[str]`
-    :   volume
+    ### Ancestors (in MRO)
 
-    `value: Optional[str]`
-    :   Total traded value
+    * pydantic.main.BaseModel
+    * pydantic.utils.Representation
+
+    ### Class variables
+
+    `ai_t: str`
+    :   Alert type
 
 `TradeDate(**data: Any)`
 :   The trade date model
@@ -273,8 +241,40 @@ Classes
 
     ### Class variables
 
+    `trd_date: datetime.date`
+    :
+
     `Config`
     :   The model config
 
-    `trd_date: datetime.date`
-    :
+`ExchTsym(**data: Any)`
+:   The exch_tsym model
+    
+    Create a new model by parsing and validating input data from keyword arguments.
+    
+    Raises ValidationError if the input data cannot be parsed to form a valid model.
+
+    ### Ancestors (in MRO)
+
+    * pydantic.main.BaseModel
+    * pydantic.utils.Representation
+
+    ### Class variables
+
+    `exch: Optional[str]`
+    :   NSE, BSE, NFO ... Exchange
+
+    `tsym: Optional[str]`
+    :   Trading symbol of the scrip (contract)
+
+    `token: Optional[str]`
+    :   Token of the scrip (contract)
+
+    `pp: Optional[str]`
+    :   Price precision
+
+    `ti: Optional[float]`
+    :   Tick size
+
+    `ls: Optional[float]`
+    :   Lot size

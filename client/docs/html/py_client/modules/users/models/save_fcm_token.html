@@ -104,13 +104,13 @@ class SaveFCMTokenResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn"><code class="name">var <span class="ident">fcmtkn</span> : str</code></dt>
-<dd>
-<div class="desc"><p>FCM token collected from device</p></div>
-</dd>
 <dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>The user id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn"><code class="name">var <span class="ident">fcmtkn</span> : str</code></dt>
+<dd>
+<div class="desc"><p>FCM token collected from device</p></div>
 </dd>
 </dl>
 </dd>
@@ -150,21 +150,21 @@ class SaveFCMTokenResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
-</dd>
-<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
+<div class="desc"><p>The logout success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
 <div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The logout success or failure status</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -187,17 +187,17 @@ class SaveFCMTokenResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel">SaveFCMTokenRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn">fcmtkn</a></code></li>
 <li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.uid" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenRequestModel.fcmtkn">fcmtkn</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel">SaveFCMTokenResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.request_time" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.stat" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.request_time" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config" href="#py_client.modules.users.models.save_fcm_token.SaveFCMTokenResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

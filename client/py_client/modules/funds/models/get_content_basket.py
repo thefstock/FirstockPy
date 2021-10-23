@@ -9,7 +9,7 @@ from datetime import datetime
 from ....common.enums import ResponseStatus
 from ....utils.decoders import build_loader, datetime_decoder
 
-__all__ = ['GetContentBasketRequestModel', 'GetContentBasketResponseModel']
+__all__ = ['GetContentBasketRequestModel', 'GetContentBasketResponseModel', 'Basket']
 
 class Basket(BaseModel):
   """

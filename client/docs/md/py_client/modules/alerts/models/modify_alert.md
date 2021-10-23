@@ -19,29 +19,29 @@ Classes
 
     ### Class variables
 
-    `ai_t: str`
-    :   Alert Type
+    `uid: str`
+    :   The user id of the login user
 
     `al_id: str`
     :   The id of the alert to modify
 
-    `d: str`
-    :   Data to be compared with LTP
+    `tsym: str`
+    :   Trading symbol
 
     `exch: str`
     :   Exchange Segment
 
-    `remarks: str`
-    :   Any message Entered during order entry.
-
-    `tsym: str`
-    :   Trading symbol
-
-    `uid: str`
-    :   The user id of the login user
+    `ai_t: str`
+    :   Alert Type
 
     `validity: py_client.common.enums.AlertValidity`
     :   DAY or GTT Validity
+
+    `remarks: str`
+    :   Any message Entered during order entry.
+
+    `d: str`
+    :   Data to be compared with LTP
 
 `ModifyAlertResponseModel(**data: Any)`
 :   The response model for modify alert endpoint
@@ -57,8 +57,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The modify alert success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `al_id: str`
     :   The modified alert id
@@ -66,8 +69,5 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The modify alert success or failure status
+    `Config`
+    :   model configuration

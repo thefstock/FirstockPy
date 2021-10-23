@@ -146,13 +146,9 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
+<div class="desc"><p>Logged in User Id</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
 <dd>
@@ -162,37 +158,41 @@ request</p>
 <dd>
 <div class="desc"><p>Noren order number, which needs to be modified</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Modified / New price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : py_client.common.enums.PriceType</code></dt>
-<dd>
-<div class="desc"><p>LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L</p></div>
+<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.qty"><code class="name">var <span class="ident">qty</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Modified / New Quantity</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : py_client.common.enums.RetentionType</code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>New Retention type of the order.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
+<div class="desc"><p>Modified / New price</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>New trigger price in case of SL-MKT or SL-LMT</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
 <dd>
-<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+<div class="desc"><p>LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
 <dd>
-<div class="desc"><p>Logged in User Id</p></div>
+<div class="desc"><p>New Retention type of the order.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
 </dd>
 </dl>
 </dd>
@@ -233,13 +233,9 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
+<div class="desc"><p>The modify order success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
@@ -249,9 +245,13 @@ request</p>
 <dd>
 <div class="desc"><p>Noren Order number of the order modified.</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The modify order success or failure status</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -274,28 +274,28 @@ request</p>
 <li>
 <h4><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel">ModifyOrderRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc">blprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc">bpprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.exch" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.norenordno" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.norenordno">norenordno</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc">prc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp">prctyp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.qty" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.qty">qty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret">ret</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc">trailprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trgprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trgprc">trgprc</a></code></li>
 <li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.tsym" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.qty" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.qty">qty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trgprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trgprc">trgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp">prctyp</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret">ret</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.bpprc">bpprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.blprc">blprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc" href="#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.trailprc">trailprc</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel">ModifyOrderResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat">stat</a></code></li>
 <li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.request_time" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.result" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.result">result</a></code></li>
-<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config" href="#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

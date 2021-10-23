@@ -36,17 +36,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
-
-    `hstk: Optional[str]`
-    :   One time Token to be sent to BackOffice or third party link
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The logout success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The logout success or failure status
+    `hstk: Optional[str]`
+    :   One time Token to be sent to BackOffice or third party link
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

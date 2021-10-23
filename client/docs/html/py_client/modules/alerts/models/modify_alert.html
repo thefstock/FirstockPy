@@ -129,37 +129,37 @@ class ModifyAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Alert Type</p></div>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.al_id"><code class="name">var <span class="ident">al_id</span> : str</code></dt>
 <dd>
 <div class="desc"><p>The id of the alert to modify</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Data to be compared with LTP</p></div>
+<div class="desc"><p>Trading symbol</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Exchange Segment</p></div>
 </dd>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Alert Type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
+<dd>
+<div class="desc"><p>DAY or GTT Validity</p></div>
+</dd>
 <dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.remarks"><code class="name">var <span class="ident">remarks</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Any message Entered during order entry.</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Trading symbol</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.validity"><code class="name">var <span class="ident">validity</span> : py_client.common.enums.AlertValidity</code></dt>
-<dd>
-<div class="desc"><p>DAY or GTT Validity</p></div>
+<div class="desc"><p>Data to be compared with LTP</p></div>
 </dd>
 </dl>
 </dd>
@@ -201,9 +201,13 @@ class ModifyAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The modify alert success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : str</code></dt>
 <dd>
@@ -213,13 +217,9 @@ class ModifyAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
-<dd>
-<div class="desc"><p>The modify alert success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -242,24 +242,24 @@ class ModifyAlertResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel">ModifyAlertRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t">ai_t</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.al_id" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.al_id">al_id</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d">d</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.exch" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.remarks" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.remarks">remarks</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym">tsym</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.uid" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.al_id" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.al_id">al_id</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.exch" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.ai_t">ai_t</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.validity" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.validity">validity</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.remarks" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel.d">d</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel">ModifyAlertResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.al_id" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.al_id">al_id</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.emsg" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config" href="#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

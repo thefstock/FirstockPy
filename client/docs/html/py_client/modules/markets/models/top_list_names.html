@@ -106,13 +106,13 @@ class TopListNamesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Exchange</p></div>
-</dd>
 <dt id="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>The user id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
 </dd>
 </dl>
 </dd>
@@ -154,25 +154,25 @@ class TopListNamesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
+<div class="desc"><p>The top list names success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
 <div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
-<dd>
-<div class="desc"><p>The top list names success or failure status</p></div>
-</dd>
 <dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.values"><code class="name">var <span class="ident">values</span> : Optional[List[<a title="py_client.common.models.BasketCriteriaPair" href="../../../common/models.html#py_client.common.models.BasketCriteriaPair">BasketCriteriaPair</a>]]</code></dt>
 <dd>
 <div class="desc"><p>Array of Basket, Criteria pair</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -195,18 +195,18 @@ class TopListNamesResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel" href="#py_client.modules.markets.models.top_list_names.TopListNamesRequestModel">TopListNamesRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch" href="#py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.uid" href="#py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch" href="#py_client.modules.markets.models.top_list_names.TopListNamesRequestModel.exch">exch</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel">TopListNamesResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.request_time" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.stat" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.request_time" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.values" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.values">values</a></code></li>
+<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config" href="#py_client.modules.markets.models.top_list_names.TopListNamesResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

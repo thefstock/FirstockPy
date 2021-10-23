@@ -19,8 +19,29 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `apkversion: str`
+    :   Application Version
+
+    `uid: str`
+    :   User Id of the login user
+
+    `pwd: Optional[pydantic.types.SecretStr]`
+    :   password for login. It will be automatically hashed during the request
+
+    `dpin: Optional[pydantic.types.SecretStr]`
+    :   The device pin
+
+    `factor2: Union[datetime.date, str]`
+    :   DOB or PAN
+
+    `vc: str`
+    :   Vendor code
+
+    `appkey: str`
+    :   Sha256 of uid|vendor_key
+
+    `imei: str`
+    :   IMEI for mobile (If desktop it takes the MAC address)
 
     `addldivinf: Optional[str]`
     :   Value must be in below format:
@@ -30,35 +51,14 @@ Classes
           iOS - iPhone 8.0 - 9.0
           Android - Moto G - 9 PKQ1.181203.01
 
-    `apkversion: str`
-    :   Application Version
-
-    `appkey: str`
-    :   Sha256 of uid|vendor_key
-
-    `dpin: Optional[pydantic.types.SecretStr]`
-    :   The device pin
-
-    `factor2: Union[datetime.date, str]`
-    :   DOB or PAN
-
-    `imei: str`
-    :   IMEI for mobile (If desktop it takes the MAC address)
-
     `ipaddr: Optional[pydantic.networks.IPvAnyAddress]`
     :   The IP address of the system
-
-    `pwd: Optional[pydantic.types.SecretStr]`
-    :   password for login. It will be automatically hashed during the request
 
     `source: Optional[py_client.common.enums.RequestSourceType]`
     :   Access Type
 
-    `uid: str`
-    :   User Id of the login user
-
-    `vc: str`
-    :   Vendor code
+    `Config`
+    :   model configuration
 
     ### Static methods
 
@@ -79,23 +79,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   Login success or failure status
 
-    `actid: Optional[str]`
-    :   Account Id
-
-    `brkname: Optional[str]`
-    :   Broker Id
-
-    `email: Optional[pydantic.networks.EmailStr]`
-    :   Email Id
-
-    `emsg: Optional[str]`
-    :   Error message if the login failed
-
-    `exarr: Optional[List[str]]`
-    :   list of strings with enabled exchange names
+    `susertoken: Optional[str]`
+    :   Present only on login success. This key is to be passed in subsequent requests
 
     `lastaccesstime: Optional[datetime.datetime]`
     :   Present only on login success.
@@ -106,11 +94,23 @@ Classes
     `spasswordreset: Optional[str]`
     :   If Y Mandatory password reset to be enforced. Otherwise the field will be absent.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   Login success or failure status
-
-    `susertoken: Optional[str]`
-    :   Present only on login success. This key is to be passed in subsequent requests
+    `exarr: Optional[List[str]]`
+    :   list of strings with enabled exchange names
 
     `uname: Optional[str]`
     :   Username
+
+    `actid: Optional[str]`
+    :   Account Id
+
+    `email: Optional[pydantic.networks.EmailStr]`
+    :   Email Id
+
+    `brkname: Optional[str]`
+    :   Broker Id
+
+    `emsg: Optional[str]`
+    :   Error message if the login failed
+
+    `Config`
+    :   model configuration

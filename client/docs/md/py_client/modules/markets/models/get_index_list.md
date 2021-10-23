@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `exch: str`
-    :   Exchange
-
     `uid: str`
     :   The user id of the login user
+
+    `exch: str`
+    :   Exchange
 
 `GetIndexListResponseModel(**data: Any)`
 :   The response model for get index list endpoint
@@ -39,17 +39,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get index list success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get index list success or failure status
-
     `values: Optional[List[py_client.common.models.IndexTokenPair]]`
     :   Array Of index token pair.
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

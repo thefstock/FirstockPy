@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `exch: str`
-    :   Exchange
-
     `uid: str`
     :   The user id of the login user
+
+    `exch: str`
+    :   Exchange
 
 `TopListNamesResponseModel(**data: Any)`
 :   The response model for top list names endpoint
@@ -39,17 +39,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The top list names success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The top list names success or failure status
-
     `values: Optional[List[py_client.common.models.BasketCriteriaPair]]`
     :   Array of Basket, Criteria pair
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

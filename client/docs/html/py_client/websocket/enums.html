@@ -117,7 +117,23 @@ class MessageTopic(str, Enum):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="py_client.websocket.enums.MessageTopic.DEPTH_FEED"><code class="name">var <span class="ident">DEPTH_FEED</span></code></dt>
+<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB"><code class="name">var <span class="ident">TOUCHLINE_SUB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB_ACK"><code class="name">var <span class="ident">TOUCHLINE_SUB_ACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED"><code class="name">var <span class="ident">TOUCHLINE_FEED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB"><code class="name">var <span class="ident">TOUCHLINE_UNSUB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB_ACK"><code class="name">var <span class="ident">TOUCHLINE_UNSUB_ACK</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -129,15 +145,15 @@ class MessageTopic(str, Enum):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="py_client.websocket.enums.MessageTopic.DEPTH_FEED"><code class="name">var <span class="ident">DEPTH_FEED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB"><code class="name">var <span class="ident">DEPTH_UNSUB</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB_ACK"><code class="name">var <span class="ident">DEPTH_UNSUB_ACK</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.ORDER_FEED"><code class="name">var <span class="ident">ORDER_FEED</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -149,31 +165,15 @@ class MessageTopic(str, Enum):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="py_client.websocket.enums.MessageTopic.ORDER_FEED"><code class="name">var <span class="ident">ORDER_FEED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.websocket.enums.MessageTopic.ORDER_UNSUB"><code class="name">var <span class="ident">ORDER_UNSUB</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="py_client.websocket.enums.MessageTopic.ORDER_UNSUB_ACK"><code class="name">var <span class="ident">ORDER_UNSUB_ACK</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED"><code class="name">var <span class="ident">TOUCHLINE_FEED</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB"><code class="name">var <span class="ident">TOUCHLINE_SUB</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB_ACK"><code class="name">var <span class="ident">TOUCHLINE_SUB_ACK</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB"><code class="name">var <span class="ident">TOUCHLINE_UNSUB</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB_ACK"><code class="name">var <span class="ident">TOUCHLINE_UNSUB_ACK</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -200,21 +200,21 @@ class MessageTopic(str, Enum):
 <ul class="two-column">
 <li><code><a title="py_client.websocket.enums.MessageTopic.CONNECTION" href="#py_client.websocket.enums.MessageTopic.CONNECTION">CONNECTION</a></code></li>
 <li><code><a title="py_client.websocket.enums.MessageTopic.CONNECTION_ACK" href="#py_client.websocket.enums.MessageTopic.CONNECTION_ACK">CONNECTION_ACK</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_FEED" href="#py_client.websocket.enums.MessageTopic.DEPTH_FEED">DEPTH_FEED</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_SUB" href="#py_client.websocket.enums.MessageTopic.DEPTH_SUB">DEPTH_SUB</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_SUB_ACK" href="#py_client.websocket.enums.MessageTopic.DEPTH_SUB_ACK">DEPTH_SUB_ACK</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB" href="#py_client.websocket.enums.MessageTopic.DEPTH_UNSUB">DEPTH_UNSUB</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB_ACK" href="#py_client.websocket.enums.MessageTopic.DEPTH_UNSUB_ACK">DEPTH_UNSUB_ACK</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_FEED" href="#py_client.websocket.enums.MessageTopic.ORDER_FEED">ORDER_FEED</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_SUB" href="#py_client.websocket.enums.MessageTopic.ORDER_SUB">ORDER_SUB</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_SUB_ACK" href="#py_client.websocket.enums.MessageTopic.ORDER_SUB_ACK">ORDER_SUB_ACK</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_UNSUB" href="#py_client.websocket.enums.MessageTopic.ORDER_UNSUB">ORDER_UNSUB</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_UNSUB_ACK" href="#py_client.websocket.enums.MessageTopic.ORDER_UNSUB_ACK">ORDER_UNSUB_ACK</a></code></li>
-<li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED">TOUCHLINE_FEED</a></code></li>
 <li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB">TOUCHLINE_SUB</a></code></li>
 <li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB_ACK" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_SUB_ACK">TOUCHLINE_SUB_ACK</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_FEED">TOUCHLINE_FEED</a></code></li>
 <li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB">TOUCHLINE_UNSUB</a></code></li>
 <li><code><a title="py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB_ACK" href="#py_client.websocket.enums.MessageTopic.TOUCHLINE_UNSUB_ACK">TOUCHLINE_UNSUB_ACK</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_SUB" href="#py_client.websocket.enums.MessageTopic.DEPTH_SUB">DEPTH_SUB</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_SUB_ACK" href="#py_client.websocket.enums.MessageTopic.DEPTH_SUB_ACK">DEPTH_SUB_ACK</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_FEED" href="#py_client.websocket.enums.MessageTopic.DEPTH_FEED">DEPTH_FEED</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB" href="#py_client.websocket.enums.MessageTopic.DEPTH_UNSUB">DEPTH_UNSUB</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.DEPTH_UNSUB_ACK" href="#py_client.websocket.enums.MessageTopic.DEPTH_UNSUB_ACK">DEPTH_UNSUB_ACK</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_SUB" href="#py_client.websocket.enums.MessageTopic.ORDER_SUB">ORDER_SUB</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_SUB_ACK" href="#py_client.websocket.enums.MessageTopic.ORDER_SUB_ACK">ORDER_SUB_ACK</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_FEED" href="#py_client.websocket.enums.MessageTopic.ORDER_FEED">ORDER_FEED</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_UNSUB" href="#py_client.websocket.enums.MessageTopic.ORDER_UNSUB">ORDER_UNSUB</a></code></li>
+<li><code><a title="py_client.websocket.enums.MessageTopic.ORDER_UNSUB_ACK" href="#py_client.websocket.enums.MessageTopic.ORDER_UNSUB_ACK">ORDER_UNSUB_ACK</a></code></li>
 </ul>
 </li>
 </ul>

@@ -14,11 +14,11 @@ ws4py = "^0.5.1"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 commitizen = "^2.18.1"
-pdoc3 = "^0.10.0"
 rich = "^10.11.0"
 python-dotenv = "^0.19.0"
 fire = "^0.4.0"
 autopep8 = "^1.5.7"
+pdoc3 = "^0.10.0"
 
 [tool.poetry.scripts]
 generate = 'scripts.generate:main'

@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
+    `uid: str`
+    :   The user id of the login user
+
     `exch: Optional[str]`
     :   Exchange
 
     `token: Optional[str]`
     :   Contract Token
-
-    `uid: str`
-    :   The user id of the login user
 
 `GetSecurityInfoResponseModel(**data: Any)`
 :   The response model for get security info endpoint
@@ -42,32 +42,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get security info success or failure status
 
-    `addbmrg: Optional[str]`
-    :   Additional Long Margin
-
-    `addsmrg: Optional[str]`
-    :   Additional Short Margin
-
-    `cname: Optional[str]`
-    :   Company Name
-
-    `delmrg: Optional[str]`
-    :   Delivery Margin
-
-    `delunt: Optional[str]`
-    :   Delivery Units
-
-    `elmbmrg: Optional[str]`
-    :   Elm Buy Margin
-
-    `elmmrg: Optional[str]`
-    :   Elm Margin
-
-    `elmsmrg: Optional[str]`
-    :   Elm Sell Margin
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `emsg: Optional[str]`
     :   Error message if the request failed
@@ -75,59 +54,77 @@ Classes
     `exch: Optional[str]`
     :   Exchange
 
+    `tsym: Optional[str]`
+    :   Trading Symbol
+
+    `cname: Optional[str]`
+    :   Company Name
+
+    `symnam: Optional[str]`
+    :   Symbol Name
+
+    `seg: Optional[str]`
+    :   Segment
+
     `exd: Optional[str]`
     :   Expiry Date
-
-    `exeendd: Optional[str]`
-    :   Exercise End Date
-
-    `exestrd: Optional[str]`
-    :   Exercise Start Date
-
-    `expmrg: Optional[str]`
-    :   Exposure Margin
-
-    `frzqty: Optional[float]`
-    :   Freeze Qty
-
-    `gp_nd: Optional[str]`
-    :   gn/gd * pn/pd
-
-    `gsmind: Optional[str]`
-    :   scripupdate Gsm Ind
 
     `instname: Optional[str]`
     :   Intrument Name
 
-    `isin: Optional[str]`
-    :   ISIN
-
-    `ls: Optional[float]`
-    :   Lot Size
-
-    `mult: Optional[float]`
-    :   Multiplier
+    `strprc: Optional[str]`
+    :   Strike Price
 
     `optt: Optional[str]`
     :   Option Type
 
+    `isin: Optional[str]`
+    :   ISIN
+
+    `ti: Optional[float]`
+    :   Tick Size
+
+    `ls: Optional[float]`
+    :   Lot Size
+
     `pp: Optional[float]`
     :   Price precision
 
-    `prcftr_d: Optional[str]`
-    :   ((GN / GD) * (PN/PD))
+    `mult: Optional[float]`
+    :   Multiplier
 
-    `prcqqty: Optional[float]`
-    :   Price Quote Qty
+    `gp_nd: Optional[str]`
+    :   gn/gd * pn/pd
 
     `prcunt: Optional[float]`
     :   Price Units
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `prcqqty: Optional[float]`
+    :   Price Quote Qty
 
-    `seg: Optional[str]`
-    :   Segment
+    `trdunt: Optional[str]`
+    :   Trade Units
+
+    `delunt: Optional[str]`
+    :   Delivery Units
+
+    `frzqty: Optional[float]`
+    :   Freeze Qty
+
+    `gsmind: Optional[str]`
+    :   scripupdate Gsm Ind
+
+    `elmbmrg: Optional[str]`
+    :   Elm Buy Margin
+
+    `elmsmrg: Optional[str]`
+    :   Elm Sell Margin
+
+    `addbmrg: Optional[str]`
+    :   Additional Long Margin
+
+    `addsmrg: Optional[str]`
+    :   Additional Short Margin
 
     `splbmrg: Optional[str]`
     :   Special Long Margin
@@ -135,17 +132,8 @@ Classes
     `splsmrg: Optional[str]`
     :   Special Short Margin
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get security info success or failure status
-
-    `strprc: Optional[str]`
-    :   Strike Price
-
-    `symnam: Optional[str]`
-    :   Symbol Name
-
-    `tenendd: Optional[str]`
-    :   Tender End Eate
+    `delmrg: Optional[str]`
+    :   Delivery Margin
 
     `tenmrg: Optional[str]`
     :   Tender Margin
@@ -153,17 +141,29 @@ Classes
     `tenstrd: Optional[str]`
     :   Tender Start Date
 
-    `ti: Optional[float]`
-    :   Tick Size
+    `tenendd: Optional[str]`
+    :   Tender End Eate
+
+    `exestrd: Optional[str]`
+    :   Exercise Start Date
+
+    `exeendd: Optional[str]`
+    :   Exercise End Date
+
+    `elmmrg: Optional[str]`
+    :   Elm Margin
+
+    `varmrg: Optional[str]`
+    :   Var Margin
+
+    `expmrg: Optional[str]`
+    :   Exposure Margin
 
     `token: Optional[str]`
     :   Contract Token
 
-    `trdunt: Optional[str]`
-    :   Trade Units
+    `prcftr_d: Optional[str]`
+    :   ((GN / GD) * (PN/PD))
 
-    `tsym: Optional[str]`
-    :   Trading Symbol
-
-    `varmrg: Optional[str]`
-    :   Var Margin
+    `Config`
+    :   model configuration

@@ -19,14 +19,19 @@ Classes
 
     ### Class variables
 
+    `uid: str`
+    :   User id of the logged in user.
+
+    `tsym: str`
+    :   Unique id of contract on which order was placed.
+        Can’t be modified, must be the same as that of original order.
+        (use url encoding to avoid special char error for symbols like M&M)
+
+    `qty: float`
+    :   Quantity to be converted.
+
     `actid: str`
     :   Account id
-
-    `ordersource: Optional[str]`
-    :   MOB For Logging
-
-    `postype: str`
-    :   Day / CF Converting Day or Carry forward position
 
     `prd: str`
     :   Product to which the user wants to convert position.
@@ -34,19 +39,14 @@ Classes
     `prevprd: str`
     :   Original product of the position.
 
-    `qty: float`
-    :   Quantity to be converted.
-
     `trantype: py_client.common.enums.TransactionType`
     :   Transaction type
 
-    `tsym: str`
-    :   Unique id of contract on which order was placed.
-        Can’t be modified, must be the same as that of original order.
-        (use url encoding to avoid special char error for symbols like M&M)
+    `postype: str`
+    :   Day / CF Converting Day or Carry forward position
 
-    `uid: str`
-    :   User id of the logged in user.
+    `ordersource: Optional[str]`
+    :   MOB For Logging
 
 `ConvertProductResponseModel(**data: Any)`
 :   The response model for product conversion endpoint
@@ -62,14 +62,14 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The product conversion success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The product conversion success or failure status
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

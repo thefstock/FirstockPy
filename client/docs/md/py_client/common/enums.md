@@ -15,13 +15,13 @@ Classes
 
     ### Class variables
 
-    `API`
-    :
-
     `MOB`
     :
 
     `WEB`
+    :
+
+    `API`
     :
 
 `ResponseStatus(value, names=None, *, module=None, qualname=None, type=None, start=1)`
@@ -34,10 +34,57 @@ Classes
 
     ### Class variables
 
+    `OK`
+    :
+
     `NOT_OK`
     :
 
-    `OK`
+`PriceType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The price type for orders & trades
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `LIMIT`
+    :
+
+    `MARKET`
+    :
+
+    `STOP_LOSS_LIMIT`
+    :
+
+    `STOP_LOSS_MARKET`
+    :
+
+    `DS`
+    :
+
+    `SECOND_LEG`
+    :
+
+    `THIRD_LEG`
+    :
+
+`TransactionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The transaction type for orders & trades
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `BUY`
+    :
+
+    `SELL`
     :
 
 `RestMethod(value, names=None, *, module=None, qualname=None, type=None, start=1)`
@@ -50,23 +97,58 @@ Classes
 
     ### Class variables
 
-    `DELETE`
-    :
-
     `GET`
-    :
-
-    `HEAD`
-    :
-
-    `OPTION`
-    :
-
-    `PATCH`
     :
 
     `POST`
     :
 
+    `PATCH`
+    :
+
     `PUT`
+    :
+
+    `DELETE`
+    :
+
+    `OPTION`
+    :
+
+    `HEAD`
+    :
+
+`RetentionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The retention type for orders
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `DAY`
+    :
+
+    `IOC`
+    :
+
+    `EOS`
+    :
+
+`AlertValidity(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The alert validity
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `DAY`
+    :
+
+    `GTT`
     :

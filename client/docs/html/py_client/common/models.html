@@ -183,24 +183,28 @@ class ExchTsym(BaseModel):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="py_client.common.models.AlertType"><code class="flex name class">
-<span>class <span class="ident">AlertType</span></span>
+<dt id="py_client.common.models.Product"><code class="flex name class">
+<span>class <span class="ident">Product</span></span>
 <span>(</span><span>**data: Any)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The alert type model</p>
+<div class="desc"><p>The product model</p>
 <p>Create a new model by parsing and validating input data from keyword arguments.</p>
 <p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class AlertType(BaseModel):
+<pre><code class="python">class Product(BaseModel):
   &#34;&#34;&#34;
-  The alert type model
+  The product model
   &#34;&#34;&#34;
-  ai_t: str
-  &#34;&#34;&#34;Alert type&#34;&#34;&#34;</code></pre>
+  prd: str
+  &#34;&#34;&#34;The product name&#34;&#34;&#34;
+  s_prdt_ali: str
+  &#34;&#34;&#34;The product display name&#34;&#34;&#34;
+  exch: List[str]
+  &#34;&#34;&#34;List of strings with enabled, allowed exchange names&#34;&#34;&#34;</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -209,9 +213,17 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.models.AlertType.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
+<dt id="py_client.common.models.Product.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Alert type</p></div>
+<div class="desc"><p>The product name</p></div>
+</dd>
+<dt id="py_client.common.models.Product.s_prdt_ali"><code class="name">var <span class="ident">s_prdt_ali</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The product display name</p></div>
+</dd>
+<dt id="py_client.common.models.Product.exch"><code class="name">var <span class="ident">exch</span> : List[str]</code></dt>
+<dd>
+<div class="desc"><p>List of strings with enabled, allowed exchange names</p></div>
 </dd>
 </dl>
 </dd>
@@ -243,36 +255,33 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.models.BankDetails.acctnum"><code class="name">var <span class="ident">acctnum</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Account Number</p></div>
-</dd>
 <dt id="py_client.common.models.BankDetails.bankn"><code class="name">var <span class="ident">bankn</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Bank Name</p></div>
 </dd>
+<dt id="py_client.common.models.BankDetails.acctnum"><code class="name">var <span class="ident">acctnum</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Account Number</p></div>
+</dd>
 </dl>
 </dd>
-<dt id="py_client.common.models.BasketCriteriaPair"><code class="flex name class">
-<span>class <span class="ident">BasketCriteriaPair</span></span>
+<dt id="py_client.common.models.DpAccountNumber"><code class="flex name class">
+<span>class <span class="ident">DpAccountNumber</span></span>
 <span>(</span><span>**data: Any)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The basket criteria pair</p>
+<div class="desc"><p>The dp account number model</p>
 <p>Create a new model by parsing and validating input data from keyword arguments.</p>
 <p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class BasketCriteriaPair(BaseModel):
+<pre><code class="python">class DpAccountNumber(BaseModel):
   &#34;&#34;&#34;
-  The basket criteria pair
+  The dp account number model
   &#34;&#34;&#34;
-  bskt: str
-  &#34;&#34;&#34;The basket name&#34;&#34;&#34;
-  crt: str
-  &#34;&#34;&#34;The criteria&#34;&#34;&#34;</code></pre>
+  dpnum: Optional[str]</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -281,13 +290,71 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.models.BasketCriteriaPair.bskt"><code class="name">var <span class="ident">bskt</span> : str</code></dt>
+<dt id="py_client.common.models.DpAccountNumber.dpnum"><code class="name">var <span class="ident">dpnum</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The basket name</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="py_client.common.models.BasketCriteriaPair.crt"><code class="name">var <span class="ident">crt</span> : str</code></dt>
+</dl>
+</dd>
+<dt id="py_client.common.models.Scrip"><code class="flex name class">
+<span>class <span class="ident">Scrip</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
 <dd>
-<div class="desc"><p>The criteria</p></div>
+<div class="desc"><p>The scrip model</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Scrip(BaseModel):
+  &#34;&#34;&#34;
+  The scrip model
+  &#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  tsym: Optional[str]
+  &#34;&#34;&#34;Trading symbol of the scrip (contract)&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Token of the scrip (contract)&#34;&#34;&#34;
+  pp: Optional[float]
+  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
+  ti: Optional[float]
+  &#34;&#34;&#34;Tick size&#34;&#34;&#34;
+  ls: Optional[float]
+  &#34;&#34;&#34;Lot size&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.models.Scrip.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.common.models.Scrip.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol of the scrip (contract)</p></div>
+</dd>
+<dt id="py_client.common.models.Scrip.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Token of the scrip (contract)</p></div>
+</dd>
+<dt id="py_client.common.models.Scrip.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.common.models.Scrip.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Tick size</p></div>
+</dd>
+<dt id="py_client.common.models.Scrip.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lot size</p></div>
 </dd>
 </dl>
 </dd>
@@ -335,124 +402,33 @@ class ExchTsym(BaseModel):
 <dd>
 <div class="desc"><p>Exchange (Select from ‘exarr’ Array provided in User Details response)</p></div>
 </dd>
-<dt id="py_client.common.models.BasketList.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
+<dt id="py_client.common.models.BasketList.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Order Price</p></div>
-</dd>
-<dt id="py_client.common.models.BasketList.prctyp"><code class="name">var <span class="ident">prctyp</span> : py_client.common.enums.PriceType</code></dt>
-<dd>
-<div class="desc"><p>LMT / MKT / SL-LMT/ SL-MKT</p></div>
-</dd>
-<dt id="py_client.common.models.BasketList.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
-<dd>
-<div class="desc"><p>C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)</p></div>
+<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
 </dd>
 <dt id="py_client.common.models.BasketList.qty"><code class="name">var <span class="ident">qty</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Order Quantity</p></div>
 </dd>
-<dt id="py_client.common.models.BasketList.trantype"><code class="name">var <span class="ident">trantype</span> : py_client.common.enums.TransactionType</code></dt>
+<dt id="py_client.common.models.BasketList.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
 <dd>
-<div class="desc"><p>BUY or SELL</p></div>
+<div class="desc"><p>Order Price</p></div>
 </dd>
 <dt id="py_client.common.models.BasketList.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Only to be sent in case of SL / SL-M order.</p></div>
 </dd>
-<dt id="py_client.common.models.BasketList.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
+<dt id="py_client.common.models.BasketList.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+<div class="desc"><p>C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)</p></div>
 </dd>
-</dl>
+<dt id="py_client.common.models.BasketList.trantype"><code class="name">var <span class="ident">trantype</span> : <a title="py_client.common.enums.TransactionType" href="enums.html#py_client.common.enums.TransactionType">TransactionType</a></code></dt>
+<dd>
+<div class="desc"><p>BUY or SELL</p></div>
 </dd>
-<dt id="py_client.common.models.DpAccountNumber"><code class="flex name class">
-<span>class <span class="ident">DpAccountNumber</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
+<dt id="py_client.common.models.BasketList.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
 <dd>
-<div class="desc"><p>The dp account number model</p>
-<p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class DpAccountNumber(BaseModel):
-  &#34;&#34;&#34;
-  The dp account number model
-  &#34;&#34;&#34;
-  dpnum: Optional[str]</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="py_client.common.models.DpAccountNumber.dpnum"><code class="name">var <span class="ident">dpnum</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
-<dt id="py_client.common.models.ExchTsym"><code class="flex name class">
-<span>class <span class="ident">ExchTsym</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The exch_tsym model</p>
-<p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class ExchTsym(BaseModel):
-  &#34;&#34;&#34;The exch_tsym model&#34;&#34;&#34;
-  exch: Optional[str]
-  &#34;&#34;&#34;NSE, BSE, NFO ... Exchange&#34;&#34;&#34;
-  tsym: Optional[str]
-  &#34;&#34;&#34;Trading symbol of the scrip (contract)&#34;&#34;&#34;
-  token: Optional[str]
-  &#34;&#34;&#34;Token of the scrip (contract)&#34;&#34;&#34;
-  pp: Optional[str]
-  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
-  ti: Optional[float]
-  &#34;&#34;&#34;Tick size&#34;&#34;&#34;
-  ls: Optional[float]
-  &#34;&#34;&#34;Lot size&#34;&#34;&#34;</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="py_client.common.models.ExchTsym.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>NSE, BSE, NFO &hellip; Exchange</p></div>
-</dd>
-<dt id="py_client.common.models.ExchTsym.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Lot size</p></div>
-</dd>
-<dt id="py_client.common.models.ExchTsym.pp"><code class="name">var <span class="ident">pp</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.common.models.ExchTsym.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Tick size</p></div>
-</dd>
-<dt id="py_client.common.models.ExchTsym.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Token of the scrip (contract)</p></div>
-</dd>
-<dt id="py_client.common.models.ExchTsym.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol of the scrip (contract)</p></div>
+<div class="desc"><p>LMT / MKT / SL-LMT/ SL-MKT</p></div>
 </dd>
 </dl>
 </dd>
@@ -494,28 +470,26 @@ class ExchTsym(BaseModel):
 </dd>
 </dl>
 </dd>
-<dt id="py_client.common.models.Product"><code class="flex name class">
-<span>class <span class="ident">Product</span></span>
+<dt id="py_client.common.models.BasketCriteriaPair"><code class="flex name class">
+<span>class <span class="ident">BasketCriteriaPair</span></span>
 <span>(</span><span>**data: Any)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The product model</p>
+<div class="desc"><p>The basket criteria pair</p>
 <p>Create a new model by parsing and validating input data from keyword arguments.</p>
 <p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class Product(BaseModel):
+<pre><code class="python">class BasketCriteriaPair(BaseModel):
   &#34;&#34;&#34;
-  The product model
+  The basket criteria pair
   &#34;&#34;&#34;
-  prd: str
-  &#34;&#34;&#34;The product name&#34;&#34;&#34;
-  s_prdt_ali: str
-  &#34;&#34;&#34;The product display name&#34;&#34;&#34;
-  exch: List[str]
-  &#34;&#34;&#34;List of strings with enabled, allowed exchange names&#34;&#34;&#34;</code></pre>
+  bskt: str
+  &#34;&#34;&#34;The basket name&#34;&#34;&#34;
+  crt: str
+  &#34;&#34;&#34;The criteria&#34;&#34;&#34;</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -524,79 +498,13 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.models.Product.exch"><code class="name">var <span class="ident">exch</span> : List[str]</code></dt>
+<dt id="py_client.common.models.BasketCriteriaPair.bskt"><code class="name">var <span class="ident">bskt</span> : str</code></dt>
 <dd>
-<div class="desc"><p>List of strings with enabled, allowed exchange names</p></div>
+<div class="desc"><p>The basket name</p></div>
 </dd>
-<dt id="py_client.common.models.Product.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
+<dt id="py_client.common.models.BasketCriteriaPair.crt"><code class="name">var <span class="ident">crt</span> : str</code></dt>
 <dd>
-<div class="desc"><p>The product name</p></div>
-</dd>
-<dt id="py_client.common.models.Product.s_prdt_ali"><code class="name">var <span class="ident">s_prdt_ali</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The product display name</p></div>
-</dd>
-</dl>
-</dd>
-<dt id="py_client.common.models.Scrip"><code class="flex name class">
-<span>class <span class="ident">Scrip</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The scrip model</p>
-<p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class Scrip(BaseModel):
-  &#34;&#34;&#34;
-  The scrip model
-  &#34;&#34;&#34;
-  exch: Optional[str]
-  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
-  tsym: Optional[str]
-  &#34;&#34;&#34;Trading symbol of the scrip (contract)&#34;&#34;&#34;
-  token: Optional[str]
-  &#34;&#34;&#34;Token of the scrip (contract)&#34;&#34;&#34;
-  pp: Optional[float]
-  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
-  ti: Optional[float]
-  &#34;&#34;&#34;Tick size&#34;&#34;&#34;
-  ls: Optional[float]
-  &#34;&#34;&#34;Lot size&#34;&#34;&#34;</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="py_client.common.models.Scrip.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exchange</p></div>
-</dd>
-<dt id="py_client.common.models.Scrip.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Lot size</p></div>
-</dd>
-<dt id="py_client.common.models.Scrip.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.common.models.Scrip.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Tick size</p></div>
-</dd>
-<dt id="py_client.common.models.Scrip.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Token of the scrip (contract)</p></div>
-</dd>
-<dt id="py_client.common.models.Scrip.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol of the scrip (contract)</p></div>
+<div class="desc"><p>The criteria</p></div>
 </dd>
 </dl>
 </dd>
@@ -638,13 +546,25 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.models.TBContract.c"><code class="name">var <span class="ident">c</span> : Optional[str]</code></dt>
+<dt id="py_client.common.models.TBContract.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Previous Close price</p></div>
+<div class="desc"><p>Trading symbol</p></div>
 </dd>
 <dt id="py_client.common.models.TBContract.lp"><code class="name">var <span class="ident">lp</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>LTP</p></div>
+</dd>
+<dt id="py_client.common.models.TBContract.c"><code class="name">var <span class="ident">c</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Previous Close price</p></div>
+</dd>
+<dt id="py_client.common.models.TBContract.v"><code class="name">var <span class="ident">v</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>volume</p></div>
+</dd>
+<dt id="py_client.common.models.TBContract.value"><code class="name">var <span class="ident">value</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Total traded value</p></div>
 </dd>
 <dt id="py_client.common.models.TBContract.oi"><code class="name">var <span class="ident">oi</span> : Optional[str]</code></dt>
 <dd>
@@ -654,17 +574,37 @@ class ExchTsym(BaseModel):
 <dd>
 <div class="desc"><p>LTP percentage change</p></div>
 </dd>
-<dt id="py_client.common.models.TBContract.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol</p></div>
+</dl>
 </dd>
-<dt id="py_client.common.models.TBContract.v"><code class="name">var <span class="ident">v</span> : Optional[str]</code></dt>
+<dt id="py_client.common.models.AlertType"><code class="flex name class">
+<span>class <span class="ident">AlertType</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
 <dd>
-<div class="desc"><p>volume</p></div>
-</dd>
-<dt id="py_client.common.models.TBContract.value"><code class="name">var <span class="ident">value</span> : Optional[str]</code></dt>
+<div class="desc"><p>The alert type model</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AlertType(BaseModel):
+  &#34;&#34;&#34;
+  The alert type model
+  &#34;&#34;&#34;
+  ai_t: str
+  &#34;&#34;&#34;Alert type&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.models.AlertType.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Total traded value</p></div>
+<div class="desc"><p>Alert type</p></div>
 </dd>
 </dl>
 </dd>
@@ -699,13 +639,73 @@ class ExchTsym(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
+<dt id="py_client.common.models.TradeDate.trd_date"><code class="name">var <span class="ident">trd_date</span> : datetime.date</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.common.models.TradeDate.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
 <div class="desc"><p>The model config</p></div>
 </dd>
-<dt id="py_client.common.models.TradeDate.trd_date"><code class="name">var <span class="ident">trd_date</span> : datetime.date</code></dt>
+</dl>
+</dd>
+<dt id="py_client.common.models.ExchTsym"><code class="flex name class">
+<span>class <span class="ident">ExchTsym</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The exch_tsym model</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ExchTsym(BaseModel):
+  &#34;&#34;&#34;The exch_tsym model&#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;NSE, BSE, NFO ... Exchange&#34;&#34;&#34;
+  tsym: Optional[str]
+  &#34;&#34;&#34;Trading symbol of the scrip (contract)&#34;&#34;&#34;
+  token: Optional[str]
+  &#34;&#34;&#34;Token of the scrip (contract)&#34;&#34;&#34;
+  pp: Optional[str]
+  &#34;&#34;&#34;Price precision&#34;&#34;&#34;
+  ti: Optional[float]
+  &#34;&#34;&#34;Tick size&#34;&#34;&#34;
+  ls: Optional[float]
+  &#34;&#34;&#34;Lot size&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.models.ExchTsym.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>NSE, BSE, NFO &hellip; Exchange</p></div>
+</dd>
+<dt id="py_client.common.models.ExchTsym.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol of the scrip (contract)</p></div>
+</dd>
+<dt id="py_client.common.models.ExchTsym.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Token of the scrip (contract)</p></div>
+</dd>
+<dt id="py_client.common.models.ExchTsym.pp"><code class="name">var <span class="ident">pp</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.common.models.ExchTsym.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Tick size</p></div>
+</dd>
+<dt id="py_client.common.models.ExchTsym.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lot size</p></div>
 </dd>
 </dl>
 </dd>
@@ -726,36 +726,18 @@ class ExchTsym(BaseModel):
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="py_client.common.models.AlertType" href="#py_client.common.models.AlertType">AlertType</a></code></h4>
+<h4><code><a title="py_client.common.models.Product" href="#py_client.common.models.Product">Product</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.models.AlertType.ai_t" href="#py_client.common.models.AlertType.ai_t">ai_t</a></code></li>
+<li><code><a title="py_client.common.models.Product.prd" href="#py_client.common.models.Product.prd">prd</a></code></li>
+<li><code><a title="py_client.common.models.Product.s_prdt_ali" href="#py_client.common.models.Product.s_prdt_ali">s_prdt_ali</a></code></li>
+<li><code><a title="py_client.common.models.Product.exch" href="#py_client.common.models.Product.exch">exch</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.common.models.BankDetails" href="#py_client.common.models.BankDetails">BankDetails</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.models.BankDetails.acctnum" href="#py_client.common.models.BankDetails.acctnum">acctnum</a></code></li>
 <li><code><a title="py_client.common.models.BankDetails.bankn" href="#py_client.common.models.BankDetails.bankn">bankn</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="py_client.common.models.BasketCriteriaPair" href="#py_client.common.models.BasketCriteriaPair">BasketCriteriaPair</a></code></h4>
-<ul class="">
-<li><code><a title="py_client.common.models.BasketCriteriaPair.bskt" href="#py_client.common.models.BasketCriteriaPair.bskt">bskt</a></code></li>
-<li><code><a title="py_client.common.models.BasketCriteriaPair.crt" href="#py_client.common.models.BasketCriteriaPair.crt">crt</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="py_client.common.models.BasketList" href="#py_client.common.models.BasketList">BasketList</a></code></h4>
-<ul class="two-column">
-<li><code><a title="py_client.common.models.BasketList.exch" href="#py_client.common.models.BasketList.exch">exch</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.prc" href="#py_client.common.models.BasketList.prc">prc</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.prctyp" href="#py_client.common.models.BasketList.prctyp">prctyp</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.prd" href="#py_client.common.models.BasketList.prd">prd</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.qty" href="#py_client.common.models.BasketList.qty">qty</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.trantype" href="#py_client.common.models.BasketList.trantype">trantype</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.trgprc" href="#py_client.common.models.BasketList.trgprc">trgprc</a></code></li>
-<li><code><a title="py_client.common.models.BasketList.tsym" href="#py_client.common.models.BasketList.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.BankDetails.acctnum" href="#py_client.common.models.BankDetails.acctnum">acctnum</a></code></li>
 </ul>
 </li>
 <li>
@@ -765,14 +747,27 @@ class ExchTsym(BaseModel):
 </ul>
 </li>
 <li>
-<h4><code><a title="py_client.common.models.ExchTsym" href="#py_client.common.models.ExchTsym">ExchTsym</a></code></h4>
+<h4><code><a title="py_client.common.models.Scrip" href="#py_client.common.models.Scrip">Scrip</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.common.models.ExchTsym.exch" href="#py_client.common.models.ExchTsym.exch">exch</a></code></li>
-<li><code><a title="py_client.common.models.ExchTsym.ls" href="#py_client.common.models.ExchTsym.ls">ls</a></code></li>
-<li><code><a title="py_client.common.models.ExchTsym.pp" href="#py_client.common.models.ExchTsym.pp">pp</a></code></li>
-<li><code><a title="py_client.common.models.ExchTsym.ti" href="#py_client.common.models.ExchTsym.ti">ti</a></code></li>
-<li><code><a title="py_client.common.models.ExchTsym.token" href="#py_client.common.models.ExchTsym.token">token</a></code></li>
-<li><code><a title="py_client.common.models.ExchTsym.tsym" href="#py_client.common.models.ExchTsym.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.exch" href="#py_client.common.models.Scrip.exch">exch</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.tsym" href="#py_client.common.models.Scrip.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.token" href="#py_client.common.models.Scrip.token">token</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.pp" href="#py_client.common.models.Scrip.pp">pp</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.ti" href="#py_client.common.models.Scrip.ti">ti</a></code></li>
+<li><code><a title="py_client.common.models.Scrip.ls" href="#py_client.common.models.Scrip.ls">ls</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.models.BasketList" href="#py_client.common.models.BasketList">BasketList</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.common.models.BasketList.exch" href="#py_client.common.models.BasketList.exch">exch</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.tsym" href="#py_client.common.models.BasketList.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.qty" href="#py_client.common.models.BasketList.qty">qty</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.prc" href="#py_client.common.models.BasketList.prc">prc</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.trgprc" href="#py_client.common.models.BasketList.trgprc">trgprc</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.prd" href="#py_client.common.models.BasketList.prd">prd</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.trantype" href="#py_client.common.models.BasketList.trantype">trantype</a></code></li>
+<li><code><a title="py_client.common.models.BasketList.prctyp" href="#py_client.common.models.BasketList.prctyp">prctyp</a></code></li>
 </ul>
 </li>
 <li>
@@ -783,41 +778,46 @@ class ExchTsym(BaseModel):
 </ul>
 </li>
 <li>
-<h4><code><a title="py_client.common.models.Product" href="#py_client.common.models.Product">Product</a></code></h4>
+<h4><code><a title="py_client.common.models.BasketCriteriaPair" href="#py_client.common.models.BasketCriteriaPair">BasketCriteriaPair</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.models.Product.exch" href="#py_client.common.models.Product.exch">exch</a></code></li>
-<li><code><a title="py_client.common.models.Product.prd" href="#py_client.common.models.Product.prd">prd</a></code></li>
-<li><code><a title="py_client.common.models.Product.s_prdt_ali" href="#py_client.common.models.Product.s_prdt_ali">s_prdt_ali</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="py_client.common.models.Scrip" href="#py_client.common.models.Scrip">Scrip</a></code></h4>
-<ul class="two-column">
-<li><code><a title="py_client.common.models.Scrip.exch" href="#py_client.common.models.Scrip.exch">exch</a></code></li>
-<li><code><a title="py_client.common.models.Scrip.ls" href="#py_client.common.models.Scrip.ls">ls</a></code></li>
-<li><code><a title="py_client.common.models.Scrip.pp" href="#py_client.common.models.Scrip.pp">pp</a></code></li>
-<li><code><a title="py_client.common.models.Scrip.ti" href="#py_client.common.models.Scrip.ti">ti</a></code></li>
-<li><code><a title="py_client.common.models.Scrip.token" href="#py_client.common.models.Scrip.token">token</a></code></li>
-<li><code><a title="py_client.common.models.Scrip.tsym" href="#py_client.common.models.Scrip.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.BasketCriteriaPair.bskt" href="#py_client.common.models.BasketCriteriaPair.bskt">bskt</a></code></li>
+<li><code><a title="py_client.common.models.BasketCriteriaPair.crt" href="#py_client.common.models.BasketCriteriaPair.crt">crt</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.common.models.TBContract" href="#py_client.common.models.TBContract">TBContract</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.common.models.TBContract.c" href="#py_client.common.models.TBContract.c">c</a></code></li>
-<li><code><a title="py_client.common.models.TBContract.lp" href="#py_client.common.models.TBContract.lp">lp</a></code></li>
-<li><code><a title="py_client.common.models.TBContract.oi" href="#py_client.common.models.TBContract.oi">oi</a></code></li>
-<li><code><a title="py_client.common.models.TBContract.pc" href="#py_client.common.models.TBContract.pc">pc</a></code></li>
 <li><code><a title="py_client.common.models.TBContract.tsym" href="#py_client.common.models.TBContract.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.TBContract.lp" href="#py_client.common.models.TBContract.lp">lp</a></code></li>
+<li><code><a title="py_client.common.models.TBContract.c" href="#py_client.common.models.TBContract.c">c</a></code></li>
 <li><code><a title="py_client.common.models.TBContract.v" href="#py_client.common.models.TBContract.v">v</a></code></li>
 <li><code><a title="py_client.common.models.TBContract.value" href="#py_client.common.models.TBContract.value">value</a></code></li>
+<li><code><a title="py_client.common.models.TBContract.oi" href="#py_client.common.models.TBContract.oi">oi</a></code></li>
+<li><code><a title="py_client.common.models.TBContract.pc" href="#py_client.common.models.TBContract.pc">pc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.models.AlertType" href="#py_client.common.models.AlertType">AlertType</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.common.models.AlertType.ai_t" href="#py_client.common.models.AlertType.ai_t">ai_t</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.common.models.TradeDate" href="#py_client.common.models.TradeDate">TradeDate</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.models.TradeDate.Config" href="#py_client.common.models.TradeDate.Config">Config</a></code></li>
 <li><code><a title="py_client.common.models.TradeDate.trd_date" href="#py_client.common.models.TradeDate.trd_date">trd_date</a></code></li>
+<li><code><a title="py_client.common.models.TradeDate.Config" href="#py_client.common.models.TradeDate.Config">Config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.models.ExchTsym" href="#py_client.common.models.ExchTsym">ExchTsym</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.common.models.ExchTsym.exch" href="#py_client.common.models.ExchTsym.exch">exch</a></code></li>
+<li><code><a title="py_client.common.models.ExchTsym.tsym" href="#py_client.common.models.ExchTsym.tsym">tsym</a></code></li>
+<li><code><a title="py_client.common.models.ExchTsym.token" href="#py_client.common.models.ExchTsym.token">token</a></code></li>
+<li><code><a title="py_client.common.models.ExchTsym.pp" href="#py_client.common.models.ExchTsym.pp">pp</a></code></li>
+<li><code><a title="py_client.common.models.ExchTsym.ti" href="#py_client.common.models.ExchTsym.ti">ti</a></code></li>
+<li><code><a title="py_client.common.models.ExchTsym.ls" href="#py_client.common.models.ExchTsym.ls">ls</a></code></li>
 </ul>
 </li>
 </ul>

@@ -24,6 +24,56 @@ Classes
 
     ### Methods
 
+    `get_index_list(self, model: py_client.modules.markets.models.get_index_list.GetIndexListRequestModel, key: str = None) ‑> py_client.modules.markets.models.get_index_list.GetIndexListResponseModel`
+    :   Get index list
+        
+        Args:
+          model (GetIndexListRequestModel): The data to be send as GetIndexListRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          GetIndexListResponseModel: The response as GetIndexListResponseModel.
+
+    `top_list_names(self, model: py_client.modules.markets.models.top_list_names.TopListNamesRequestModel, key: str = None) ‑> py_client.modules.markets.models.top_list_names.TopListNamesResponseModel`
+    :   Get top list names
+        
+        Args:
+          model (TopListNamesRequestModel): The data to be send as TopListNamesRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          TopListNamesResponseModel: The response as TopListNamesResponseModel.
+
+    `top_list(self, model: py_client.modules.markets.models.top_list.TopListRequestModel, key: str = None) ‑> py_client.modules.markets.models.top_list.TopListResponseModel`
+    :   Get top list
+        
+        Args:
+          model (TopListRequestModel): The data to be send as TopListRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          TopListResponseModel: The response as TopListResponseModel.
+
+    `tp_series(self, model: py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel, key: str = None) ‑> py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel`
+    :   Get time price data (Chart data)
+        
+        Args:
+          model (TimePriceSeriesRequestModel): The data to be send as TimePriceSeriesRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          TimePriceSeriesResponseModel: The response as TimePriceSeriesResponseModel.
+
+    `get_option_chain(self, model: py_client.modules.markets.models.get_option_chain.GetOptionChainRequestModel, key: str = None) ‑> py_client.modules.markets.models.get_option_chain.GetOptionChainResponseModel`
+    :   Get option chain
+        
+        Args:
+          model (GetOptionChainRequestModel): The data to be send as GetOptionChainRequestModel.
+          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          GetOptionChainResponseModel: The response as GetOptionChainResponseModel.
+
     `exch_msg(self, model: py_client.modules.markets.models.exch_message.ExchMessageRequestModel, key: str = None) ‑> py_client.modules.markets.models.exch_message.ExchMessageResponseModel`
     :   Exch message
         
@@ -44,26 +94,6 @@ Classes
         Returns:
           GetBrokerMessageResponseModel: The response as GetBrokerMessageResponseModel.
 
-    `get_index_list(self, model: py_client.modules.markets.models.get_index_list.GetIndexListRequestModel, key: str = None) ‑> py_client.modules.markets.models.get_index_list.GetIndexListResponseModel`
-    :   Get index list
-        
-        Args:
-          model (GetIndexListRequestModel): The data to be send as GetIndexListRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetIndexListResponseModel: The response as GetIndexListResponseModel.
-
-    `get_option_chain(self, model: py_client.modules.markets.models.get_option_chain.GetOptionChainRequestModel, key: str = None) ‑> py_client.modules.markets.models.get_option_chain.GetOptionChainResponseModel`
-    :   Get option chain
-        
-        Args:
-          model (GetOptionChainRequestModel): The data to be send as GetOptionChainRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetOptionChainResponseModel: The response as GetOptionChainResponseModel.
-
     `span_calc(self, model: py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel, key: str = None) ‑> py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel`
     :   Get broker message
         
@@ -73,33 +103,3 @@ Classes
         
         Returns:
           SpanCalculatorResponseModel: The response as SpanCalculatorResponseModel.
-
-    `top_list(self, model: py_client.modules.markets.models.top_list.TopListRequestModel, key: str = None) ‑> py_client.modules.markets.models.top_list.TopListResponseModel`
-    :   Get top list
-        
-        Args:
-          model (TopListRequestModel): The data to be send as TopListRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          TopListResponseModel: The response as TopListResponseModel.
-
-    `top_list_names(self, model: py_client.modules.markets.models.top_list_names.TopListNamesRequestModel, key: str = None) ‑> py_client.modules.markets.models.top_list_names.TopListNamesResponseModel`
-    :   Get top list names
-        
-        Args:
-          model (TopListNamesRequestModel): The data to be send as TopListNamesRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          TopListNamesResponseModel: The response as TopListNamesResponseModel.
-
-    `tp_series(self, model: py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel, key: str = None) ‑> py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel`
-    :   Get time price data (Chart data)
-        
-        Args:
-          model (TimePriceSeriesRequestModel): The data to be send as TimePriceSeriesRequestModel.
-          key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          TimePriceSeriesResponseModel: The response as TimePriceSeriesResponseModel.

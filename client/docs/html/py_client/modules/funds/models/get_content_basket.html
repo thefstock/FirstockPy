@@ -37,7 +37,7 @@ from datetime import datetime
 from ....common.enums import ResponseStatus
 from ....utils.decoders import build_loader, datetime_decoder
 
-__all__ = [&#39;GetContentBasketRequestModel&#39;, &#39;GetContentBasketResponseModel&#39;]
+__all__ = [&#39;GetContentBasketRequestModel&#39;, &#39;GetContentBasketResponseModel&#39;, &#39;Basket&#39;]
 
 class Basket(BaseModel):
   &#34;&#34;&#34;
@@ -112,13 +112,13 @@ class GetContentBasketResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Exchange Name</p></div>
-</dd>
 <dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>The user id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Exchange Name</p></div>
 </dd>
 </dl>
 </dd>
@@ -160,11 +160,15 @@ class GetContentBasketResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The get content basket success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.basketlist"><code class="name">var <span class="ident">basketlist</span> : Optional[List[py_client.modules.funds.models.get_content_basket.Basket]]</code></dt>
+<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.basketlist"><code class="name">var <span class="ident">basketlist</span> : Optional[List[<a title="py_client.modules.funds.models.get_content_basket.Basket" href="#py_client.modules.funds.models.get_content_basket.Basket">Basket</a>]]</code></dt>
 <dd>
 <div class="desc"><p>List of baskets</p></div>
 </dd>
@@ -172,13 +176,41 @@ class GetContentBasketResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
-<dt id="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+</dl>
+</dd>
+<dt id="py_client.modules.funds.models.get_content_basket.Basket"><code class="flex name class">
+<span>class <span class="ident">Basket</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
 <dd>
-<div class="desc"><p>The get content basket success or failure status</p></div>
+<div class="desc"><p>Singel basket item</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Basket(BaseModel):
+  &#34;&#34;&#34;
+  Singel basket item
+  &#34;&#34;&#34;
+  basket: str
+  &#34;&#34;&#34;The basket&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.funds.models.get_content_basket.Basket.basket"><code class="name">var <span class="ident">basket</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The basket</p></div>
 </dd>
 </dl>
 </dd>
@@ -201,18 +233,24 @@ class GetContentBasketResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel">GetContentBasketRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.uid" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketRequestModel.exch">exch</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel">GetContentBasketResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.basketlist" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.basketlist">basketlist</a></code></li>
 <li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.emsg" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config" href="#py_client.modules.funds.models.get_content_basket.GetContentBasketResponseModel.Config">Config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.modules.funds.models.get_content_basket.Basket" href="#py_client.modules.funds.models.get_content_basket.Basket">Basket</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.modules.funds.models.get_content_basket.Basket.basket" href="#py_client.modules.funds.models.get_content_basket.Basket.basket">basket</a></code></li>
 </ul>
 </li>
 </ul>

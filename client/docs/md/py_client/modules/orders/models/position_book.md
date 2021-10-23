@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `actid: str`
-    :   Account Id of logged in user
-
     `uid: str`
     :   Logged in User Id
+
+    `actid: str`
+    :   Account Id of logged in user
 
 `PositionBookResponseModel(**data: Any)`
 :   The response model for position book endpoint
@@ -39,17 +39,53 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The position book success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `exch: Optional[str]`
+    :   Exchange Segment
+
+    `tsym: Optional[str]`
+    :   Trading symbol / contract on which order is placed.
+
+    `token: Optional[str]`
+    :   Token
+
+    `uid: Optional[str]`
+    :   User Id
 
     `actid: Optional[str]`
     :   Account Id
 
-    `cfbuyamt: Optional[str]`
-    :   Carry Forward Buy Amount
+    `prd: Optional[str]`
+    :   Display product alias name, using prarr returned in user details.
 
-    `cfbuyavgprc: Optional[str]`
-    :   Carry Forward Buy average price
+    `netqty: Optional[str]`
+    :   Net Position quantity
+
+    `netavgprc: Optional[str]`
+    :   Net position average price
+
+    `daybuyqty: Optional[str]`
+    :   Day Buy Quantity
+
+    `daysellqty: Optional[str]`
+    :   Day Sell Quantity
+
+    `daybuyavgprc: Optional[str]`
+    :   Day Buy average price
+
+    `daysellavgprc: Optional[str]`
+    :   Day buy average price
+
+    `daybuyamt: Optional[str]`
+    :   Day Buy Amount
+
+    `daysellamt: Optional[str]`
+    :   Day Sell Amount
 
     `cfbuyqty: Optional[str]`
     :   Carry Forward Buy Quantity
@@ -57,102 +93,66 @@ Classes
     `cforgavgprc: Optional[str]`
     :   Original Avg Price
 
-    `cfsellamt: Optional[str]`
-    :   Carry Forward Sell Amount
+    `cfsellqty: Optional[str]`
+    :   Carry Forward Sell Quantity
+
+    `cfbuyavgprc: Optional[str]`
+    :   Carry Forward Buy average price
 
     `cfsellavgprc: Optional[str]`
     :   Carry Forward Buy average price
 
-    `cfsellqty: Optional[str]`
-    :   Carry Forward Sell Quantity
+    `cfbuyamt: Optional[str]`
+    :   Carry Forward Buy Amount
 
-    `daybuyamt: Optional[str]`
-    :   Day Buy Amount
-
-    `daybuyavgprc: Optional[str]`
-    :   Day Buy average price
-
-    `daybuyqty: Optional[str]`
-    :   Day Buy Quantity
-
-    `daysellamt: Optional[str]`
-    :   Day Sell Amount
-
-    `daysellavgprc: Optional[str]`
-    :   Day buy average price
-
-    `daysellqty: Optional[str]`
-    :   Day Sell Quantity
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
-
-    `exch: Optional[str]`
-    :   Exchange Segment
+    `cfsellamt: Optional[str]`
+    :   Carry Forward Sell Amount
 
     `lp: Optional[str]`
     :   LTP
 
-    `ls: Optional[str]`
-    :   Lot size
+    `rpnl: Optional[str]`
+    :   RealizedPNL
 
-    `mult: Optional[str]`
-    :
-
-    `netavgprc: Optional[str]`
-    :   Net position average price
-
-    `netqty: Optional[str]`
-    :   Net Position quantity
-
-    `openbuyamt: Optional[str]`
-    :
-
-    `openbuyavgprc: Optional[str]`
-    :
+    `urmtom: Optional[str]`
+    :   UnrealizedMTOM. 
+        (Can be recalculated in LTP update := netqty * (lp from web socket - netavgprc) * prcftr bep Break even price
 
     `openbuyqty: Optional[str]`
-    :
-
-    `opensellamt: Optional[str]`
-    :
-
-    `opensellavgprc: Optional[str]`
     :
 
     `opensellqty: Optional[str]`
     :
 
+    `openbuyamt: Optional[str]`
+    :
+
+    `opensellamt: Optional[str]`
+    :
+
+    `openbuyavgprc: Optional[str]`
+    :
+
+    `opensellavgprc: Optional[str]`
+    :
+
+    `mult: Optional[str]`
+    :
+
     `pp: Optional[str]`
     :   Price precision
-
-    `prcftr: Optional[str]`
-    :   gn*pn/(gd*pd)
-
-    `prd: Optional[str]`
-    :   Display product alias name, using prarr returned in user details.
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `rpnl: Optional[str]`
-    :   RealizedPNL
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The position book success or failure status
 
     `ti: Optional[str]`
     :   Tick size
 
-    `token: Optional[str]`
-    :   Token
+    `ls: Optional[str]`
+    :   Lot size
 
-    `tsym: Optional[str]`
-    :   Trading symbol / contract on which order is placed.
+    `prcftr: Optional[str]`
+    :   gn*pn/(gd*pd)
 
-    `uid: Optional[str]`
-    :   User Id
+    `emsg: Optional[str]`
+    :   Error message if the request failed
 
-    `urmtom: Optional[str]`
-    :   UnrealizedMTOM. 
-        (Can be recalculated in LTP update := netqty * (lp from web socket - netavgprc) * prcftr bep Break even price
+    `Config`
+    :   model configuration
