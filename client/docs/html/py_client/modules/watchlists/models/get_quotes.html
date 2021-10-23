@@ -209,6 +209,10 @@ class GetQuotesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Exchange</p></div>
@@ -216,10 +220,6 @@ class GetQuotesResponseModel(BaseModel):
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Contract Token</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -360,73 +360,13 @@ class GetQuotesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The get scrips success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1"><code class="name">var <span class="ident">bo1</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>Best Buy Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2"><code class="name">var <span class="ident">bo2</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3"><code class="name">var <span class="ident">bo3</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4"><code class="name">var <span class="ident">bo4</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5"><code class="name">var <span class="ident">bo5</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1"><code class="name">var <span class="ident">bp1</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2"><code class="name">var <span class="ident">bp2</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3"><code class="name">var <span class="ident">bp3</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4"><code class="name">var <span class="ident">bp4</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5"><code class="name">var <span class="ident">bp5</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1"><code class="name">var <span class="ident">bq1</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2"><code class="name">var <span class="ident">bq2</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3"><code class="name">var <span class="ident">bq3</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4"><code class="name">var <span class="ident">bq4</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5"><code class="name">var <span class="ident">bq5</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname"><code class="name">var <span class="ident">cname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Company Name</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
@@ -436,9 +376,21 @@ class GetQuotesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Exchange</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h"><code class="name">var <span class="ident">h</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Day High Price</p></div>
+<div class="desc"><p>Trading Symbol</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname"><code class="name">var <span class="ident">cname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Company Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam"><code class="name">var <span class="ident">symnam</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Symbol Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Segment</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
 <dd>
@@ -448,9 +400,33 @@ class GetQuotesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>ISIN</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l"><code class="name">var <span class="ident">l</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Day Low Price</p></div>
+<div class="desc"><p>Tick Size</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lot Size</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Multiplier</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Contract Token</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d"><code class="name">var <span class="ident">prcftr_d</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>((GN / GD) * (PN/PD))</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc"><code class="name">var <span class="ident">uc</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Upper circuit limit</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc"><code class="name">var <span class="ident">lc</span> : Optional[float]</code></dt>
 <dd>
@@ -460,9 +436,17 @@ class GetQuotesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>LTP</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h"><code class="name">var <span class="ident">h</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Lot Size</p></div>
+<div class="desc"><p>Day High Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l"><code class="name">var <span class="ident">l</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Day Low Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v"><code class="name">var <span class="ident">v</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Volume</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq"><code class="name">var <span class="ident">ltq</span> : Optional[float]</code></dt>
 <dd>
@@ -472,113 +456,129 @@ class GetQuotesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Last trade time</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1"><code class="name">var <span class="ident">bp1</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Multiplier</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d"><code class="name">var <span class="ident">prcftr_d</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>((GN / GD) * (PN/PD))</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Segment</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1"><code class="name">var <span class="ident">so1</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Sell Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2"><code class="name">var <span class="ident">so2</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Sell Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3"><code class="name">var <span class="ident">so3</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Sell Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4"><code class="name">var <span class="ident">so4</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Sell Orders</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5"><code class="name">var <span class="ident">so5</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Best Sell Orders</p></div>
+<div class="desc"><p>Best Buy Price</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1"><code class="name">var <span class="ident">sp1</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Price</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2"><code class="name">var <span class="ident">bp2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2"><code class="name">var <span class="ident">sp2</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3"><code class="name">var <span class="ident">bp3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3"><code class="name">var <span class="ident">sp3</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Price</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4"><code class="name">var <span class="ident">bp4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4"><code class="name">var <span class="ident">sp4</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5"><code class="name">var <span class="ident">bp5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Price</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5"><code class="name">var <span class="ident">sp5</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Price</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1"><code class="name">var <span class="ident">bq1</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1"><code class="name">var <span class="ident">sq1</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2"><code class="name">var <span class="ident">bq2</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2"><code class="name">var <span class="ident">sq2</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Quantity</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3"><code class="name">var <span class="ident">bq3</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3"><code class="name">var <span class="ident">sq3</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4"><code class="name">var <span class="ident">bq4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4"><code class="name">var <span class="ident">sq4</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Quantity</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5"><code class="name">var <span class="ident">bq5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Quantity</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5"><code class="name">var <span class="ident">sq5</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Best Sell Quantity</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1"><code class="name">var <span class="ident">bo1</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>The get scrips success or failure status</p></div>
+<div class="desc"><p>Best Buy Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam"><code class="name">var <span class="ident">symnam</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1"><code class="name">var <span class="ident">so1</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Symbol Name</p></div>
+<div class="desc"><p>Best Sell Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2"><code class="name">var <span class="ident">bo2</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Tick Size</p></div>
+<div class="desc"><p>Best Buy Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2"><code class="name">var <span class="ident">so2</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Contract Token</p></div>
+<div class="desc"><p>Best Sell Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3"><code class="name">var <span class="ident">bo3</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Trading Symbol</p></div>
+<div class="desc"><p>Best Buy Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc"><code class="name">var <span class="ident">uc</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3"><code class="name">var <span class="ident">so3</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Upper circuit limit</p></div>
+<div class="desc"><p>Best Sell Orders</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v"><code class="name">var <span class="ident">v</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4"><code class="name">var <span class="ident">bo4</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Volume</p></div>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4"><code class="name">var <span class="ident">so4</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5"><code class="name">var <span class="ident">bo5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Buy Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5"><code class="name">var <span class="ident">so5</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Best Sell Orders</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -601,69 +601,69 @@ class GetQuotesResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel">GetQuotesRequestModel</a></code></h4>
 <ul class="">
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel">GetQuotesResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1">bo1</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2">bo2</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3">bo3</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4">bo4</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5">bo5</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1">bp1</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2">bp2</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3">bp3</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4">bp4</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5">bp5</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1">bq1</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2">bq2</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3">bq3</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4">bq4</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5">bq5</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname">cname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.emsg">emsg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.exch" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h">h</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.cname">cname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam">symnam</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg">seg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.instname">instname</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.isin" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.isin">isin</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l">l</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti">ti</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp">pp</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult">mult</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d">prcftr_d</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc">uc</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lc">lc</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lp" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.lp">lp</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.h">h</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.l">l</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v">v</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltq">ltq</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltt" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ltt">ltt</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.mult">mult</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.pp">pp</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.prcftr_d">prcftr_d</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.seg">seg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1">so1</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2">so2</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3">so3</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4">so4</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5">so5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp1">bp1</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp1">sp1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp2">bp2</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp2">sp2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp3">bp3</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp3">sp3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp4">bp4</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp4">sp4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bp5">bp5</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sp5">sp5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq1">bq1</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq1">sq1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq2">bq2</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq2">sq2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq3">bq3</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq3">sq3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq4">bq4</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq4">sq4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bq5">bq5</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.sq5">sq5</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.symnam">symnam</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.ti">ti</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.uc">uc</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.v">v</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo1">bo1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so1">so1</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo2">bo2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so2">so2</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo3">bo3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so3">so3</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo4">bo4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so4">so4</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.bo5">bo5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.so5">so5</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config" href="#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

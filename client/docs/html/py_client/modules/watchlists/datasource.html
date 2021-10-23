@@ -356,80 +356,6 @@ class WatchListDataSource(NorenRestDataSource):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips"><code class="name flex">
-<span>def <span class="ident">add_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.add_scrips.AddScripsRequestModel" href="models/add_scrips.html#py_client.modules.watchlists.models.add_scrips.AddScripsRequestModel">AddScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.add_scrips.AddScripsResponseModel" href="models/add_scrips.html#py_client.modules.watchlists.models.add_scrips.AddScripsResponseModel">AddScripsResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Add multiple scrips to a watchlist</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>AddScripsRequestModel</code></dt>
-<dd>The data to be send as AddScripsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>AddScripsResponseModel</code></dt>
-<dd>The response as AddScripsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def add_scrips(self, model: AddScripsRequestModel, key: str = None) -&gt; AddScripsResponseModel:
-  &#34;&#34;&#34;
-  Add multiple scrips to a watchlist
-
-  Args:
-    model (AddScripsRequestModel): The data to be send as AddScripsRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    AddScripsResponseModel: The response as AddScripsResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.ADD_SCRIPS, key)
-  # convert the request to response model
-  return AddScripsResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips"><code class="name flex">
-<span>def <span class="ident">delete_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.delete_scrips.DeleteScripsRequestModel" href="models/delete_scrips.html#py_client.modules.watchlists.models.delete_scrips.DeleteScripsRequestModel">DeleteScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.delete_scrips.DeleteScripsResponseModel" href="models/delete_scrips.html#py_client.modules.watchlists.models.delete_scrips.DeleteScripsResponseModel">DeleteScripsResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Delete scrips from a watchlist</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>DeleteScripsRequestModel</code></dt>
-<dd>The data to be send as DeleteScripsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>DeleteScripsResponseModel</code></dt>
-<dd>The response as DeleteScripsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def delete_scrips(self, model: DeleteScripsRequestModel, key: str = None) -&gt; DeleteScripsResponseModel:
-  &#34;&#34;&#34;
-  Delete scrips from a watchlist
-
-  Args:
-    model (DeleteScripsRequestModel): The data to be send as DeleteScripsRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    DeleteScripsResponseModel: The response as DeleteScripsResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.DELETE_SCRIPS, key)
-  # convert the request to response model
-  return DeleteScripsResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 <dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_names"><code class="name flex">
 <span>def <span class="ident">get_names</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_names.GetWatchListNamesRequestModel" href="models/get_names.html#py_client.modules.watchlists.models.get_names.GetWatchListNamesRequestModel">GetWatchListNamesRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_names.GetWatchListNamesResponseModel" href="models/get_names.html#py_client.modules.watchlists.models.get_names.GetWatchListNamesResponseModel">GetWatchListNamesResponseModel</a></span>
 </code></dt>
@@ -465,154 +391,6 @@ class WatchListDataSource(NorenRestDataSource):
   response_json = self._run_request(model, endpoints.GET_NAMES, key)
   # convert the request to response model
   return GetWatchListNamesResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips"><code class="name flex">
-<span>def <span class="ident">get_predefined_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel" href="models/get_predefined_scrips.html#py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel">GetPredefinedScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel" href="models/get_predefined_scrips.html#py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel">GetPredefinedScripsResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get list of predefined MW scrips</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetPredefinedScripsRequestModel</code></dt>
-<dd>The data to be send as GetPredefinedScripsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetPredefinedScripsResponseModel</code></dt>
-<dd>The response as GetPredefinedScripsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_predefined_scrips(self, model: GetPredefinedScripsRequestModel, key: str = None) -&gt; GetPredefinedScripsResponseModel:
-  &#34;&#34;&#34;
-  Get list of predefined MW scrips
-
-  Args:
-    model (GetPredefinedScripsRequestModel): The data to be send as GetPredefinedScripsRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetPredefinedScripsResponseModel: The response as GetPredefinedScripsResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_PREDEFINED_SCRIPS, key)
-  # convert the request to response model
-  return GetPredefinedScripsResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists"><code class="name flex">
-<span>def <span class="ident">get_predefined_watchlists</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsRequestModel" href="models/get_predefined_watchlists.html#py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsRequestModel">GetPredefinedWatchListsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel" href="models/get_predefined_watchlists.html#py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel">GetPredefinedWatchListsResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get list of predefined MWs</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetPredefinedWatchListsRequestModel</code></dt>
-<dd>The data to be send as GetPredefinedWatchListsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetPredefinedWatchListsResponseModel</code></dt>
-<dd>The response as GetPredefinedWatchListsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_predefined_watchlists(self, model: GetPredefinedWatchListsRequestModel, key: str = None) -&gt; GetPredefinedWatchListsResponseModel:
-  &#34;&#34;&#34;
-  Get list of predefined MWs
-
-  Args:
-    model (GetPredefinedWatchListsRequestModel): The data to be send as GetPredefinedWatchListsRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetPredefinedWatchListsResponseModel: The response as GetPredefinedWatchListsResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_PREDEFINED_WATCHLISTS, key)
-  # convert the request to response model
-  return GetPredefinedWatchListsResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes"><code class="name flex">
-<span>def <span class="ident">get_quotes</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel" href="models/get_quotes.html#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel">GetQuotesRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel" href="models/get_quotes.html#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel">GetQuotesResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get quotes</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetQuotesRequestModel</code></dt>
-<dd>The data to be send as GetQuotesRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetQuotesResponseModel</code></dt>
-<dd>The response as GetQuotesResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_quotes(self, model: GetQuotesRequestModel, key: str = None) -&gt; GetQuotesResponseModel:
-  &#34;&#34;&#34;
-  Get quotes
-
-  Args:
-    model (GetQuotesRequestModel): The data to be send as GetQuotesRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetQuotesResponseModel: The response as GetQuotesResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_QUOTES, key)
-  # convert the request to response model
-  return GetQuotesResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info"><code class="name flex">
-<span>def <span class="ident">get_security_info</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel" href="models/get_security_info.html#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel">GetSecurityInfoRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel" href="models/get_security_info.html#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel">GetSecurityInfoResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get security info</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetSecurityInfoRequestModel</code></dt>
-<dd>The data to be send as GetSecurityInfoRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetSecurityInfoResponseModel</code></dt>
-<dd>The response as GetSecurityInfoResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_security_info(self, model: GetSecurityInfoRequestModel, key: str = None) -&gt; GetSecurityInfoResponseModel:
-  &#34;&#34;&#34;
-  Get security info
-
-  Args:
-    model (GetSecurityInfoRequestModel): The data to be send as GetSecurityInfoRequestModel.
-    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetSecurityInfoResponseModel: The response as GetSecurityInfoResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_SECURITY_INFO, key)
-  # convert the request to response model
-  return GetSecurityInfoResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_watchlist"><code class="name flex">
@@ -690,6 +468,228 @@ class WatchListDataSource(NorenRestDataSource):
   return SearchScripsResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips"><code class="name flex">
+<span>def <span class="ident">add_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.add_scrips.AddScripsRequestModel" href="models/add_scrips.html#py_client.modules.watchlists.models.add_scrips.AddScripsRequestModel">AddScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.add_scrips.AddScripsResponseModel" href="models/add_scrips.html#py_client.modules.watchlists.models.add_scrips.AddScripsResponseModel">AddScripsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add multiple scrips to a watchlist</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>AddScripsRequestModel</code></dt>
+<dd>The data to be send as AddScripsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>AddScripsResponseModel</code></dt>
+<dd>The response as AddScripsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_scrips(self, model: AddScripsRequestModel, key: str = None) -&gt; AddScripsResponseModel:
+  &#34;&#34;&#34;
+  Add multiple scrips to a watchlist
+
+  Args:
+    model (AddScripsRequestModel): The data to be send as AddScripsRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    AddScripsResponseModel: The response as AddScripsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.ADD_SCRIPS, key)
+  # convert the request to response model
+  return AddScripsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips"><code class="name flex">
+<span>def <span class="ident">delete_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.delete_scrips.DeleteScripsRequestModel" href="models/delete_scrips.html#py_client.modules.watchlists.models.delete_scrips.DeleteScripsRequestModel">DeleteScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.delete_scrips.DeleteScripsResponseModel" href="models/delete_scrips.html#py_client.modules.watchlists.models.delete_scrips.DeleteScripsResponseModel">DeleteScripsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete scrips from a watchlist</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>DeleteScripsRequestModel</code></dt>
+<dd>The data to be send as DeleteScripsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>DeleteScripsResponseModel</code></dt>
+<dd>The response as DeleteScripsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_scrips(self, model: DeleteScripsRequestModel, key: str = None) -&gt; DeleteScripsResponseModel:
+  &#34;&#34;&#34;
+  Delete scrips from a watchlist
+
+  Args:
+    model (DeleteScripsRequestModel): The data to be send as DeleteScripsRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    DeleteScripsResponseModel: The response as DeleteScripsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.DELETE_SCRIPS, key)
+  # convert the request to response model
+  return DeleteScripsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info"><code class="name flex">
+<span>def <span class="ident">get_security_info</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel" href="models/get_security_info.html#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel">GetSecurityInfoRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel" href="models/get_security_info.html#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel">GetSecurityInfoResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get security info</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetSecurityInfoRequestModel</code></dt>
+<dd>The data to be send as GetSecurityInfoRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetSecurityInfoResponseModel</code></dt>
+<dd>The response as GetSecurityInfoResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_security_info(self, model: GetSecurityInfoRequestModel, key: str = None) -&gt; GetSecurityInfoResponseModel:
+  &#34;&#34;&#34;
+  Get security info
+
+  Args:
+    model (GetSecurityInfoRequestModel): The data to be send as GetSecurityInfoRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetSecurityInfoResponseModel: The response as GetSecurityInfoResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.GET_SECURITY_INFO, key)
+  # convert the request to response model
+  return GetSecurityInfoResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes"><code class="name flex">
+<span>def <span class="ident">get_quotes</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel" href="models/get_quotes.html#py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel">GetQuotesRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel" href="models/get_quotes.html#py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel">GetQuotesResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get quotes</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetQuotesRequestModel</code></dt>
+<dd>The data to be send as GetQuotesRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetQuotesResponseModel</code></dt>
+<dd>The response as GetQuotesResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_quotes(self, model: GetQuotesRequestModel, key: str = None) -&gt; GetQuotesResponseModel:
+  &#34;&#34;&#34;
+  Get quotes
+
+  Args:
+    model (GetQuotesRequestModel): The data to be send as GetQuotesRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetQuotesResponseModel: The response as GetQuotesResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.GET_QUOTES, key)
+  # convert the request to response model
+  return GetQuotesResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists"><code class="name flex">
+<span>def <span class="ident">get_predefined_watchlists</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsRequestModel" href="models/get_predefined_watchlists.html#py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsRequestModel">GetPredefinedWatchListsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel" href="models/get_predefined_watchlists.html#py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel">GetPredefinedWatchListsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get list of predefined MWs</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetPredefinedWatchListsRequestModel</code></dt>
+<dd>The data to be send as GetPredefinedWatchListsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetPredefinedWatchListsResponseModel</code></dt>
+<dd>The response as GetPredefinedWatchListsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_predefined_watchlists(self, model: GetPredefinedWatchListsRequestModel, key: str = None) -&gt; GetPredefinedWatchListsResponseModel:
+  &#34;&#34;&#34;
+  Get list of predefined MWs
+
+  Args:
+    model (GetPredefinedWatchListsRequestModel): The data to be send as GetPredefinedWatchListsRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetPredefinedWatchListsResponseModel: The response as GetPredefinedWatchListsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.GET_PREDEFINED_WATCHLISTS, key)
+  # convert the request to response model
+  return GetPredefinedWatchListsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips"><code class="name flex">
+<span>def <span class="ident">get_predefined_scrips</span></span>(<span>self, model: <a title="py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel" href="models/get_predefined_scrips.html#py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel">GetPredefinedScripsRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel" href="models/get_predefined_scrips.html#py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel">GetPredefinedScripsResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get list of predefined MW scrips</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetPredefinedScripsRequestModel</code></dt>
+<dd>The data to be send as GetPredefinedScripsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetPredefinedScripsResponseModel</code></dt>
+<dd>The response as GetPredefinedScripsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_predefined_scrips(self, model: GetPredefinedScripsRequestModel, key: str = None) -&gt; GetPredefinedScripsResponseModel:
+  &#34;&#34;&#34;
+  Get list of predefined MW scrips
+
+  Args:
+    model (GetPredefinedScripsRequestModel): The data to be send as GetPredefinedScripsRequestModel.
+    key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetPredefinedScripsResponseModel: The response as GetPredefinedScripsResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.GET_PREDEFINED_SCRIPS, key)
+  # convert the request to response model
+  return GetPredefinedScripsResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
 </dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -722,15 +722,15 @@ class WatchListDataSource(NorenRestDataSource):
 <li>
 <h4><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource" href="#py_client.modules.watchlists.datasource.WatchListDataSource">WatchListDataSource</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips">add_scrips</a></code></li>
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips">delete_scrips</a></code></li>
 <li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_names" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_names">get_names</a></code></li>
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips">get_predefined_scrips</a></code></li>
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists">get_predefined_watchlists</a></code></li>
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes">get_quotes</a></code></li>
-<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info">get_security_info</a></code></li>
 <li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_watchlist" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_watchlist">get_watchlist</a></code></li>
 <li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.search_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.search_scrips">search_scrips</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.add_scrips">add_scrips</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.delete_scrips">delete_scrips</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_security_info">get_security_info</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_quotes">get_quotes</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_watchlists">get_predefined_watchlists</a></code></li>
+<li><code><a title="py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips" href="#py_client.modules.watchlists.datasource.WatchListDataSource.get_predefined_scrips">get_predefined_scrips</a></code></li>
 </ul>
 </li>
 </ul>

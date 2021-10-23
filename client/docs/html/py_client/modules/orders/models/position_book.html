@@ -173,13 +173,13 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.position_book.PositionBookRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Account Id of logged in user</p></div>
-</dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Logged in User Id</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Account Id of logged in user</p></div>
 </dd>
 </dl>
 </dd>
@@ -284,21 +284,69 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The position book success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange Segment</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol / contract on which order is placed.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Token</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.uid"><code class="name">var <span class="ident">uid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>User Id</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Account Id</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt"><code class="name">var <span class="ident">cfbuyamt</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Carry Forward Buy Amount</p></div>
+<div class="desc"><p>Display product alias name, using prarr returned in user details.</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc"><code class="name">var <span class="ident">cfbuyavgprc</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty"><code class="name">var <span class="ident">netqty</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Carry Forward Buy average price</p></div>
+<div class="desc"><p>Net Position quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc"><code class="name">var <span class="ident">netavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Net position average price</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty"><code class="name">var <span class="ident">daybuyqty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day Buy Quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty"><code class="name">var <span class="ident">daysellqty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc"><code class="name">var <span class="ident">daybuyavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day Buy average price</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc"><code class="name">var <span class="ident">daysellavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day buy average price</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt"><code class="name">var <span class="ident">daybuyamt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day Buy Amount</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt"><code class="name">var <span class="ident">daysellamt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Day Sell Amount</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyqty"><code class="name">var <span class="ident">cfbuyqty</span> : Optional[str]</code></dt>
 <dd>
@@ -308,87 +356,40 @@ request</p>
 <dd>
 <div class="desc"><p>Original Avg Price</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt"><code class="name">var <span class="ident">cfsellamt</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellqty"><code class="name">var <span class="ident">cfsellqty</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Carry Forward Sell Amount</p></div>
+<div class="desc"><p>Carry Forward Sell Quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc"><code class="name">var <span class="ident">cfbuyavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Carry Forward Buy average price</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellavgprc"><code class="name">var <span class="ident">cfsellavgprc</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Carry Forward Buy average price</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellqty"><code class="name">var <span class="ident">cfsellqty</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt"><code class="name">var <span class="ident">cfbuyamt</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Carry Forward Sell Quantity</p></div>
+<div class="desc"><p>Carry Forward Buy Amount</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt"><code class="name">var <span class="ident">daybuyamt</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt"><code class="name">var <span class="ident">cfsellamt</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Day Buy Amount</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc"><code class="name">var <span class="ident">daybuyavgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Day Buy average price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty"><code class="name">var <span class="ident">daybuyqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Day Buy Quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt"><code class="name">var <span class="ident">daysellamt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Day Sell Amount</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc"><code class="name">var <span class="ident">daysellavgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Day buy average price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty"><code class="name">var <span class="ident">daysellqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Day Sell Quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exchange Segment</p></div>
+<div class="desc"><p>Carry Forward Sell Amount</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.lp"><code class="name">var <span class="ident">lp</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>LTP</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.rpnl"><code class="name">var <span class="ident">rpnl</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Lot size</p></div>
+<div class="desc"><p>RealizedPNL</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.urmtom"><code class="name">var <span class="ident">urmtom</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc"><code class="name">var <span class="ident">netavgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Net position average price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty"><code class="name">var <span class="ident">netqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Net Position quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt"><code class="name">var <span class="ident">openbuyamt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc"><code class="name">var <span class="ident">openbuyavgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
+<div class="desc"><p>UnrealizedMTOM.
+(Can be recalculated in LTP update := netqty * (lp from web socket - netavgprc) * prcftr bep Break even price</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyqty"><code class="name">var <span class="ident">openbuyqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt"><code class="name">var <span class="ident">opensellamt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc"><code class="name">var <span class="ident">opensellavgprc</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -396,50 +397,49 @@ request</p>
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt"><code class="name">var <span class="ident">openbuyamt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt"><code class="name">var <span class="ident">opensellamt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc"><code class="name">var <span class="ident">openbuyavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc"><code class="name">var <span class="ident">opensellavgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr"><code class="name">var <span class="ident">prcftr</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>gn<em>pn/(gd</em>pd)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Display product alias name, using prarr returned in user details.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.rpnl"><code class="name">var <span class="ident">rpnl</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>RealizedPNL</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
-<dd>
-<div class="desc"><p>The position book success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Tick size</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Token</p></div>
+<div class="desc"><p>Lot size</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr"><code class="name">var <span class="ident">prcftr</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Trading symbol / contract on which order is placed.</p></div>
+<div class="desc"><p>gn<em>pn/(gd</em>pd)</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.uid"><code class="name">var <span class="ident">uid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>User Id</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.urmtom"><code class="name">var <span class="ident">urmtom</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.position_book.PositionBookResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>UnrealizedMTOM.
-(Can be recalculated in LTP update := netqty * (lp from web socket - netavgprc) * prcftr bep Break even price</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -462,52 +462,52 @@ request</p>
 <li>
 <h4><code><a title="py_client.modules.orders.models.position_book.PositionBookRequestModel" href="#py_client.modules.orders.models.position_book.PositionBookRequestModel">PositionBookRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookRequestModel.actid" href="#py_client.modules.orders.models.position_book.PositionBookRequestModel.actid">actid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookRequestModel.uid" href="#py_client.modules.orders.models.position_book.PositionBookRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookRequestModel.actid" href="#py_client.modules.orders.models.position_book.PositionBookRequestModel.actid">actid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel">PositionBookResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.Config" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.stat" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.exch" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.token" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.uid" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.actid" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt">cfbuyamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc">cfbuyavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.prd" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty">netqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc">netavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty">daybuyqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty">daysellqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc">daybuyavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc">daysellavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt">daybuyamt</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt">daysellamt</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyqty">cfbuyqty</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cforgavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cforgavgprc">cforgavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt">cfsellamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellavgprc">cfsellavgprc</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellqty">cfsellqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyamt">daybuyamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyavgprc">daybuyavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daybuyqty">daybuyqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellamt">daysellamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellavgprc">daysellavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.daysellqty">daysellqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.exch" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyavgprc">cfbuyavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellavgprc">cfsellavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfbuyamt">cfbuyamt</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.cfsellamt">cfsellamt</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.lp" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.lp">lp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.ls" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.ls">ls</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.mult" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.mult">mult</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.netavgprc">netavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.netqty">netqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt">openbuyamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc">openbuyavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyqty">openbuyqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt">opensellamt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc">opensellavgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellqty">opensellqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.pp" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.pp">pp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr">prcftr</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.prd" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.prd">prd</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.rpnl" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.rpnl">rpnl</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.stat" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.ti" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.ti">ti</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.token" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.uid" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.urmtom" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.urmtom">urmtom</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyqty">openbuyqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellqty" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellqty">opensellqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyamt">openbuyamt</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellamt">opensellamt</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.openbuyavgprc">openbuyavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.opensellavgprc">opensellavgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.mult" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.mult">mult</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.pp" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.pp">pp</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.ti" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.ti">ti</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.ls" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.prcftr">prcftr</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.position_book.PositionBookResponseModel.Config" href="#py_client.modules.orders.models.position_book.PositionBookResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

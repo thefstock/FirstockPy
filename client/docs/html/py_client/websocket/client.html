@@ -445,58 +445,42 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.websocket.client.NorenWebsocketClient.closed"><code class="name flex">
-<span>def <span class="ident">closed</span></span>(<span>self)</span>
+<dt id="py_client.websocket.client.NorenWebsocketClient.on_connect"><code class="name flex">
+<span>def <span class="ident">on_connect</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.websocket.client.NorenWebsocketClient" href="#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a>'), Dict[str, Any]], None])</span>
 </code></dt>
 <dd>
-<div class="desc"><p>This method runs once the connection is closed.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
-</div></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def closed(self):
-  &#34;&#34;&#34;
-  This method runs once the connection is closed.
-  ..warning:: Do not call this method directly
-  &#34;&#34;&#34;
-  for handler in self.__on_close_handlers:
-    handler(self)</code></pre>
-</details>
-</dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.connect"><code class="name flex">
-<span>def <span class="ident">connect</span></span>(<span>self, uid: str, actid: str)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Connect to websocket</p>
+<div class="desc"><p>Add on open handler</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>uid</code></strong> :&ensp;<code>str</code></dt>
-<dd>The user id for the user</dd>
-<dt><strong><code>actid</code></strong> :&ensp;<code>str</code></dt>
-<dd>The account id for the user</dd>
-</dl></div>
+<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.websocket.client.NorenWebsocketClient" href="#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a>, Dict[str, Any]], None]</code></dt>
+<dd>The handler to run on connection opened</dd>
+</dl>
+<h2 id="usage">Usage</h2>
+<p>Should be used as decorator</p>
+<pre><code class="language-python">@ws.on_connect
+def on_connect(client, ack: Dict[str, Any]):
+  print('Connected: ', ack)
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def connect(self, uid: str, actid: str):
+<pre><code class="python">def on_connect(self, handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
   &#34;&#34;&#34;
-  Connect to websocket
+  Add on open handler
 
   Args:
-      uid (str): The user id for the user
-      actid (str): The account id for the user
+    handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+
+  Usage:
+    Should be used as decorator
+    ```python
+    @ws.on_connect
+    def on_connect(client, ack: Dict[str, Any]):
+      print(&#39;Connected: &#39;, ack)
+    ```
   &#34;&#34;&#34;
-  model = WebsocketConnectionModel(
-    uid=uid,
-    actid=actid,
-    susertoken=self.get_state(&#39;token&#39;)
-  )
-  self.__connection_model = model
-  return super().connect()</code></pre>
+  self.__on_connect_handlers.append(handler)</code></pre>
 </details>
 </dd>
 <dt id="py_client.websocket.client.NorenWebsocketClient.on_close"><code class="name flex">
@@ -535,44 +519,6 @@ def on_close(client):
     ```
   &#34;&#34;&#34;
   self.__on_close_handlers.append(handler)</code></pre>
-</details>
-</dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.on_connect"><code class="name flex">
-<span>def <span class="ident">on_connect</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.websocket.client.NorenWebsocketClient" href="#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a>'), Dict[str, Any]], None])</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Add on open handler</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.websocket.client.NorenWebsocketClient" href="#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a>, Dict[str, Any]], None]</code></dt>
-<dd>The handler to run on connection opened</dd>
-</dl>
-<h2 id="usage">Usage</h2>
-<p>Should be used as decorator</p>
-<pre><code class="language-python">@ws.on_connect
-def on_connect(client, ack: Dict[str, Any]):
-  print('Connected: ', ack)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def on_connect(self, handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
-  &#34;&#34;&#34;
-  Add on open handler
-
-  Args:
-    handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
-
-  Usage:
-    Should be used as decorator
-    ```python
-    @ws.on_connect
-    def on_connect(client, ack: Dict[str, Any]):
-      print(&#39;Connected: &#39;, ack)
-    ```
-  &#34;&#34;&#34;
-  self.__on_connect_handlers.append(handler)</code></pre>
 </details>
 </dd>
 <dt id="py_client.websocket.client.NorenWebsocketClient.on_message"><code class="name flex">
@@ -620,103 +566,37 @@ def on_depth_feed(client, message: Dict[str, Any]):
   return register</code></pre>
 </details>
 </dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.opened"><code class="name flex">
-<span>def <span class="ident">opened</span></span>(<span>self)</span>
+<dt id="py_client.websocket.client.NorenWebsocketClient.connect"><code class="name flex">
+<span>def <span class="ident">connect</span></span>(<span>self, uid: str, actid: str)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>This method runs once the connection is established</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
-</div></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def opened(self):
-  &#34;&#34;&#34;
-  This method runs once the connection is established
-  ..warning:: Do not call this method directly
-  &#34;&#34;&#34;
-  if self.__connection_model is not None:
-    self.send(self.__connection_model.json())</code></pre>
-</details>
-</dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.received_message"><code class="name flex">
-<span>def <span class="ident">received_message</span></span>(<span>self, message: ws4py.messaging.TextMessage)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>This method runs for every message</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
-</div></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def received_message(self, message: TextMessage):
-  &#34;&#34;&#34;
-  This method runs for every message
-  ..warning:: Do not call this method directly
-  &#34;&#34;&#34;
-  message = json.loads(message.data)
-  if message[&#39;t&#39;] == MessageTopic.CONNECTION_ACK:
-    for handler in self.__on_connect_handlers:
-      handler(self, message)
-    for handler in self.__on_message_handlers[MessageTopic.CONNECTION_ACK]:
-      handler(self, message)
-  else:
-    for handler in self.__on_message_handlers[message[&#39;t&#39;]]:
-      handler(self, message)</code></pre>
-</details>
-</dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.subscribe_depth"><code class="name flex">
-<span>def <span class="ident">subscribe_depth</span></span>(<span>self, *scriplists: List[str])</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Subscribe to depth feed</p>
+<div class="desc"><p>Connect to websocket</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>scriplists</code></strong> :&ensp;<code>List[str]</code></dt>
-<dd>One or more scriplists</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def subscribe_depth(self, *scriplists: List[str]):
-  &#34;&#34;&#34;
-  Subscribe to depth feed
-
-  Args:
-    scriplists (List[str]): One or more scriplists
-  &#34;&#34;&#34;
-  model = DepthSubscribeModel(k=scriplists)
-  self.send(model.json())</code></pre>
-</details>
-</dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.subscribe_order"><code class="name flex">
-<span>def <span class="ident">subscribe_order</span></span>(<span>self, actid: str)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Subscribe to depth feed</p>
-<h2 id="args">Args</h2>
-<dl>
+<dt><strong><code>uid</code></strong> :&ensp;<code>str</code></dt>
+<dd>The user id for the user</dd>
 <dt><strong><code>actid</code></strong> :&ensp;<code>str</code></dt>
-<dd>Account id based on which order updated to be sent.</dd>
+<dd>The account id for the user</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def subscribe_order(self, actid: str):
+<pre><code class="python">def connect(self, uid: str, actid: str):
   &#34;&#34;&#34;
-  Subscribe to depth feed
+  Connect to websocket
 
   Args:
-    actid (str): Account id based on which order updated to be sent.
+      uid (str): The user id for the user
+      actid (str): The account id for the user
   &#34;&#34;&#34;
-  model = OrderSubscribeModel(actid=actid)
-  self.send(model.json())</code></pre>
+  model = WebsocketConnectionModel(
+    uid=uid,
+    actid=actid,
+    susertoken=self.get_state(&#39;token&#39;)
+  )
+  self.__connection_model = model
+  return super().connect()</code></pre>
 </details>
 </dd>
 <dt id="py_client.websocket.client.NorenWebsocketClient.subscribe_touchline"><code class="name flex">
@@ -741,6 +621,56 @@ def on_depth_feed(client, message: Dict[str, Any]):
     scriplists (List[str]): One or more scriplists
   &#34;&#34;&#34;
   model = TouchlineSubscribeModel(k=scriplists)
+  self.send(model.json())</code></pre>
+</details>
+</dd>
+<dt id="py_client.websocket.client.NorenWebsocketClient.unsubscribe_touchline"><code class="name flex">
+<span>def <span class="ident">unsubscribe_touchline</span></span>(<span>self, *scriplists: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Unsubscribe from touchline feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scriplists</code></strong> :&ensp;<code>List[str]</code></dt>
+<dd>One or more scriplists</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unsubscribe_touchline(self, *scriplists: List[str]):
+  &#34;&#34;&#34;
+  Unsubscribe from touchline feed
+
+  Args:
+    scriplists (List[str]): One or more scriplists
+  &#34;&#34;&#34;
+  model = TouchlineUnsubscribeModel(k=scriplists)
+  self.send(model.json())</code></pre>
+</details>
+</dd>
+<dt id="py_client.websocket.client.NorenWebsocketClient.subscribe_depth"><code class="name flex">
+<span>def <span class="ident">subscribe_depth</span></span>(<span>self, *scriplists: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Subscribe to depth feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scriplists</code></strong> :&ensp;<code>List[str]</code></dt>
+<dd>One or more scriplists</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe_depth(self, *scriplists: List[str]):
+  &#34;&#34;&#34;
+  Subscribe to depth feed
+
+  Args:
+    scriplists (List[str]): One or more scriplists
+  &#34;&#34;&#34;
+  model = DepthSubscribeModel(k=scriplists)
   self.send(model.json())</code></pre>
 </details>
 </dd>
@@ -769,6 +699,31 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
+<dt id="py_client.websocket.client.NorenWebsocketClient.subscribe_order"><code class="name flex">
+<span>def <span class="ident">subscribe_order</span></span>(<span>self, actid: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Subscribe to depth feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Account id based on which order updated to be sent.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe_order(self, actid: str):
+  &#34;&#34;&#34;
+  Subscribe to depth feed
+
+  Args:
+    actid (str): Account id based on which order updated to be sent.
+  &#34;&#34;&#34;
+  model = OrderSubscribeModel(actid=actid)
+  self.send(model.json())</code></pre>
+</details>
+</dd>
 <dt id="py_client.websocket.client.NorenWebsocketClient.unsubscribe_order"><code class="name flex">
 <span>def <span class="ident">unsubscribe_order</span></span>(<span>self, actid: str)</span>
 </code></dt>
@@ -794,29 +749,74 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.websocket.client.NorenWebsocketClient.unsubscribe_touchline"><code class="name flex">
-<span>def <span class="ident">unsubscribe_touchline</span></span>(<span>self, *scriplists: List[str])</span>
+<dt id="py_client.websocket.client.NorenWebsocketClient.opened"><code class="name flex">
+<span>def <span class="ident">opened</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Unsubscribe from touchline feed</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>scriplists</code></strong> :&ensp;<code>List[str]</code></dt>
-<dd>One or more scriplists</dd>
-</dl></div>
+<div class="desc"><p>This method runs once the connection is established</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
+</div></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def unsubscribe_touchline(self, *scriplists: List[str]):
+<pre><code class="python">def opened(self):
   &#34;&#34;&#34;
-  Unsubscribe from touchline feed
-
-  Args:
-    scriplists (List[str]): One or more scriplists
+  This method runs once the connection is established
+  ..warning:: Do not call this method directly
   &#34;&#34;&#34;
-  model = TouchlineUnsubscribeModel(k=scriplists)
-  self.send(model.json())</code></pre>
+  if self.__connection_model is not None:
+    self.send(self.__connection_model.json())</code></pre>
+</details>
+</dd>
+<dt id="py_client.websocket.client.NorenWebsocketClient.closed"><code class="name flex">
+<span>def <span class="ident">closed</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method runs once the connection is closed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closed(self):
+  &#34;&#34;&#34;
+  This method runs once the connection is closed.
+  ..warning:: Do not call this method directly
+  &#34;&#34;&#34;
+  for handler in self.__on_close_handlers:
+    handler(self)</code></pre>
+</details>
+</dd>
+<dt id="py_client.websocket.client.NorenWebsocketClient.received_message"><code class="name flex">
+<span>def <span class="ident">received_message</span></span>(<span>self, message: ws4py.messaging.TextMessage)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method runs for every message</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning:&ensp;Do not call this method directly</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def received_message(self, message: TextMessage):
+  &#34;&#34;&#34;
+  This method runs for every message
+  ..warning:: Do not call this method directly
+  &#34;&#34;&#34;
+  message = json.loads(message.data)
+  if message[&#39;t&#39;] == MessageTopic.CONNECTION_ACK:
+    for handler in self.__on_connect_handlers:
+      handler(self, message)
+    for handler in self.__on_message_handlers[MessageTopic.CONNECTION_ACK]:
+      handler(self, message)
+  else:
+    for handler in self.__on_message_handlers[message[&#39;t&#39;]]:
+      handler(self, message)</code></pre>
 </details>
 </dd>
 </dl>
@@ -850,19 +850,19 @@ def on_depth_feed(client, message: Dict[str, Any]):
 <li>
 <h4><code><a title="py_client.websocket.client.NorenWebsocketClient" href="#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.closed" href="#py_client.websocket.client.NorenWebsocketClient.closed">closed</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.connect" href="#py_client.websocket.client.NorenWebsocketClient.connect">connect</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.on_close" href="#py_client.websocket.client.NorenWebsocketClient.on_close">on_close</a></code></li>
 <li><code><a title="py_client.websocket.client.NorenWebsocketClient.on_connect" href="#py_client.websocket.client.NorenWebsocketClient.on_connect">on_connect</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.on_close" href="#py_client.websocket.client.NorenWebsocketClient.on_close">on_close</a></code></li>
 <li><code><a title="py_client.websocket.client.NorenWebsocketClient.on_message" href="#py_client.websocket.client.NorenWebsocketClient.on_message">on_message</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.opened" href="#py_client.websocket.client.NorenWebsocketClient.opened">opened</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.received_message" href="#py_client.websocket.client.NorenWebsocketClient.received_message">received_message</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.subscribe_depth" href="#py_client.websocket.client.NorenWebsocketClient.subscribe_depth">subscribe_depth</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.subscribe_order" href="#py_client.websocket.client.NorenWebsocketClient.subscribe_order">subscribe_order</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.connect" href="#py_client.websocket.client.NorenWebsocketClient.connect">connect</a></code></li>
 <li><code><a title="py_client.websocket.client.NorenWebsocketClient.subscribe_touchline" href="#py_client.websocket.client.NorenWebsocketClient.subscribe_touchline">subscribe_touchline</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.unsubscribe_depth" href="#py_client.websocket.client.NorenWebsocketClient.unsubscribe_depth">unsubscribe_depth</a></code></li>
-<li><code><a title="py_client.websocket.client.NorenWebsocketClient.unsubscribe_order" href="#py_client.websocket.client.NorenWebsocketClient.unsubscribe_order">unsubscribe_order</a></code></li>
 <li><code><a title="py_client.websocket.client.NorenWebsocketClient.unsubscribe_touchline" href="#py_client.websocket.client.NorenWebsocketClient.unsubscribe_touchline">unsubscribe_touchline</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.subscribe_depth" href="#py_client.websocket.client.NorenWebsocketClient.subscribe_depth">subscribe_depth</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.unsubscribe_depth" href="#py_client.websocket.client.NorenWebsocketClient.unsubscribe_depth">unsubscribe_depth</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.subscribe_order" href="#py_client.websocket.client.NorenWebsocketClient.subscribe_order">subscribe_order</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.unsubscribe_order" href="#py_client.websocket.client.NorenWebsocketClient.unsubscribe_order">unsubscribe_order</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.opened" href="#py_client.websocket.client.NorenWebsocketClient.opened">opened</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.closed" href="#py_client.websocket.client.NorenWebsocketClient.closed">closed</a></code></li>
+<li><code><a title="py_client.websocket.client.NorenWebsocketClient.received_message" href="#py_client.websocket.client.NorenWebsocketClient.received_message">received_message</a></code></li>
 </ul>
 </li>
 </ul>

@@ -124,80 +124,6 @@ class InternalServerError(HttpException):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="py_client.common.exceptions.BadRequestError"><code class="flex name class">
-<span>class <span class="ident">BadRequestError</span></span>
-<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The http error corresponding to 400 status code</p>
-<p>Initialize a BadRequestError</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class BadRequestError(HttpException):
-  &#34;&#34;&#34;
-  The http error corresponding to 400 status code
-  &#34;&#34;&#34;
-  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
-    &#34;&#34;&#34;
-    Initialize a BadRequestError
-    &#34;&#34;&#34;
-    code = HTTPStatus.BAD_REQUEST
-    msg = msg or &#39;Bad Request&#39;
-    super().__init__(url, code, msg, headers)</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
-<li>urllib.error.HTTPError</li>
-<li>urllib.error.URLError</li>
-<li>builtins.OSError</li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-<li>urllib.response.addinfourl</li>
-<li>urllib.response.addinfo</li>
-<li>urllib.response.addbase</li>
-<li>tempfile._TemporaryFileWrapper</li>
-</ul>
-</dd>
-<dt id="py_client.common.exceptions.ForbiddenError"><code class="flex name class">
-<span>class <span class="ident">ForbiddenError</span></span>
-<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The http error corresponding to 403 status code</p>
-<p>Initialize a BadRequestError</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class ForbiddenError(HttpException):
-  &#34;&#34;&#34;
-  The http error corresponding to 403 status code
-  &#34;&#34;&#34;
-  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
-    &#34;&#34;&#34;
-    Initialize a BadRequestError
-    &#34;&#34;&#34;
-    code = HTTPStatus.FORBIDDEN
-    msg = msg or &#39;Forbidden&#39;
-    super().__init__(url, code, msg, headers)</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
-<li>urllib.error.HTTPError</li>
-<li>urllib.error.URLError</li>
-<li>builtins.OSError</li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-<li>urllib.response.addinfourl</li>
-<li>urllib.response.addinfo</li>
-<li>urllib.response.addbase</li>
-<li>tempfile._TemporaryFileWrapper</li>
-</ul>
-</dd>
 <dt id="py_client.common.exceptions.HttpException"><code class="flex name class">
 <span>class <span class="ident">HttpException</span></span>
 <span>(</span><span>url: str, code: http.HTTPStatus, msg: str, headers={})</span>
@@ -237,101 +163,27 @@ class InternalServerError(HttpException):
 <li><a title="py_client.common.exceptions.UnauthorizedError" href="#py_client.common.exceptions.UnauthorizedError">UnauthorizedError</a></li>
 </ul>
 </dd>
-<dt id="py_client.common.exceptions.InternalServerError"><code class="flex name class">
-<span>class <span class="ident">InternalServerError</span></span>
+<dt id="py_client.common.exceptions.BadRequestError"><code class="flex name class">
+<span>class <span class="ident">BadRequestError</span></span>
 <span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The http error corresponding to 500 status code</p>
+<div class="desc"><p>The http error corresponding to 400 status code</p>
 <p>Initialize a BadRequestError</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class InternalServerError(HttpException):
+<pre><code class="python">class BadRequestError(HttpException):
   &#34;&#34;&#34;
-  The http error corresponding to 500 status code
-  &#34;&#34;&#34;
-  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
-    &#34;&#34;&#34;
-    Initialize a BadRequestError
-    &#34;&#34;&#34;
-    code = HTTPStatus.INTERNAL_SERVER_ERROR
-    msg = msg or &#39;Internal Server Error&#39;
-    super().__init__(url, code, msg, headers)</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
-<li>urllib.error.HTTPError</li>
-<li>urllib.error.URLError</li>
-<li>builtins.OSError</li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-<li>urllib.response.addinfourl</li>
-<li>urllib.response.addinfo</li>
-<li>urllib.response.addbase</li>
-<li>tempfile._TemporaryFileWrapper</li>
-</ul>
-</dd>
-<dt id="py_client.common.exceptions.NotFoundError"><code class="flex name class">
-<span>class <span class="ident">NotFoundError</span></span>
-<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The http error corresponding to 404 status code</p>
-<p>Initialize a BadRequestError</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class NotFoundError(HttpException):
-  &#34;&#34;&#34;
-  The http error corresponding to 404 status code
+  The http error corresponding to 400 status code
   &#34;&#34;&#34;
   def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
     &#34;&#34;&#34;
     Initialize a BadRequestError
     &#34;&#34;&#34;
-    code = HTTPStatus.NOT_FOUND
-    msg = msg or &#39;Not Found&#39;
-    super().__init__(url, code, msg, headers)</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
-<li>urllib.error.HTTPError</li>
-<li>urllib.error.URLError</li>
-<li>builtins.OSError</li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-<li>urllib.response.addinfourl</li>
-<li>urllib.response.addinfo</li>
-<li>urllib.response.addbase</li>
-<li>tempfile._TemporaryFileWrapper</li>
-</ul>
-</dd>
-<dt id="py_client.common.exceptions.PaymentRequiredError"><code class="flex name class">
-<span>class <span class="ident">PaymentRequiredError</span></span>
-<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
-</code></dt>
-<dd>
-<div class="desc"><p>The http error corresponding to 402 status code</p>
-<p>Initialize a BadRequestError</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class PaymentRequiredError(HttpException):
-  &#34;&#34;&#34;
-  The http error corresponding to 402 status code
-  &#34;&#34;&#34;
-  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
-    &#34;&#34;&#34;
-    Initialize a BadRequestError
-    &#34;&#34;&#34;
-    code = HTTPStatus.PAYMENT_REQUIRED
-    msg = msg or &#39;Payment Required&#39;
+    code = HTTPStatus.BAD_REQUEST
+    msg = msg or &#39;Bad Request&#39;
     super().__init__(url, code, msg, headers)</code></pre>
 </details>
 <h3>Ancestors</h3>
@@ -385,6 +237,154 @@ class InternalServerError(HttpException):
 <li>tempfile._TemporaryFileWrapper</li>
 </ul>
 </dd>
+<dt id="py_client.common.exceptions.PaymentRequiredError"><code class="flex name class">
+<span>class <span class="ident">PaymentRequiredError</span></span>
+<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The http error corresponding to 402 status code</p>
+<p>Initialize a BadRequestError</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PaymentRequiredError(HttpException):
+  &#34;&#34;&#34;
+  The http error corresponding to 402 status code
+  &#34;&#34;&#34;
+  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
+    &#34;&#34;&#34;
+    Initialize a BadRequestError
+    &#34;&#34;&#34;
+    code = HTTPStatus.PAYMENT_REQUIRED
+    msg = msg or &#39;Payment Required&#39;
+    super().__init__(url, code, msg, headers)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
+<li>urllib.error.HTTPError</li>
+<li>urllib.error.URLError</li>
+<li>builtins.OSError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+<li>urllib.response.addinfourl</li>
+<li>urllib.response.addinfo</li>
+<li>urllib.response.addbase</li>
+<li>tempfile._TemporaryFileWrapper</li>
+</ul>
+</dd>
+<dt id="py_client.common.exceptions.ForbiddenError"><code class="flex name class">
+<span>class <span class="ident">ForbiddenError</span></span>
+<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The http error corresponding to 403 status code</p>
+<p>Initialize a BadRequestError</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ForbiddenError(HttpException):
+  &#34;&#34;&#34;
+  The http error corresponding to 403 status code
+  &#34;&#34;&#34;
+  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
+    &#34;&#34;&#34;
+    Initialize a BadRequestError
+    &#34;&#34;&#34;
+    code = HTTPStatus.FORBIDDEN
+    msg = msg or &#39;Forbidden&#39;
+    super().__init__(url, code, msg, headers)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
+<li>urllib.error.HTTPError</li>
+<li>urllib.error.URLError</li>
+<li>builtins.OSError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+<li>urllib.response.addinfourl</li>
+<li>urllib.response.addinfo</li>
+<li>urllib.response.addbase</li>
+<li>tempfile._TemporaryFileWrapper</li>
+</ul>
+</dd>
+<dt id="py_client.common.exceptions.NotFoundError"><code class="flex name class">
+<span>class <span class="ident">NotFoundError</span></span>
+<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The http error corresponding to 404 status code</p>
+<p>Initialize a BadRequestError</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NotFoundError(HttpException):
+  &#34;&#34;&#34;
+  The http error corresponding to 404 status code
+  &#34;&#34;&#34;
+  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
+    &#34;&#34;&#34;
+    Initialize a BadRequestError
+    &#34;&#34;&#34;
+    code = HTTPStatus.NOT_FOUND
+    msg = msg or &#39;Not Found&#39;
+    super().__init__(url, code, msg, headers)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
+<li>urllib.error.HTTPError</li>
+<li>urllib.error.URLError</li>
+<li>builtins.OSError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+<li>urllib.response.addinfourl</li>
+<li>urllib.response.addinfo</li>
+<li>urllib.response.addbase</li>
+<li>tempfile._TemporaryFileWrapper</li>
+</ul>
+</dd>
+<dt id="py_client.common.exceptions.InternalServerError"><code class="flex name class">
+<span>class <span class="ident">InternalServerError</span></span>
+<span>(</span><span>url: str, msg: str = None, headers: Any = {})</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The http error corresponding to 500 status code</p>
+<p>Initialize a BadRequestError</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InternalServerError(HttpException):
+  &#34;&#34;&#34;
+  The http error corresponding to 500 status code
+  &#34;&#34;&#34;
+  def __init__(self, url: str, msg: str = None, headers: Any = {}) -&gt; None:
+    &#34;&#34;&#34;
+    Initialize a BadRequestError
+    &#34;&#34;&#34;
+    code = HTTPStatus.INTERNAL_SERVER_ERROR
+    msg = msg or &#39;Internal Server Error&#39;
+    super().__init__(url, code, msg, headers)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></li>
+<li>urllib.error.HTTPError</li>
+<li>urllib.error.URLError</li>
+<li>builtins.OSError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+<li>urllib.response.addinfourl</li>
+<li>urllib.response.addinfo</li>
+<li>urllib.response.addbase</li>
+<li>tempfile._TemporaryFileWrapper</li>
+</ul>
+</dd>
 </dl>
 </section>
 </article>
@@ -402,25 +402,25 @@ class InternalServerError(HttpException):
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="py_client.common.exceptions.BadRequestError" href="#py_client.common.exceptions.BadRequestError">BadRequestError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="py_client.common.exceptions.ForbiddenError" href="#py_client.common.exceptions.ForbiddenError">ForbiddenError</a></code></h4>
-</li>
-<li>
 <h4><code><a title="py_client.common.exceptions.HttpException" href="#py_client.common.exceptions.HttpException">HttpException</a></code></h4>
 </li>
 <li>
-<h4><code><a title="py_client.common.exceptions.InternalServerError" href="#py_client.common.exceptions.InternalServerError">InternalServerError</a></code></h4>
+<h4><code><a title="py_client.common.exceptions.BadRequestError" href="#py_client.common.exceptions.BadRequestError">BadRequestError</a></code></h4>
 </li>
 <li>
-<h4><code><a title="py_client.common.exceptions.NotFoundError" href="#py_client.common.exceptions.NotFoundError">NotFoundError</a></code></h4>
+<h4><code><a title="py_client.common.exceptions.UnauthorizedError" href="#py_client.common.exceptions.UnauthorizedError">UnauthorizedError</a></code></h4>
 </li>
 <li>
 <h4><code><a title="py_client.common.exceptions.PaymentRequiredError" href="#py_client.common.exceptions.PaymentRequiredError">PaymentRequiredError</a></code></h4>
 </li>
 <li>
-<h4><code><a title="py_client.common.exceptions.UnauthorizedError" href="#py_client.common.exceptions.UnauthorizedError">UnauthorizedError</a></code></h4>
+<h4><code><a title="py_client.common.exceptions.ForbiddenError" href="#py_client.common.exceptions.ForbiddenError">ForbiddenError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="py_client.common.exceptions.NotFoundError" href="#py_client.common.exceptions.NotFoundError">NotFoundError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="py_client.common.exceptions.InternalServerError" href="#py_client.common.exceptions.InternalServerError">InternalServerError</a></code></h4>
 </li>
 </ul>
 </li>

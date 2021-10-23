@@ -5,50 +5,6 @@ Request and response models for span calculator request
 Classes
 -------
 
-`SpanCalculatorPos(**data: Any)`
-:   Each object in pos of SpanCalculatorRequestModel
-    
-    Create a new model by parsing and validating input data from keyword arguments.
-    
-    Raises ValidationError if the input data cannot be parsed to form a valid model.
-
-    ### Ancestors (in MRO)
-
-    * pydantic.main.BaseModel
-    * pydantic.utils.Representation
-
-    ### Class variables
-
-    `Config`
-    :   model configuration
-
-    `buyqty: Optional[float]`
-    :   Buy Open Quantity
-
-    `exch: Optional[str]`
-    :   Exchange
-
-    `expd: Optional[datetime.date]`
-    :   expiry date
-
-    `instname: Optional[str]`
-    :   Instrument name
-
-    `netqty: Optional[float]`
-    :   Net traded quantity
-
-    `optt: Optional[str]`
-    :   Option Type
-
-    `sellqty: Optional[float]`
-    :   Sell Open Quantity
-
-    `strprc: Optional[float]`
-    :   Strike price
-
-    `symname: Optional[str]`
-    :   Symbol name
-
 `SpanCalculatorRequestModel(**data: Any)`
 :   The request model for span calculator endpoint
     
@@ -83,17 +39,8 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
-
-    `expo: Optional[str]`
-    :   Exposure margin
-
-    `expo_trade: Optional[str]`
-    :   Exposure margin ignoring input fields buyqty, sellqty
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The span calculator success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
@@ -101,8 +48,61 @@ Classes
     `span: Optional[str]`
     :   Span value
 
+    `expo: Optional[str]`
+    :   Exposure margin
+
     `span_trade: Optional[str]`
     :   Span value ignoring input fields buyqty, sellqty
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The span calculator success or failure status
+    `expo_trade: Optional[str]`
+    :   Exposure margin ignoring input fields buyqty, sellqty
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration
+
+`SpanCalculatorPos(**data: Any)`
+:   Each object in pos of SpanCalculatorRequestModel
+    
+    Create a new model by parsing and validating input data from keyword arguments.
+    
+    Raises ValidationError if the input data cannot be parsed to form a valid model.
+
+    ### Ancestors (in MRO)
+
+    * pydantic.main.BaseModel
+    * pydantic.utils.Representation
+
+    ### Class variables
+
+    `exch: Optional[str]`
+    :   Exchange
+
+    `instname: Optional[str]`
+    :   Instrument name
+
+    `symname: Optional[str]`
+    :   Symbol name
+
+    `expd: Optional[datetime.date]`
+    :   expiry date
+
+    `optt: Optional[str]`
+    :   Option Type
+
+    `strprc: Optional[float]`
+    :   Strike price
+
+    `buyqty: Optional[float]`
+    :   Buy Open Quantity
+
+    `sellqty: Optional[float]`
+    :   Sell Open Quantity
+
+    `netqty: Optional[float]`
+    :   Net traded quantity
+
+    `Config`
+    :   model configuration

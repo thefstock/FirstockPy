@@ -19,26 +19,26 @@ Classes
 
     ### Class variables
 
-    `ai_t: str`
-    :   Alert Type
-
-    `d: str`
-    :   Data to be compared with LTP
-
-    `exch: str`
-    :   Exchange Segment
-
-    `remarks: str`
-    :   Any message Entered during order entry.
+    `uid: str`
+    :   The user id of the login user
 
     `tsym: str`
     :   Trading symbol
 
-    `uid: str`
-    :   The user id of the login user
+    `exch: str`
+    :   Exchange Segment
+
+    `ai_t: str`
+    :   Alert Type
 
     `validity: py_client.common.enums.AlertValidity`
     :   DAY or GTT Validity
+
+    `remarks: str`
+    :   Any message Entered during order entry.
+
+    `d: str`
+    :   Data to be compared with LTP
 
 `SetAlertResponseModel(**data: Any)`
 :   The response model for set alert endpoint
@@ -54,8 +54,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The set alert success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `al_id: Optional[str]`
     :   Alert Id
@@ -63,8 +66,5 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The set alert success or failure status
+    `Config`
+    :   model configuration

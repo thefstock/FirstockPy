@@ -19,23 +19,29 @@ Classes
 
     ### Class variables
 
-    `actid: str`
-    :   Login user account id
+    `uid: str`
+    :   The user id of the login user
 
-    `ai_t: str`
-    :   Alert Type. should be original type can't be modified
-
-    `d: str`
-    :   Data to be compared with LTP
-
-    `dscqty: Optional[str]`
-    :   Disclosed quantity (Max 10% for NSE, and 50% for MCX)
+    `tsym: str`
+    :   Trading symbol
 
     `exch: str`
     :   Exchange Segment
 
-    `prc: str`
-    :   Order price
+    `ai_t: str`
+    :   Alert Type. should be original type can't be modified
+
+    `validity: py_client.common.enums.AlertValidity`
+    :   DAY or GTT Validity
+
+    `remarks: str`
+    :   Any message Entered during order entry.
+
+    `d: str`
+    :   Data to be compared with LTP
+
+    `trantype: py_client.common.enums.TransactionType`
+    :   Transaction type
 
     `prctyp: py_client.common.enums.PriceType`
     :   Price type
@@ -43,26 +49,20 @@ Classes
     `prd: str`
     :   The product name
 
-    `qty: str`
-    :   Order quantity
-
-    `remarks: str`
-    :   Any message Entered during order entry.
-
     `ret: py_client.common.enums.RetentionType`
     :   Retention type
 
-    `trantype: py_client.common.enums.TransactionType`
-    :   Transaction type
+    `actid: str`
+    :   Login user account id
 
-    `tsym: str`
-    :   Trading symbol
+    `prc: str`
+    :   Order price
 
-    `uid: str`
-    :   The user id of the login user
+    `qty: str`
+    :   Order quantity
 
-    `validity: py_client.common.enums.AlertValidity`
-    :   DAY or GTT Validity
+    `dscqty: Optional[str]`
+    :   Disclosed quantity (Max 10% for NSE, and 50% for MCX)
 
 `ModifyGttOrderResponseModel(**data: Any)`
 :   The response model for modify gtt order endpoint
@@ -78,8 +78,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The modify gtt order success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `al_id: Optional[str]`
     :   Alert Id
@@ -87,8 +90,5 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The modify gtt order success or failure status
+    `Config`
+    :   model configuration

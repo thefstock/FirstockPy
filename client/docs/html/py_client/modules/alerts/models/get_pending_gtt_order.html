@@ -201,13 +201,21 @@ class GetPendingGttOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The get pending gtt order success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>Login user account id</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange Segment</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : Optional[str]</code></dt>
 <dd>
@@ -217,9 +225,45 @@ class GetPendingGttOrderResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Alert id</p></div>
 </dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity"><code class="name">var <span class="ident">validity</span> : Optional[<a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a>]</code></dt>
+<dd>
+<div class="desc"><p>DAY or GTT Validity</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Any message Entered during order entry.</p></div>
+</dd>
 <dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.d"><code class="name">var <span class="ident">d</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Data to be compared with LTP</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype"><code class="name">var <span class="ident">trantype</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dd>
+<div class="desc"><p>Transaction type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : Optional[<a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a>]</code></dt>
+<dd>
+<div class="desc"><p>Price type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>The product name</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
+<dd>
+<div class="desc"><p>Retention type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Login user account id</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order price</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty"><code class="name">var <span class="ident">qty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order quantity</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
 <dd>
@@ -229,53 +273,9 @@ class GetPendingGttOrderResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>Exchange Segment</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order price</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : Optional[py_client.common.enums.PriceType]</code></dt>
-<dd>
-<div class="desc"><p>Price type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>The product name</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty"><code class="name">var <span class="ident">qty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order quantity</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Any message Entered during order entry.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ret"><code class="name">var <span class="ident">ret</span> : py_client.common.enums.RetentionType</code></dt>
-<dd>
-<div class="desc"><p>Retention type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
-<dd>
-<div class="desc"><p>The get pending gtt order success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype"><code class="name">var <span class="ident">trantype</span> : Optional[py_client.common.enums.TransactionType]</code></dt>
-<dd>
-<div class="desc"><p>Transaction type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity"><code class="name">var <span class="ident">validity</span> : Optional[py_client.common.enums.AlertValidity]</code></dt>
-<dd>
-<div class="desc"><p>DAY or GTT Validity</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -304,25 +304,25 @@ class GetPendingGttOrderResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel">GetPendingGttOrderResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ai_t" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ai_t">ai_t</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.al_id" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.al_id">al_id</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity">validity</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks">remarks</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.d" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.d">d</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.dscqty" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.dscqty">dscqty</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.emsg" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype">trantype</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prctyp" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prctyp">prctyp</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prd" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prd">prd</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty">qty</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.remarks">remarks</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ret" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.ret">ret</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.trantype">trantype</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.validity">validity</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.qty">qty</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.dscqty" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.dscqty">dscqty</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.emsg" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config" href="#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

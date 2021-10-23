@@ -209,9 +209,37 @@ class LoginResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.apkversion"><code class="name">var <span class="ident">apkversion</span> : str</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Application Version</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>User Id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.pwd"><code class="name">var <span class="ident">pwd</span> : Optional[pydantic.types.SecretStr]</code></dt>
+<dd>
+<div class="desc"><p>password for login. It will be automatically hashed during the request</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.dpin"><code class="name">var <span class="ident">dpin</span> : Optional[pydantic.types.SecretStr]</code></dt>
+<dd>
+<div class="desc"><p>The device pin</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.factor2"><code class="name">var <span class="ident">factor2</span> : Union[datetime.date, str]</code></dt>
+<dd>
+<div class="desc"><p>DOB or PAN</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.vc"><code class="name">var <span class="ident">vc</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Vendor code</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.appkey"><code class="name">var <span class="ident">appkey</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Sha256 of uid|vendor_key</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.imei"><code class="name">var <span class="ident">imei</span> : str</code></dt>
+<dd>
+<div class="desc"><p>IMEI for mobile (If desktop it takes the MAC address)</p></div>
 </dd>
 <dt id="py_client.modules.users.models.login.LoginRequestModel.addldivinf"><code class="name">var <span class="ident">addldivinf</span> : Optional[str]</code></dt>
 <dd>
@@ -222,45 +250,17 @@ examples:
 iOS - iPhone 8.0 - 9.0
 Android - Moto G - 9 PKQ1.181203.01</p></div>
 </dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.apkversion"><code class="name">var <span class="ident">apkversion</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Application Version</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.appkey"><code class="name">var <span class="ident">appkey</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Sha256 of uid|vendor_key</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.dpin"><code class="name">var <span class="ident">dpin</span> : Optional[pydantic.types.SecretStr]</code></dt>
-<dd>
-<div class="desc"><p>The device pin</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.factor2"><code class="name">var <span class="ident">factor2</span> : Union[datetime.date, str]</code></dt>
-<dd>
-<div class="desc"><p>DOB or PAN</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.imei"><code class="name">var <span class="ident">imei</span> : str</code></dt>
-<dd>
-<div class="desc"><p>IMEI for mobile (If desktop it takes the MAC address)</p></div>
-</dd>
 <dt id="py_client.modules.users.models.login.LoginRequestModel.ipaddr"><code class="name">var <span class="ident">ipaddr</span> : Optional[pydantic.networks.IPvAnyAddress]</code></dt>
 <dd>
 <div class="desc"><p>The IP address of the system</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.pwd"><code class="name">var <span class="ident">pwd</span> : Optional[pydantic.types.SecretStr]</code></dt>
-<dd>
-<div class="desc"><p>password for login. It will be automatically hashed during the request</p></div>
 </dd>
 <dt id="py_client.modules.users.models.login.LoginRequestModel.source"><code class="name">var <span class="ident">source</span> : Optional[<a title="py_client.common.enums.RequestSourceType" href="../../../common/enums.html#py_client.common.enums.RequestSourceType">RequestSourceType</a>]</code></dt>
 <dd>
 <div class="desc"><p>Access Type</p></div>
 </dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dt id="py_client.modules.users.models.login.LoginRequestModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>User Id of the login user</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginRequestModel.vc"><code class="name">var <span class="ident">vc</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Vendor code</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 <h3>Static methods</h3>
@@ -341,29 +341,13 @@ def validate(cls, values: dict):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Login success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.susertoken"><code class="name">var <span class="ident">susertoken</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Account Id</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.brkname"><code class="name">var <span class="ident">brkname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Broker Id</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.email"><code class="name">var <span class="ident">email</span> : Optional[pydantic.networks.EmailStr]</code></dt>
-<dd>
-<div class="desc"><p>Email Id</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the login failed</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.exarr"><code class="name">var <span class="ident">exarr</span> : Optional[List[str]]</code></dt>
-<dd>
-<div class="desc"><p>list of strings with enabled exchange names</p></div>
+<div class="desc"><p>Present only on login success. This key is to be passed in subsequent requests</p></div>
 </dd>
 <dt id="py_client.modules.users.models.login.LoginResponseModel.lastaccesstime"><code class="name">var <span class="ident">lastaccesstime</span> : Optional[datetime.datetime]</code></dt>
 <dd>
@@ -377,17 +361,33 @@ def validate(cls, values: dict):
 <dd>
 <div class="desc"><p>If Y Mandatory password reset to be enforced. Otherwise the field will be absent.</p></div>
 </dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.exarr"><code class="name">var <span class="ident">exarr</span> : Optional[List[str]]</code></dt>
 <dd>
-<div class="desc"><p>Login success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.users.models.login.LoginResponseModel.susertoken"><code class="name">var <span class="ident">susertoken</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Present only on login success. This key is to be passed in subsequent requests</p></div>
+<div class="desc"><p>list of strings with enabled exchange names</p></div>
 </dd>
 <dt id="py_client.modules.users.models.login.LoginResponseModel.uname"><code class="name">var <span class="ident">uname</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Username</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Account Id</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.email"><code class="name">var <span class="ident">email</span> : Optional[pydantic.networks.EmailStr]</code></dt>
+<dd>
+<div class="desc"><p>Email Id</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.brkname"><code class="name">var <span class="ident">brkname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Broker Id</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the login failed</p></div>
+</dd>
+<dt id="py_client.modules.users.models.login.LoginResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -410,36 +410,36 @@ def validate(cls, values: dict):
 <li>
 <h4><code><a title="py_client.modules.users.models.login.LoginRequestModel" href="#py_client.modules.users.models.login.LoginRequestModel">LoginRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.Config" href="#py_client.modules.users.models.login.LoginRequestModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.addldivinf" href="#py_client.modules.users.models.login.LoginRequestModel.addldivinf">addldivinf</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.validate" href="#py_client.modules.users.models.login.LoginRequestModel.validate">validate</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginRequestModel.apkversion" href="#py_client.modules.users.models.login.LoginRequestModel.apkversion">apkversion</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.appkey" href="#py_client.modules.users.models.login.LoginRequestModel.appkey">appkey</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.uid" href="#py_client.modules.users.models.login.LoginRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.pwd" href="#py_client.modules.users.models.login.LoginRequestModel.pwd">pwd</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginRequestModel.dpin" href="#py_client.modules.users.models.login.LoginRequestModel.dpin">dpin</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginRequestModel.factor2" href="#py_client.modules.users.models.login.LoginRequestModel.factor2">factor2</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.imei" href="#py_client.modules.users.models.login.LoginRequestModel.imei">imei</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.ipaddr" href="#py_client.modules.users.models.login.LoginRequestModel.ipaddr">ipaddr</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.pwd" href="#py_client.modules.users.models.login.LoginRequestModel.pwd">pwd</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.source" href="#py_client.modules.users.models.login.LoginRequestModel.source">source</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.uid" href="#py_client.modules.users.models.login.LoginRequestModel.uid">uid</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.validate" href="#py_client.modules.users.models.login.LoginRequestModel.validate">validate</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginRequestModel.vc" href="#py_client.modules.users.models.login.LoginRequestModel.vc">vc</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.appkey" href="#py_client.modules.users.models.login.LoginRequestModel.appkey">appkey</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.imei" href="#py_client.modules.users.models.login.LoginRequestModel.imei">imei</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.addldivinf" href="#py_client.modules.users.models.login.LoginRequestModel.addldivinf">addldivinf</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.ipaddr" href="#py_client.modules.users.models.login.LoginRequestModel.ipaddr">ipaddr</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.source" href="#py_client.modules.users.models.login.LoginRequestModel.source">source</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginRequestModel.Config" href="#py_client.modules.users.models.login.LoginRequestModel.Config">Config</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.users.models.login.LoginResponseModel" href="#py_client.modules.users.models.login.LoginResponseModel">LoginResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.Config" href="#py_client.modules.users.models.login.LoginResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.actid" href="#py_client.modules.users.models.login.LoginResponseModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.brkname" href="#py_client.modules.users.models.login.LoginResponseModel.brkname">brkname</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.email" href="#py_client.modules.users.models.login.LoginResponseModel.email">email</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.emsg" href="#py_client.modules.users.models.login.LoginResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.exarr" href="#py_client.modules.users.models.login.LoginResponseModel.exarr">exarr</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.stat" href="#py_client.modules.users.models.login.LoginResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.susertoken" href="#py_client.modules.users.models.login.LoginResponseModel.susertoken">susertoken</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginResponseModel.lastaccesstime" href="#py_client.modules.users.models.login.LoginResponseModel.lastaccesstime">lastaccesstime</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginResponseModel.request_time" href="#py_client.modules.users.models.login.LoginResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginResponseModel.spasswordreset" href="#py_client.modules.users.models.login.LoginResponseModel.spasswordreset">spasswordreset</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.stat" href="#py_client.modules.users.models.login.LoginResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.susertoken" href="#py_client.modules.users.models.login.LoginResponseModel.susertoken">susertoken</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.exarr" href="#py_client.modules.users.models.login.LoginResponseModel.exarr">exarr</a></code></li>
 <li><code><a title="py_client.modules.users.models.login.LoginResponseModel.uname" href="#py_client.modules.users.models.login.LoginResponseModel.uname">uname</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.actid" href="#py_client.modules.users.models.login.LoginResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.email" href="#py_client.modules.users.models.login.LoginResponseModel.email">email</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.brkname" href="#py_client.modules.users.models.login.LoginResponseModel.brkname">brkname</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.emsg" href="#py_client.modules.users.models.login.LoginResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.users.models.login.LoginResponseModel.Config" href="#py_client.modules.users.models.login.LoginResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

@@ -36,8 +36,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get enabled alert types success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `ai_ts: Optional[List[py_client.common.models.AlertType]]`
     :   List of alert types
@@ -45,8 +48,5 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get enabled alert types success or failure status
+    `Config`
+    :   model configuration

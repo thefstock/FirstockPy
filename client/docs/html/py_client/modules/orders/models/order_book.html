@@ -170,13 +170,13 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.order_book.OrderBookRequestModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>The product name</p></div>
-</dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Logged in User Id</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookRequestModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>The product name</p></div>
 </dd>
 </dl>
 </dd>
@@ -281,65 +281,125 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The order book success or failure status</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>Account Id</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.amo"><code class="name">var <span class="ident">amo</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Yes / No</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc"><code class="name">var <span class="ident">avgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Average trade price of total traded quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty"><code class="name">var <span class="ident">cancelqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Canceled quantity for order which is in status cancelled.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order disclosed quantity.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Exchange Segment</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid"><code class="name">var <span class="ident">exchordid</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Exchange Order Number</p></div>
+<div class="desc"><p>Trading symbol / contract on which order is placed.</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.extm"><code class="name">var <span class="ident">extm</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.norenordno"><code class="name">var <span class="ident">norenordno</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>extm</p></div>
+<div class="desc"><p>Noren Order Number</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order Price</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.qty"><code class="name">var <span class="ident">qty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order Quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Display product alias name, using prarr returned in user details.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order status</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype"><code class="name">var <span class="ident">trantype</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dd>
+<div class="desc"><p>B / S Transaction type of the order</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : Optional[<a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a>]</code></dt>
+<dd>
+<div class="desc"><p>LMT / MKT Price type</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.fillshares"><code class="name">var <span class="ident">fillshares</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Total Traded Quantity of this order</p></div>
 </dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc"><code class="name">var <span class="ident">avgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Average trade price of total traded quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason"><code class="name">var <span class="ident">rejreason</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>If order is rejected, reason in text form</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid"><code class="name">var <span class="ident">exchordid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange Order Number</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty"><code class="name">var <span class="ident">cancelqty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Canceled quantity for order which is in status cancelled.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Any message Entered during order entry.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order disclosed quantity.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Order trigger price</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.ret"><code class="name">var <span class="ident">ret</span> : Optional[<a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a>]</code></dt>
+<dd>
+<div class="desc"><p>DAY / IOC / EOS Order validity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.uid"><code class="name">var <span class="ident">uid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>User Id</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Account Id</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.amo"><code class="name">var <span class="ident">amo</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Yes / No</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Tick size</p></div>
+</dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Lot size</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.norenordno"><code class="name">var <span class="ident">norenordno</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Noren Order Number</p></div>
+<div class="desc"><p>Contract Token</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.orddttm"><code class="name">var <span class="ident">orddttm</span> : Optional[str]</code></dt>
 <dd>
@@ -349,85 +409,25 @@ request</p>
 <dd>
 <div class="desc"><p>ordenttm</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.extm"><code class="name">var <span class="ident">extm</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prc"><code class="name">var <span class="ident">prc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order Price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : Optional[py_client.common.enums.PriceType]</code></dt>
-<dd>
-<div class="desc"><p>LMT / MKT Price type</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.prd"><code class="name">var <span class="ident">prd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Display product alias name, using prarr returned in user details.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.qty"><code class="name">var <span class="ident">qty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order Quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason"><code class="name">var <span class="ident">rejreason</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>If order is rejected, reason in text form</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Any message Entered during order entry.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.ret"><code class="name">var <span class="ident">ret</span> : Optional[py_client.common.enums.RetentionType]</code></dt>
-<dd>
-<div class="desc"><p>DAY / IOC / EOS Order validity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum"><code class="name">var <span class="ident">snonum</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>This field will be present for product H and B; and only if it is profit/sl order.</p></div>
+<div class="desc"><p>extm</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.snoordt"><code class="name">var <span class="ident">snoordt</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>0 for profit leg and 1 for stoploss leg</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum"><code class="name">var <span class="ident">snonum</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>The order book success or failure status</p></div>
+<div class="desc"><p>This field will be present for product H and B; and only if it is profit/sl order.</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Order status</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>Tick size</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Contract Token</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype"><code class="name">var <span class="ident">trantype</span> : Optional[py_client.common.enums.TransactionType]</code></dt>
-<dd>
-<div class="desc"><p>B / S Transaction type of the order</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Order trigger price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol / contract on which order is placed.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.order_book.OrderBookResponseModel.uid"><code class="name">var <span class="ident">uid</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>User Id</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -450,50 +450,50 @@ request</p>
 <li>
 <h4><code><a title="py_client.modules.orders.models.order_book.OrderBookRequestModel" href="#py_client.modules.orders.models.order_book.OrderBookRequestModel">OrderBookRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookRequestModel.prd" href="#py_client.modules.orders.models.order_book.OrderBookRequestModel.prd">prd</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookRequestModel.uid" href="#py_client.modules.orders.models.order_book.OrderBookRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookRequestModel.prd" href="#py_client.modules.orders.models.order_book.OrderBookRequestModel.prd">prd</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel">OrderBookResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.Config" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.Config">Config</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.actid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.amo" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.amo">amo</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc">avgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc">blprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc">bpprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty">cancelqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty">dscqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.stat" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.exch" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid">exchordid</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.extm" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.extm">extm</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.fillshares" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.fillshares">fillshares</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ls" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym">tsym</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.norenordno" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.norenordno">norenordno</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.qty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.qty">qty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prd" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.status" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.status">status</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype">trantype</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp">prctyp</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.fillshares" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.fillshares">fillshares</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.avgprc">avgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason">rejreason</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.exchordid">exchordid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.cancelqty">cancelqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.dscqty">dscqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc">trgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ret" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ret">ret</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.uid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.actid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.bpprc">bpprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.blprc">blprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc">trailprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.amo" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.amo">amo</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.pp" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.pp">pp</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ti" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ti">ti</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ls" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.token" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.token">token</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.orddttm" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.orddttm">orddttm</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ordenttm" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ordenttm">ordenttm</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.pp" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.pp">pp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prc">prc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prctyp">prctyp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.prd" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.prd">prd</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.qty" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.qty">qty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.rejreason">rejreason</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.remarks">remarks</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ret" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ret">ret</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum">snonum</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.extm" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.extm">extm</a></code></li>
 <li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.snoordt" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.snoordt">snoordt</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.stat" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.status" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.status">status</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.ti" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.ti">ti</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.token" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trailprc">trailprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trantype">trantype</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.trgprc">trgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.uid" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.snonum">snonum</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.order_book.OrderBookResponseModel.Config" href="#py_client.modules.orders.models.order_book.OrderBookResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

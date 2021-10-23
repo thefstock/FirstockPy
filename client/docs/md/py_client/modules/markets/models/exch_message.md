@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `exch: Optional[str]`
-    :   Exchange
-
     `uid: str`
     :   The user id of the login user
+
+    `exch: Optional[str]`
+    :   Exchange
 
 `ExchMessageResponseModel(**data: Any)`
 :   The response model for exch message endpoint
@@ -39,11 +39,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The exch message success or failure status
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `request_time: Optional[datetime.datetime]`
+    :   Response recieved time
 
     `exchmsg: Optional[str]`
     :   It will be present only on a successful response
@@ -51,8 +51,8 @@ Classes
     `exchtm: Optional[datetime.datetime]`
     :   Exchange Time
 
-    `request_time: Optional[datetime.datetime]`
-    :   Response recieved time
+    `emsg: Optional[str]`
+    :   Error message if the request failed
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The exch message success or failure status
+    `Config`
+    :   model configuration

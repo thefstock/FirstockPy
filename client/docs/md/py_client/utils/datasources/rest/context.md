@@ -19,26 +19,26 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :
-
-    `data: Optional[str]`
-    :
-
-    `headers: Dict[str, str]`
+    `url: str`
     :
 
     `method: py_client.common.enums.RestMethod`
     :
 
+    `data: Optional[str]`
+    :
+
     `params: Dict[str, str]`
     :
 
-    `response: Optional[requests.models.Response]`
+    `headers: Dict[str, str]`
     :
 
     `result: Optional[str]`
     :
 
-    `url: str`
+    `response: Optional[requests.models.Response]`
+    :
+
+    `Config`
     :

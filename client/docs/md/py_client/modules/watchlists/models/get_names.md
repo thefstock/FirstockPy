@@ -36,17 +36,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get names success or failure status
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get names success or failure status
-
     `values: List[str]`
     :   Watch List names as a json array of strings.
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

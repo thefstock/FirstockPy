@@ -36,11 +36,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get pending gtt order success or failure status
 
-    `actid: Optional[str]`
-    :   Login user account id
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `tsym: Optional[str]`
+    :   Trading symbol
+
+    `exch: Optional[str]`
+    :   Exchange Segment
 
     `ai_t: Optional[str]`
     :   Alert Type
@@ -48,20 +54,17 @@ Classes
     `al_id: Optional[str]`
     :   Alert id
 
+    `validity: Optional[py_client.common.enums.AlertValidity]`
+    :   DAY or GTT Validity
+
+    `remarks: Optional[str]`
+    :   Any message Entered during order entry.
+
     `d: Optional[str]`
     :   Data to be compared with LTP
 
-    `dscqty: Optional[str]`
-    :   Disclosed quantity (Max 10% for NSE, and 50% for MCX)
-
-    `emsg: Optional[str]`
-    :   Error message if the request failed
-
-    `exch: Optional[str]`
-    :   Exchange Segment
-
-    `prc: Optional[str]`
-    :   Order price
+    `trantype: Optional[py_client.common.enums.TransactionType]`
+    :   Transaction type
 
     `prctyp: Optional[py_client.common.enums.PriceType]`
     :   Price type
@@ -69,26 +72,23 @@ Classes
     `prd: Optional[str]`
     :   The product name
 
-    `qty: Optional[str]`
-    :   Order quantity
-
-    `remarks: Optional[str]`
-    :   Any message Entered during order entry.
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
     `ret: py_client.common.enums.RetentionType`
     :   Retention type
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get pending gtt order success or failure status
+    `actid: Optional[str]`
+    :   Login user account id
 
-    `trantype: Optional[py_client.common.enums.TransactionType]`
-    :   Transaction type
+    `prc: Optional[str]`
+    :   Order price
 
-    `tsym: Optional[str]`
-    :   Trading symbol
+    `qty: Optional[str]`
+    :   Order quantity
 
-    `validity: Optional[py_client.common.enums.AlertValidity]`
-    :   DAY or GTT Validity
+    `dscqty: Optional[str]`
+    :   Disclosed quantity (Max 10% for NSE, and 50% for MCX)
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

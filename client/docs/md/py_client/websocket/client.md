@@ -23,16 +23,19 @@ Classes
 
     ### Methods
 
-    `closed(self)`
-    :   This method runs once the connection is closed.
-        ..warning:: Do not call this method directly
-
-    `connect(self, uid: str, actid: str)`
-    :   Connect to websocket
+    `on_connect(self, handler: Callable[[ForwardRef('NorenWebsocketClient'), Dict[str, Any]], None])`
+    :   Add on open handler
         
         Args:
-            uid (str): The user id for the user
-            actid (str): The account id for the user
+          handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+        
+        Usage:
+          Should be used as decorator
+          ```python
+          @ws.on_connect
+          def on_connect(client, ack: Dict[str, Any]):
+            print('Connected: ', ack)
+          ```
 
     `on_close(self, handler: Callable[[ForwardRef('NorenWebsocketClient')], None])`
     :   Add on close handler
@@ -46,20 +49,6 @@ Classes
           @ws.on_close
           def on_close(client):
             print('Connection closed')
-          ```
-
-    `on_connect(self, handler: Callable[[ForwardRef('NorenWebsocketClient'), Dict[str, Any]], None])`
-    :   Add on open handler
-        
-        Args:
-          handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
-        
-        Usage:
-          Should be used as decorator
-          ```python
-          @ws.on_connect
-          def on_connect(client, ack: Dict[str, Any]):
-            print('Connected: ', ack)
           ```
 
     `on_message(self, topic: py_client.websocket.enums.MessageTopic)`
@@ -79,28 +68,27 @@ Classes
             print(message)
           ```
 
-    `opened(self)`
-    :   This method runs once the connection is established
-        ..warning:: Do not call this method directly
+    `connect(self, uid: str, actid: str)`
+    :   Connect to websocket
+        
+        Args:
+            uid (str): The user id for the user
+            actid (str): The account id for the user
 
-    `received_message(self, message: ws4py.messaging.TextMessage)`
-    :   This method runs for every message
-        ..warning:: Do not call this method directly
-
-    `subscribe_depth(self, *scriplists: List[str])`
-    :   Subscribe to depth feed
+    `subscribe_touchline(self, *scriplists: List[str])`
+    :   Subscribe to touchline feed
         
         Args:
           scriplists (List[str]): One or more scriplists
 
-    `subscribe_order(self, actid: str)`
-    :   Subscribe to depth feed
+    `unsubscribe_touchline(self, *scriplists: List[str])`
+    :   Unsubscribe from touchline feed
         
         Args:
-          actid (str): Account id based on which order updated to be sent.
+          scriplists (List[str]): One or more scriplists
 
-    `subscribe_touchline(self, *scriplists: List[str])`
-    :   Subscribe to touchline feed
+    `subscribe_depth(self, *scriplists: List[str])`
+    :   Subscribe to depth feed
         
         Args:
           scriplists (List[str]): One or more scriplists
@@ -111,14 +99,26 @@ Classes
         Args:
           scriplists (List[str]): One or more scriplists
 
+    `subscribe_order(self, actid: str)`
+    :   Subscribe to depth feed
+        
+        Args:
+          actid (str): Account id based on which order updated to be sent.
+
     `unsubscribe_order(self, actid: str)`
     :   Unsubscribe from depth feed
         
         Args:
           actid (str): Account id based on which order updated to be sent.
 
-    `unsubscribe_touchline(self, *scriplists: List[str])`
-    :   Unsubscribe from touchline feed
-        
-        Args:
-          scriplists (List[str]): One or more scriplists
+    `opened(self)`
+    :   This method runs once the connection is established
+        ..warning:: Do not call this method directly
+
+    `closed(self)`
+    :   This method runs once the connection is closed.
+        ..warning:: Do not call this method directly
+
+    `received_message(self, message: ws4py.messaging.TextMessage)`
+    :   This method runs for every message
+        ..warning:: Do not call this method directly

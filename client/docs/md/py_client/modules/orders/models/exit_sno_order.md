@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
+    `uid: str`
+    :   Logged in User Id
+
     `norenordno: str`
     :   Noren order number, which needs to be cancelled
 
     `prd: str`
     :   Allowed for only H and B products (Cover order and bracket order)
-
-    `uid: str`
-    :   Logged in User Id
 
 `ExitSnoOrderResponseModel(**data: Any)`
 :   The response model for exit sno order endpoint
@@ -42,8 +42,11 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The exit sno success or failure status
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
     `dmsg: Optional[str]`
     :   Display message, (will be present only in case of success).
@@ -51,8 +54,5 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The exit sno success or failure status
+    `Config`
+    :   model configuration

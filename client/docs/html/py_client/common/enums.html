@@ -35,7 +35,11 @@ from enum import Enum
 __all__ = [
   &#39;RequestSourceType&#39;,
   &#39;ResponseStatus&#39;,
-  &#39;RestMethod&#39;
+  &#39;PriceType&#39;,
+  &#39;TransactionType&#39;,
+  &#39;RestMethod&#39;,
+  &#39;RetentionType&#39;,
+  &#39;AlertValidity&#39;
 ]
 
 class RequestSourceType(str, Enum):
@@ -134,15 +138,15 @@ class AlertValidity(str, Enum):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.enums.RequestSourceType.API"><code class="name">var <span class="ident">API</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="py_client.common.enums.RequestSourceType.MOB"><code class="name">var <span class="ident">MOB</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="py_client.common.enums.RequestSourceType.WEB"><code class="name">var <span class="ident">WEB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RequestSourceType.API"><code class="name">var <span class="ident">API</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -172,11 +176,104 @@ class AlertValidity(str, Enum):
 </ul>
 <h3>Class variables</h3>
 <dl>
+<dt id="py_client.common.enums.ResponseStatus.OK"><code class="name">var <span class="ident">OK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.common.enums.ResponseStatus.NOT_OK"><code class="name">var <span class="ident">NOT_OK</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="py_client.common.enums.ResponseStatus.OK"><code class="name">var <span class="ident">OK</span></code></dt>
+</dl>
+</dd>
+<dt id="py_client.common.enums.PriceType"><code class="flex name class">
+<span>class <span class="ident">PriceType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The price type for orders &amp; trades</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PriceType(str, Enum):
+  &#34;&#34;&#34;
+  The price type for orders &amp; trades
+  &#34;&#34;&#34;
+  LIMIT = &#39;LMT&#39;
+  MARKET = &#39;MKT&#39;
+  STOP_LOSS_LIMIT = &#39;SL-LMT&#39;
+  STOP_LOSS_MARKET = &#39;SL-MKT&#39;
+  DS = &#39;DS&#39;
+  SECOND_LEG = &#39;2L&#39;
+  THIRD_LEG = &#39;3L&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.enums.PriceType.LIMIT"><code class="name">var <span class="ident">LIMIT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.MARKET"><code class="name">var <span class="ident">MARKET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.STOP_LOSS_LIMIT"><code class="name">var <span class="ident">STOP_LOSS_LIMIT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.STOP_LOSS_MARKET"><code class="name">var <span class="ident">STOP_LOSS_MARKET</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.DS"><code class="name">var <span class="ident">DS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.SECOND_LEG"><code class="name">var <span class="ident">SECOND_LEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.PriceType.THIRD_LEG"><code class="name">var <span class="ident">THIRD_LEG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="py_client.common.enums.TransactionType"><code class="flex name class">
+<span>class <span class="ident">TransactionType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The transaction type for orders &amp; trades</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TransactionType(str, Enum):
+  &#34;&#34;&#34;
+  The transaction type for orders &amp; trades
+  &#34;&#34;&#34;
+  BUY = &#39;B&#39;
+  SELL = &#39;S&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.enums.TransactionType.BUY"><code class="name">var <span class="ident">BUY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.TransactionType.SELL"><code class="name">var <span class="ident">SELL</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -211,23 +308,7 @@ class AlertValidity(str, Enum):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.common.enums.RestMethod.DELETE"><code class="name">var <span class="ident">DELETE</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="py_client.common.enums.RestMethod.GET"><code class="name">var <span class="ident">GET</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.common.enums.RestMethod.HEAD"><code class="name">var <span class="ident">HEAD</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.common.enums.RestMethod.OPTION"><code class="name">var <span class="ident">OPTION</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="py_client.common.enums.RestMethod.PATCH"><code class="name">var <span class="ident">PATCH</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -235,7 +316,96 @@ class AlertValidity(str, Enum):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="py_client.common.enums.RestMethod.PATCH"><code class="name">var <span class="ident">PATCH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="py_client.common.enums.RestMethod.PUT"><code class="name">var <span class="ident">PUT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RestMethod.DELETE"><code class="name">var <span class="ident">DELETE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RestMethod.OPTION"><code class="name">var <span class="ident">OPTION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RestMethod.HEAD"><code class="name">var <span class="ident">HEAD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="py_client.common.enums.RetentionType"><code class="flex name class">
+<span>class <span class="ident">RetentionType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The retention type for orders</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RetentionType(str, Enum):
+  &#34;&#34;&#34;
+  The retention type for orders
+  &#34;&#34;&#34;
+  DAY = &#39;DAY&#39;
+  IOC = &#39;IOC&#39;
+  EOS = &#39;EOS&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.enums.RetentionType.DAY"><code class="name">var <span class="ident">DAY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RetentionType.IOC"><code class="name">var <span class="ident">IOC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.RetentionType.EOS"><code class="name">var <span class="ident">EOS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="py_client.common.enums.AlertValidity"><code class="flex name class">
+<span>class <span class="ident">AlertValidity</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The alert validity</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AlertValidity(str, Enum):
+  &#34;&#34;&#34;
+  The alert validity
+  &#34;&#34;&#34;
+  DAY = &#39;DAY&#39;
+  GTT = &#39;GTT&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.enums.AlertValidity.DAY"><code class="name">var <span class="ident">DAY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertValidity.GTT"><code class="name">var <span class="ident">GTT</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -260,28 +430,62 @@ class AlertValidity(str, Enum):
 <li>
 <h4><code><a title="py_client.common.enums.RequestSourceType" href="#py_client.common.enums.RequestSourceType">RequestSourceType</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.enums.RequestSourceType.API" href="#py_client.common.enums.RequestSourceType.API">API</a></code></li>
 <li><code><a title="py_client.common.enums.RequestSourceType.MOB" href="#py_client.common.enums.RequestSourceType.MOB">MOB</a></code></li>
 <li><code><a title="py_client.common.enums.RequestSourceType.WEB" href="#py_client.common.enums.RequestSourceType.WEB">WEB</a></code></li>
+<li><code><a title="py_client.common.enums.RequestSourceType.API" href="#py_client.common.enums.RequestSourceType.API">API</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.common.enums.ResponseStatus" href="#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.common.enums.ResponseStatus.NOT_OK" href="#py_client.common.enums.ResponseStatus.NOT_OK">NOT_OK</a></code></li>
 <li><code><a title="py_client.common.enums.ResponseStatus.OK" href="#py_client.common.enums.ResponseStatus.OK">OK</a></code></li>
+<li><code><a title="py_client.common.enums.ResponseStatus.NOT_OK" href="#py_client.common.enums.ResponseStatus.NOT_OK">NOT_OK</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.enums.PriceType" href="#py_client.common.enums.PriceType">PriceType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.common.enums.PriceType.LIMIT" href="#py_client.common.enums.PriceType.LIMIT">LIMIT</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.MARKET" href="#py_client.common.enums.PriceType.MARKET">MARKET</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.STOP_LOSS_LIMIT" href="#py_client.common.enums.PriceType.STOP_LOSS_LIMIT">STOP_LOSS_LIMIT</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.STOP_LOSS_MARKET" href="#py_client.common.enums.PriceType.STOP_LOSS_MARKET">STOP_LOSS_MARKET</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.DS" href="#py_client.common.enums.PriceType.DS">DS</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.SECOND_LEG" href="#py_client.common.enums.PriceType.SECOND_LEG">SECOND_LEG</a></code></li>
+<li><code><a title="py_client.common.enums.PriceType.THIRD_LEG" href="#py_client.common.enums.PriceType.THIRD_LEG">THIRD_LEG</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.enums.TransactionType" href="#py_client.common.enums.TransactionType">TransactionType</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.common.enums.TransactionType.BUY" href="#py_client.common.enums.TransactionType.BUY">BUY</a></code></li>
+<li><code><a title="py_client.common.enums.TransactionType.SELL" href="#py_client.common.enums.TransactionType.SELL">SELL</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.common.enums.RestMethod" href="#py_client.common.enums.RestMethod">RestMethod</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.common.enums.RestMethod.DELETE" href="#py_client.common.enums.RestMethod.DELETE">DELETE</a></code></li>
 <li><code><a title="py_client.common.enums.RestMethod.GET" href="#py_client.common.enums.RestMethod.GET">GET</a></code></li>
-<li><code><a title="py_client.common.enums.RestMethod.HEAD" href="#py_client.common.enums.RestMethod.HEAD">HEAD</a></code></li>
-<li><code><a title="py_client.common.enums.RestMethod.OPTION" href="#py_client.common.enums.RestMethod.OPTION">OPTION</a></code></li>
-<li><code><a title="py_client.common.enums.RestMethod.PATCH" href="#py_client.common.enums.RestMethod.PATCH">PATCH</a></code></li>
 <li><code><a title="py_client.common.enums.RestMethod.POST" href="#py_client.common.enums.RestMethod.POST">POST</a></code></li>
+<li><code><a title="py_client.common.enums.RestMethod.PATCH" href="#py_client.common.enums.RestMethod.PATCH">PATCH</a></code></li>
 <li><code><a title="py_client.common.enums.RestMethod.PUT" href="#py_client.common.enums.RestMethod.PUT">PUT</a></code></li>
+<li><code><a title="py_client.common.enums.RestMethod.DELETE" href="#py_client.common.enums.RestMethod.DELETE">DELETE</a></code></li>
+<li><code><a title="py_client.common.enums.RestMethod.OPTION" href="#py_client.common.enums.RestMethod.OPTION">OPTION</a></code></li>
+<li><code><a title="py_client.common.enums.RestMethod.HEAD" href="#py_client.common.enums.RestMethod.HEAD">HEAD</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.enums.RetentionType" href="#py_client.common.enums.RetentionType">RetentionType</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.common.enums.RetentionType.DAY" href="#py_client.common.enums.RetentionType.DAY">DAY</a></code></li>
+<li><code><a title="py_client.common.enums.RetentionType.IOC" href="#py_client.common.enums.RetentionType.IOC">IOC</a></code></li>
+<li><code><a title="py_client.common.enums.RetentionType.EOS" href="#py_client.common.enums.RetentionType.EOS">EOS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.enums.AlertValidity" href="#py_client.common.enums.AlertValidity">AlertValidity</a></code></h4>
+<ul class="">
+<li><code><a title="py_client.common.enums.AlertValidity.DAY" href="#py_client.common.enums.AlertValidity.DAY">DAY</a></code></li>
+<li><code><a title="py_client.common.enums.AlertValidity.GTT" href="#py_client.common.enums.AlertValidity.GTT">GTT</a></code></li>
 </ul>
 </li>
 </ul>

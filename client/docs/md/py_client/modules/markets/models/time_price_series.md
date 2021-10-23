@@ -19,23 +19,23 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
-
-    `et: datetime.datetime`
-    :   End Time
+    `uid: str`
+    :   The user id of the login user
 
     `exch: str`
     :   Exchange
 
-    `st: datetime.datetime`
-    :   Start time
-
     `token: str`
     :   Token
 
-    `uid: str`
-    :   The user id of the login user
+    `st: datetime.datetime`
+    :   Start time
+
+    `et: datetime.datetime`
+    :   End Time
+
+    `Config`
+    :   model configuration
 
 `TimePriceSeriesResponseModel(**data: Any)`
 :   The response model for time price series endpoint
@@ -51,14 +51,17 @@ Classes
 
     ### Class variables
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The time price series success or failure status
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
-    `intc: Optional[str]`
-    :   Interval close
+    `time: Optional[datetime.datetime]`
+    :   DD/MM/CCYY hh:mm:ss
+
+    `into: Optional[str]`
+    :   Interval open
 
     `inth: Optional[str]`
     :   Interval high
@@ -66,29 +69,26 @@ Classes
     `intl: Optional[str]`
     :   Interval low
 
-    `into: Optional[str]`
-    :   Interval open
-
-    `intoi: Optional[str]`
-    :   Interval io change
-
-    `intv: Optional[str]`
-    :   Interval volume
+    `intc: Optional[str]`
+    :   Interval close
 
     `intvwap: Optional[str]`
     :   Interval vwap
 
-    `oi: Optional[str]`
-    :   oi
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The time price series success or failure status
-
-    `time: Optional[datetime.datetime]`
-    :   DD/MM/CCYY hh:mm:ss
+    `intv: Optional[str]`
+    :   Interval volume
 
     `v: Optional[str]`
     :   volume
+
+    `intoi: Optional[str]`
+    :   Interval io change
+
+    `oi: Optional[str]`
+    :   oi
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `Config`
+    :   model configuration

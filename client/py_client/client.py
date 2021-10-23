@@ -48,16 +48,11 @@ class Client(Stateful):
     self._interceptors = []
 
   @property
-  def ws(self):
+  def ws(self) -> NorenWebsocketClient:
     """
     The websocket client
     """
     return self.__ws
-
-  @property
-  def state(self):
-    """The current client state"""
-    return self.__state__
 
   @property
   def users(self) -> UserDataSource:
@@ -97,9 +92,14 @@ class Client(Stateful):
   @property
   def funds(self) -> FundsDataSource:
     """
-    The funds module datasource
+    The funds module datasource.
     """
     return self.__funds
+
+  @property
+  def state(self):
+    """The current client state"""
+    return self.__state__
 
   def login(self, model: LoginRequestModel):
     """

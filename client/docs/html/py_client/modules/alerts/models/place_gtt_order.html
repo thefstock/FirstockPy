@@ -157,31 +157,39 @@ class PlaceGttOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Login user account id</p></div>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Alert Type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d"><code class="name">var <span class="ident">d</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Data to be compared with LTP</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Disclosed quantity (Max 10% for NSE, and 50% for MCX)</p></div>
+<div class="desc"><p>Trading symbol</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Exchange Segment</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Order price</p></div>
+<div class="desc"><p>Alert Type</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : py_client.common.enums.PriceType</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
+<dd>
+<div class="desc"><p>DAY or GTT Validity</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks"><code class="name">var <span class="ident">remarks</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Any message Entered during order entry.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d"><code class="name">var <span class="ident">d</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Data to be compared with LTP</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype"><code class="name">var <span class="ident">trantype</span> : <a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a></code></dt>
+<dd>
+<div class="desc"><p>Transaction type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
 <dd>
 <div class="desc"><p>Price type</p></div>
 </dd>
@@ -189,33 +197,25 @@ class PlaceGttOrderResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>The product name</p></div>
 </dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
+<dd>
+<div class="desc"><p>Retention type</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Login user account id</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Order price</p></div>
+</dd>
 <dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.qty"><code class="name">var <span class="ident">qty</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Order quantity</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks"><code class="name">var <span class="ident">remarks</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Any message Entered during order entry.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : py_client.common.enums.RetentionType</code></dt>
-<dd>
-<div class="desc"><p>Retention type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype"><code class="name">var <span class="ident">trantype</span> : py_client.common.enums.TransactionType</code></dt>
-<dd>
-<div class="desc"><p>Transaction type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity"><code class="name">var <span class="ident">validity</span> : py_client.common.enums.AlertValidity</code></dt>
-<dd>
-<div class="desc"><p>DAY or GTT Validity</p></div>
+<div class="desc"><p>Disclosed quantity (Max 10% for NSE, and 50% for MCX)</p></div>
 </dd>
 </dl>
 </dd>
@@ -257,9 +257,13 @@ class PlaceGttOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The place gtt order success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : Optional[str]</code></dt>
 <dd>
@@ -269,13 +273,9 @@ class PlaceGttOrderResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
-<dd>
-<div class="desc"><p>The place gtt order success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 </dl>
 </dd>
@@ -298,31 +298,31 @@ class PlaceGttOrderResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel">PlaceGttOrderRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t">ai_t</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d">d</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty">dscqty</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym">tsym</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.exch" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ai_t">ai_t</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity">validity</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.d">d</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype">trantype</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prctyp" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prctyp">prctyp</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prd" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prd">prd</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.qty" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.qty">qty</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.remarks">remarks</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ret" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.ret">ret</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.trantype">trantype</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.uid">uid</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.validity">validity</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.prc">prc</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.qty" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.qty">qty</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel.dscqty">dscqty</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel">PlaceGttOrderResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.al_id" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.al_id">al_id</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.emsg" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config" href="#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel.Config">Config</a></code></li>
 </ul>
 </li>
 </ul>

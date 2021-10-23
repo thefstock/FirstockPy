@@ -21,7 +21,19 @@ Classes
     `CONNECTION_ACK`
     :
 
-    `DEPTH_FEED`
+    `TOUCHLINE_SUB`
+    :
+
+    `TOUCHLINE_SUB_ACK`
+    :
+
+    `TOUCHLINE_FEED`
+    :
+
+    `TOUCHLINE_UNSUB`
+    :
+
+    `TOUCHLINE_UNSUB_ACK`
     :
 
     `DEPTH_SUB`
@@ -30,13 +42,13 @@ Classes
     `DEPTH_SUB_ACK`
     :
 
+    `DEPTH_FEED`
+    :
+
     `DEPTH_UNSUB`
     :
 
     `DEPTH_UNSUB_ACK`
-    :
-
-    `ORDER_FEED`
     :
 
     `ORDER_SUB`
@@ -45,23 +57,11 @@ Classes
     `ORDER_SUB_ACK`
     :
 
+    `ORDER_FEED`
+    :
+
     `ORDER_UNSUB`
     :
 
     `ORDER_UNSUB_ACK`
-    :
-
-    `TOUCHLINE_FEED`
-    :
-
-    `TOUCHLINE_SUB`
-    :
-
-    `TOUCHLINE_SUB_ACK`
-    :
-
-    `TOUCHLINE_UNSUB`
-    :
-
-    `TOUCHLINE_UNSUB_ACK`
     :
