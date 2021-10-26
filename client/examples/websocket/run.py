@@ -1,5 +1,5 @@
 from typing import Any
-from py_client.websocket import NorenWebsocketClient
+from py_client.websocket import WsClient
 from py_client.common import RequestSourceType, ResponseStatus
 from py_client.models import LoginRequestModel
 from py_client.client import Client
@@ -27,18 +27,18 @@ login_model = LoginRequestModel(
 client.login(login_model)
 
 @ws.on_message(MessageTopic.TOUCHLINE_FEED)
-def msg_handler(client: NorenWebsocketClient, message: Any):
+def msg_handler(client: WsClient, message: Any):
   print("Recieving touchline feed")
   print(message)
 
 @ws.on_message(MessageTopic.TOUCHLINE_SUB_ACK)
-def msg_handler(client: NorenWebsocketClient, message: Any):
+def msg_handler(client: WsClient, message: Any):
   if message.get('s') == 'OK':
     print('Subscribed to touchline feed')
   print(message)
 
 @ws.on_connect
-def cnc_handler(client: NorenWebsocketClient, message: Any):
+def cnc_handler(client: WsClient, message: Any):
   if message.get('s') == 'OK':
     client.subscribe_touchline('NSE', 'NIFTY')
     print('Connected to server')

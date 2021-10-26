@@ -3,7 +3,7 @@ The client combines all the modules and abstracts the inner logic
 """
 
 from py_client.common.enums import ResponseStatus
-from py_client.websocket.client import NorenWebsocketClient
+from py_client.websocket.client import WsClient
 from .modules.users import LoginRequestModel, LogoutRequestModel
 from .modules.users import UserDataSource
 from .modules.watchlists import WatchListDataSource
@@ -39,7 +39,7 @@ class Client(Stateful):
     self.__alerts = AlertsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__funds = FundsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__hl = HoldingsLimitsDataSource(api_url, interceptors=self._interceptors, state=self.state)
-    self.__ws = NorenWebsocketClient(socket_url, state=self.state)
+    self.__ws = WsClient(socket_url, state=self.state)
 
   def __setup__(self) -> None:
     """
@@ -48,7 +48,7 @@ class Client(Stateful):
     self._interceptors = []
 
   @property
-  def ws(self) -> NorenWebsocketClient:
+  def ws(self) -> WsClient:
     """
     The websocket client
     """

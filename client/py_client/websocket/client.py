@@ -13,9 +13,11 @@ from py_client.websocket.models.order import OrderSubscribeModel, OrderUnsubscri
 from ..utils.stateful import Stateful
 from .models import *
 
-class NorenWebsocketClient(WebSocketClient, Stateful):
+__all__  = ['WsClient']
+
+class WsClient(WebSocketClient, Stateful):
   """
-  The websocket client for accessing noren ws
+  The websocket client for realtime data
   """
   def __init__(self, url: str, state: Dict[str, Any] = {}):
     """
@@ -33,12 +35,12 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
     self.__on_close_handlers = []
     self.__on_message_handlers: Dict[MessageTopic, Callable] = defaultdict(lambda: [])
 
-  def on_connect(self, handler: Callable[['NorenWebsocketClient', Dict[str, Any]], None]):
+  def on_connect(self, handler: Callable[['WsClient', Dict[str, Any]], None]):
     """
     Add on open handler
 
     Args:
-      handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+      handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
 
     Usage:
       Should be used as decorator
@@ -50,12 +52,12 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
     """
     self.__on_connect_handlers.append(handler)
 
-  def on_close(self, handler: Callable[['NorenWebsocketClient'], None]):
+  def on_close(self, handler: Callable[['WsClient'], None]):
     """
     Add on close handler
 
     Args:
-      handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
+      handler (Callable[[WsClient], None]): The handler to run on connection closed
     
     Usage:
       Should be used as decorator
@@ -75,7 +77,7 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
       topic (MessageTopic): The handler to run when a new message is recieved
 
     Returns:
-      Callable[[Callable[['NorenWebsocketClient', Dict[str, Any]], None]], None]
+      Callable[[Callable[['WsClient', Dict[str, Any]], None]], None]
 
     Usage:
       Should be used as decorator
@@ -85,7 +87,7 @@ class NorenWebsocketClient(WebSocketClient, Stateful):
         print(message)
       ```
     """
-    def register(handler: Callable[['NorenWebsocketClient', Dict[str, Any]], None]):
+    def register(handler: Callable[['WsClient', Dict[str, Any]], None]):
       self.__on_message_handlers[topic].append(handler)
     return register
 

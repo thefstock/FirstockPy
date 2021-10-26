@@ -34,6 +34,8 @@ class GetPendingGttOrderResponseModel(BaseModel):
   """Alert Type"""
   al_id: Optional[str]
   """Alert id"""
+  token: Optional[str]
+  """Contract token"""
   validity: Optional[AlertValidity]
   """DAY or GTT Validity"""
   remarks: Optional[str]
@@ -46,7 +48,7 @@ class GetPendingGttOrderResponseModel(BaseModel):
   """Price type"""
   prd: Optional[str]
   """The product name"""
-  ret: RetentionType
+  ret: Optional[RetentionType]
   """Retention type"""
   actid: Optional[str]
   """Login user account id"""

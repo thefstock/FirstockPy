@@ -2,11 +2,11 @@
 """
 Request and response models for place gtt order request
 """
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
-from ....common.enums import AlertValidity, PriceType, ResponseStatus, RetentionType, TransactionType
+from ....common.enums import AlertType, AlertValidity, PriceType, ResponseStatus, RetentionType, TransactionType
 from ....utils.decoders import build_loader, datetime_decoder
 
 __all__ = ['PlaceGttOrderRequestModel', 'PlaceGttOrderResponseModel']
@@ -21,7 +21,7 @@ class PlaceGttOrderRequestModel(BaseModel):
   """Trading symbol"""
   exch: str
   """Exchange Segment"""
-  ai_t: str
+  ai_t: AlertType
   """Alert Type"""
   validity: AlertValidity
   """DAY or GTT Validity"""
@@ -50,7 +50,7 @@ class PlaceGttOrderResponseModel(BaseModel):
   """
   The response model for place gtt order endpoint
   """
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   """The place gtt order success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""

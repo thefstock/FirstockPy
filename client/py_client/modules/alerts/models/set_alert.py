@@ -2,11 +2,11 @@
 """
 Request and response models for set alert request
 """
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
-from ....common.enums import AlertValidity, ResponseStatus
+from ....common.enums import AlertType, AlertValidity, ResponseStatus
 from ....utils.decoders import build_loader, datetime_decoder
 
 __all__ = ['SetAlertRequestModel', 'SetAlertResponseModel']
@@ -21,20 +21,20 @@ class SetAlertRequestModel(BaseModel):
   """Trading symbol"""
   exch: str
   """Exchange Segment"""
-  ai_t: str
+  ai_t: AlertType
   """Alert Type"""
   validity: AlertValidity
   """DAY or GTT Validity"""
   remarks: str
   """Any message Entered during order entry."""
-  d: str
+  d: Optional[str]
   """Data to be compared with LTP"""
 
 class SetAlertResponseModel(BaseModel):
   """
   The response model for set alert endpoint
   """
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   """The set alert success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""

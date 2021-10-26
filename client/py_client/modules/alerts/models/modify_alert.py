@@ -2,7 +2,7 @@
 """
 Request and response models for modify alert request
 """
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
@@ -36,7 +36,7 @@ class ModifyAlertResponseModel(BaseModel):
   """
   The response model for modify alert endpoint
   """
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   """The modify alert success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""

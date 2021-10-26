@@ -29,9 +29,10 @@ The library uses **requests** library under the hood to interface with the REST 
 __version__ = '0.1.0'
 
 __all__ = [
-    'Client', 'NorenWebsocketClient',
+    'Client', 'WsClient',
     'AlertsDataSource', 'FundsDataSource', 'MarketsDataSource',
-    'OrdersDataSource', 'UserDataSource', 'WatchListDataSource']
+    'OrdersDataSource', 'UserDataSource', 'WatchListDataSource'
+  ]
 
 from .common import *
 from .modules import *
