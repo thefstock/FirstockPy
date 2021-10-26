@@ -22,7 +22,7 @@ class GetPredefinedWatchListsResponseModel(BaseModel):
   """
   The response model for get predefined watchlists endpoint
   """
-  stat: ResponseStatus
+  stat: Optional[ResponseStatus]
   """The get predefined watchlists success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""

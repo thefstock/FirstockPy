@@ -4,7 +4,7 @@ CLI Tool for working with this project
 from fire import Fire
 import string
 import re
-from os import path, makedirs
+from os import getcwd, path, makedirs
 from rich.console import Console
 
 from .assets import generator_strings as codes
@@ -48,11 +48,9 @@ class Generator:
     else:
       console.print(f'[ERROR] path does not exist {path.abspath(datasource_path)}', style='red')
 
-
   def model(self, module: str, name: str):
     """Generate a model file"""
     console = Console()
-
     name = re.sub(r"[^a-z]+", ' ', name).strip()
     classname = string.capwords(name).replace(' ', '')
     filename = name.replace(' ', '_')
@@ -119,6 +117,45 @@ class Generator:
         mfile.writelines(f"\nfrom .{module_name} import *")
     else:
       console.print(f'[ERROR] folder already exists {path.abspath(module_path)}', style='red')
+
+  def test_suite(self, name: str):
+    """Generate test suite"""
+    console = Console()
+    
+    name = re.sub(r"[^a-z]+", ' ', name).strip()
+    classname = "Test" + string.capwords(name).replace(' ', '')
+    module_name = name.replace(' ', '_')
+    # test file path
+    test_suite_path = path.join(getcwd(), 'tests', f"test_{module_name}_module.py")
+    if not path.exists(test_suite_path):
+      console.print(f"Generating test suite for [b green]{module_name}[/b green]\n")
+      with open(test_suite_path, 'w') as test_file:
+        test_file.write(codes.TEST_SUITE.format(name=name, classname=classname, module=module_name))
+    else:
+      console.print(f'[ERROR] file already exists {path.abspath(test_suite_path)}', style='red')
+
+  def test_case(self, module: str, name: str, model: str = None, endpoint: str = None):
+    """Generate test case for a test suite"""
+    console = Console()
+    # set model as name if its none
+    model = name if model is None else model
+    # get method name
+    name = re.sub(r"[^a-z]+", ' ', name).strip()
+    method_name = name.replace(' ', '_')
+    endpoint_key = method_name.upper() if endpoint is None else endpoint.upper()
+    # get model name
+    model = re.sub(r"[^a-z]+", ' ', model).strip()
+    model_name = string.capwords(model).replace(' ', '')
+    # get module name
+    module = re.sub(r"[^a-z]+", ' ', module).strip()
+    module_name = module.replace(' ', '_')
+    test_suite_path = path.join(getcwd(), 'tests', f"test_{module_name}_module.py")
+    if path.exists(test_suite_path):
+      console.print(f"[yellow][UPDATING][/yellow]\t[violet]{test_suite_path}[/violet]")
+      with open(test_suite_path, 'a') as test_file:
+        test_file.write(codes.TEST_CASE.format(model=model_name, name=method_name, module=module_name, endpoint=endpoint_key))
+    else:
+      console.print(f'[ERROR] no test suite available at {path.abspath(test_suite_path)}', style='red')
 
 def main():
   Fire(Generator)

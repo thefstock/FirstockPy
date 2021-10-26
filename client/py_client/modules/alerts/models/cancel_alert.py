@@ -2,7 +2,7 @@
 """
 Request and response models for cancel alert request
 """
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
@@ -24,7 +24,7 @@ class CancelAlertResponseModel(BaseModel):
   """
   The response model for cancel alert endpoint
   """
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   """The cancel alert success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""

@@ -92,3 +92,53 @@ METHOD = """
     # convert the request to response model
     return {model}ResponseModel.parse_raw(response_json)
 """
+
+TEST_SUITE = """
+import os
+import json
+import unittest
+from unittest.mock import MagicMock
+
+from py_client import Client, ResponseStatus
+from py_client.models import LoginResponseModel
+from py_client.modules.{module}.models import *
+from py_client.modules.{module} import endpoints
+
+from .common import create_login_model
+from .mock import mock_post
+
+class {classname}(unittest.TestCase):
+  \"\"\"
+  Test {name} module
+  \"\"\"
+
+  def setUp(self) -> None:
+    self.client = Client(os.getenv('API_URL'), os.getenv('SOCKET_URL'))
+    # mock methods
+    self.post_mock = MagicMock(wraps=mock_post)
+    self.client.{module}.post = self.post_mock
+    self.client.users.login = MagicMock(return_value=LoginResponseModel(susertoken='abcdefg'))
+    # login
+    self.credentials = create_login_model()
+    self.token = self.client.login(self.credentials).susertoken
+    assert self.token is not None
+"""
+
+TEST_CASE = """
+  def test_{name}(self):
+    model = {model}RequestModel(...)
+    response = self.client.{module}.{name}(model)
+    with self.subTest('request should be called with proper data'):
+      expected_data = {{ ... }}
+      expected_body = f'jData={{json.dumps(expected_data)}}&jKey={{self.token}}'
+      self.post_mock.assert_called_with(endpoints.{endpoint}, expected_body)
+    with self.subTest('response should be parsed properly'):
+      assert response is not None
+      assert response.stat is not None
+      if response.stat == ResponseStatus.OK:
+        # check
+        pass
+      else:
+        assert response.emsg is not None
+        assert type(response.emsg) == str
+"""

@@ -6,6 +6,7 @@ import json
 from dateutil.parser import parse as parse_date
 from datetime import datetime
 from typing import Any, Callable, Dict, Union
+from pydantic.main import ModelMetaclass
 
 def datetime_decoder(transform: Callable[[datetime], Any] = None, **kwargs):
   """
@@ -17,7 +18,7 @@ def datetime_decoder(transform: Callable[[datetime], Any] = None, **kwargs):
   Returns:
     Callable[[str], datetime]: The datetime decoder
   """
-  def decode(value: str) -> datetime:
+  def decode(value: str) -> Any:
     """
     Decode the datetime string to datetime instance
 
@@ -29,6 +30,26 @@ def datetime_decoder(transform: Callable[[datetime], Any] = None, **kwargs):
     """
     dt = parse_date(value, **kwargs)
     return dt if transform is None else transform(dt)
+  return decode
+
+def nested_model(ModelClass: ModelMetaclass):
+  """
+  Runs decoders of the nested model
+
+  Returns:
+    Callable[[Union[str,int]], datetime]: The datetime decoder
+  """
+  def decode(value: Any) -> ModelClass:
+    """
+    Decode nested object into corresponding pydantic model
+
+    Args:
+      value (Any): The value as object or list of objects
+    """
+    if type(value) == list:
+      return [ModelClass.parse_raw(json.dumps(val)) for val in value]
+    else:
+      return ModelClass.parse_raw(json.dumps(value))
   return decode
 
 def timestamp_decoder():

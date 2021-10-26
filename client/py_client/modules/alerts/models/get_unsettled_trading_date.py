@@ -8,7 +8,7 @@ from datetime import datetime
 
 from ....common.enums import ResponseStatus
 from ....common.models import TradeDate
-from ....utils.decoders import build_loader, datetime_decoder
+from ....utils.decoders import build_loader, datetime_decoder, nested_model
 
 __all__ = ['GetUnsettledTradingDateRequestModel', 'GetUnsettledTradingDateResponseModel']
 
@@ -35,5 +35,6 @@ class GetUnsettledTradingDateResponseModel(BaseModel):
   class Config:
     """model configuration"""
     json_loads = build_loader({
-      "request_time": datetime_decoder()
+      "request_time": datetime_decoder(),
+      "trd_date": nested_model(TradeDate)
     })

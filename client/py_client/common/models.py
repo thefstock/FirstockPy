@@ -110,7 +110,7 @@ class TBContract(BaseModel):
   pc: Optional[str] 
   """LTP percentage change"""
 
-class AlertType(BaseModel):
+class AlertTypeModel(BaseModel):
   """
   The alert type model
   """
@@ -125,9 +125,9 @@ class TradeDate(BaseModel):
 
   class Config:
     """The model config"""
-    json_dumps = {
+    json_loads = build_loader({
       "trd_date": datetime_decoder(transform=lambda dt: dt.date())
-    }
+    })
 
 class ExchTsym(BaseModel):
   """The exch_tsym model"""

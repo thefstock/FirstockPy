@@ -70,7 +70,7 @@ class LoginResponseModel(BaseModel):
   """
   The data model for login response
   """
-  stat: ResponseStatus
+  stat: ResponseStatus = ResponseStatus.OK
   """Login success or failure status"""
   susertoken: Optional[str]
   """Present only on login success. This key is to be passed in subsequent requests"""

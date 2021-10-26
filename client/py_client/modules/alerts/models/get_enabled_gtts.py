@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 from ....common.enums import ResponseStatus
-from ....common.models import AlertType
+from ....common.models import AlertTypeModel
 from ....utils.decoders import build_loader, datetime_decoder
 
 __all__ = ['GetEnabledGttsRequestModel', 'GetEnabledGttsResponseModel']
@@ -27,7 +27,7 @@ class GetEnabledGttsResponseModel(BaseModel):
   """The get enabled gtts success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""
-  ai_ts: Optional[List[AlertType]]
+  ai_ts: Optional[List[AlertTypeModel]]
   """List of alert types"""
   emsg: Optional[str]
   """Error message if the request failed"""
