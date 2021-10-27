@@ -5,10 +5,14 @@ import json
 from py_client.modules.watchlists import endpoints as wlep
 from py_client.modules.users import endpoints as uep
 from py_client.modules.alerts import endpoints as aep
+from py_client.modules.funds import endpoints as fep
+from py_client.modules.markets import endpoints as mep
 
 # MOCK RESULTS
 RESULTS = {
-    # Alerts module
+    # ---------------------------------------------------------------------------- #
+    #                                 ALERTS MODULE                                #
+    # ---------------------------------------------------------------------------- #
     aep.SET_ALERT: {
         "request_time": "11:22:26 08-04-2021",
         "stat": "Oi created",
@@ -100,7 +104,180 @@ RESULTS = {
             }
         ]
     },
-    # Users Module
+    # ---------------------------------------------------------------------------- #
+    #                                 FUNDS MODULE                                 #
+    # ---------------------------------------------------------------------------- #
+    fep.GET_MAX_PAYOUT_AMOUNT: {
+        "request_time": "15:52:26 10-05-2021",
+        "stat": "Ok",
+        "actid": "C-GURURAJ",
+        "payout": "21200.20"
+    },
+    fep.GET_CONTENT_BASKET: {
+        "request_time": "18:51:38 25-06-2021",
+        "stat": "Ok",
+        "basketlists":
+        [
+            {"basket": "NSEEQ"},
+            {"basket": "BSEEQ"},
+            {"basket": "A"}
+        ]
+    },
+    fep.GET_CONTENT_LIST: {
+        "request_time": "18:51:38 25-06-2021",
+        "stat": "Ok",
+        "tsym": "AUROPHARMA-EQ",
+        "lp": "1450.00",
+        "c": "0.00",
+        "h": "0.00",
+        "l": "0.00",
+        "ap": "0.00",
+        "v": "0",
+        "ltt": "05:30:00",
+        "pc": "0.00"
+    },
+    # ---------------------------------------------------------------------------- #
+    #                                MARKETS MODULE                                #
+    # ---------------------------------------------------------------------------- #
+    mep.GET_INDEX_LIST: {
+        "request_time": "20:12:29 13-12-2020",
+        "stat": "Ok",
+        "values": [
+            {
+                "idxname": "HangSeng BeES-NAV",
+                "token": "26016"
+            },
+            {
+                "idxname": "India VIX",
+                "token": "26017"
+            },
+            {
+                "idxname": "Nifty 50",
+                "token": "26000"
+            },
+            {
+                "idxname": "Nifty IT",
+                "token": "26008"
+            },
+            {
+                "idxname": "Nifty Next 50",
+                "token": "26013"
+            },
+            {
+                "idxname": "Nifty Bank",
+                "token": "26009"
+            },
+            {
+                "idxname": "Nifty 500",
+                "token": "26004"
+            },
+            {
+                "idxname": "Nifty 100",
+                "token": "26012"
+            },
+            {
+                "idxname": "Nifty Midcap 50",
+                "token": "26014"
+            }
+        ]
+    },
+    mep.TOP_LIST_NAMES: {
+        "request_time": "13:08:22 03-06-2020",
+        "stat": "Ok",
+        "values": [
+            {
+                "bskt": "NSEBL",
+                "crt": "VOLUME"
+            },
+            {
+                "bskt": "NSEBL",
+                "crt": "LTP"
+            },
+            {
+                "bskt": "NSEBL",
+                "crt": "VALUE"
+            },
+            {
+                "bskt": "NSEEQ",
+                "crt": "VOLUME"
+            },
+            {
+                "bskt": "NSEEQ",
+                "crt": "LTP"
+            },
+            {
+                "bskt": "NSEEQ",
+                "crt": "VALUE"
+            },
+            {
+                "bskt": "NSEALL",
+                "crt": "VOLUME"
+            }
+        ]
+    },
+    mep.TOP_LIST: {
+        "stat": "Ok",
+        "request_time": "15:44:45 03-06-2020",
+        "values": [
+            {
+                "tsym": "AIRAN-EQ",
+                "lp": "950.00",
+                "c": "915.00",
+                "v": "42705",
+                "value": "40185405.00",
+                "oi": "0",
+                "pc": "3.83"
+            },
+            {
+                "tsym": "SHRENIK-EQ",
+                "lp": "1850.00",
+                "c": "1785.00",
+                "v": "206846",
+                "value": "368806418.00",
+                "oi": "0",
+                "pc": "3.64"
+            },
+            {
+                "tsym": "REMSONSIND-EQ",
+                "lp": "6000.00",
+                "c": "5795.00",
+                "v": "3948",
+                "value": "22752324.00",
+                "oi": "0",
+                "pc": "3.54"
+            },
+            {
+                "tsym": "AXISNIFTY-EQ",
+                "lp": "106700.00",
+                "c": "103301.00",
+                "v": "422",
+                "value": "43825544.00",
+                "oi": "0",
+                "pc": "3.29"
+            }
+        ]
+    },
+    mep.TP_SERIES: {
+        "stat": "Ok",
+        "time": "02-06-2020 15:46:23",
+        "into": "0.00",
+        "inth": "0.00",
+        "intl": "0.00",
+        "intc": "0.00",
+        "intvwap": "0.00",
+        "intv": "0",
+        "intoi": "0",
+        "v": "980515",
+        "oi": "128702"
+    },
+    mep.GET_BROKER_MESSAGE:  {
+        "stat": "Ok",
+        "norentm": "02-05-1975 08:48:52",
+        "dmsg": "Test Msg All Message Recovery2"
+    },
+    # ---------------------------------------------------------------------------- #
+    #                                 USERS MODULE                                 #
+    # ---------------------------------------------------------------------------- #
     uep.LOGIN: {
         "request_time": "20:18:47 19-05-2020",
         "stat": "Ok",
@@ -180,7 +357,9 @@ RESULTS = {
         "request_time": "14:59:43 27-05-2020",
         "stat": "Ok"
     },
-    # WatchLists
+    # ---------------------------------------------------------------------------- #
+    #                               WATCHLISTS MODULE                              #
+    # ---------------------------------------------------------------------------- #
     wlep.GET_NAMES: {
         "request_time": "12:34:52 21-05-2020",
         "values": [
