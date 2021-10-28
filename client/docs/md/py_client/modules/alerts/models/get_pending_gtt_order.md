@@ -54,6 +54,9 @@ Classes
     `al_id: Optional[str]`
     :   Alert id
 
+    `token: Optional[str]`
+    :   Contract token
+
     `validity: Optional[py_client.common.enums.AlertValidity]`
     :   DAY or GTT Validity
 
@@ -72,7 +75,7 @@ Classes
     `prd: Optional[str]`
     :   The product name
 
-    `ret: py_client.common.enums.RetentionType`
+    `ret: Optional[py_client.common.enums.RetentionType]`
     :   Retention type
 
     `actid: Optional[str]`

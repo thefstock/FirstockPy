@@ -30,11 +30,11 @@
 <pre><code class="python">&#34;&#34;&#34;
 Request and response models for set alert request
 &#34;&#34;&#34;
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
-from ....common.enums import AlertValidity, ResponseStatus
+from ....common.enums import AlertType, AlertValidity, ResponseStatus
 from ....utils.decoders import build_loader, datetime_decoder
 
 __all__ = [&#39;SetAlertRequestModel&#39;, &#39;SetAlertResponseModel&#39;]
@@ -49,20 +49,20 @@ class SetAlertRequestModel(BaseModel):
   &#34;&#34;&#34;Trading symbol&#34;&#34;&#34;
   exch: str
   &#34;&#34;&#34;Exchange Segment&#34;&#34;&#34;
-  ai_t: str
+  ai_t: AlertType
   &#34;&#34;&#34;Alert Type&#34;&#34;&#34;
   validity: AlertValidity
   &#34;&#34;&#34;DAY or GTT Validity&#34;&#34;&#34;
   remarks: str
   &#34;&#34;&#34;Any message Entered during order entry.&#34;&#34;&#34;
-  d: str
+  d: Optional[str]
   &#34;&#34;&#34;Data to be compared with LTP&#34;&#34;&#34;
 
 class SetAlertResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for set alert endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   &#34;&#34;&#34;The set alert success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -109,13 +109,13 @@ class SetAlertResponseModel(BaseModel):
   &#34;&#34;&#34;Trading symbol&#34;&#34;&#34;
   exch: str
   &#34;&#34;&#34;Exchange Segment&#34;&#34;&#34;
-  ai_t: str
+  ai_t: AlertType
   &#34;&#34;&#34;Alert Type&#34;&#34;&#34;
   validity: AlertValidity
   &#34;&#34;&#34;DAY or GTT Validity&#34;&#34;&#34;
   remarks: str
   &#34;&#34;&#34;Any message Entered during order entry.&#34;&#34;&#34;
-  d: str
+  d: Optional[str]
   &#34;&#34;&#34;Data to be compared with LTP&#34;&#34;&#34;</code></pre>
 </details>
 <h3>Ancestors</h3>
@@ -137,7 +137,7 @@ class SetAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Exchange Segment</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : <a title="py_client.common.enums.AlertType" href="../../../common/enums.html#py_client.common.enums.AlertType">AlertType</a></code></dt>
 <dd>
 <div class="desc"><p>Alert Type</p></div>
 </dd>
@@ -149,7 +149,7 @@ class SetAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Any message Entered during order entry.</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Data to be compared with LTP</p></div>
 </dd>
@@ -171,7 +171,7 @@ class SetAlertResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for set alert endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   &#34;&#34;&#34;The set alert success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -193,7 +193,7 @@ class SetAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
 <dd>
 <div class="desc"><p>The set alert success or failure status</p></div>
 </dd>

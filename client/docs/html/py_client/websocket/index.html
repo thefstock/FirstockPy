@@ -6,7 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>py_client.websocket API documentation</title>
 <meta name="description" content="The websocket client to connect to websocket to recieve realtime feeds.
-The NorenWebsockerClient contains decorators to assign handlers for listening …" />
+The WsClient contains decorators to assign handlers for listening to messages …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -24,14 +24,14 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
 </header>
 <section id="section-intro">
 <p>The websocket client to connect to websocket to recieve realtime feeds.
-The NorenWebsockerClient contains decorators to assign handlers for listening to messages.</p>
+The WsClient contains decorators to assign handlers for listening to messages.</p>
 <p>These decorators include:
 - <code>on_message(topic)</code> - Runs on every message
 - <code>on_connect</code> - Runs once connection is established (Provides the connection acknowedgement message)
 - <code>on_close</code> - Runs once the connection is closed</p>
 <p>Example:</p>
 <pre><code class="language-python">from typing import Any
-from py_client.websocket import NorenWebsocketClient
+from py_client.websocket import WsClient
 from py_client import Client, LoginRequestModel, RequestSourceType
 import os
 from dotenv import load_dotenv
@@ -57,11 +57,11 @@ login_model = LoginRequestModel(
 client.login(login_model)
 
 @ws.on_message(MessageTopic.TOUCHLINE_FEED)
-def msg_handler(client: NorenWebsocketClient, message: Any):
+def msg_handler(client: WsClient, message: Any):
   print(message)
 
 @ws.on_connect
-def cnc_handler(client: NorenWebsocketClient, message: Any):
+def cnc_handler(client: WsClient, message: Any):
   print(message)
 
 
@@ -79,7 +79,7 @@ ws.run_forever()
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
 The websocket client to connect to websocket to recieve realtime feeds.
-The NorenWebsockerClient contains decorators to assign handlers for listening to messages.
+The WsClient contains decorators to assign handlers for listening to messages.
 
 These decorators include:
   - `on_message(topic)` - Runs on every message
@@ -90,7 +90,7 @@ Example:
 
 ```python
 from typing import Any
-from py_client.websocket import NorenWebsocketClient
+from py_client.websocket import WsClient
 from py_client import Client, LoginRequestModel, RequestSourceType
 import os
 from dotenv import load_dotenv
@@ -116,11 +116,11 @@ login_model = LoginRequestModel(
 client.login(login_model)
 
 @ws.on_message(MessageTopic.TOUCHLINE_FEED)
-def msg_handler(client: NorenWebsocketClient, message: Any):
+def msg_handler(client: WsClient, message: Any):
   print(message)
 
 @ws.on_connect
-def cnc_handler(client: NorenWebsocketClient, message: Any):
+def cnc_handler(client: WsClient, message: Any):
   print(message)
 
 

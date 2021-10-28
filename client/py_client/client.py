@@ -3,6 +3,7 @@ The client combines all the modules and abstracts the inner logic
 """
 
 from py_client.common.enums import ResponseStatus
+from py_client.modules.holdings_limits.models.holdings import HoldingsResponseModel
 from py_client.websocket.client import WsClient
 from .modules.users import LoginRequestModel, LogoutRequestModel
 from .modules.users import UserDataSource
@@ -134,7 +135,7 @@ class Client(Stateful):
       self.set_state('token', None)
     return response
 
-  def holdings(self, model: HoldingsRequestModel, key: str):
+  def holdings(self, model: HoldingsRequestModel, key: str = None):
     """
     Get holdings
 

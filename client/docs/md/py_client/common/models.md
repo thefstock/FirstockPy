@@ -210,7 +210,7 @@ Classes
     `pc: Optional[str]`
     :   LTP percentage change
 
-`AlertType(**data: Any)`
+`AlertTypeModel(**data: Any)`
 :   The alert type model
     
     Create a new model by parsing and validating input data from keyword arguments.

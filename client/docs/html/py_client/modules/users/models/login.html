@@ -99,7 +99,7 @@ class LoginResponseModel(BaseModel):
   &#34;&#34;&#34;
   The data model for login response
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: ResponseStatus = ResponseStatus.OK
   &#34;&#34;&#34;Login success or failure status&#34;&#34;&#34;
   susertoken: Optional[str]
   &#34;&#34;&#34;Present only on login success. This key is to be passed in subsequent requests&#34;&#34;&#34;
@@ -305,7 +305,7 @@ def validate(cls, values: dict):
   &#34;&#34;&#34;
   The data model for login response
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: ResponseStatus = ResponseStatus.OK
   &#34;&#34;&#34;Login success or failure status&#34;&#34;&#34;
   susertoken: Optional[str]
   &#34;&#34;&#34;Present only on login success. This key is to be passed in subsequent requests&#34;&#34;&#34;

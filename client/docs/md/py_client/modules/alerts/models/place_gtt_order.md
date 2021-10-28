@@ -28,7 +28,7 @@ Classes
     `exch: str`
     :   Exchange Segment
 
-    `ai_t: str`
+    `ai_t: py_client.common.enums.AlertType`
     :   Alert Type
 
     `validity: py_client.common.enums.AlertValidity`
@@ -78,7 +78,7 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
+    `stat: Union[py_client.common.enums.ResponseStatus, str]`
     :   The place gtt order success or failure status
 
     `request_time: Optional[datetime.datetime]`

@@ -35,7 +35,7 @@ class GetContentBasketResponseModel(BaseModel):
   """The get content basket success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""
-  basketlist: Optional[List[Basket]]
+  basketlists: Optional[List[Basket]]
   """List of baskets"""
   emsg: Optional[str]
   """Error message if the request failed"""

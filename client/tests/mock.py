@@ -7,6 +7,8 @@ from py_client.modules.users import endpoints as uep
 from py_client.modules.alerts import endpoints as aep
 from py_client.modules.funds import endpoints as fep
 from py_client.modules.markets import endpoints as mep
+from py_client.modules.orders import endpoints as oep
+from py_client.modules.holdings_limits import endpoints as hlep
 
 # MOCK RESULTS
 RESULTS = {
@@ -274,6 +276,176 @@ RESULTS = {
         "stat": "Ok",
         "norentm": "02-05-1975 08:48:52",
         "dmsg": "Test Msg All Message Recovery2"
+    },
+    # ---------------------------------------------------------------------------- #
+    #                                 ORDERS MODULE                                #
+    # ---------------------------------------------------------------------------- #
+    oep.PLACE_ORDER: {
+        "request_time": "10:48:03 20-05-2020",
+        "stat": "Ok",
+        "norenordno": "20052000000017"
+    },
+    oep.MODIFY_ORDER: {
+        "request_time": "14:14:08 26-05-2020",
+        "stat": "Ok",
+        "result": "20052600000103"
+    },
+    oep.CANCEL_ORDER: {
+        "request_time": "14:14:08 26-05-2020",
+        "stat": "Ok",
+        "result": "20052600000103"
+    },
+    oep.ORDER_BOOK: {
+        "stat": "Ok",
+        "exch": "NSE",
+        "tsym": "ACC-EQ",
+        "norenordno": "20062500000001223",
+        "prc": "127230",
+        "qty": "100",
+        "prd": "C",
+        "status": "Open",
+        "trantype": "B",
+        "prctyp": "LMT",
+        "fillshares": "0",
+        "avgprc": "0",
+        "exchordid": "250620000000343421",
+        "uid": "VIDYA",
+        "actid": "CLIENT1",
+        "ret": "DAY",
+        "amo": "Yes"
+    },
+    oep.SINGLE_ORDER_HISTORY: {
+        "stat": "Ok",
+        "norenordno": "20121300065716",
+        "uid": "DEMO1",
+        "actid": "DEMO1",
+        "exch": "NSE",
+        "tsym": "ACCELYA-EQ",
+        "qty": "180",
+        "trantype": "B",
+        "prctyp": "LMT",
+        "ret": "DAY",
+        "token": "7053",
+        "pp": "2",
+        "ls": "1",
+        "ti": "0.05",
+        "prc": "800.00",
+        "dscqty": "0",
+        "prd": "M",
+        "status": "OPEN",
+        "rpt": "New",
+        "norentm": "19:59:32 13-12-2020",
+        "exch_tm": "00:00:00 01-01-1980",
+        "remarks": "WC TEST Order",
+        "exchordid": "6858"
+    },
+    oep.TRADE_BOOK: {
+        "stat": "Ok",
+        "norenordno": "20121300065715",
+        "uid": "GURURAJ",
+        "actid": "GURURAJ",
+        "exch": "NSE",
+        "prctyp": "LMT",
+        "ret": "DAY",
+        "prd": "M",
+        "flid": "102",
+        "fltm": "01-01-1980 00:00:00",
+        "trantype": "S",
+        "tsym": "ACCELYA-EQ",
+        "qty": "180",
+        "token": "7053",
+        "fillshares": "180",
+        "flqty": "180",
+        "pp": "2",
+        "ls": "1",
+        "ti": "0.05",
+        "prc": "800.00",
+        "flprc": "800.00",
+        "norentm": "19:59:32 13-12-2020",
+        "exch_tm": "00:00:00 01-01-1980",
+        "remarks": "WC TEST Order",
+        "exchordid": "6857"
+    },
+    oep.POSITION_BOOK: {
+        "stat": "Ok",
+        "uid": "POORNA",
+        "actid": "POORNA",
+        "exch": "NSE",
+        "tsym": "ACC-EQ",
+        "prd": "C",
+        "pp": "2",
+        "ls": "1",
+        "ti": "5.00",
+        "mult": "1",
+        "prcftr": "1.000000",
+        "daybuyqty": "2",
+        "daysellqty": "2",
+        "daybuyamt": "2610.00",
+        "daybuyavgprc": "1305.00",
+        "daysellamt": "2610.00",
+        "daysellavgprc": "1305.00",
+        "cfbuyqty": "0",
+        "cfsellqty": "0",
+        "cfbuyamt": "0.00",
+        "cfbuyavgprc": "0.00",
+        "cfsellamt": "0.00",
+        "cfsellavgprc": "0.00",
+        "openbuyqty": "0",
+        "opensellqty": "23",
+        "openbuyamt": "0.00",
+        "openbuyavgprc": "0.00",
+        "opensellamt": "30015.00",
+        "opensellavgprc": "1305.00",
+        "netqty": "0",
+        "netavgprc": "0.00",
+        "lp": "0.00",
+        "urmtom": "0.00",
+        "rpnl": "0.00",
+        "cforgavgprc": "0.00"
+    },
+    oep.CONVERT_PRODUCT: {
+        "request_time": "10:52:12 02-06-2020",
+        "stat": "Ok"
+    },
+    # ---------------------------------------------------------------------------- #
+    #                               HOLDINGS & LIMITS                              #
+    # ---------------------------------------------------------------------------- #
+    hlep.HOLDINGS: {
+        "stat": "Ok",
+        "exch_tsym": [
+            {
+                "exch": "NSE",
+                "token": "22",
+                "tsym": "ACC-EQ"
+            }
+        ],
+        "holdqty": "2000000",
+        "colqty": "200",
+        "btstqty": "0",
+        "btstcolqty": "0",
+        "usedqty": "0",
+        "upldprc": "1400.00"
+    },
+    hlep.LIMITS: {
+        "request_time": "18:07:31 29-05-2020",
+        "stat": "Ok",
+        "cash": "1500000000000000.00",
+        "payin": "0.00",
+        "payout": "0.00",
+        "brkcollamt": "0.00",
+        "unclearedcash": "0.00",
+        "daycash": "0.00",
+        "turnoverlmt": "50000000000000.00",
+        "pendordvallmt": "2000000000000000.00",
+        "turnover": "3915000.00",
+        "pendordval": "2871000.00",
+        "marginused": "3945540.00",
+        "mtomcurper": "0.00",
+        "unmtom": "30540.00",
+        "grexpo": "3915000.00",
+        "uzpnl_e_i": "15270.00",
+        "uzpnl_e_m": "61080.00",
+        "uzpnl_e_c": "-45810.00"
     },
     # ---------------------------------------------------------------------------- #
     #                                 USERS MODULE                                 #

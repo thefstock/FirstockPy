@@ -19,7 +19,7 @@ Classes
 
     ### Instance variables
 
-    `ws: py_client.websocket.client.NorenWebsocketClient`
+    `ws: py_client.websocket.client.WsClient`
     :   The websocket client
 
     `users: py_client.modules.users.datasource.UserDataSource`
@@ -64,7 +64,7 @@ Classes
         Returns:
           LogoutResponseModel: The response from logout request as LogoutResponseModel instance
 
-    `holdings(self, model: py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel, key: str)`
+    `holdings(self, model: py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel, key: str = None)`
     :   Get holdings
         
         Args:

@@ -40,10 +40,10 @@ Classes
     `trgprc: Optional[str]`
     :   New trigger price in case of SL-MKT or SL-LMT
 
-    `prctyp: py_client.common.enums.PriceType`
+    `prctyp: Optional[py_client.common.enums.PriceType]`
     :   LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L
 
-    `ret: py_client.common.enums.RetentionType`
+    `ret: Optional[py_client.common.enums.RetentionType]`
     :   New Retention type of the order.
 
     `bpprc: Optional[str]`

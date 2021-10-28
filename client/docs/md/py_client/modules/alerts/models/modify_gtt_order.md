@@ -78,7 +78,7 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
+    `stat: Union[py_client.common.enums.ResponseStatus, str]`
     :   The modify gtt order success or failure status
 
     `request_time: Optional[datetime.datetime]`

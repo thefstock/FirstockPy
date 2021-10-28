@@ -14,7 +14,7 @@ Classes
 
     * py_client.client.Client
     * py_client.utils.datasources.rest.datasource.RestDataSource
-    * py_client.websocket.client.NorenWebsocketClient
+    * py_client.websocket.client.WsClient
 
     ### Instance variables
 

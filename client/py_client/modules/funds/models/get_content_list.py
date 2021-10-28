@@ -20,7 +20,7 @@ class GetContentListRequestModel(BaseModel):
   exch: str
   """Exchange Name"""
   condition_name: str
-  """condition list"""
+  """Condition list"""
   basket: Optional[str]
   """Basket Name"""
 

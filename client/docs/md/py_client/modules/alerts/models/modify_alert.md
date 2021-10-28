@@ -57,7 +57,7 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
+    `stat: Union[py_client.common.enums.ResponseStatus, str]`
     :   The modify alert success or failure status
 
     `request_time: Optional[datetime.datetime]`

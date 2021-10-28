@@ -1,7 +1,7 @@
 Module py_client.websocket
 ==========================
 The websocket client to connect to websocket to recieve realtime feeds.
-The NorenWebsockerClient contains decorators to assign handlers for listening to messages.
+The WsClient contains decorators to assign handlers for listening to messages.
 
 These decorators include:
   - `on_message(topic)` - Runs on every message
@@ -12,7 +12,7 @@ Example:
 
 ```python
 from typing import Any
-from py_client.websocket import NorenWebsocketClient
+from py_client.websocket import WsClient
 from py_client import Client, LoginRequestModel, RequestSourceType
 import os
 from dotenv import load_dotenv
@@ -38,11 +38,11 @@ login_model = LoginRequestModel(
 client.login(login_model)
 
 @ws.on_message(MessageTopic.TOUCHLINE_FEED)
-def msg_handler(client: NorenWebsocketClient, message: Any):
+def msg_handler(client: WsClient, message: Any):
   print(message)
 
 @ws.on_connect
-def cnc_handler(client: NorenWebsocketClient, message: Any):
+def cnc_handler(client: WsClient, message: Any):
   print(message)
 
 ws.connect(os.getenv('UID'), os.getenv('UID'))

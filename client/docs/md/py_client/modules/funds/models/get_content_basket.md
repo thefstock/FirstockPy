@@ -45,7 +45,7 @@ Classes
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `basketlist: Optional[List[py_client.modules.funds.models.get_content_basket.Basket]]`
+    `basketlists: Optional[List[py_client.modules.funds.models.get_content_basket.Basket]]`
     :   List of baskets
 
     `emsg: Optional[str]`

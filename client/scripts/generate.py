@@ -130,6 +130,7 @@ class Generator:
     if not path.exists(test_suite_path):
       console.print(f"Generating test suite for [b green]{module_name}[/b green]\n")
       with open(test_suite_path, 'w') as test_file:
+        console.print(f"[green][CREATING][/green]\t[violet]{test_suite_path}[/violet]")
         test_file.write(codes.TEST_SUITE.format(name=name, classname=classname, module=module_name))
     else:
       console.print(f'[ERROR] file already exists {path.abspath(test_suite_path)}', style='red')

@@ -32,7 +32,8 @@ The client combines all the modules and abstracts the inner logic
 &#34;&#34;&#34;
 
 from py_client.common.enums import ResponseStatus
-from py_client.websocket.client import NorenWebsocketClient
+from py_client.modules.holdings_limits.models.holdings import HoldingsResponseModel
+from py_client.websocket.client import WsClient
 from .modules.users import LoginRequestModel, LogoutRequestModel
 from .modules.users import UserDataSource
 from .modules.watchlists import WatchListDataSource
@@ -68,7 +69,7 @@ class Client(Stateful):
     self.__alerts = AlertsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__funds = FundsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__hl = HoldingsLimitsDataSource(api_url, interceptors=self._interceptors, state=self.state)
-    self.__ws = NorenWebsocketClient(socket_url, state=self.state)
+    self.__ws = WsClient(socket_url, state=self.state)
 
   def __setup__(self) -&gt; None:
     &#34;&#34;&#34;
@@ -77,7 +78,7 @@ class Client(Stateful):
     self._interceptors = []
 
   @property
-  def ws(self) -&gt; NorenWebsocketClient:
+  def ws(self) -&gt; WsClient:
     &#34;&#34;&#34;
     The websocket client
     &#34;&#34;&#34;
@@ -163,7 +164,7 @@ class Client(Stateful):
       self.set_state(&#39;token&#39;, None)
     return response
 
-  def holdings(self, model: HoldingsRequestModel, key: str):
+  def holdings(self, model: HoldingsRequestModel, key: str = None):
     &#34;&#34;&#34;
     Get holdings
 
@@ -237,7 +238,7 @@ class Client(Stateful):
     self.__alerts = AlertsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__funds = FundsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__hl = HoldingsLimitsDataSource(api_url, interceptors=self._interceptors, state=self.state)
-    self.__ws = NorenWebsocketClient(socket_url, state=self.state)
+    self.__ws = WsClient(socket_url, state=self.state)
 
   def __setup__(self) -&gt; None:
     &#34;&#34;&#34;
@@ -246,7 +247,7 @@ class Client(Stateful):
     self._interceptors = []
 
   @property
-  def ws(self) -&gt; NorenWebsocketClient:
+  def ws(self) -&gt; WsClient:
     &#34;&#34;&#34;
     The websocket client
     &#34;&#34;&#34;
@@ -332,7 +333,7 @@ class Client(Stateful):
       self.set_state(&#39;token&#39;, None)
     return response
 
-  def holdings(self, model: HoldingsRequestModel, key: str):
+  def holdings(self, model: HoldingsRequestModel, key: str = None):
     &#34;&#34;&#34;
     Get holdings
 
@@ -364,7 +365,7 @@ class Client(Stateful):
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="py_client.client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.NorenWebsocketClient" href="websocket/client.html#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a></code></dt>
+<dt id="py_client.client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.WsClient" href="websocket/client.html#py_client.websocket.client.WsClient">WsClient</a></code></dt>
 <dd>
 <div class="desc"><p>The websocket client</p></div>
 <details class="source">
@@ -372,7 +373,7 @@ class Client(Stateful):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@property
-def ws(self) -&gt; NorenWebsocketClient:
+def ws(self) -&gt; WsClient:
   &#34;&#34;&#34;
   The websocket client
   &#34;&#34;&#34;
@@ -561,7 +562,7 @@ def state(self):
 </details>
 </dd>
 <dt id="py_client.client.Client.holdings"><code class="name flex">
-<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str)</span>
+<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get holdings</p>
@@ -581,7 +582,7 @@ def state(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str):
+<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str = None):
   &#34;&#34;&#34;
   Get holdings
 

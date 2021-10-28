@@ -17,7 +17,7 @@ class SingleOrderHistoryRequestModel(BaseModel):
   """
   uid: str
   """Logged in User Id"""
-  norenord: str
+  norenordno: str
   """Noren Order Number"""
 
 class SingleOrderHistoryResponseModel(BaseModel):

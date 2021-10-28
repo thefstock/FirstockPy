@@ -35,7 +35,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 from ....common.enums import ResponseStatus
-from ....common.models import AlertType
+from ....common.models import AlertTypeModel
 from ....utils.decoders import build_loader, datetime_decoder
 
 __all__ = [&#39;GetEnabledAlertTypesRequestModel&#39;, &#39;GetEnabledAlertTypesResponseModel&#39;]
@@ -55,7 +55,7 @@ class GetEnabledAlertTypesResponseModel(BaseModel):
   &#34;&#34;&#34;The get enabled alert types success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
-  ai_ts: Optional[List[AlertType]]
+  ai_ts: Optional[List[AlertTypeModel]]
   &#34;&#34;&#34;List of alert types&#34;&#34;&#34;
   emsg: Optional[str]
   &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
@@ -128,7 +128,7 @@ class GetEnabledAlertTypesResponseModel(BaseModel):
   &#34;&#34;&#34;The get enabled alert types success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
-  ai_ts: Optional[List[AlertType]]
+  ai_ts: Optional[List[AlertTypeModel]]
   &#34;&#34;&#34;List of alert types&#34;&#34;&#34;
   emsg: Optional[str]
   &#34;&#34;&#34;Error message if the request failed&#34;&#34;&#34;
@@ -154,7 +154,7 @@ class GetEnabledAlertTypesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel.ai_ts"><code class="name">var <span class="ident">ai_ts</span> : Optional[List[<a title="py_client.common.models.AlertType" href="../../../common/models.html#py_client.common.models.AlertType">AlertType</a>]]</code></dt>
+<dt id="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel.ai_ts"><code class="name">var <span class="ident">ai_ts</span> : Optional[List[<a title="py_client.common.models.AlertTypeModel" href="../../../common/models.html#py_client.common.models.AlertTypeModel">AlertTypeModel</a>]]</code></dt>
 <dd>
 <div class="desc"><p>List of alert types</p></div>
 </dd>

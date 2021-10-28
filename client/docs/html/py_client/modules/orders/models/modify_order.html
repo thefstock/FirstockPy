@@ -58,9 +58,9 @@ class ModifyOrderRequestModel(BaseModel):
   &#34;&#34;&#34;Modified / New price&#34;&#34;&#34;
   trgprc: Optional[str]
   &#34;&#34;&#34;New trigger price in case of SL-MKT or SL-LMT&#34;&#34;&#34;
-  prctyp: PriceType
+  prctyp: Optional[PriceType]
   &#34;&#34;&#34;LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L&#34;&#34;&#34;
-  ret: RetentionType
+  ret: Optional[RetentionType]
   &#34;&#34;&#34;New Retention type of the order.&#34;&#34;&#34;
   bpprc: Optional[str]
   &#34;&#34;&#34;Book Profit Price applicable only if product is selected as B (Bracket order )&#34;&#34;&#34;
@@ -128,9 +128,9 @@ request</p>
   &#34;&#34;&#34;Modified / New price&#34;&#34;&#34;
   trgprc: Optional[str]
   &#34;&#34;&#34;New trigger price in case of SL-MKT or SL-LMT&#34;&#34;&#34;
-  prctyp: PriceType
+  prctyp: Optional[PriceType]
   &#34;&#34;&#34;LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L&#34;&#34;&#34;
-  ret: RetentionType
+  ret: Optional[RetentionType]
   &#34;&#34;&#34;New Retention type of the order.&#34;&#34;&#34;
   bpprc: Optional[str]
   &#34;&#34;&#34;Book Profit Price applicable only if product is selected as B (Bracket order )&#34;&#34;&#34;
@@ -174,11 +174,11 @@ request</p>
 <dd>
 <div class="desc"><p>New trigger price in case of SL-MKT or SL-LMT</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : Optional[<a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a>]</code></dt>
 <dd>
 <div class="desc"><p>LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
+<dt id="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : Optional[<a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a>]</code></dt>
 <dd>
 <div class="desc"><p>New Retention type of the order.</p></div>
 </dd>

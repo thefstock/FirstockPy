@@ -8,7 +8,7 @@ to communicate with the server.
 ```py
 from py_client import Client, LoginRequestModel, HttpException
 
-client = Client(base_url='http://<HOST>:<PORT>')
+client = Client(api_url=API_URL, socket_url=SOCKET_URL)
 
 login_model = LoginRequestModel(...)
 

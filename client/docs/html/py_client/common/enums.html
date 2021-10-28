@@ -33,14 +33,16 @@ Commonly used enumerators
 from enum import Enum
 
 __all__ = [
-  &#39;RequestSourceType&#39;,
-  &#39;ResponseStatus&#39;,
-  &#39;PriceType&#39;,
-  &#39;TransactionType&#39;,
-  &#39;RestMethod&#39;,
-  &#39;RetentionType&#39;,
-  &#39;AlertValidity&#39;
+    &#39;RequestSourceType&#39;,
+    &#39;ResponseStatus&#39;,
+    &#39;PriceType&#39;,
+    &#39;TransactionType&#39;,
+    &#39;RestMethod&#39;,
+    &#39;RetentionType&#39;,
+    &#39;AlertValidity&#39;,
+    &#39;AlertType&#39;
 ]
+
 
 class RequestSourceType(str, Enum):
   &#34;&#34;&#34;
@@ -50,12 +52,14 @@ class RequestSourceType(str, Enum):
   WEB = &#39;WEB&#39;
   API = &#39;API&#39;
 
+
 class ResponseStatus(str, Enum):
   &#34;&#34;&#34;
   The response success or failure status
   &#34;&#34;&#34;
   OK = &#39;Ok&#39;
   NOT_OK = &#39;Not_Ok&#39;
+
 
 class RestMethod(str, Enum):
   &#34;&#34;&#34;
@@ -69,6 +73,7 @@ class RestMethod(str, Enum):
   OPTION = &#39;option&#39;
   HEAD = &#39;head&#39;
 
+
 class PriceType(str, Enum):
   &#34;&#34;&#34;
   The price type for orders &amp; trades
@@ -81,12 +86,14 @@ class PriceType(str, Enum):
   SECOND_LEG = &#39;2L&#39;
   THIRD_LEG = &#39;3L&#39;
 
+
 class TransactionType(str, Enum):
   &#34;&#34;&#34;
   The transaction type for orders &amp; trades
   &#34;&#34;&#34;
   BUY = &#39;B&#39;
   SELL = &#39;S&#39;
+
 
 class RetentionType(str, Enum):
   &#34;&#34;&#34;
@@ -96,12 +103,33 @@ class RetentionType(str, Enum):
   IOC = &#39;IOC&#39;
   EOS = &#39;EOS&#39;
 
+
 class AlertValidity(str, Enum):
   &#34;&#34;&#34;
   The alert validity
   &#34;&#34;&#34;
   DAY = &#39;DAY&#39;
-  GTT = &#39;GTT&#39;</code></pre>
+  GTT = &#39;GTT&#39;
+
+
+class AlertType(str, Enum):
+  &#34;&#34;&#34;
+  The available alert types
+  &#34;&#34;&#34;
+  LTP_A = &#39;LTP_A&#39;
+  LTP_B = &#39;LTP_B&#39;
+  CH_PER_A = &#39;CH_PER_A&#39;
+  CH_PER_B = &#39;CH_PER_B&#39;
+  ATP_A = &#39;ATP_A&#39;
+  ATP_B = &#39;ATP_B&#39;
+  LTP_A_52HIGH = &#39;LTP_A_52HIGH&#39;
+  LTP_B_52LOW = &#39;LTP_B_52LOW&#39;
+  VOLUME_A = &#39;VOLUME_A&#39;
+  OI_A = &#39;OI_A&#39;
+  OI_B = &#39;OI_B&#39;
+  TOI_A = &#39;TOI_A&#39;
+  TOI_B = &#39;TOI_B&#39;
+  LMT_BOS_O = &#39;LMT_BOS_O&#39;</code></pre>
 </details>
 </section>
 <section>
@@ -411,6 +439,100 @@ class AlertValidity(str, Enum):
 </dd>
 </dl>
 </dd>
+<dt id="py_client.common.enums.AlertType"><code class="flex name class">
+<span>class <span class="ident">AlertType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The available alert types</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AlertType(str, Enum):
+  &#34;&#34;&#34;
+  The available alert types
+  &#34;&#34;&#34;
+  LTP_A = &#39;LTP_A&#39;
+  LTP_B = &#39;LTP_B&#39;
+  CH_PER_A = &#39;CH_PER_A&#39;
+  CH_PER_B = &#39;CH_PER_B&#39;
+  ATP_A = &#39;ATP_A&#39;
+  ATP_B = &#39;ATP_B&#39;
+  LTP_A_52HIGH = &#39;LTP_A_52HIGH&#39;
+  LTP_B_52LOW = &#39;LTP_B_52LOW&#39;
+  VOLUME_A = &#39;VOLUME_A&#39;
+  OI_A = &#39;OI_A&#39;
+  OI_B = &#39;OI_B&#39;
+  TOI_A = &#39;TOI_A&#39;
+  TOI_B = &#39;TOI_B&#39;
+  LMT_BOS_O = &#39;LMT_BOS_O&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.common.enums.AlertType.LTP_A"><code class="name">var <span class="ident">LTP_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.LTP_B"><code class="name">var <span class="ident">LTP_B</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.CH_PER_A"><code class="name">var <span class="ident">CH_PER_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.CH_PER_B"><code class="name">var <span class="ident">CH_PER_B</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.ATP_A"><code class="name">var <span class="ident">ATP_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.ATP_B"><code class="name">var <span class="ident">ATP_B</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.LTP_A_52HIGH"><code class="name">var <span class="ident">LTP_A_52HIGH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.LTP_B_52LOW"><code class="name">var <span class="ident">LTP_B_52LOW</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.VOLUME_A"><code class="name">var <span class="ident">VOLUME_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.OI_A"><code class="name">var <span class="ident">OI_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.OI_B"><code class="name">var <span class="ident">OI_B</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.TOI_A"><code class="name">var <span class="ident">TOI_A</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.TOI_B"><code class="name">var <span class="ident">TOI_B</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="py_client.common.enums.AlertType.LMT_BOS_O"><code class="name">var <span class="ident">LMT_BOS_O</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
 </dl>
 </section>
 </article>
@@ -486,6 +608,25 @@ class AlertValidity(str, Enum):
 <ul class="">
 <li><code><a title="py_client.common.enums.AlertValidity.DAY" href="#py_client.common.enums.AlertValidity.DAY">DAY</a></code></li>
 <li><code><a title="py_client.common.enums.AlertValidity.GTT" href="#py_client.common.enums.AlertValidity.GTT">GTT</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="py_client.common.enums.AlertType" href="#py_client.common.enums.AlertType">AlertType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.common.enums.AlertType.LTP_A" href="#py_client.common.enums.AlertType.LTP_A">LTP_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.LTP_B" href="#py_client.common.enums.AlertType.LTP_B">LTP_B</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.CH_PER_A" href="#py_client.common.enums.AlertType.CH_PER_A">CH_PER_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.CH_PER_B" href="#py_client.common.enums.AlertType.CH_PER_B">CH_PER_B</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.ATP_A" href="#py_client.common.enums.AlertType.ATP_A">ATP_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.ATP_B" href="#py_client.common.enums.AlertType.ATP_B">ATP_B</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.LTP_A_52HIGH" href="#py_client.common.enums.AlertType.LTP_A_52HIGH">LTP_A_52HIGH</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.LTP_B_52LOW" href="#py_client.common.enums.AlertType.LTP_B_52LOW">LTP_B_52LOW</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.VOLUME_A" href="#py_client.common.enums.AlertType.VOLUME_A">VOLUME_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.OI_A" href="#py_client.common.enums.AlertType.OI_A">OI_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.OI_B" href="#py_client.common.enums.AlertType.OI_B">OI_B</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.TOI_A" href="#py_client.common.enums.AlertType.TOI_A">TOI_A</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.TOI_B" href="#py_client.common.enums.AlertType.TOI_B">TOI_B</a></code></li>
+<li><code><a title="py_client.common.enums.AlertType.LMT_BOS_O" href="#py_client.common.enums.AlertType.LMT_BOS_O">LMT_BOS_O</a></code></li>
 </ul>
 </li>
 </ul>
