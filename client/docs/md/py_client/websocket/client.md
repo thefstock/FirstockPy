@@ -5,8 +5,8 @@ The websocket client
 Classes
 -------
 
-`NorenWebsocketClient(url: str, state: Dict[str, Any] = {})`
-:   The websocket client for accessing noren ws
+`WsClient(url: str, state: Dict[str, Any] = {})`
+:   The websocket client for realtime data
     
     Initialize the websocket client
     
@@ -23,11 +23,11 @@ Classes
 
     ### Methods
 
-    `on_connect(self, handler: Callable[[ForwardRef('NorenWebsocketClient'), Dict[str, Any]], None])`
+    `on_connect(self, handler: Callable[[ForwardRef('WsClient'), Dict[str, Any]], None])`
     :   Add on open handler
         
         Args:
-          handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+          handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
         
         Usage:
           Should be used as decorator
@@ -37,11 +37,11 @@ Classes
             print('Connected: ', ack)
           ```
 
-    `on_close(self, handler: Callable[[ForwardRef('NorenWebsocketClient')], None])`
+    `on_close(self, handler: Callable[[ForwardRef('WsClient')], None])`
     :   Add on close handler
         
         Args:
-          handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
+          handler (Callable[[WsClient], None]): The handler to run on connection closed
         
         Usage:
           Should be used as decorator
@@ -58,7 +58,7 @@ Classes
           topic (MessageTopic): The handler to run when a new message is recieved
         
         Returns:
-          Callable[[Callable[['NorenWebsocketClient', Dict[str, Any]], None]], None]
+          Callable[[Callable[['WsClient', Dict[str, Any]], None]], None]
         
         Usage:
           Should be used as decorator

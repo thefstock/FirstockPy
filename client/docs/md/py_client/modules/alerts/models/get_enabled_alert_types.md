@@ -42,7 +42,7 @@ Classes
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `ai_ts: Optional[List[py_client.common.models.AlertType]]`
+    `ai_ts: Optional[List[py_client.common.models.AlertTypeModel]]`
     :   List of alert types
 
     `emsg: Optional[str]`

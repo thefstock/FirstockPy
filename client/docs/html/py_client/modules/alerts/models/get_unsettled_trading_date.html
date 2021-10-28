@@ -36,7 +36,7 @@ from datetime import datetime
 
 from ....common.enums import ResponseStatus
 from ....common.models import TradeDate
-from ....utils.decoders import build_loader, datetime_decoder
+from ....utils.decoders import build_loader, datetime_decoder, nested_model
 
 __all__ = [&#39;GetUnsettledTradingDateRequestModel&#39;, &#39;GetUnsettledTradingDateResponseModel&#39;]
 
@@ -63,7 +63,8 @@ class GetUnsettledTradingDateResponseModel(BaseModel):
   class Config:
     &#34;&#34;&#34;model configuration&#34;&#34;&#34;
     json_loads = build_loader({
-      &#34;request_time&#34;: datetime_decoder()
+      &#34;request_time&#34;: datetime_decoder(),
+      &#34;trd_date&#34;: nested_model(TradeDate)
     })</code></pre>
 </details>
 </section>
@@ -136,7 +137,8 @@ class GetUnsettledTradingDateResponseModel(BaseModel):
   class Config:
     &#34;&#34;&#34;model configuration&#34;&#34;&#34;
     json_loads = build_loader({
-      &#34;request_time&#34;: datetime_decoder()
+      &#34;request_time&#34;: datetime_decoder(),
+      &#34;trd_date&#34;: nested_model(TradeDate)
     })</code></pre>
 </details>
 <h3>Ancestors</h3>

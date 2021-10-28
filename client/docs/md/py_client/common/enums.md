@@ -152,3 +152,55 @@ Classes
 
     `GTT`
     :
+
+`AlertType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The available alert types
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `LTP_A`
+    :
+
+    `LTP_B`
+    :
+
+    `CH_PER_A`
+    :
+
+    `CH_PER_B`
+    :
+
+    `ATP_A`
+    :
+
+    `ATP_B`
+    :
+
+    `LTP_A_52HIGH`
+    :
+
+    `LTP_B_52LOW`
+    :
+
+    `VOLUME_A`
+    :
+
+    `OI_A`
+    :
+
+    `OI_B`
+    :
+
+    `TOI_A`
+    :
+
+    `TOI_B`
+    :
+
+    `LMT_BOS_O`
+    :

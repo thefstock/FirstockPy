@@ -29,9 +29,9 @@ class ModifyOrderRequestModel(BaseModel):
   """Modified / New price"""
   trgprc: Optional[str]
   """New trigger price in case of SL-MKT or SL-LMT"""
-  prctyp: PriceType
+  prctyp: Optional[PriceType]
   """LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L"""
-  ret: RetentionType
+  ret: Optional[RetentionType]
   """New Retention type of the order."""
   bpprc: Optional[str]
   """Book Profit Price applicable only if product is selected as B (Bracket order )"""

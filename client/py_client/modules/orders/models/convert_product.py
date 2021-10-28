@@ -25,8 +25,6 @@ class ConvertProductRequestModel(BaseModel):
   """
   qty: float
   """Quantity to be converted."""
-  uid: str
-  """User id of the logged in user."""
   actid: str
   """Account id"""
   prd: str

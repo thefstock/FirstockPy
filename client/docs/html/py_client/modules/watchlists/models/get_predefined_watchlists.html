@@ -51,7 +51,7 @@ class GetPredefinedWatchListsResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for get predefined watchlists endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Optional[ResponseStatus]
   &#34;&#34;&#34;The get predefined watchlists success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -124,7 +124,7 @@ class GetPredefinedWatchListsResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for get predefined watchlists endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Optional[ResponseStatus]
   &#34;&#34;&#34;The get predefined watchlists success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -146,7 +146,7 @@ class GetPredefinedWatchListsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Optional[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>]</code></dt>
 <dd>
 <div class="desc"><p>The get predefined watchlists success or failure status</p></div>
 </dd>

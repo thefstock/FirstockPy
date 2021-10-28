@@ -22,7 +22,7 @@ Classes
     `uid: str`
     :   Logged in User Id
 
-    `norenord: str`
+    `norenordno: str`
     :   Noren Order Number
 
 `SingleOrderHistoryResponseModel(**data: Any)`

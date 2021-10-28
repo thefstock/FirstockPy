@@ -36,7 +36,7 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
+    `stat: Optional[py_client.common.enums.ResponseStatus]`
     :   The get predefined watchlists success or failure status
 
     `request_time: Optional[datetime.datetime]`

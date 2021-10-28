@@ -16,6 +16,13 @@ Functions
       Callable[[str], datetime]: The datetime decoder
 
     
+`nested_model(ModelClass: pydantic.main.ModelMetaclass)`
+:   Runs decoders of the nested model
+    
+    Returns:
+      Callable[[Union[str,int]], datetime]: The datetime decoder
+
+    
 `timestamp_decoder()`
 :   Creates a timestamp to datetime decoder.
     

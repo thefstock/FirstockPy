@@ -28,7 +28,7 @@ Classes
     `exch: str`
     :   Exchange Segment
 
-    `ai_t: str`
+    `ai_t: py_client.common.enums.AlertType`
     :   Alert Type
 
     `validity: py_client.common.enums.AlertValidity`
@@ -37,7 +37,7 @@ Classes
     `remarks: str`
     :   Any message Entered during order entry.
 
-    `d: str`
+    `d: Optional[str]`
     :   Data to be compared with LTP
 
 `SetAlertResponseModel(**data: Any)`
@@ -54,7 +54,7 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
+    `stat: Union[py_client.common.enums.ResponseStatus, str]`
     :   The set alert success or failure status
 
     `request_time: Optional[datetime.datetime]`

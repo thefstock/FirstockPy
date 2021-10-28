@@ -20,7 +20,7 @@ Classes
     ### Class variables
 
     `uid: str`
-    :   User id of the logged in user.
+    :   Logged in User Id
 
     `tsym: str`
     :   Unique id of contract on which order was placed.

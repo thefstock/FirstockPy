@@ -29,7 +29,7 @@ methods to effectively execute the tasks.</p>
 to communicate with the server.</p>
 <pre><code class="language-py">from py_client import Client, LoginRequestModel, HttpException
 
-client = Client(base_url='http://&lt;HOST&gt;:&lt;PORT&gt;')
+client = Client(api_url=API_URL, socket_url=SOCKET_URL)
 
 login_model = LoginRequestModel(...)
 
@@ -280,7 +280,7 @@ to communicate with the server.
 ```py
 from py_client import Client, LoginRequestModel, HttpException
 
-client = Client(base_url=&#39;http://&lt;HOST&gt;:&lt;PORT&gt;&#39;)
+client = Client(api_url=API_URL, socket_url=SOCKET_URL)
 
 login_model = LoginRequestModel(...)
 
@@ -301,9 +301,10 @@ The library uses **requests** library under the hood to interface with the REST 
 __version__ = &#39;0.1.0&#39;
 
 __all__ = [
-    &#39;Client&#39;, &#39;NorenWebsocketClient&#39;,
+    &#39;Client&#39;, &#39;WsClient&#39;,
     &#39;AlertsDataSource&#39;, &#39;FundsDataSource&#39;, &#39;MarketsDataSource&#39;,
-    &#39;OrdersDataSource&#39;, &#39;UserDataSource&#39;, &#39;WatchListDataSource&#39;]
+    &#39;OrdersDataSource&#39;, &#39;UserDataSource&#39;, &#39;WatchListDataSource&#39;
+  ]
 
 from .common import *
 from .modules import *
@@ -337,7 +338,7 @@ from .client import *</code></pre>
 <dt><code class="name"><a title="py_client.websocket" href="websocket/index.html">py_client.websocket</a></code></dt>
 <dd>
 <div class="desc"><p>The websocket client to connect to websocket to recieve realtime feeds.
-The NorenWebsockerClient contains decorators to assign handlers for listening …</p></div>
+The WsClient contains decorators to assign handlers for listening to messages …</p></div>
 </dd>
 </dl>
 </section>
@@ -386,7 +387,7 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
     self.__alerts = AlertsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__funds = FundsDataSource(api_url, interceptors=self._interceptors, state=self.state)
     self.__hl = HoldingsLimitsDataSource(api_url, interceptors=self._interceptors, state=self.state)
-    self.__ws = NorenWebsocketClient(socket_url, state=self.state)
+    self.__ws = WsClient(socket_url, state=self.state)
 
   def __setup__(self) -&gt; None:
     &#34;&#34;&#34;
@@ -395,7 +396,7 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
     self._interceptors = []
 
   @property
-  def ws(self) -&gt; NorenWebsocketClient:
+  def ws(self) -&gt; WsClient:
     &#34;&#34;&#34;
     The websocket client
     &#34;&#34;&#34;
@@ -481,7 +482,7 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
       self.set_state(&#39;token&#39;, None)
     return response
 
-  def holdings(self, model: HoldingsRequestModel, key: str):
+  def holdings(self, model: HoldingsRequestModel, key: str = None):
     &#34;&#34;&#34;
     Get holdings
 
@@ -513,7 +514,7 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="py_client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.NorenWebsocketClient" href="websocket/client.html#py_client.websocket.client.NorenWebsocketClient">NorenWebsocketClient</a></code></dt>
+<dt id="py_client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.WsClient" href="websocket/client.html#py_client.websocket.client.WsClient">WsClient</a></code></dt>
 <dd>
 <div class="desc"><p>The websocket client</p></div>
 <details class="source">
@@ -521,7 +522,7 @@ The NorenWebsockerClient contains decorators to assign handlers for listening �
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@property
-def ws(self) -&gt; NorenWebsocketClient:
+def ws(self) -&gt; WsClient:
   &#34;&#34;&#34;
   The websocket client
   &#34;&#34;&#34;
@@ -710,7 +711,7 @@ def state(self):
 </details>
 </dd>
 <dt id="py_client.Client.holdings"><code class="name flex">
-<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str)</span>
+<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get holdings</p>
@@ -730,7 +731,7 @@ def state(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str):
+<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str = None):
   &#34;&#34;&#34;
   Get holdings
 
@@ -790,12 +791,12 @@ def state(self):
 </li>
 </ul>
 </dd>
-<dt id="py_client.NorenWebsocketClient"><code class="flex name class">
-<span>class <span class="ident">NorenWebsocketClient</span></span>
+<dt id="py_client.WsClient"><code class="flex name class">
+<span>class <span class="ident">WsClient</span></span>
 <span>(</span><span>url: str, state: Dict[str, Any] = {})</span>
 </code></dt>
 <dd>
-<div class="desc"><p>The websocket client for accessing noren ws</p>
+<div class="desc"><p>The websocket client for realtime data</p>
 <p>Initialize the websocket client</p>
 <h2 id="args">Args</h2>
 <dl>
@@ -808,9 +809,9 @@ def state(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class NorenWebsocketClient(WebSocketClient, Stateful):
+<pre><code class="python">class WsClient(WebSocketClient, Stateful):
   &#34;&#34;&#34;
-  The websocket client for accessing noren ws
+  The websocket client for realtime data
   &#34;&#34;&#34;
   def __init__(self, url: str, state: Dict[str, Any] = {}):
     &#34;&#34;&#34;
@@ -828,12 +829,12 @@ def state(self):
     self.__on_close_handlers = []
     self.__on_message_handlers: Dict[MessageTopic, Callable] = defaultdict(lambda: [])
 
-  def on_connect(self, handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
+  def on_connect(self, handler: Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]):
     &#34;&#34;&#34;
     Add on open handler
 
     Args:
-      handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+      handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
 
     Usage:
       Should be used as decorator
@@ -845,12 +846,12 @@ def state(self):
     &#34;&#34;&#34;
     self.__on_connect_handlers.append(handler)
 
-  def on_close(self, handler: Callable[[&#39;NorenWebsocketClient&#39;], None]):
+  def on_close(self, handler: Callable[[&#39;WsClient&#39;], None]):
     &#34;&#34;&#34;
     Add on close handler
 
     Args:
-      handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
+      handler (Callable[[WsClient], None]): The handler to run on connection closed
     
     Usage:
       Should be used as decorator
@@ -870,7 +871,7 @@ def state(self):
       topic (MessageTopic): The handler to run when a new message is recieved
 
     Returns:
-      Callable[[Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]], None]
+      Callable[[Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]], None]
 
     Usage:
       Should be used as decorator
@@ -880,7 +881,7 @@ def state(self):
         print(message)
       ```
     &#34;&#34;&#34;
-    def register(handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
+    def register(handler: Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]):
       self.__on_message_handlers[topic].append(handler)
     return register
 
@@ -1000,14 +1001,14 @@ def state(self):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.NorenWebsocketClient.on_connect"><code class="name flex">
-<span>def <span class="ident">on_connect</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.NorenWebsocketClient" href="#py_client.NorenWebsocketClient">NorenWebsocketClient</a>'), Dict[str, Any]], None])</span>
+<dt id="py_client.WsClient.on_connect"><code class="name flex">
+<span>def <span class="ident">on_connect</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.WsClient" href="#py_client.WsClient">WsClient</a>'), Dict[str, Any]], None])</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add on open handler</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.NorenWebsocketClient" href="#py_client.NorenWebsocketClient">NorenWebsocketClient</a>, Dict[str, Any]], None]</code></dt>
+<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.WsClient" href="#py_client.WsClient">WsClient</a>, Dict[str, Any]], None]</code></dt>
 <dd>The handler to run on connection opened</dd>
 </dl>
 <h2 id="usage">Usage</h2>
@@ -1020,12 +1021,12 @@ def on_connect(client, ack: Dict[str, Any]):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def on_connect(self, handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
+<pre><code class="python">def on_connect(self, handler: Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]):
   &#34;&#34;&#34;
   Add on open handler
 
   Args:
-    handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+    handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
 
   Usage:
     Should be used as decorator
@@ -1038,14 +1039,14 @@ def on_connect(client, ack: Dict[str, Any]):
   self.__on_connect_handlers.append(handler)</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.on_close"><code class="name flex">
-<span>def <span class="ident">on_close</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.NorenWebsocketClient" href="#py_client.NorenWebsocketClient">NorenWebsocketClient</a>')], None])</span>
+<dt id="py_client.WsClient.on_close"><code class="name flex">
+<span>def <span class="ident">on_close</span></span>(<span>self, handler: Callable[[ForwardRef('<a title="py_client.WsClient" href="#py_client.WsClient">WsClient</a>')], None])</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add on close handler</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.NorenWebsocketClient" href="#py_client.NorenWebsocketClient">NorenWebsocketClient</a>], None]</code></dt>
+<dt><strong><code>handler</code></strong> :&ensp;<code>Callable[[<a title="py_client.WsClient" href="#py_client.WsClient">WsClient</a>], None]</code></dt>
 <dd>The handler to run on connection closed</dd>
 </dl>
 <h2 id="usage">Usage</h2>
@@ -1058,12 +1059,12 @@ def on_close(client):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def on_close(self, handler: Callable[[&#39;NorenWebsocketClient&#39;], None]):
+<pre><code class="python">def on_close(self, handler: Callable[[&#39;WsClient&#39;], None]):
   &#34;&#34;&#34;
   Add on close handler
 
   Args:
-    handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
+    handler (Callable[[WsClient], None]): The handler to run on connection closed
   
   Usage:
     Should be used as decorator
@@ -1076,7 +1077,7 @@ def on_close(client):
   self.__on_close_handlers.append(handler)</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.on_message"><code class="name flex">
+<dt id="py_client.WsClient.on_message"><code class="name flex">
 <span>def <span class="ident">on_message</span></span>(<span>self, topic: <a title="py_client.websocket.enums.MessageTopic" href="websocket/enums.html#py_client.websocket.enums.MessageTopic">MessageTopic</a>)</span>
 </code></dt>
 <dd>
@@ -1087,7 +1088,7 @@ def on_close(client):
 <dd>The handler to run when a new message is recieved</dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>Callable[[Callable[['NorenWebsocketClient', Dict[str, Any]], None]], None]</p>
+<p>Callable[[Callable[['WsClient', Dict[str, Any]], None]], None]</p>
 <h2 id="usage">Usage</h2>
 <p>Should be used as decorator</p>
 <pre><code class="language-python">@ws.on_message(MessageTopic.DEPTH_FEED)
@@ -1106,7 +1107,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
     topic (MessageTopic): The handler to run when a new message is recieved
 
   Returns:
-    Callable[[Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]], None]
+    Callable[[Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]], None]
 
   Usage:
     Should be used as decorator
@@ -1116,12 +1117,12 @@ def on_depth_feed(client, message: Dict[str, Any]):
       print(message)
     ```
   &#34;&#34;&#34;
-  def register(handler: Callable[[&#39;NorenWebsocketClient&#39;, Dict[str, Any]], None]):
+  def register(handler: Callable[[&#39;WsClient&#39;, Dict[str, Any]], None]):
     self.__on_message_handlers[topic].append(handler)
   return register</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.connect"><code class="name flex">
+<dt id="py_client.WsClient.connect"><code class="name flex">
 <span>def <span class="ident">connect</span></span>(<span>self, uid: str, actid: str)</span>
 </code></dt>
 <dd>
@@ -1154,7 +1155,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   return super().connect()</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.subscribe_touchline"><code class="name flex">
+<dt id="py_client.WsClient.subscribe_touchline"><code class="name flex">
 <span>def <span class="ident">subscribe_touchline</span></span>(<span>self, *scriplists: List[str])</span>
 </code></dt>
 <dd>
@@ -1179,7 +1180,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.unsubscribe_touchline"><code class="name flex">
+<dt id="py_client.WsClient.unsubscribe_touchline"><code class="name flex">
 <span>def <span class="ident">unsubscribe_touchline</span></span>(<span>self, *scriplists: List[str])</span>
 </code></dt>
 <dd>
@@ -1204,7 +1205,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.subscribe_depth"><code class="name flex">
+<dt id="py_client.WsClient.subscribe_depth"><code class="name flex">
 <span>def <span class="ident">subscribe_depth</span></span>(<span>self, *scriplists: List[str])</span>
 </code></dt>
 <dd>
@@ -1229,7 +1230,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.unsubscribe_depth"><code class="name flex">
+<dt id="py_client.WsClient.unsubscribe_depth"><code class="name flex">
 <span>def <span class="ident">unsubscribe_depth</span></span>(<span>self, *scriplists: List[str])</span>
 </code></dt>
 <dd>
@@ -1254,7 +1255,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.subscribe_order"><code class="name flex">
+<dt id="py_client.WsClient.subscribe_order"><code class="name flex">
 <span>def <span class="ident">subscribe_order</span></span>(<span>self, actid: str)</span>
 </code></dt>
 <dd>
@@ -1279,7 +1280,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.unsubscribe_order"><code class="name flex">
+<dt id="py_client.WsClient.unsubscribe_order"><code class="name flex">
 <span>def <span class="ident">unsubscribe_order</span></span>(<span>self, actid: str)</span>
 </code></dt>
 <dd>
@@ -1304,7 +1305,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
   self.send(model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.opened"><code class="name flex">
+<dt id="py_client.WsClient.opened"><code class="name flex">
 <span>def <span class="ident">opened</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -1325,7 +1326,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
     self.send(self.__connection_model.json())</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.closed"><code class="name flex">
+<dt id="py_client.WsClient.closed"><code class="name flex">
 <span>def <span class="ident">closed</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -1346,7 +1347,7 @@ def on_depth_feed(client, message: Dict[str, Any]):
     handler(self)</code></pre>
 </details>
 </dd>
-<dt id="py_client.NorenWebsocketClient.received_message"><code class="name flex">
+<dt id="py_client.WsClient.received_message"><code class="name flex">
 <span>def <span class="ident">received_message</span></span>(<span>self, message: ws4py.messaging.TextMessage)</span>
 </code></dt>
 <dd>
@@ -4521,21 +4522,21 @@ def on_depth_feed(client, message: Dict[str, Any]):
 </ul>
 </li>
 <li>
-<h4><code><a title="py_client.NorenWebsocketClient" href="#py_client.NorenWebsocketClient">NorenWebsocketClient</a></code></h4>
+<h4><code><a title="py_client.WsClient" href="#py_client.WsClient">WsClient</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.NorenWebsocketClient.on_connect" href="#py_client.NorenWebsocketClient.on_connect">on_connect</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.on_close" href="#py_client.NorenWebsocketClient.on_close">on_close</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.on_message" href="#py_client.NorenWebsocketClient.on_message">on_message</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.connect" href="#py_client.NorenWebsocketClient.connect">connect</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.subscribe_touchline" href="#py_client.NorenWebsocketClient.subscribe_touchline">subscribe_touchline</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.unsubscribe_touchline" href="#py_client.NorenWebsocketClient.unsubscribe_touchline">unsubscribe_touchline</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.subscribe_depth" href="#py_client.NorenWebsocketClient.subscribe_depth">subscribe_depth</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.unsubscribe_depth" href="#py_client.NorenWebsocketClient.unsubscribe_depth">unsubscribe_depth</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.subscribe_order" href="#py_client.NorenWebsocketClient.subscribe_order">subscribe_order</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.unsubscribe_order" href="#py_client.NorenWebsocketClient.unsubscribe_order">unsubscribe_order</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.opened" href="#py_client.NorenWebsocketClient.opened">opened</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.closed" href="#py_client.NorenWebsocketClient.closed">closed</a></code></li>
-<li><code><a title="py_client.NorenWebsocketClient.received_message" href="#py_client.NorenWebsocketClient.received_message">received_message</a></code></li>
+<li><code><a title="py_client.WsClient.on_connect" href="#py_client.WsClient.on_connect">on_connect</a></code></li>
+<li><code><a title="py_client.WsClient.on_close" href="#py_client.WsClient.on_close">on_close</a></code></li>
+<li><code><a title="py_client.WsClient.on_message" href="#py_client.WsClient.on_message">on_message</a></code></li>
+<li><code><a title="py_client.WsClient.connect" href="#py_client.WsClient.connect">connect</a></code></li>
+<li><code><a title="py_client.WsClient.subscribe_touchline" href="#py_client.WsClient.subscribe_touchline">subscribe_touchline</a></code></li>
+<li><code><a title="py_client.WsClient.unsubscribe_touchline" href="#py_client.WsClient.unsubscribe_touchline">unsubscribe_touchline</a></code></li>
+<li><code><a title="py_client.WsClient.subscribe_depth" href="#py_client.WsClient.subscribe_depth">subscribe_depth</a></code></li>
+<li><code><a title="py_client.WsClient.unsubscribe_depth" href="#py_client.WsClient.unsubscribe_depth">unsubscribe_depth</a></code></li>
+<li><code><a title="py_client.WsClient.subscribe_order" href="#py_client.WsClient.subscribe_order">subscribe_order</a></code></li>
+<li><code><a title="py_client.WsClient.unsubscribe_order" href="#py_client.WsClient.unsubscribe_order">unsubscribe_order</a></code></li>
+<li><code><a title="py_client.WsClient.opened" href="#py_client.WsClient.opened">opened</a></code></li>
+<li><code><a title="py_client.WsClient.closed" href="#py_client.WsClient.closed">closed</a></code></li>
+<li><code><a title="py_client.WsClient.received_message" href="#py_client.WsClient.received_message">received_message</a></code></li>
 </ul>
 </li>
 <li>

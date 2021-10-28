@@ -9,7 +9,7 @@ to communicate with the server.
 ```py
 from py_client import Client, LoginRequestModel, HttpException
 
-client = Client(base_url='http://<HOST>:<PORT>')
+client = Client(api_url=API_URL, socket_url=SOCKET_URL)
 
 login_model = LoginRequestModel(...)
 
@@ -292,7 +292,7 @@ Classes
 
     ### Instance variables
 
-    `ws: py_client.websocket.client.NorenWebsocketClient`
+    `ws: py_client.websocket.client.WsClient`
     :   The websocket client
 
     `users: py_client.modules.users.datasource.UserDataSource`
@@ -337,7 +337,7 @@ Classes
         Returns:
           LogoutResponseModel: The response from logout request as LogoutResponseModel instance
 
-    `holdings(self, model: py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel, key: str)`
+    `holdings(self, model: py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel, key: str = None)`
     :   Get holdings
         
         Args:
@@ -357,8 +357,8 @@ Classes
         Returns:
           LimitsResponseModel: The response as LimitsResponseModel.
 
-`NorenWebsocketClient(url: str, state: Dict[str, Any] = {})`
-:   The websocket client for accessing noren ws
+`WsClient(url: str, state: Dict[str, Any] = {})`
+:   The websocket client for realtime data
     
     Initialize the websocket client
     
@@ -375,11 +375,11 @@ Classes
 
     ### Methods
 
-    `on_connect(self, handler: Callable[[ForwardRef('NorenWebsocketClient'), Dict[str, Any]], None])`
+    `on_connect(self, handler: Callable[[ForwardRef('WsClient'), Dict[str, Any]], None])`
     :   Add on open handler
         
         Args:
-          handler (Callable[[NorenWebsocketClient, Dict[str, Any]], None]): The handler to run on connection opened
+          handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
         
         Usage:
           Should be used as decorator
@@ -389,11 +389,11 @@ Classes
             print('Connected: ', ack)
           ```
 
-    `on_close(self, handler: Callable[[ForwardRef('NorenWebsocketClient')], None])`
+    `on_close(self, handler: Callable[[ForwardRef('WsClient')], None])`
     :   Add on close handler
         
         Args:
-          handler (Callable[[NorenWebsocketClient], None]): The handler to run on connection closed
+          handler (Callable[[WsClient], None]): The handler to run on connection closed
         
         Usage:
           Should be used as decorator
@@ -410,7 +410,7 @@ Classes
           topic (MessageTopic): The handler to run when a new message is recieved
         
         Returns:
-          Callable[[Callable[['NorenWebsocketClient', Dict[str, Any]], None]], None]
+          Callable[[Callable[['WsClient', Dict[str, Any]], None]], None]
         
         Usage:
           Should be used as decorator

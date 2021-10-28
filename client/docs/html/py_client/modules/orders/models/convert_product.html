@@ -54,8 +54,6 @@ class ConvertProductRequestModel(BaseModel):
   &#34;&#34;&#34;
   qty: float
   &#34;&#34;&#34;Quantity to be converted.&#34;&#34;&#34;
-  uid: str
-  &#34;&#34;&#34;User id of the logged in user.&#34;&#34;&#34;
   actid: str
   &#34;&#34;&#34;Account id&#34;&#34;&#34;
   prd: str
@@ -121,8 +119,6 @@ class ConvertProductResponseModel(BaseModel):
   &#34;&#34;&#34;
   qty: float
   &#34;&#34;&#34;Quantity to be converted.&#34;&#34;&#34;
-  uid: str
-  &#34;&#34;&#34;User id of the logged in user.&#34;&#34;&#34;
   actid: str
   &#34;&#34;&#34;Account id&#34;&#34;&#34;
   prd: str
@@ -145,7 +141,7 @@ class ConvertProductResponseModel(BaseModel):
 <dl>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>User id of the logged in user.</p></div>
+<div class="desc"><p>Logged in User Id</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>

@@ -30,7 +30,7 @@
 <pre><code class="python">&#34;&#34;&#34;
 Request and response models for cancel gtt order request
 &#34;&#34;&#34;
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel
 from datetime import datetime
 
@@ -52,7 +52,7 @@ class CancelGttOrderResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for cancel gtt order endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   &#34;&#34;&#34;The cancel gtt order success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -131,7 +131,7 @@ class CancelGttOrderResponseModel(BaseModel):
   &#34;&#34;&#34;
   The response model for cancel gtt order endpoint
   &#34;&#34;&#34;
-  stat: ResponseStatus
+  stat: Union[ResponseStatus, str]
   &#34;&#34;&#34;The cancel gtt order success or failure status&#34;&#34;&#34;
   request_time: Optional[datetime]
   &#34;&#34;&#34;It will be present only on successful response.&#34;&#34;&#34;
@@ -153,7 +153,7 @@ class CancelGttOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.cancel_gtt_order.CancelGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.alerts.models.cancel_gtt_order.CancelGttOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
 <dd>
 <div class="desc"><p>The cancel gtt order success or failure status</p></div>
 </dd>
