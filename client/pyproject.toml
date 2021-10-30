@@ -21,10 +21,11 @@ autopep8 = "^1.5.7"
 pytest-html = "^3.1.1"
 pytest-md = "^0.2.0"
 pdoc3 = "^0.10.0"
+poetry2setup = "^1.0.0"
 
 [tool.poetry.scripts]
 generate = 'scripts.generate:main'
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["setuptools", "poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
