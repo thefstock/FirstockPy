@@ -2,14 +2,14 @@
 Request and Response model for order book request
 """
 
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
 
 from ....common.enums import PriceType, ResponseStatus, RetentionType, TransactionType
 from ....utils.decoders import build_loader, datetime_decoder
 
-__all__ = ['OrderBookRequestModel', 'OrderBookResponseModel']
+__all__ = ['OrderBookRequestModel', 'OrderBookModel', 'OrderBookResponseModel']
 
 class OrderBookRequestModel(BaseModel):
   """
@@ -20,11 +20,11 @@ class OrderBookRequestModel(BaseModel):
   prd: Optional[str]
   """The product name"""
 
-class OrderBookResponseModel(BaseModel):
+class OrderBookModel(BaseModel):
   """
   The response model for order book endpoint
   """
-  stat: ResponseStatus
+  stat: Optional[ResponseStatus]
   """The order book success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""
@@ -96,6 +96,21 @@ class OrderBookResponseModel(BaseModel):
   """This field will be present for product H and B; and only if it is profit/sl order."""
   emsg: Optional[str]
   """Error message if the request failed"""
+  class Config:
+    """model configuration"""
+    json_loads = build_loader({
+      "request_time": datetime_decoder()
+    })
+
+class OrderBookResponseModel(BaseModel):
+  stat: Optional[ResponseStatus]
+  """The order book success or failure status"""
+  request_time: Optional[datetime]
+  """It will be present only on successful response."""
+  emsg: Optional[str]
+  """Error message if the request failed"""
+  orders: Optional[List[OrderBookModel]]
+  """The order list when present"""
   class Config:
     """model configuration"""
     json_loads = build_loader({
