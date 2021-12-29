@@ -36,20 +36,20 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get broker message success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `Config`
+    :   model configuration
 
     `dmsg: Optional[str]`
     :   This will be present only in case of success
 
-    `norentm: Optional[datetime.datetime]`
-    :   Noren Time
-
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `norentm: Optional[datetime.datetime]`
+    :   Noren Time
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get broker message success or failure status

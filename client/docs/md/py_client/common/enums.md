@@ -5,8 +5,8 @@ Commonly used enumerators
 Classes
 -------
 
-`RequestSourceType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The source of the request, mobile or web
+`AlertType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The available alert types
 
     ### Ancestors (in MRO)
 
@@ -15,126 +15,46 @@ Classes
 
     ### Class variables
 
-    `MOB`
+    `ATP_A`
     :
 
-    `WEB`
+    `ATP_B`
     :
 
-    `API`
+    `CH_PER_A`
     :
 
-`ResponseStatus(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The response success or failure status
-
-    ### Ancestors (in MRO)
-
-    * builtins.str
-    * enum.Enum
-
-    ### Class variables
-
-    `OK`
+    `CH_PER_B`
     :
 
-    `NOT_OK`
+    `LMT_BOS_O`
     :
 
-`PriceType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The price type for orders & trades
-
-    ### Ancestors (in MRO)
-
-    * builtins.str
-    * enum.Enum
-
-    ### Class variables
-
-    `LIMIT`
+    `LTP_A`
     :
 
-    `MARKET`
+    `LTP_A_52HIGH`
     :
 
-    `STOP_LOSS_LIMIT`
+    `LTP_B`
     :
 
-    `STOP_LOSS_MARKET`
+    `LTP_B_52LOW`
     :
 
-    `DS`
+    `OI_A`
     :
 
-    `SECOND_LEG`
+    `OI_B`
     :
 
-    `THIRD_LEG`
+    `TOI_A`
     :
 
-`TransactionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The transaction type for orders & trades
-
-    ### Ancestors (in MRO)
-
-    * builtins.str
-    * enum.Enum
-
-    ### Class variables
-
-    `BUY`
+    `TOI_B`
     :
 
-    `SELL`
-    :
-
-`RestMethod(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   Enumeration for REST methods
-
-    ### Ancestors (in MRO)
-
-    * builtins.str
-    * enum.Enum
-
-    ### Class variables
-
-    `GET`
-    :
-
-    `POST`
-    :
-
-    `PATCH`
-    :
-
-    `PUT`
-    :
-
-    `DELETE`
-    :
-
-    `OPTION`
-    :
-
-    `HEAD`
-    :
-
-`RetentionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The retention type for orders
-
-    ### Ancestors (in MRO)
-
-    * builtins.str
-    * enum.Enum
-
-    ### Class variables
-
-    `DAY`
-    :
-
-    `IOC`
-    :
-
-    `EOS`
+    `VOLUME_A`
     :
 
 `AlertValidity(value, names=None, *, module=None, qualname=None, type=None, start=1)`
@@ -153,8 +73,8 @@ Classes
     `GTT`
     :
 
-`AlertType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
-:   The available alert types
+`PriceType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The price type for orders & trades
 
     ### Ancestors (in MRO)
 
@@ -163,44 +83,124 @@ Classes
 
     ### Class variables
 
-    `LTP_A`
+    `DS`
     :
 
-    `LTP_B`
+    `LIMIT`
     :
 
-    `CH_PER_A`
+    `MARKET`
     :
 
-    `CH_PER_B`
+    `SECOND_LEG`
     :
 
-    `ATP_A`
+    `STOP_LOSS_LIMIT`
     :
 
-    `ATP_B`
+    `STOP_LOSS_MARKET`
     :
 
-    `LTP_A_52HIGH`
+    `THIRD_LEG`
     :
 
-    `LTP_B_52LOW`
+`RequestSourceType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The source of the request, mobile or web
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `API`
     :
 
-    `VOLUME_A`
+    `MOB`
     :
 
-    `OI_A`
+    `WEB`
     :
 
-    `OI_B`
+`ResponseStatus(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The response success or failure status
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `NOT_OK`
     :
 
-    `TOI_A`
+    `OK`
     :
 
-    `TOI_B`
+`RestMethod(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   Enumeration for REST methods
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `DELETE`
     :
 
-    `LMT_BOS_O`
+    `GET`
+    :
+
+    `HEAD`
+    :
+
+    `OPTION`
+    :
+
+    `PATCH`
+    :
+
+    `POST`
+    :
+
+    `PUT`
+    :
+
+`RetentionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The retention type for orders
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `DAY`
+    :
+
+    `EOS`
+    :
+
+    `IOC`
+    :
+
+`TransactionType(value, names=None, *, module=None, qualname=None, type=None, start=1)`
+:   The transaction type for orders & trades
+
+    ### Ancestors (in MRO)
+
+    * builtins.str
+    * enum.Enum
+
+    ### Class variables
+
+    `BUY`
+    :
+
+    `SELL`
     :

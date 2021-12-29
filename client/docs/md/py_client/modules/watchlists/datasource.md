@@ -24,36 +24,6 @@ Classes
 
     ### Methods
 
-    `get_names(self, model: py_client.modules.watchlists.models.get_names.GetWatchListNamesRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_names.GetWatchListNamesResponseModel`
-    :   Fetch watchlist names
-        
-        Args:
-          model (GetWatchListNamesRequestModel): The data to be send as GetWatchListNamesRequestModel.
-          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetWatchListNamesResponseModel: The response as GetWatchListNamesResponseModel.
-
-    `get_watchlist(self, model: py_client.modules.watchlists.models.get_watchlist.GetWatchListRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_watchlist.GetWatchListResponseModel`
-    :   Get scrip list for a given watchlist name
-        
-        Args:
-          model (GetWatchListRequestModel): The data to be send as GetWatchListRequestModel.
-          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          GetWatchListResponseModel: The response as GetWatchListResponseModel.
-
-    `search_scrips(self, model: py_client.modules.watchlists.models.search_scrips.SearchScripsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.search_scrips.SearchScripsResponseModel`
-    :   Search for scrips
-        
-        Args:
-          model (SearchScripsRequestModel): The data to be send as SearchScripsRequestModel.
-          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
-        
-        Returns:
-          SearchScripsResponseModel: The response as SearchScripsResponseModel.
-
     `add_scrips(self, model: py_client.modules.watchlists.models.add_scrips.AddScripsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.add_scrips.AddScripsResponseModel`
     :   Add multiple scrips to a watchlist
         
@@ -74,25 +44,25 @@ Classes
         Returns:
           DeleteScripsResponseModel: The response as DeleteScripsResponseModel.
 
-    `get_security_info(self, model: py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel`
-    :   Get security info
+    `get_names(self, model: py_client.modules.watchlists.models.get_names.GetWatchListNamesRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_names.GetWatchListNamesResponseModel`
+    :   Fetch watchlist names
         
         Args:
-          model (GetSecurityInfoRequestModel): The data to be send as GetSecurityInfoRequestModel.
+          model (GetWatchListNamesRequestModel): The data to be send as GetWatchListNamesRequestModel.
           key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
         
         Returns:
-          GetSecurityInfoResponseModel: The response as GetSecurityInfoResponseModel.
+          GetWatchListNamesResponseModel: The response as GetWatchListNamesResponseModel.
 
-    `get_quotes(self, model: py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel`
-    :   Get quotes
+    `get_predefined_scrips(self, model: py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel`
+    :   Get list of predefined MW scrips
         
         Args:
-          model (GetQuotesRequestModel): The data to be send as GetQuotesRequestModel.
+          model (GetPredefinedScripsRequestModel): The data to be send as GetPredefinedScripsRequestModel.
           key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
         
         Returns:
-          GetQuotesResponseModel: The response as GetQuotesResponseModel.
+          GetPredefinedScripsResponseModel: The response as GetPredefinedScripsResponseModel.
 
     `get_predefined_watchlists(self, model: py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_predefined_watchlists.GetPredefinedWatchListsResponseModel`
     :   Get list of predefined MWs
@@ -104,12 +74,42 @@ Classes
         Returns:
           GetPredefinedWatchListsResponseModel: The response as GetPredefinedWatchListsResponseModel.
 
-    `get_predefined_scrips(self, model: py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_predefined_scrips.GetPredefinedScripsResponseModel`
-    :   Get list of predefined MW scrips
+    `get_quotes(self, model: py_client.modules.watchlists.models.get_quotes.GetQuotesRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_quotes.GetQuotesResponseModel`
+    :   Get quotes
         
         Args:
-          model (GetPredefinedScripsRequestModel): The data to be send as GetPredefinedScripsRequestModel.
+          model (GetQuotesRequestModel): The data to be send as GetQuotesRequestModel.
           key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
         
         Returns:
-          GetPredefinedScripsResponseModel: The response as GetPredefinedScripsResponseModel.
+          GetQuotesResponseModel: The response as GetQuotesResponseModel.
+
+    `get_security_info(self, model: py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel`
+    :   Get security info
+        
+        Args:
+          model (GetSecurityInfoRequestModel): The data to be send as GetSecurityInfoRequestModel.
+          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          GetSecurityInfoResponseModel: The response as GetSecurityInfoResponseModel.
+
+    `get_watchlist(self, model: py_client.modules.watchlists.models.get_watchlist.GetWatchListRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.get_watchlist.GetWatchListResponseModel`
+    :   Get scrip list for a given watchlist name
+        
+        Args:
+          model (GetWatchListRequestModel): The data to be send as GetWatchListRequestModel.
+          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          GetWatchListResponseModel: The response as GetWatchListResponseModel.
+
+    `search_scrips(self, model: py_client.modules.watchlists.models.search_scrips.SearchScripsRequestModel, key: str = None) ‑> py_client.modules.watchlists.models.search_scrips.SearchScripsResponseModel`
+    :   Search for scrips
+        
+        Args:
+          model (SearchScripsRequestModel): The data to be send as SearchScripsRequestModel.
+          key (str): The key obtained on login success. Uses the token in the state if not passed explicitly.
+        
+        Returns:
+          SearchScripsResponseModel: The response as SearchScripsResponseModel.

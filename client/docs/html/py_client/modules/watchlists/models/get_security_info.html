@@ -183,10 +183,6 @@ class GetSecurityInfoResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Exchange</p></div>
@@ -194,6 +190,10 @@ class GetSecurityInfoResponseModel(BaseModel):
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Contract Token</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -308,109 +308,9 @@ class GetSecurityInfoResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The get security info success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exchange</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading Symbol</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname"><code class="name">var <span class="ident">cname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Company Name</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam"><code class="name">var <span class="ident">symnam</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Symbol Name</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Segment</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd"><code class="name">var <span class="ident">exd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Expiry Date</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Intrument Name</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc"><code class="name">var <span class="ident">strprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Strike Price</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt"><code class="name">var <span class="ident">optt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Option Type</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin"><code class="name">var <span class="ident">isin</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>ISIN</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Tick Size</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Lot Size</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Price precision</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Multiplier</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd"><code class="name">var <span class="ident">gp_nd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>gn/gd * pn/pd</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt"><code class="name">var <span class="ident">prcunt</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Price Units</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty"><code class="name">var <span class="ident">prcqqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Price Quote Qty</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt"><code class="name">var <span class="ident">trdunt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trade Units</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt"><code class="name">var <span class="ident">delunt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Delivery Units</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty"><code class="name">var <span class="ident">frzqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Freeze Qty</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind"><code class="name">var <span class="ident">gsmind</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>scripupdate Gsm Ind</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg"><code class="name">var <span class="ident">elmbmrg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Elm Buy Margin</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg"><code class="name">var <span class="ident">elmsmrg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Elm Sell Margin</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.addbmrg"><code class="name">var <span class="ident">addbmrg</span> : Optional[str]</code></dt>
 <dd>
@@ -420,6 +320,110 @@ class GetSecurityInfoResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Additional Short Margin</p></div>
 </dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname"><code class="name">var <span class="ident">cname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Company Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg"><code class="name">var <span class="ident">delmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Delivery Margin</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt"><code class="name">var <span class="ident">delunt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Delivery Units</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg"><code class="name">var <span class="ident">elmbmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Elm Buy Margin</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg"><code class="name">var <span class="ident">elmmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Elm Margin</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg"><code class="name">var <span class="ident">elmsmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Elm Sell Margin</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd"><code class="name">var <span class="ident">exd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Expiry Date</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd"><code class="name">var <span class="ident">exeendd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exercise End Date</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd"><code class="name">var <span class="ident">exestrd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exercise Start Date</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg"><code class="name">var <span class="ident">expmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure Margin</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty"><code class="name">var <span class="ident">frzqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Freeze Qty</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd"><code class="name">var <span class="ident">gp_nd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>gn/gd * pn/pd</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind"><code class="name">var <span class="ident">gsmind</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>scripupdate Gsm Ind</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Intrument Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin"><code class="name">var <span class="ident">isin</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>ISIN</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls"><code class="name">var <span class="ident">ls</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Lot Size</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult"><code class="name">var <span class="ident">mult</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Multiplier</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt"><code class="name">var <span class="ident">optt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option Type</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp"><code class="name">var <span class="ident">pp</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price precision</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d"><code class="name">var <span class="ident">prcftr_d</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>((GN / GD) * (PN/PD))</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty"><code class="name">var <span class="ident">prcqqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price Quote Qty</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt"><code class="name">var <span class="ident">prcunt</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Price Units</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg"><code class="name">var <span class="ident">seg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Segment</p></div>
+</dd>
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.splbmrg"><code class="name">var <span class="ident">splbmrg</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Special Long Margin</p></div>
@@ -428,9 +432,21 @@ class GetSecurityInfoResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Special Short Margin</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg"><code class="name">var <span class="ident">delmrg</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>Delivery Margin</p></div>
+<div class="desc"><p>The get security info success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc"><code class="name">var <span class="ident">strprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Strike Price</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam"><code class="name">var <span class="ident">symnam</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Symbol Name</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd"><code class="name">var <span class="ident">tenendd</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Tender End Eate</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenmrg"><code class="name">var <span class="ident">tenmrg</span> : Optional[str]</code></dt>
 <dd>
@@ -440,41 +456,25 @@ class GetSecurityInfoResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Tender Start Date</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd"><code class="name">var <span class="ident">tenendd</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti"><code class="name">var <span class="ident">ti</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Tender End Eate</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd"><code class="name">var <span class="ident">exestrd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exercise Start Date</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd"><code class="name">var <span class="ident">exeendd</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exercise End Date</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg"><code class="name">var <span class="ident">elmmrg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Elm Margin</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg"><code class="name">var <span class="ident">varmrg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Var Margin</p></div>
-</dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg"><code class="name">var <span class="ident">expmrg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exposure Margin</p></div>
+<div class="desc"><p>Tick Size</p></div>
 </dd>
 <dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Contract Token</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d"><code class="name">var <span class="ident">prcftr_d</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt"><code class="name">var <span class="ident">trdunt</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>((GN / GD) * (PN/PD))</p></div>
+<div class="desc"><p>Trade Units</p></div>
 </dd>
-<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Trading Symbol</p></div>
+</dd>
+<dt id="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg"><code class="name">var <span class="ident">varmrg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Var Margin</p></div>
 </dd>
 </dl>
 </dd>
@@ -497,56 +497,56 @@ class GetSecurityInfoResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel">GetSecurityInfoRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.exch" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.token" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel">GetSecurityInfoResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname">cname</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam">symnam</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg">seg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd">exd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname">instname</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc">strprc</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt">optt</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin">isin</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti">ti</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls">ls</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp">pp</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult">mult</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd">gp_nd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt">prcunt</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty">prcqqty</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt">trdunt</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt">delunt</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty">frzqty</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind">gsmind</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg">elmbmrg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg">elmsmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.addbmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.addbmrg">addbmrg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.addsmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.addsmrg">addsmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.cname">cname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg">delmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delunt">delunt</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmbmrg">elmbmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg">elmmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmsmrg">elmsmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exd">exd</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd">exeendd</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd">exestrd</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg">expmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.frzqty">frzqty</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gp_nd">gp_nd</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.gsmind">gsmind</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.instname">instname</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.isin">isin</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ls">ls</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.mult">mult</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.optt">optt</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.pp">pp</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d">prcftr_d</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcqqty">prcqqty</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcunt">prcunt</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.seg">seg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.splbmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.splbmrg">splbmrg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.splsmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.splsmrg">splsmrg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.delmrg">delmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.strprc">strprc</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.symnam">symnam</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd">tenendd</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenmrg">tenmrg</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenstrd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenstrd">tenstrd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tenendd">tenendd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exestrd">exestrd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.exeendd">exeendd</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.elmmrg">elmmrg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg">varmrg</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.expmrg">expmrg</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.ti">ti</a></code></li>
 <li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.token" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.prcftr_d">prcftr_d</a></code></li>
-<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.trdunt">trdunt</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg" href="#py_client.modules.watchlists.models.get_security_info.GetSecurityInfoResponseModel.varmrg">varmrg</a></code></li>
 </ul>
 </li>
 </ul>

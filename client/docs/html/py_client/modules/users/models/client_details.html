@@ -135,10 +135,6 @@ class ClientDetailsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Login users account ID</p></div>
@@ -146,6 +142,10 @@ class ClientDetailsResponseModel(BaseModel):
 <dt id="py_client.modules.users.models.client_details.ClientDetailsRequestModel.brkname"><code class="name">var <span class="ident">brkname</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Login users broker ID</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -211,45 +211,25 @@ class ClientDetailsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The logout success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.actid"><code class="name">var <span class="ident">actid</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Login users account ID</p></div>
 </dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte"><code class="name">var <span class="ident">creatdte</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>Creation date</p></div>
-</dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme"><code class="name">var <span class="ident">creattme</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>Creation time</p></div>
-</dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num"><code class="name">var <span class="ident">m_num</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Mobile number</p></div>
-</dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.email"><code class="name">var <span class="ident">email</span> : Optional[pydantic.networks.EmailStr]</code></dt>
-<dd>
-<div class="desc"><p>Email Id</p></div>
-</dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan"><code class="name">var <span class="ident">pan</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>The PAN of user</p></div>
-</dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addr"><code class="name">var <span class="ident">addr</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Address</p></div>
 </dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice"><code class="name">var <span class="ident">addroffice</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Office address</p></div>
-</dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrcity"><code class="name">var <span class="ident">addrcity</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>City</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice"><code class="name">var <span class="ident">addroffice</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Office address</p></div>
 </dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrstate"><code class="name">var <span class="ident">addrstate</span> : Optional[str]</code></dt>
 <dd>
@@ -259,21 +239,41 @@ class ClientDetailsResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>List of bank details</p></div>
 </dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte"><code class="name">var <span class="ident">creatdte</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>Creation date</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme"><code class="name">var <span class="ident">creattme</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>Creation time</p></div>
+</dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.dp_acct_num"><code class="name">var <span class="ident">dp_acct_num</span> : Optional[List[<a title="py_client.common.models.DpAccountNumber" href="../../../common/models.html#py_client.common.models.DpAccountNumber">DpAccountNumber</a>]]</code></dt>
 <dd>
 <div class="desc"><p>List of bank</p></div>
 </dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.email"><code class="name">var <span class="ident">email</span> : Optional[pydantic.networks.EmailStr]</code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>Email Id</p></div>
 </dd>
 <dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num"><code class="name">var <span class="ident">m_num</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Mobile number</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan"><code class="name">var <span class="ident">pan</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>The PAN of user</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The logout success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -296,30 +296,30 @@ class ClientDetailsResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel" href="#py_client.modules.users.models.client_details.ClientDetailsRequestModel">ClientDetailsRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid" href="#py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel.actid" href="#py_client.modules.users.models.client_details.ClientDetailsRequestModel.actid">actid</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel.brkname" href="#py_client.modules.users.models.client_details.ClientDetailsRequestModel.brkname">brkname</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid" href="#py_client.modules.users.models.client_details.ClientDetailsRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel">ClientDetailsResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.actid" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte">creatdte</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme">creattme</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num">m_num</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.email" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.email">email</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan">pan</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addr" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.addr">addr</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice">addroffice</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrcity" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrcity">addrcity</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.addroffice">addroffice</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrstate" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.addrstate">addrstate</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.bankdetails" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.bankdetails">bankdetails</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.creatdte">creatdte</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.creattme">creattme</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.dp_acct_num" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.dp_acct_num">dp_acct_num</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.email" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.email">email</a></code></li>
 <li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.emsg" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.m_num">m_num</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.pan">pan</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat" href="#py_client.modules.users.models.client_details.ClientDetailsResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

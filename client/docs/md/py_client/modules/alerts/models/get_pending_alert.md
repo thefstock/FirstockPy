@@ -36,32 +36,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get pending alert success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `al_id: Optional[str]`
-    :   The id of the alert to modify
-
-    `tsym: Optional[str]`
-    :   Trading symbol
-
-    `exch: Optional[str]`
-    :   Exchange Segment
+    `Config`
+    :   model configuration
 
     `ai_t: Optional[str]`
     :   Alert Type
 
-    `token: Optional[str]`
-    :   Contract token
-
-    `validity: py_client.common.enums.AlertValidity`
-    :   DAY or GTT Validity
-
-    `remarks: Optional[str]`
-    :   Any message Entered during order entry.
+    `al_id: Optional[str]`
+    :   The id of the alert to modify
 
     `d: Optional[str]`
     :   Data to be compared with LTP
@@ -69,5 +51,23 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `exch: Optional[str]`
+    :   Exchange Segment
+
+    `remarks: Optional[str]`
+    :   Any message Entered during order entry.
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get pending alert success or failure status
+
+    `token: Optional[str]`
+    :   Contract token
+
+    `tsym: Optional[str]`
+    :   Trading symbol
+
+    `validity: py_client.common.enums.AlertValidity`
+    :   DAY or GTT Validity

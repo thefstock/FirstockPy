@@ -19,12 +19,6 @@ Classes
 
     ### Class variables
 
-    `t: py_client.websocket.enums.MessageTopic`
-    :   The message topic
-
-    `uid: str`
-    :   User ID
-
     `actid: str`
     :   Account id
 
@@ -33,3 +27,9 @@ Classes
 
     `susertoken: Optional[str]`
     :   User Session Token
+
+    `t: py_client.websocket.enums.MessageTopic`
+    :   The message topic
+
+    `uid: str`
+    :   User ID

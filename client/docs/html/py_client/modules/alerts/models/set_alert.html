@@ -125,33 +125,33 @@ class SetAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : <a title="py_client.common.enums.AlertType" href="../../../common/enums.html#py_client.common.enums.AlertType">AlertType</a></code></dt>
 <dd>
-<div class="desc"><p>The user id of the login user</p></div>
+<div class="desc"><p>Alert Type</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Trading symbol</p></div>
+<div class="desc"><p>Data to be compared with LTP</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Exchange Segment</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : <a title="py_client.common.enums.AlertType" href="../../../common/enums.html#py_client.common.enums.AlertType">AlertType</a></code></dt>
-<dd>
-<div class="desc"><p>Alert Type</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
-<dd>
-<div class="desc"><p>DAY or GTT Validity</p></div>
-</dd>
 <dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.remarks"><code class="name">var <span class="ident">remarks</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Any message Entered during order entry.</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d"><code class="name">var <span class="ident">d</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Data to be compared with LTP</p></div>
+<div class="desc"><p>Trading symbol</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
+<dd>
+<div class="desc"><p>DAY or GTT Validity</p></div>
 </dd>
 </dl>
 </dd>
@@ -193,13 +193,9 @@ class SetAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The set alert success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : Optional[str]</code></dt>
 <dd>
@@ -209,9 +205,13 @@ class SetAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
+<dd>
+<div class="desc"><p>The set alert success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -234,23 +234,23 @@ class SetAlertResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel">SetAlertRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid">uid</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.exch" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.exch">exch</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.ai_t">ai_t</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity">validity</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.remarks" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.remarks">remarks</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.d">d</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.exch" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.remarks" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity" href="#py_client.modules.alerts.models.set_alert.SetAlertRequestModel.validity">validity</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel">SetAlertResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.al_id" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.al_id">al_id</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.emsg" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat" href="#py_client.modules.alerts.models.set_alert.SetAlertResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

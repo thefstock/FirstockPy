@@ -19,17 +19,17 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   User Id
-
-    `pan: str`
-    :   PAN of the user
+    `Config`
+    :   model configuration
 
     `dob: datetime.date`
     :   Date of birth
 
-    `Config`
-    :   model configuration
+    `pan: str`
+    :   PAN of the user
+
+    `uid: str`
+    :   User Id
 
 `ForgotPasswordResponseModel(**data: Any)`
 :   The response model for forgot password endpoint
@@ -45,14 +45,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   Password reset is Success Or failure status
-
-    `request_time: datetime.datetime`
-    :   Response received time
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the forgot password failed
 
-    `Config`
-    :   model configuration
+    `request_time: datetime.datetime`
+    :   Response received time
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   Password reset is Success Or failure status

@@ -151,29 +151,29 @@ class TimePriceSeriesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Exchange</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token"><code class="name">var <span class="ident">token</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Token</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st"><code class="name">var <span class="ident">st</span> : datetime.datetime</code></dt>
-<dd>
-<div class="desc"><p>Start time</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.et"><code class="name">var <span class="ident">et</span> : datetime.datetime</code></dt>
 <dd>
 <div class="desc"><p>End Time</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st"><code class="name">var <span class="ident">st</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"><p>Start time</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token"><code class="name">var <span class="ident">token</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Token</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -234,21 +234,17 @@ class TimePriceSeriesResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The time price series success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time"><code class="name">var <span class="ident">time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc"><code class="name">var <span class="ident">intc</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>DD/MM/CCYY hh:mm:ss</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into"><code class="name">var <span class="ident">into</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Interval open</p></div>
+<div class="desc"><p>Interval close</p></div>
 </dd>
 <dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.inth"><code class="name">var <span class="ident">inth</span> : Optional[str]</code></dt>
 <dd>
@@ -258,37 +254,41 @@ class TimePriceSeriesResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Interval low</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc"><code class="name">var <span class="ident">intc</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into"><code class="name">var <span class="ident">into</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Interval close</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap"><code class="name">var <span class="ident">intvwap</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Interval vwap</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv"><code class="name">var <span class="ident">intv</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Interval volume</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v"><code class="name">var <span class="ident">v</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>volume</p></div>
+<div class="desc"><p>Interval open</p></div>
 </dd>
 <dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intoi"><code class="name">var <span class="ident">intoi</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Interval io change</p></div>
 </dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv"><code class="name">var <span class="ident">intv</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Interval volume</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap"><code class="name">var <span class="ident">intvwap</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Interval vwap</p></div>
+</dd>
 <dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.oi"><code class="name">var <span class="ident">oi</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>oi</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>Error message if the request failed</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The time price series success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time"><code class="name">var <span class="ident">time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>DD/MM/CCYY hh:mm:ss</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v"><code class="name">var <span class="ident">v</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>volume</p></div>
 </dd>
 </dl>
 </dd>
@@ -311,31 +311,31 @@ class TimePriceSeriesResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel">TimePriceSeriesRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid">uid</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st">st</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.et" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.et">et</a></code></li>
 <li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.Config" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.et" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.et">et</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.st">st</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel">TimePriceSeriesResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time">time</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into">into</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc">intc</a></code></li>
 <li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.inth" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.inth">inth</a></code></li>
 <li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intl" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intl">intl</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intc">intc</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap">intvwap</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv">intv</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v">v</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.into">into</a></code></li>
 <li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intoi" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intoi">intoi</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intv">intv</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.intvwap">intvwap</a></code></li>
 <li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.oi" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.oi">oi</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.time">time</a></code></li>
+<li><code><a title="py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v" href="#py_client.modules.markets.models.time_price_series.TimePriceSeriesResponseModel.v">v</a></code></li>
 </ul>
 </li>
 </ul>

@@ -36,14 +36,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The logout success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The logout success or failure status

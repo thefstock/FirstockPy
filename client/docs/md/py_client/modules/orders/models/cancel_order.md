@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   Logged in User Id
-
     `norenordno: str`
     :   Noren order number, which needs to be cancelled
+
+    `uid: str`
+    :   Logged in User Id
 
 `CancelOrderResponseModel(**data: Any)`
 :   The response model for cancel order endpoint
@@ -39,8 +39,11 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The cancel order success or failure status
+    `Config`
+    :   model configuration
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
@@ -48,8 +51,5 @@ Classes
     `result: Optional[str]`
     :   Noren Order number of the order modified.
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
-
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The cancel order success or failure status

@@ -23,19 +23,16 @@ Classes
 
     ### Methods
 
-    `on_connect(self, handler: Callable[[ForwardRef('WsClient'), Dict[str, Any]], None])`
-    :   Add on open handler
+    `closed(self)`
+    :   This method runs once the connection is closed.
+        ..warning:: Do not call this method directly
+
+    `connect(self, uid: str, actid: str)`
+    :   Connect to websocket
         
         Args:
-          handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
-        
-        Usage:
-          Should be used as decorator
-          ```python
-          @ws.on_connect
-          def on_connect(client, ack: Dict[str, Any]):
-            print('Connected: ', ack)
-          ```
+            uid (str): The user id for the user
+            actid (str): The account id for the user
 
     `on_close(self, handler: Callable[[ForwardRef('WsClient')], None])`
     :   Add on close handler
@@ -49,6 +46,20 @@ Classes
           @ws.on_close
           def on_close(client):
             print('Connection closed')
+          ```
+
+    `on_connect(self, handler: Callable[[ForwardRef('WsClient'), Dict[str, Any]], None])`
+    :   Add on open handler
+        
+        Args:
+          handler (Callable[[WsClient, Dict[str, Any]], None]): The handler to run on connection opened
+        
+        Usage:
+          Should be used as decorator
+          ```python
+          @ws.on_connect
+          def on_connect(client, ack: Dict[str, Any]):
+            print('Connected: ', ack)
           ```
 
     `on_message(self, topic: py_client.websocket.enums.MessageTopic)`
@@ -68,33 +79,16 @@ Classes
             print(message)
           ```
 
-    `connect(self, uid: str, actid: str)`
-    :   Connect to websocket
-        
-        Args:
-            uid (str): The user id for the user
-            actid (str): The account id for the user
+    `opened(self)`
+    :   This method runs once the connection is established
+        ..warning:: Do not call this method directly
 
-    `subscribe_touchline(self, *scriplists: List[str])`
-    :   Subscribe to touchline feed
-        
-        Args:
-          scriplists (List[str]): One or more scriplists
-
-    `unsubscribe_touchline(self, *scriplists: List[str])`
-    :   Unsubscribe from touchline feed
-        
-        Args:
-          scriplists (List[str]): One or more scriplists
+    `received_message(self, message: ws4py.messaging.TextMessage)`
+    :   This method runs for every message
+        ..warning:: Do not call this method directly
 
     `subscribe_depth(self, *scriplists: List[str])`
     :   Subscribe to depth feed
-        
-        Args:
-          scriplists (List[str]): One or more scriplists
-
-    `unsubscribe_depth(self, *scriplists: List[str])`
-    :   Unsubscribe from depth feed
         
         Args:
           scriplists (List[str]): One or more scriplists
@@ -105,20 +99,26 @@ Classes
         Args:
           actid (str): Account id based on which order updated to be sent.
 
+    `subscribe_touchline(self, *scriplists: List[str])`
+    :   Subscribe to touchline feed
+        
+        Args:
+          scriplists (List[str]): One or more scriplists
+
+    `unsubscribe_depth(self, *scriplists: List[str])`
+    :   Unsubscribe from depth feed
+        
+        Args:
+          scriplists (List[str]): One or more scriplists
+
     `unsubscribe_order(self, actid: str)`
     :   Unsubscribe from depth feed
         
         Args:
           actid (str): Account id based on which order updated to be sent.
 
-    `opened(self)`
-    :   This method runs once the connection is established
-        ..warning:: Do not call this method directly
-
-    `closed(self)`
-    :   This method runs once the connection is closed.
-        ..warning:: Do not call this method directly
-
-    `received_message(self, message: ws4py.messaging.TextMessage)`
-    :   This method runs for every message
-        ..warning:: Do not call this method directly
+    `unsubscribe_touchline(self, *scriplists: List[str])`
+    :   Unsubscribe from touchline feed
+        
+        Args:
+          scriplists (List[str]): One or more scriplists

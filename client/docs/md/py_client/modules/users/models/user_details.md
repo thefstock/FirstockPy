@@ -36,17 +36,11 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The logout success or failure status
+    `Config`
+    :   model configuration
 
-    `exarr: Optional[List[str]]`
-    :   List of strings with enabled exchange names
-
-    `orarr: Optional[List[str]]`
-    :   List of strings with enabled price types for user
-
-    `prarr: Optional[List[py_client.common.models.Product]]`
-    :   List of Product Obj with enabled products, as defined below.
+    `actid: Optional[str]`
+    :   Account Id
 
     `brkname: Optional[str]`
     :   Broker Id
@@ -57,20 +51,26 @@ Classes
     `email: Optional[pydantic.networks.EmailStr]`
     :   Email Id
 
-    `actid: Optional[str]`
-    :   Account Id
+    `emsg: Optional[str]`
+    :   Error message if the request failed
+
+    `exarr: Optional[List[str]]`
+    :   List of strings with enabled exchange names
 
     `m_num: Optional[str]`
     :   Mobile Number
 
-    `u_prev: Optional[str]`
-    :   Always it will be an INVESTOR, other types of user not allowed to login using this API.
+    `orarr: Optional[List[str]]`
+    :   List of strings with enabled price types for user
+
+    `prarr: Optional[List[py_client.common.models.Product]]`
+    :   List of Product Obj with enabled products, as defined below.
 
     `request_time: Optional[datetime.datetime]`
     :   It will be present only on successful response.
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The logout success or failure status
 
-    `Config`
-    :   model configuration
+    `u_prev: Optional[str]`
+    :   Always it will be an INVESTOR, other types of user not allowed to login using this API.

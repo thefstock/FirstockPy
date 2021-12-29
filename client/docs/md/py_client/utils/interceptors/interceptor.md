@@ -5,7 +5,7 @@ The base class for creating interceptors
 Classes
 -------
 
-`Interceptor()`
+`Interceptor(*args, **kwds)`
 :   The abstract base interceptor.
     Other interceptors should inherit from this.
     
@@ -22,13 +22,6 @@ Classes
 
     ### Methods
 
-    `before(self, context: ~C) ‑> ~C`
-    :   This hook runs before the request is send.
-        You can modify the context here to augment the request
-        
-        Args:
-            context (C): The request context
-
     `after(self, context: ~C) ‑> ~C`
     :   This hook runs after the request is completed and the response is recieved.
         You can modify the response to transform the result.
@@ -36,3 +29,10 @@ Classes
         
         Args:
           context (C): The request context
+
+    `before(self, context: ~C) ‑> ~C`
+    :   This hook runs before the request is send.
+        You can modify the context here to augment the request
+        
+        Args:
+            context (C): The request context

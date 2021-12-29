@@ -105,13 +105,13 @@ class CancelAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
 <dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.al_id"><code class="name">var <span class="ident">al_id</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Alert Id</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -153,13 +153,9 @@ class CancelAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
+<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The cancel alert success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : Optional[str]</code></dt>
 <dd>
@@ -169,9 +165,13 @@ class CancelAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : Union[<a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a>, str]</code></dt>
+<dd>
+<div class="desc"><p>The cancel alert success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -194,18 +194,18 @@ class CancelAlertResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel">CancelAlertRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.al_id" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.al_id">al_id</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel">CancelAlertResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.al_id" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.al_id">al_id</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.emsg" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat" href="#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

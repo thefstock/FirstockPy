@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
     `actid: str`
     :   Login users account ID
 
     `brkname: str`
     :   Login users broker ID
+
+    `uid: str`
+    :   The user id of the login user
 
 `ClientDetailsResponseModel(**data: Any)`
 :   The response model for client details endpoint
@@ -42,35 +42,20 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The logout success or failure status
+    `Config`
+    :   model configuration
 
     `actid: Optional[str]`
     :   Login users account ID
 
-    `creatdte: Optional[datetime.datetime]`
-    :   Creation date
-
-    `creattme: Optional[datetime.datetime]`
-    :   Creation time
-
-    `m_num: Optional[str]`
-    :   Mobile number
-
-    `email: Optional[pydantic.networks.EmailStr]`
-    :   Email Id
-
-    `pan: Optional[str]`
-    :   The PAN of user
-
     `addr: Optional[str]`
     :   Address
 
-    `addroffice: Optional[str]`
-    :   Office address
-
     `addrcity: Optional[str]`
     :   City
+
+    `addroffice: Optional[str]`
+    :   Office address
 
     `addrstate: Optional[str]`
     :   State
@@ -78,14 +63,29 @@ Classes
     `bankdetails: Optional[List[py_client.common.models.BankDetails]]`
     :   List of bank details
 
+    `creatdte: Optional[datetime.datetime]`
+    :   Creation date
+
+    `creattme: Optional[datetime.datetime]`
+    :   Creation time
+
     `dp_acct_num: Optional[List[py_client.common.models.DpAccountNumber]]`
     :   List of bank
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `email: Optional[pydantic.networks.EmailStr]`
+    :   Email Id
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `m_num: Optional[str]`
+    :   Mobile number
+
+    `pan: Optional[str]`
+    :   The PAN of user
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The logout success or failure status

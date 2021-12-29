@@ -19,8 +19,8 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   User Id
+    `dpin: str`
+    :   New pin
 
     `imei: str`
     :   IMEI or device unique fingerprint
@@ -28,8 +28,8 @@ Classes
     `source: py_client.common.enums.RequestSourceType`
     :   Access type
 
-    `dpin: str`
-    :   New pin
+    `uid: str`
+    :   User Id
 
 `SetDevicePinResponseModel(**data: Any)`
 :   The data model for set device pin response
@@ -45,14 +45,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The set device pin success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful setting of new pin.
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful setting of new pin.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The set device pin success or failure status

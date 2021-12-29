@@ -139,23 +139,17 @@ class ConvertProductResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Logged in User Id</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Unique id of contract on which order was placed.
-Can’t be modified, must be the same as that of original order.
-(use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty"><code class="name">var <span class="ident">qty</span> : float</code></dt>
-<dd>
-<div class="desc"><p>Quantity to be converted.</p></div>
-</dd>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Account id</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource"><code class="name">var <span class="ident">ordersource</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>MOB For Logging</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype"><code class="name">var <span class="ident">postype</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Day / CF Converting Day or Carry forward position</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
 <dd>
@@ -165,17 +159,23 @@ Can’t be modified, must be the same as that of original order.
 <dd>
 <div class="desc"><p>Original product of the position.</p></div>
 </dd>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty"><code class="name">var <span class="ident">qty</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Quantity to be converted.</p></div>
+</dd>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.trantype"><code class="name">var <span class="ident">trantype</span> : <a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a></code></dt>
 <dd>
 <div class="desc"><p>Transaction type</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype"><code class="name">var <span class="ident">postype</span> : str</code></dt>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Day / CF Converting Day or Carry forward position</p></div>
+<div class="desc"><p>Unique id of contract on which order was placed.
+Can’t be modified, must be the same as that of original order.
+(use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource"><code class="name">var <span class="ident">ordersource</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>MOB For Logging</p></div>
+<div class="desc"><p>Logged in User Id</p></div>
 </dd>
 </dl>
 </dd>
@@ -214,21 +214,21 @@ Can’t be modified, must be the same as that of original order.
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The product conversion success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The product conversion success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -251,24 +251,24 @@ Can’t be modified, must be the same as that of original order.
 <li>
 <h4><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel">ConvertProductRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid">uid</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty">qty</a></code></li>
 <li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.actid" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.actid">actid</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource">ordersource</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype">postype</a></code></li>
 <li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.prd" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.prd">prd</a></code></li>
 <li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.prevprd" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.prevprd">prevprd</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.qty">qty</a></code></li>
 <li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.trantype" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.trantype">trantype</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.postype">postype</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.ordersource">ordersource</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid" href="#py_client.modules.orders.models.convert_product.ConvertProductRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel">ConvertProductResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.emsg" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.emsg">emsg</a></code></li>
 <li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.Config" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.emsg" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat" href="#py_client.modules.orders.models.convert_product.ConvertProductResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

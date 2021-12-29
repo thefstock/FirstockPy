@@ -19,56 +19,56 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   Logged in User Id
-
     `actid: str`
     :   Login users account ID
-
-    `exch: str`
-    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
-
-    `tsym: str`
-    :   Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&M)
-
-    `qty: str`
-    :   Order Quantity
-
-    `prc: str`
-    :   Order Price
-
-    `trgprc: Optional[str]`
-    :   Only to be sent in case of SL / SL-M order.
-
-    `prd: str`
-    :   C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)
-
-    `trantype: py_client.common.enums.TransactionType`
-    :   BUY or SELL
-
-    `prctyp: py_client.common.enums.PriceType`
-    :   LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L
 
     `blprc: Optional[str]`
     :   Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )
 
-    `rorgqty: Optional[str]`
-    :   Optional field. Application only for modify order, open order quantity
+    `exch: str`
+    :   Exchange (Select from ‘exarr’ Array provided in User Details response)
 
     `fillshares: Optional[str]`
     :   Optional field. Application only for modify order, quantity already filled
 
-    `rorgprc: Optional[str]`
-    :   Optional field. Application only for modify order, open order price
+    `norenordno: Optional[str]`
+    :   Optional field. Application only for H or B order modification
 
     `orgtrgprc: Optional[str]`
     :   Optional field. Application only for modify order, open order trigger price
 
-    `norenordno: Optional[str]`
-    :   Optional field. Application only for H or B order modification
+    `prc: str`
+    :   Order Price
+
+    `prctyp: py_client.common.enums.PriceType`
+    :   LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L
+
+    `prd: str`
+    :   C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)
+
+    `qty: str`
+    :   Order Quantity
+
+    `rorgprc: Optional[str]`
+    :   Optional field. Application only for modify order, open order price
+
+    `rorgqty: Optional[str]`
+    :   Optional field. Application only for modify order, open order quantity
 
     `snonum: Optional[str]`
     :   Optional field. Application only for H or B order modification
+
+    `trantype: py_client.common.enums.TransactionType`
+    :   BUY or SELL
+
+    `trgprc: Optional[str]`
+    :   Only to be sent in case of SL / SL-M order.
+
+    `tsym: str`
+    :   Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&M)
+
+    `uid: str`
+    :   Logged in User Id
 
 `GetOrderMarginResponseModel(**data: Any)`
 :   The response model for get order margin endpoint
@@ -84,23 +84,23 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get order margin success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `remarks: Optional[str]`
-    :   This field will be available only on success.
+    `Config`
+    :   model configuration
 
     `cash: Optional[str]`
     :   Total credits available for order
 
-    `marginused: Optional[str]`
-    :   Total margin used.
-
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `marginused: Optional[str]`
+    :   Total margin used.
+
+    `remarks: Optional[str]`
+    :   This field will be available only on success.
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get order margin success or failure status

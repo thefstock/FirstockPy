@@ -113,6 +113,95 @@ class SpanCalculatorResponseModel(BaseModel):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos"><code class="flex name class">
+<span>class <span class="ident">SpanCalculatorPos</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Each object in pos of SpanCalculatorRequestModel</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SpanCalculatorPos(BaseModel):
+  &#34;&#34;&#34;
+  Each object in pos of SpanCalculatorRequestModel
+  &#34;&#34;&#34;
+  exch: Optional[str]
+  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
+  instname: Optional[str] 
+  &#34;&#34;&#34;Instrument name&#34;&#34;&#34;
+  symname: Optional[str]
+  &#34;&#34;&#34;Symbol name&#34;&#34;&#34;
+  expd: Optional[date]
+  &#34;&#34;&#34;expiry date&#34;&#34;&#34;
+  optt: Optional[str]
+  &#34;&#34;&#34;Option Type&#34;&#34;&#34;
+  strprc: Optional[float]
+  &#34;&#34;&#34;Strike price&#34;&#34;&#34;
+  buyqty: Optional[float]
+  &#34;&#34;&#34;Buy Open Quantity&#34;&#34;&#34;
+  sellqty: Optional[float]
+  &#34;&#34;&#34;Sell Open Quantity&#34;&#34;&#34;
+  netqty: Optional[float]
+  &#34;&#34;&#34;Net traded quantity&#34;&#34;&#34;
+  class Config:
+    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
+    json_dumps = build_dumber({
+      &#34;expd&#34;: date_encoder(&#39;%Y-%m-%d&#39;)
+    })</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dd>
+<div class="desc"><p>model configuration</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty"><code class="name">var <span class="ident">buyqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Buy Open Quantity</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exchange</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd"><code class="name">var <span class="ident">expd</span> : Optional[datetime.date]</code></dt>
+<dd>
+<div class="desc"><p>expiry date</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Instrument name</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty"><code class="name">var <span class="ident">netqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Net traded quantity</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt"><code class="name">var <span class="ident">optt</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Option Type</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty"><code class="name">var <span class="ident">sellqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Sell Open Quantity</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc"><code class="name">var <span class="ident">strprc</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Strike price</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname"><code class="name">var <span class="ident">symname</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Symbol name</p></div>
+</dd>
+</dl>
+</dd>
 <dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel"><code class="flex name class">
 <span>class <span class="ident">SpanCalculatorRequestModel</span></span>
 <span>(</span><span>**data: Any)</span>
@@ -195,9 +284,21 @@ class SpanCalculatorResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The span calculator success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo"><code class="name">var <span class="ident">expo</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure margin</p></div>
+</dd>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade"><code class="name">var <span class="ident">expo_trade</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Exposure margin ignoring input fields buyqty, sellqty</p></div>
 </dd>
 <dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
@@ -207,114 +308,13 @@ class SpanCalculatorResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Span value</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo"><code class="name">var <span class="ident">expo</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exposure margin</p></div>
-</dd>
 <dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.span_trade"><code class="name">var <span class="ident">span_trade</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Span value ignoring input fields buyqty, sellqty</p></div>
 </dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade"><code class="name">var <span class="ident">expo_trade</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>Exposure margin ignoring input fields buyqty, sellqty</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
-<dd>
-<div class="desc"><p>model configuration</p></div>
-</dd>
-</dl>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos"><code class="flex name class">
-<span>class <span class="ident">SpanCalculatorPos</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Each object in pos of SpanCalculatorRequestModel</p>
-<p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class SpanCalculatorPos(BaseModel):
-  &#34;&#34;&#34;
-  Each object in pos of SpanCalculatorRequestModel
-  &#34;&#34;&#34;
-  exch: Optional[str]
-  &#34;&#34;&#34;Exchange&#34;&#34;&#34;
-  instname: Optional[str] 
-  &#34;&#34;&#34;Instrument name&#34;&#34;&#34;
-  symname: Optional[str]
-  &#34;&#34;&#34;Symbol name&#34;&#34;&#34;
-  expd: Optional[date]
-  &#34;&#34;&#34;expiry date&#34;&#34;&#34;
-  optt: Optional[str]
-  &#34;&#34;&#34;Option Type&#34;&#34;&#34;
-  strprc: Optional[float]
-  &#34;&#34;&#34;Strike price&#34;&#34;&#34;
-  buyqty: Optional[float]
-  &#34;&#34;&#34;Buy Open Quantity&#34;&#34;&#34;
-  sellqty: Optional[float]
-  &#34;&#34;&#34;Sell Open Quantity&#34;&#34;&#34;
-  netqty: Optional[float]
-  &#34;&#34;&#34;Net traded quantity&#34;&#34;&#34;
-  class Config:
-    &#34;&#34;&#34;model configuration&#34;&#34;&#34;
-    json_dumps = build_dumber({
-      &#34;expd&#34;: date_encoder(&#39;%Y-%m-%d&#39;)
-    })</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exchange</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname"><code class="name">var <span class="ident">instname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Instrument name</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname"><code class="name">var <span class="ident">symname</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Symbol name</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd"><code class="name">var <span class="ident">expd</span> : Optional[datetime.date]</code></dt>
-<dd>
-<div class="desc"><p>expiry date</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt"><code class="name">var <span class="ident">optt</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Option Type</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc"><code class="name">var <span class="ident">strprc</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Strike price</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty"><code class="name">var <span class="ident">buyqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Buy Open Quantity</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty"><code class="name">var <span class="ident">sellqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Sell Open Quantity</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty"><code class="name">var <span class="ident">netqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Net traded quantity</p></div>
-</dd>
-<dt id="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config"><code class="name">var <span class="ident">Config</span></code></dt>
-<dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>The span calculator success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -335,6 +335,21 @@ class SpanCalculatorResponseModel(BaseModel):
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
+<h4><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos">SpanCalculatorPos</a></code></h4>
+<ul class="two-column">
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty">buyqty</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd">expd</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname">instname</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty">netqty</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt">optt</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty">sellqty</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc">strprc</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname">symname</a></code></li>
+</ul>
+</li>
+<li>
 <h4><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel">SpanCalculatorRequestModel</a></code></h4>
 <ul class="">
 <li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel.actid" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorRequestModel.actid">actid</a></code></li>
@@ -344,29 +359,14 @@ class SpanCalculatorResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel">SpanCalculatorResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo">expo</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade">expo_trade</a></code></li>
 <li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.request_time" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.request_time">request_time</a></code></li>
 <li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.span" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.span">span</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo">expo</a></code></li>
 <li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.span_trade" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.span_trade">span_trade</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.expo_trade">expo_trade</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.Config">Config</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos">SpanCalculatorPos</a></code></h4>
-<ul class="two-column">
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.instname">instname</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.symname">symname</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.expd">expd</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.optt">optt</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.strprc">strprc</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.buyqty">buyqty</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.sellqty">sellqty</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.netqty">netqty</a></code></li>
-<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorPos.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat" href="#py_client.modules.markets.models.span_calculator.SpanCalculatorResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

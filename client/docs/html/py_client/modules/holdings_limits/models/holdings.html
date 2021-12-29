@@ -132,10 +132,6 @@ class HoldingsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>The user id of the login user</p></div>
-</dd>
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Account id of the logged in user.</p></div>
@@ -143,6 +139,10 @@ class HoldingsResponseModel(BaseModel):
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Product name</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>The user id of the login user</p></div>
 </dd>
 </dl>
 </dd>
@@ -206,13 +206,37 @@ class HoldingsResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The holdings success or failure status</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty"><code class="name">var <span class="ident">benqty</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>Beneficiary quantity</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty"><code class="name">var <span class="ident">brkcolqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Broker Collateral</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty"><code class="name">var <span class="ident">btstcolqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>BTST Collateral quantity</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty"><code class="name">var <span class="ident">btstqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>BTST quantity</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty"><code class="name">var <span class="ident">colqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>Collateral quantity</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty"><code class="name">var <span class="ident">dpqty</span> : Optional[float]</code></dt>
+<dd>
+<div class="desc"><p>DP Holding quantity</p></div>
+</dd>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Error message if the request failed</p></div>
 </dd>
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.exch_tsym"><code class="name">var <span class="ident">exch_tsym</span> : Optional[List[<a title="py_client.common.models.ExchTsym" href="../../../common/models.html#py_client.common.models.ExchTsym">ExchTsym</a>]]</code></dt>
 <dd>
@@ -222,53 +246,29 @@ class HoldingsResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Holding quantity</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty"><code class="name">var <span class="ident">dpqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>DP Holding quantity</p></div>
-</dd>
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.npoadqty"><code class="name">var <span class="ident">npoadqty</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Non Poa display quantity</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty"><code class="name">var <span class="ident">colqty</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>Collateral quantity</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty"><code class="name">var <span class="ident">benqty</span> : Optional[float]</code></dt>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
 <dd>
-<div class="desc"><p>Beneficiary quantity</p></div>
+<div class="desc"><p>The holdings success or failure status</p></div>
 </dd>
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.unplgdqty"><code class="name">var <span class="ident">unplgdqty</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Unpledged quantity</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty"><code class="name">var <span class="ident">brkcolqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Broker Collateral</p></div>
-</dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty"><code class="name">var <span class="ident">btstqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>BTST quantity</p></div>
-</dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty"><code class="name">var <span class="ident">btstcolqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>BTST Collateral quantity</p></div>
-</dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty"><code class="name">var <span class="ident">usedqty</span> : Optional[float]</code></dt>
-<dd>
-<div class="desc"><p>Holding used today</p></div>
-</dd>
 <dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.upldprc"><code class="name">var <span class="ident">upldprc</span> : Optional[float]</code></dt>
 <dd>
 <div class="desc"><p>Average price uploaded along with holdings</p></div>
 </dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty"><code class="name">var <span class="ident">usedqty</span> : Optional[float]</code></dt>
 <dd>
-<div class="desc"><p>Error message if the request failed</p></div>
-</dd>
-<dt id="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
-<dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Holding used today</p></div>
 </dd>
 </dl>
 </dd>
@@ -291,30 +291,30 @@ class HoldingsResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid" href="#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.actid" href="#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.actid">actid</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.prd" href="#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid" href="#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel">HoldingsResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty">benqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty">brkcolqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty">btstcolqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty">btstqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty">colqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty">dpqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg">emsg</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.exch_tsym" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.exch_tsym">exch_tsym</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.holdqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.holdqty">holdqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.dpqty">dpqty</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.npoadqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.npoadqty">npoadqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.colqty">colqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.benqty">benqty</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.stat">stat</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.unplgdqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.unplgdqty">unplgdqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.brkcolqty">brkcolqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstqty">btstqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.btstcolqty">btstcolqty</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty">usedqty</a></code></li>
 <li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.upldprc" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.upldprc">upldprc</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty" href="#py_client.modules.holdings_limits.models.holdings.HoldingsResponseModel.usedqty">usedqty</a></code></li>
 </ul>
 </li>
 </ul>

@@ -136,6 +136,48 @@ def build_loader(decoders: Dict[str, Callable[[Any], Any]]):
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="py_client.utils.decoders.build_loader"><code class="name flex">
+<span>def <span class="ident">build_loader</span></span>(<span>decoders: Dict[str, Callable[[Any], Any]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Build a json loader function from a map of decoders for fields that needs to be loaded differently.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>decoders</code></strong> :&ensp;<code>Dict[str, Callable[[Any], Any]]</code></dt>
+<dd>The docoder map</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build_loader(decoders: Dict[str, Callable[[Any], Any]]):
+  &#34;&#34;&#34;
+  Build a json loader function from a map of decoders for fields that needs to be loaded differently.
+
+  Args:
+    decoders (Dict[str, Callable[[Any], Any]]): The docoder map
+  &#34;&#34;&#34;
+  def loads(json_string: str) -&gt; dict:
+    &#34;&#34;&#34;
+    The json loads function for converting json to dict
+
+    Args:
+      json_string (str): The json string to load
+
+    Returns:
+      dict: The converted python dictionary
+    &#34;&#34;&#34;
+    # parse json
+    obj = json.loads(json_string)
+    # run decoders on the object
+    for field, decode in decoders.items():
+      # decode the field value
+      if field in obj and obj[field] is not None:
+        obj[field] = decode(obj[field])
+    return obj
+  return loads</code></pre>
+</details>
+</dd>
 <dt id="py_client.utils.decoders.datetime_decoder"><code class="name flex">
 <span>def <span class="ident">datetime_decoder</span></span>(<span>transform: Callable[[datetime.datetime], Any] = None, **kwargs)</span>
 </code></dt>
@@ -250,48 +292,6 @@ def build_loader(decoders: Dict[str, Callable[[Any], Any]]):
   return decode</code></pre>
 </details>
 </dd>
-<dt id="py_client.utils.decoders.build_loader"><code class="name flex">
-<span>def <span class="ident">build_loader</span></span>(<span>decoders: Dict[str, Callable[[Any], Any]])</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Build a json loader function from a map of decoders for fields that needs to be loaded differently.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>decoders</code></strong> :&ensp;<code>Dict[str, Callable[[Any], Any]]</code></dt>
-<dd>The docoder map</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def build_loader(decoders: Dict[str, Callable[[Any], Any]]):
-  &#34;&#34;&#34;
-  Build a json loader function from a map of decoders for fields that needs to be loaded differently.
-
-  Args:
-    decoders (Dict[str, Callable[[Any], Any]]): The docoder map
-  &#34;&#34;&#34;
-  def loads(json_string: str) -&gt; dict:
-    &#34;&#34;&#34;
-    The json loads function for converting json to dict
-
-    Args:
-      json_string (str): The json string to load
-
-    Returns:
-      dict: The converted python dictionary
-    &#34;&#34;&#34;
-    # parse json
-    obj = json.loads(json_string)
-    # run decoders on the object
-    for field, decode in decoders.items():
-      # decode the field value
-      if field in obj and obj[field] is not None:
-        obj[field] = decode(obj[field])
-    return obj
-  return loads</code></pre>
-</details>
-</dd>
 </dl>
 </section>
 <section>
@@ -310,10 +310,10 @@ def build_loader(decoders: Dict[str, Callable[[Any], Any]]):
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="py_client.utils.decoders.build_loader" href="#py_client.utils.decoders.build_loader">build_loader</a></code></li>
 <li><code><a title="py_client.utils.decoders.datetime_decoder" href="#py_client.utils.decoders.datetime_decoder">datetime_decoder</a></code></li>
 <li><code><a title="py_client.utils.decoders.nested_model" href="#py_client.utils.decoders.nested_model">nested_model</a></code></li>
 <li><code><a title="py_client.utils.decoders.timestamp_decoder" href="#py_client.utils.decoders.timestamp_decoder">timestamp_decoder</a></code></li>
-<li><code><a title="py_client.utils.decoders.build_loader" href="#py_client.utils.decoders.build_loader">build_loader</a></code></li>
 </ul>
 </li>
 </ul>

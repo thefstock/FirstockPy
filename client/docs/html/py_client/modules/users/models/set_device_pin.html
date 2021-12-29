@@ -112,9 +112,9 @@ class SetDevicePinResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin"><code class="name">var <span class="ident">dpin</span> : str</code></dt>
 <dd>
-<div class="desc"><p>User Id</p></div>
+<div class="desc"><p>New pin</p></div>
 </dd>
 <dt id="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.imei"><code class="name">var <span class="ident">imei</span> : str</code></dt>
 <dd>
@@ -124,9 +124,9 @@ class SetDevicePinResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Access type</p></div>
 </dd>
-<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin"><code class="name">var <span class="ident">dpin</span> : str</code></dt>
+<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
 <dd>
-<div class="desc"><p>New pin</p></div>
+<div class="desc"><p>User Id</p></div>
 </dd>
 </dl>
 </dd>
@@ -166,21 +166,21 @@ class SetDevicePinResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The set device pin success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful setting of new pin.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful setting of new pin.</p></div>
+</dd>
+<dt id="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The set device pin success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -203,19 +203,19 @@ class SetDevicePinResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel">SetDevicePinRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid">uid</a></code></li>
+<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin">dpin</a></code></li>
 <li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.imei" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.imei">imei</a></code></li>
 <li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.source" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.source">source</a></code></li>
-<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.dpin">dpin</a></code></li>
+<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid" href="#py_client.modules.users.models.set_device_pin.SetDevicePinRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel">SetDevicePinResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.emsg" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.emsg">emsg</a></code></li>
 <li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.Config" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.emsg" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat" href="#py_client.modules.users.models.set_device_pin.SetDevicePinResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

@@ -19,17 +19,17 @@ Classes
 
     ### Class variables
 
+    `Config`
+    :   model configuration
+
+    `scrips: List[str]`
+    :   List of scrips
+
     `uid: str`
     :   The user id of the login user
 
     `wlname: str`
     :   Name of the Watchlist, for which scrip list is required
-
-    `scrips: List[str]`
-    :   List of scrips
-
-    `Config`
-    :   model configuration
 
 `AddScripsResponseModel(**data: Any)`
 :   The response model for add scrips to watchlist endpoint
@@ -45,14 +45,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The add scrips success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The add scrips success or failure status

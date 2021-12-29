@@ -16,15 +16,15 @@ Functions
         Callable[[date], str]: The date encoder function
 
     
-`password_hash_encoder()`
-:   Create a password hash encoder
-    
-    Returns:
-      Callable[[str], str]: The password hash encoder function
-
-    
 `list_encoder(separator: str = ',')`
 :   Create a list encoder
     
     Args:
       separator (str, optional): The character used to differentiate between list items. Defaults to ','.
+
+    
+`password_hash_encoder()`
+:   Create a password hash encoder
+    
+    Returns:
+      Callable[[str], str]: The password hash encoder function
