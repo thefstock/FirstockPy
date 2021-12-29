@@ -38,7 +38,7 @@ Classes
     :   Vendor code
 
     `appkey: str`
-    :   Sha256 of uid|vendor_key
+    :   The APP Key or the API Key or the Vendor key
 
     `imei: str`
     :   IMEI for mobile (If desktop it takes the MAC address)

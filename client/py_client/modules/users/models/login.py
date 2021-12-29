@@ -24,12 +24,12 @@ class LoginRequestModel(BaseModel):
   """password for login. It will be automatically hashed during the request"""
   dpin: Optional[SecretStr]
   """The device pin"""
-  factor2: Union[date, str]
+  factor2: str
   """DOB or PAN"""
   vc: str
   """Vendor code"""
   appkey: str
-  """Sha256 of uid|vendor_key"""
+  """The APP Key or the API Key or the Vendor key"""
   imei: str
   """IMEI for mobile (If desktop it takes the MAC address)"""
   addldivinf: Optional[str]
