@@ -2,10 +2,14 @@
 The data source for all orders specific requests
 """
 
+from typing import List
+from pydantic import parse_raw_as
+
 from ...utils.datasources import NorenRestDataSource
 from . import endpoints
 
 from .models import *
+from py_client import ResponseStatus
 
 class OrdersDataSource(NorenRestDataSource):
   """
@@ -114,8 +118,18 @@ class OrdersDataSource(NorenRestDataSource):
       OrderBookResponseModel: The response as OrderBookResponseModel.
     """
     response_json = self._run_request(model, endpoints.ORDER_BOOK, key)
-    # convert the request to response model
-    return OrderBookResponseModel.parse_raw(response_json)
+    print('Order book received:', response_json)
+
+    if ("[{" in response_json):
+      print("Multiple orders found")
+      list_response = parse_raw_as(List[OrderBookModel], response_json)
+      response = OrderBookResponseModel()
+      response.stat = ResponseStatus.OK
+      response.orders = list_response
+      return response
+    else:
+      print("No Orders")
+      return OrderBookResponseModel.parse_raw(response_json)
 
   def multileg_order_book(self, model: MultilegOrderBookRequestModel, key: str = None) -> MultilegOrderBookResponseModel:
     """
