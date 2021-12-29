@@ -31,10 +31,14 @@
 The data source for all orders specific requests
 &#34;&#34;&#34;
 
+from typing import List
+from pydantic import parse_raw_as
+
 from ...utils.datasources import NorenRestDataSource
 from . import endpoints
 
 from .models import *
+from py_client import ResponseStatus
 
 class OrdersDataSource(NorenRestDataSource):
   &#34;&#34;&#34;
@@ -143,8 +147,18 @@ class OrdersDataSource(NorenRestDataSource):
       OrderBookResponseModel: The response as OrderBookResponseModel.
     &#34;&#34;&#34;
     response_json = self._run_request(model, endpoints.ORDER_BOOK, key)
-    # convert the request to response model
-    return OrderBookResponseModel.parse_raw(response_json)
+    print(&#39;Order book received:&#39;, response_json)
+
+    if (&#34;[{&#34; in response_json):
+      print(&#34;Multiple orders found&#34;)
+      list_response = parse_raw_as(List[OrderBookModel], response_json)
+      response = OrderBookResponseModel()
+      response.stat = ResponseStatus.OK
+      response.orders = list_response
+      return response
+    else:
+      print(&#34;No Orders&#34;)
+      return OrderBookResponseModel.parse_raw(response_json)
 
   def multileg_order_book(self, model: MultilegOrderBookRequestModel, key: str = None) -&gt; MultilegOrderBookResponseModel:
     &#34;&#34;&#34;
@@ -360,8 +374,18 @@ class OrdersDataSource(NorenRestDataSource):
       OrderBookResponseModel: The response as OrderBookResponseModel.
     &#34;&#34;&#34;
     response_json = self._run_request(model, endpoints.ORDER_BOOK, key)
-    # convert the request to response model
-    return OrderBookResponseModel.parse_raw(response_json)
+    print(&#39;Order book received:&#39;, response_json)
+
+    if (&#34;[{&#34; in response_json):
+      print(&#34;Multiple orders found&#34;)
+      list_response = parse_raw_as(List[OrderBookModel], response_json)
+      response = OrderBookResponseModel()
+      response.stat = ResponseStatus.OK
+      response.orders = list_response
+      return response
+    else:
+      print(&#34;No Orders&#34;)
+      return OrderBookResponseModel.parse_raw(response_json)
 
   def multileg_order_book(self, model: MultilegOrderBookRequestModel, key: str = None) -&gt; MultilegOrderBookResponseModel:
     &#34;&#34;&#34;
@@ -446,80 +470,6 @@ class OrdersDataSource(NorenRestDataSource):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.place_order"><code class="name flex">
-<span>def <span class="ident">place_order</span></span>(<span>self, model: <a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel" href="models/place_order.html#py_client.modules.orders.models.place_order.PlaceOrderRequestModel">PlaceOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel" href="models/place_order.html#py_client.modules.orders.models.place_order.PlaceOrderResponseModel">PlaceOrderResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Place a new order</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>PlaceOrderRequestModel</code></dt>
-<dd>The data to be send as PlaceOrderRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>PlaceOrderResponseModel</code></dt>
-<dd>The response as PlaceOrderResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def place_order(self, model: PlaceOrderRequestModel, key: str = None) -&gt; PlaceOrderResponseModel:
-  &#34;&#34;&#34;
-  Place a new order
-
-  Args:
-    model (PlaceOrderRequestModel): The data to be send as PlaceOrderRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    PlaceOrderResponseModel: The response as PlaceOrderResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.PLACE_ORDER, key)
-  # convert the request to response model
-  return PlaceOrderResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.modify_order"><code class="name flex">
-<span>def <span class="ident">modify_order</span></span>(<span>self, model: <a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel" href="models/modify_order.html#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel">ModifyOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel" href="models/modify_order.html#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel">ModifyOrderResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Modify an order</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ModifyOrderRequestModel</code></dt>
-<dd>The data to be send as ModifyOrderRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ModifyOrderResponseModel</code></dt>
-<dd>The response as ModifyOrderResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def modify_order(self, model: ModifyOrderRequestModel, key: str = None) -&gt; ModifyOrderResponseModel:
-  &#34;&#34;&#34;
-  Modify an order
-
-  Args:
-    model (ModifyOrderRequestModel): The data to be send as ModifyOrderRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    ModifyOrderResponseModel: The response as ModifyOrderResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.MODIFY_ORDER, key)
-  # convert the request to response model
-  return ModifyOrderResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 <dt id="py_client.modules.orders.datasource.OrdersDataSource.cancel_order"><code class="name flex">
 <span>def <span class="ident">cancel_order</span></span>(<span>self, model: <a title="py_client.modules.orders.models.cancel_order.CancelOrderRequestModel" href="models/cancel_order.html#py_client.modules.orders.models.cancel_order.CancelOrderRequestModel">CancelOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.cancel_order.CancelOrderResponseModel" href="models/cancel_order.html#py_client.modules.orders.models.cancel_order.CancelOrderResponseModel">CancelOrderResponseModel</a></span>
 </code></dt>
@@ -555,6 +505,43 @@ class OrdersDataSource(NorenRestDataSource):
   response_json = self._run_request(model, endpoints.CANCEL_ORDER, key)
   # convert the request to response model
   return CancelOrderResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.convert_product"><code class="name flex">
+<span>def <span class="ident">convert_product</span></span>(<span>self, model: <a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel" href="models/convert_product.html#py_client.modules.orders.models.convert_product.ConvertProductRequestModel">ConvertProductRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel" href="models/convert_product.html#py_client.modules.orders.models.convert_product.ConvertProductResponseModel">ConvertProductResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert Product</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ConvertProductRequestModel</code></dt>
+<dd>The data to be send as ConvertProductRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ConvertProductResponseModel</code></dt>
+<dd>The response as ConvertProductResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert_product(self, model: ConvertProductRequestModel, key: str = None) -&gt; ConvertProductResponseModel:
+  &#34;&#34;&#34;
+  Convert Product
+
+  Args:
+    model (ConvertProductRequestModel): The data to be send as ConvertProductRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    ConvertProductResponseModel: The response as ConvertProductResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.CONVERT_PRODUCT, key)
+  # convert the request to response model
+  return ConvertProductResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.orders.datasource.OrdersDataSource.exit_sno_order"><code class="name flex">
@@ -594,43 +581,6 @@ class OrdersDataSource(NorenRestDataSource):
   return ExitSnoOrderResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.get_order_margin"><code class="name flex">
-<span>def <span class="ident">get_order_margin</span></span>(<span>self, model: <a title="py_client.modules.orders.models.get_order_margin.GetOrderMarginRequestModel" href="models/get_order_margin.html#py_client.modules.orders.models.get_order_margin.GetOrderMarginRequestModel">GetOrderMarginRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.get_order_margin.GetOrderMarginResponseModel" href="models/get_order_margin.html#py_client.modules.orders.models.get_order_margin.GetOrderMarginResponseModel">GetOrderMarginResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get order margin</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetOrderMarginRequestModel</code></dt>
-<dd>The data to be send as GetOrderMarginRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetOrderMarginResponseModel</code></dt>
-<dd>The response as GetOrderMarginResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_order_margin(self, model: GetOrderMarginRequestModel, key: str = None) -&gt; GetOrderMarginResponseModel:
-  &#34;&#34;&#34;
-  Get order margin
-
-  Args:
-    model (GetOrderMarginRequestModel): The data to be send as GetOrderMarginRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetOrderMarginResponseModel: The response as GetOrderMarginResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.GET_ORDER_MARGIN, key)
-  # convert the request to response model
-  return GetOrderMarginResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 <dt id="py_client.modules.orders.datasource.OrdersDataSource.get_basket_margin"><code class="name flex">
 <span>def <span class="ident">get_basket_margin</span></span>(<span>self, model: <a title="py_client.modules.orders.models.get_basket_margin.GetBasketMarginRequestModel" href="models/get_basket_margin.html#py_client.modules.orders.models.get_basket_margin.GetBasketMarginRequestModel">GetBasketMarginRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.get_basket_margin.GetBasketMarginResponseModel" href="models/get_basket_margin.html#py_client.modules.orders.models.get_basket_margin.GetBasketMarginResponseModel">GetBasketMarginResponseModel</a></span>
 </code></dt>
@@ -668,41 +618,78 @@ class OrdersDataSource(NorenRestDataSource):
   return GetBasketMarginResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.order_book"><code class="name flex">
-<span>def <span class="ident">order_book</span></span>(<span>self, model: <a title="py_client.modules.orders.models.order_book.OrderBookRequestModel" href="models/order_book.html#py_client.modules.orders.models.order_book.OrderBookRequestModel">OrderBookRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.order_book.OrderBookResponseModel" href="models/order_book.html#py_client.modules.orders.models.order_book.OrderBookResponseModel">OrderBookResponseModel</a></span>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.get_order_margin"><code class="name flex">
+<span>def <span class="ident">get_order_margin</span></span>(<span>self, model: <a title="py_client.modules.orders.models.get_order_margin.GetOrderMarginRequestModel" href="models/get_order_margin.html#py_client.modules.orders.models.get_order_margin.GetOrderMarginRequestModel">GetOrderMarginRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.get_order_margin.GetOrderMarginResponseModel" href="models/get_order_margin.html#py_client.modules.orders.models.get_order_margin.GetOrderMarginResponseModel">GetOrderMarginResponseModel</a></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Order book</p>
+<div class="desc"><p>Get order margin</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>OrderBookRequestModel</code></dt>
-<dd>The data to be send as OrderBookRequestModel.</dd>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetOrderMarginRequestModel</code></dt>
+<dd>The data to be send as GetOrderMarginRequestModel.</dd>
 <dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>OrderBookResponseModel</code></dt>
-<dd>The response as OrderBookResponseModel.</dd>
+<dt><code>GetOrderMarginResponseModel</code></dt>
+<dd>The response as GetOrderMarginResponseModel.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def order_book(self, model: OrderBookRequestModel, key: str = None) -&gt; OrderBookResponseModel:
+<pre><code class="python">def get_order_margin(self, model: GetOrderMarginRequestModel, key: str = None) -&gt; GetOrderMarginResponseModel:
   &#34;&#34;&#34;
-  Order book
+  Get order margin
 
   Args:
-    model (OrderBookRequestModel): The data to be send as OrderBookRequestModel.
+    model (GetOrderMarginRequestModel): The data to be send as GetOrderMarginRequestModel.
     key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
 
   Returns:
-    OrderBookResponseModel: The response as OrderBookResponseModel.
+    GetOrderMarginResponseModel: The response as GetOrderMarginResponseModel.
   &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.ORDER_BOOK, key)
+  response_json = self._run_request(model, endpoints.GET_ORDER_MARGIN, key)
   # convert the request to response model
-  return OrderBookResponseModel.parse_raw(response_json)</code></pre>
+  return GetOrderMarginResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.modify_order"><code class="name flex">
+<span>def <span class="ident">modify_order</span></span>(<span>self, model: <a title="py_client.modules.orders.models.modify_order.ModifyOrderRequestModel" href="models/modify_order.html#py_client.modules.orders.models.modify_order.ModifyOrderRequestModel">ModifyOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.modify_order.ModifyOrderResponseModel" href="models/modify_order.html#py_client.modules.orders.models.modify_order.ModifyOrderResponseModel">ModifyOrderResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Modify an order</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ModifyOrderRequestModel</code></dt>
+<dd>The data to be send as ModifyOrderRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ModifyOrderResponseModel</code></dt>
+<dd>The response as ModifyOrderResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def modify_order(self, model: ModifyOrderRequestModel, key: str = None) -&gt; ModifyOrderResponseModel:
+  &#34;&#34;&#34;
+  Modify an order
+
+  Args:
+    model (ModifyOrderRequestModel): The data to be send as ModifyOrderRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    ModifyOrderResponseModel: The response as ModifyOrderResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.MODIFY_ORDER, key)
+  # convert the request to response model
+  return ModifyOrderResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.orders.datasource.OrdersDataSource.multileg_order_book"><code class="name flex">
@@ -740,6 +727,127 @@ class OrdersDataSource(NorenRestDataSource):
   response_json = self._run_request(model, endpoints.MULTILEG_ORDER_BOOK, key)
   # convert the request to response model
   return MultilegOrderBookResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.order_book"><code class="name flex">
+<span>def <span class="ident">order_book</span></span>(<span>self, model: <a title="py_client.modules.orders.models.order_book.OrderBookRequestModel" href="models/order_book.html#py_client.modules.orders.models.order_book.OrderBookRequestModel">OrderBookRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.order_book.OrderBookResponseModel" href="models/order_book.html#py_client.modules.orders.models.order_book.OrderBookResponseModel">OrderBookResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Order book</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>OrderBookRequestModel</code></dt>
+<dd>The data to be send as OrderBookRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>OrderBookResponseModel</code></dt>
+<dd>The response as OrderBookResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def order_book(self, model: OrderBookRequestModel, key: str = None) -&gt; OrderBookResponseModel:
+  &#34;&#34;&#34;
+  Order book
+
+  Args:
+    model (OrderBookRequestModel): The data to be send as OrderBookRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    OrderBookResponseModel: The response as OrderBookResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.ORDER_BOOK, key)
+  print(&#39;Order book received:&#39;, response_json)
+
+  if (&#34;[{&#34; in response_json):
+    print(&#34;Multiple orders found&#34;)
+    list_response = parse_raw_as(List[OrderBookModel], response_json)
+    response = OrderBookResponseModel()
+    response.stat = ResponseStatus.OK
+    response.orders = list_response
+    return response
+  else:
+    print(&#34;No Orders&#34;)
+    return OrderBookResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.place_order"><code class="name flex">
+<span>def <span class="ident">place_order</span></span>(<span>self, model: <a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel" href="models/place_order.html#py_client.modules.orders.models.place_order.PlaceOrderRequestModel">PlaceOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel" href="models/place_order.html#py_client.modules.orders.models.place_order.PlaceOrderResponseModel">PlaceOrderResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Place a new order</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>PlaceOrderRequestModel</code></dt>
+<dd>The data to be send as PlaceOrderRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>PlaceOrderResponseModel</code></dt>
+<dd>The response as PlaceOrderResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def place_order(self, model: PlaceOrderRequestModel, key: str = None) -&gt; PlaceOrderResponseModel:
+  &#34;&#34;&#34;
+  Place a new order
+
+  Args:
+    model (PlaceOrderRequestModel): The data to be send as PlaceOrderRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    PlaceOrderResponseModel: The response as PlaceOrderResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.PLACE_ORDER, key)
+  # convert the request to response model
+  return PlaceOrderResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.orders.datasource.OrdersDataSource.position_book"><code class="name flex">
+<span>def <span class="ident">position_book</span></span>(<span>self, model: <a title="py_client.modules.orders.models.position_book.PositionBookRequestModel" href="models/position_book.html#py_client.modules.orders.models.position_book.PositionBookRequestModel">PositionBookRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.position_book.PositionBookResponseModel" href="models/position_book.html#py_client.modules.orders.models.position_book.PositionBookResponseModel">PositionBookResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Position Book</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>PositionBookRequestModel</code></dt>
+<dd>The data to be send as PositionBookRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>PositionBookResponseModel</code></dt>
+<dd>The response as PositionBookResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def position_book(self, model: PositionBookRequestModel, key: str = None) -&gt; PositionBookResponseModel:
+  &#34;&#34;&#34;
+  Position Book
+
+  Args:
+    model (PositionBookRequestModel): The data to be send as PositionBookRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    PositionBookResponseModel: The response as PositionBookResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.POSITION_BOOK, key)
+  # convert the request to response model
+  return PositionBookResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.orders.datasource.OrdersDataSource.single_order_history"><code class="name flex">
@@ -816,80 +924,6 @@ class OrdersDataSource(NorenRestDataSource):
   return TradeBookResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.position_book"><code class="name flex">
-<span>def <span class="ident">position_book</span></span>(<span>self, model: <a title="py_client.modules.orders.models.position_book.PositionBookRequestModel" href="models/position_book.html#py_client.modules.orders.models.position_book.PositionBookRequestModel">PositionBookRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.position_book.PositionBookResponseModel" href="models/position_book.html#py_client.modules.orders.models.position_book.PositionBookResponseModel">PositionBookResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Position Book</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>PositionBookRequestModel</code></dt>
-<dd>The data to be send as PositionBookRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>PositionBookResponseModel</code></dt>
-<dd>The response as PositionBookResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def position_book(self, model: PositionBookRequestModel, key: str = None) -&gt; PositionBookResponseModel:
-  &#34;&#34;&#34;
-  Position Book
-
-  Args:
-    model (PositionBookRequestModel): The data to be send as PositionBookRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    PositionBookResponseModel: The response as PositionBookResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.POSITION_BOOK, key)
-  # convert the request to response model
-  return PositionBookResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.orders.datasource.OrdersDataSource.convert_product"><code class="name flex">
-<span>def <span class="ident">convert_product</span></span>(<span>self, model: <a title="py_client.modules.orders.models.convert_product.ConvertProductRequestModel" href="models/convert_product.html#py_client.modules.orders.models.convert_product.ConvertProductRequestModel">ConvertProductRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.orders.models.convert_product.ConvertProductResponseModel" href="models/convert_product.html#py_client.modules.orders.models.convert_product.ConvertProductResponseModel">ConvertProductResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Convert Product</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ConvertProductRequestModel</code></dt>
-<dd>The data to be send as ConvertProductRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ConvertProductResponseModel</code></dt>
-<dd>The response as ConvertProductResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def convert_product(self, model: ConvertProductRequestModel, key: str = None) -&gt; ConvertProductResponseModel:
-  &#34;&#34;&#34;
-  Convert Product
-
-  Args:
-    model (ConvertProductRequestModel): The data to be send as ConvertProductRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    ConvertProductResponseModel: The response as ConvertProductResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.CONVERT_PRODUCT, key)
-  # convert the request to response model
-  return ConvertProductResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 </dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -922,18 +956,18 @@ class OrdersDataSource(NorenRestDataSource):
 <li>
 <h4><code><a title="py_client.modules.orders.datasource.OrdersDataSource" href="#py_client.modules.orders.datasource.OrdersDataSource">OrdersDataSource</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.place_order" href="#py_client.modules.orders.datasource.OrdersDataSource.place_order">place_order</a></code></li>
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.modify_order" href="#py_client.modules.orders.datasource.OrdersDataSource.modify_order">modify_order</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.cancel_order" href="#py_client.modules.orders.datasource.OrdersDataSource.cancel_order">cancel_order</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.convert_product" href="#py_client.modules.orders.datasource.OrdersDataSource.convert_product">convert_product</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.exit_sno_order" href="#py_client.modules.orders.datasource.OrdersDataSource.exit_sno_order">exit_sno_order</a></code></li>
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.get_order_margin" href="#py_client.modules.orders.datasource.OrdersDataSource.get_order_margin">get_order_margin</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.get_basket_margin" href="#py_client.modules.orders.datasource.OrdersDataSource.get_basket_margin">get_basket_margin</a></code></li>
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.order_book" href="#py_client.modules.orders.datasource.OrdersDataSource.order_book">order_book</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.get_order_margin" href="#py_client.modules.orders.datasource.OrdersDataSource.get_order_margin">get_order_margin</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.modify_order" href="#py_client.modules.orders.datasource.OrdersDataSource.modify_order">modify_order</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.multileg_order_book" href="#py_client.modules.orders.datasource.OrdersDataSource.multileg_order_book">multileg_order_book</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.order_book" href="#py_client.modules.orders.datasource.OrdersDataSource.order_book">order_book</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.place_order" href="#py_client.modules.orders.datasource.OrdersDataSource.place_order">place_order</a></code></li>
+<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.position_book" href="#py_client.modules.orders.datasource.OrdersDataSource.position_book">position_book</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.single_order_history" href="#py_client.modules.orders.datasource.OrdersDataSource.single_order_history">single_order_history</a></code></li>
 <li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.trade_book" href="#py_client.modules.orders.datasource.OrdersDataSource.trade_book">trade_book</a></code></li>
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.position_book" href="#py_client.modules.orders.datasource.OrdersDataSource.position_book">position_book</a></code></li>
-<li><code><a title="py_client.modules.orders.datasource.OrdersDataSource.convert_product" href="#py_client.modules.orders.datasource.OrdersDataSource.convert_product">convert_product</a></code></li>
 </ul>
 </li>
 </ul>

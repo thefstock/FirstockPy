@@ -110,10 +110,6 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Logged in User Id</p></div>
-</dd>
 <dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.norenordno"><code class="name">var <span class="ident">norenordno</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Noren order number, which needs to be cancelled</p></div>
@@ -121,6 +117,10 @@ request</p>
 <dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Allowed for only H and B products (Cover order and bracket order)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Logged in User Id</p></div>
 </dd>
 </dl>
 </dd>
@@ -161,13 +161,9 @@ request</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The exit sno success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.dmsg"><code class="name">var <span class="ident">dmsg</span> : Optional[str]</code></dt>
 <dd>
@@ -177,9 +173,13 @@ request</p>
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The exit sno success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -202,19 +202,19 @@ request</p>
 <li>
 <h4><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel">ExitSnoOrderRequestModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.norenordno" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.norenordno">norenordno</a></code></li>
 <li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.prd" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel">ExitSnoOrderResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.dmsg" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.dmsg">dmsg</a></code></li>
 <li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.emsg" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat" href="#py_client.modules.orders.models.exit_sno_order.ExitSnoOrderResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

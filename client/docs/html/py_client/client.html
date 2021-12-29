@@ -365,19 +365,77 @@ class Client(Stateful):
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="py_client.client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.WsClient" href="websocket/client.html#py_client.websocket.client.WsClient">WsClient</a></code></dt>
+<dt id="py_client.client.Client.alerts"><code class="name">var <span class="ident">alerts</span> : <a title="py_client.modules.alerts.datasource.AlertsDataSource" href="modules/alerts/datasource.html#py_client.modules.alerts.datasource.AlertsDataSource">AlertsDataSource</a></code></dt>
 <dd>
-<div class="desc"><p>The websocket client</p></div>
+<div class="desc"><p>The alerts module datasource</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@property
-def ws(self) -&gt; WsClient:
+def alerts(self) -&gt; AlertsDataSource:
   &#34;&#34;&#34;
-  The websocket client
+  The alerts module datasource
   &#34;&#34;&#34;
-  return self.__ws</code></pre>
+  return self.__alerts</code></pre>
+</details>
+</dd>
+<dt id="py_client.client.Client.funds"><code class="name">var <span class="ident">funds</span> : <a title="py_client.modules.funds.datasource.FundsDataSource" href="modules/funds/datasource.html#py_client.modules.funds.datasource.FundsDataSource">FundsDataSource</a></code></dt>
+<dd>
+<div class="desc"><p>The funds module datasource.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def funds(self) -&gt; FundsDataSource:
+  &#34;&#34;&#34;
+  The funds module datasource.
+  &#34;&#34;&#34;
+  return self.__funds</code></pre>
+</details>
+</dd>
+<dt id="py_client.client.Client.markets"><code class="name">var <span class="ident">markets</span> : <a title="py_client.modules.markets.datasource.MarketsDataSource" href="modules/markets/datasource.html#py_client.modules.markets.datasource.MarketsDataSource">MarketsDataSource</a></code></dt>
+<dd>
+<div class="desc"><p>The markets module datasource</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def markets(self) -&gt; MarketsDataSource:
+  &#34;&#34;&#34;
+  The markets module datasource
+  &#34;&#34;&#34;
+  return self.__markets</code></pre>
+</details>
+</dd>
+<dt id="py_client.client.Client.orders"><code class="name">var <span class="ident">orders</span> : <a title="py_client.modules.orders.datasource.OrdersDataSource" href="modules/orders/datasource.html#py_client.modules.orders.datasource.OrdersDataSource">OrdersDataSource</a></code></dt>
+<dd>
+<div class="desc"><p>The orders module datasource</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def orders(self) -&gt; OrdersDataSource:
+  &#34;&#34;&#34;
+  The orders module datasource
+  &#34;&#34;&#34;
+  return self.__orders</code></pre>
+</details>
+</dd>
+<dt id="py_client.client.Client.state"><code class="name">var <span class="ident">state</span></code></dt>
+<dd>
+<div class="desc"><p>The current client state</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def state(self):
+  &#34;&#34;&#34;The current client state&#34;&#34;&#34;
+  return self.__state__</code></pre>
 </details>
 </dd>
 <dt id="py_client.client.Client.users"><code class="name">var <span class="ident">users</span> : <a title="py_client.modules.users.datasource.UserDataSource" href="modules/users/datasource.html#py_client.modules.users.datasource.UserDataSource">UserDataSource</a></code></dt>
@@ -410,82 +468,94 @@ def watchlists(self) -&gt; WatchListDataSource:
   return self.__watchlists</code></pre>
 </details>
 </dd>
-<dt id="py_client.client.Client.orders"><code class="name">var <span class="ident">orders</span> : <a title="py_client.modules.orders.datasource.OrdersDataSource" href="modules/orders/datasource.html#py_client.modules.orders.datasource.OrdersDataSource">OrdersDataSource</a></code></dt>
+<dt id="py_client.client.Client.ws"><code class="name">var <span class="ident">ws</span> : <a title="py_client.websocket.client.WsClient" href="websocket/client.html#py_client.websocket.client.WsClient">WsClient</a></code></dt>
 <dd>
-<div class="desc"><p>The orders module datasource</p></div>
+<div class="desc"><p>The websocket client</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@property
-def orders(self) -&gt; OrdersDataSource:
+def ws(self) -&gt; WsClient:
   &#34;&#34;&#34;
-  The orders module datasource
+  The websocket client
   &#34;&#34;&#34;
-  return self.__orders</code></pre>
-</details>
-</dd>
-<dt id="py_client.client.Client.markets"><code class="name">var <span class="ident">markets</span> : <a title="py_client.modules.markets.datasource.MarketsDataSource" href="modules/markets/datasource.html#py_client.modules.markets.datasource.MarketsDataSource">MarketsDataSource</a></code></dt>
-<dd>
-<div class="desc"><p>The markets module datasource</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def markets(self) -&gt; MarketsDataSource:
-  &#34;&#34;&#34;
-  The markets module datasource
-  &#34;&#34;&#34;
-  return self.__markets</code></pre>
-</details>
-</dd>
-<dt id="py_client.client.Client.alerts"><code class="name">var <span class="ident">alerts</span> : <a title="py_client.modules.alerts.datasource.AlertsDataSource" href="modules/alerts/datasource.html#py_client.modules.alerts.datasource.AlertsDataSource">AlertsDataSource</a></code></dt>
-<dd>
-<div class="desc"><p>The alerts module datasource</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def alerts(self) -&gt; AlertsDataSource:
-  &#34;&#34;&#34;
-  The alerts module datasource
-  &#34;&#34;&#34;
-  return self.__alerts</code></pre>
-</details>
-</dd>
-<dt id="py_client.client.Client.funds"><code class="name">var <span class="ident">funds</span> : <a title="py_client.modules.funds.datasource.FundsDataSource" href="modules/funds/datasource.html#py_client.modules.funds.datasource.FundsDataSource">FundsDataSource</a></code></dt>
-<dd>
-<div class="desc"><p>The funds module datasource.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def funds(self) -&gt; FundsDataSource:
-  &#34;&#34;&#34;
-  The funds module datasource.
-  &#34;&#34;&#34;
-  return self.__funds</code></pre>
-</details>
-</dd>
-<dt id="py_client.client.Client.state"><code class="name">var <span class="ident">state</span></code></dt>
-<dd>
-<div class="desc"><p>The current client state</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def state(self):
-  &#34;&#34;&#34;The current client state&#34;&#34;&#34;
-  return self.__state__</code></pre>
+  return self.__ws</code></pre>
 </details>
 </dd>
 </dl>
 <h3>Methods</h3>
 <dl>
+<dt id="py_client.client.Client.holdings"><code class="name flex">
+<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get holdings</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>HoldingsRequestModel</code></dt>
+<dd>The data to be send as HoldingsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The key obtained on login success</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>HoldingsResponseModel</code></dt>
+<dd>The response as HoldingsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str = None):
+  &#34;&#34;&#34;
+  Get holdings
+
+  Args:
+    model (HoldingsRequestModel): The data to be send as HoldingsRequestModel.
+    key (str): The key obtained on login success
+  
+  Returns:
+    HoldingsResponseModel: The response as HoldingsResponseModel.
+  &#34;&#34;&#34;
+  return self.__hl.holdings(model, key)</code></pre>
+</details>
+</dd>
+<dt id="py_client.client.Client.limits"><code class="name flex">
+<span>def <span class="ident">limits</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel" href="modules/holdings_limits/models/limits.html#py_client.modules.holdings_limits.models.limits.LimitsRequestModel">LimitsRequestModel</a>, key: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Limits</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>LimitsRequestModel</code></dt>
+<dd>The data to be send as LimitsRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>LimitsResponseModel</code></dt>
+<dd>The response as LimitsResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def limits(self, model: LimitsRequestModel, key: str = None):
+  &#34;&#34;&#34;
+  Limits
+
+  Args:
+    model (LimitsRequestModel): The data to be send as LimitsRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    LimitsResponseModel: The response as LimitsResponseModel.
+  &#34;&#34;&#34;
+  return self.__hl.limits(model, key)</code></pre>
+</details>
+</dd>
 <dt id="py_client.client.Client.login"><code class="name flex">
 <span>def <span class="ident">login</span></span>(<span>self, model: <a title="py_client.modules.users.models.login.LoginRequestModel" href="modules/users/models/login.html#py_client.modules.users.models.login.LoginRequestModel">LoginRequestModel</a>)</span>
 </code></dt>
@@ -561,76 +631,6 @@ def state(self):
   return response</code></pre>
 </details>
 </dd>
-<dt id="py_client.client.Client.holdings"><code class="name flex">
-<span>def <span class="ident">holdings</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel" href="modules/holdings_limits/models/holdings.html#py_client.modules.holdings_limits.models.holdings.HoldingsRequestModel">HoldingsRequestModel</a>, key: str = None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get holdings</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>HoldingsRequestModel</code></dt>
-<dd>The data to be send as HoldingsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
-<dd>The key obtained on login success</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>HoldingsResponseModel</code></dt>
-<dd>The response as HoldingsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def holdings(self, model: HoldingsRequestModel, key: str = None):
-  &#34;&#34;&#34;
-  Get holdings
-
-  Args:
-    model (HoldingsRequestModel): The data to be send as HoldingsRequestModel.
-    key (str): The key obtained on login success
-  
-  Returns:
-    HoldingsResponseModel: The response as HoldingsResponseModel.
-  &#34;&#34;&#34;
-  return self.__hl.holdings(model, key)</code></pre>
-</details>
-</dd>
-<dt id="py_client.client.Client.limits"><code class="name flex">
-<span>def <span class="ident">limits</span></span>(<span>self, model: <a title="py_client.modules.holdings_limits.models.limits.LimitsRequestModel" href="modules/holdings_limits/models/limits.html#py_client.modules.holdings_limits.models.limits.LimitsRequestModel">LimitsRequestModel</a>, key: str = None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Limits</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>LimitsRequestModel</code></dt>
-<dd>The data to be send as LimitsRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>LimitsResponseModel</code></dt>
-<dd>The response as LimitsResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def limits(self, model: LimitsRequestModel, key: str = None):
-  &#34;&#34;&#34;
-  Limits
-
-  Args:
-    model (LimitsRequestModel): The data to be send as LimitsRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    LimitsResponseModel: The response as LimitsResponseModel.
-  &#34;&#34;&#34;
-  return self.__hl.limits(model, key)</code></pre>
-</details>
-</dd>
 </dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -661,18 +661,18 @@ def state(self):
 <li>
 <h4><code><a title="py_client.client.Client" href="#py_client.client.Client">Client</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.client.Client.login" href="#py_client.client.Client.login">login</a></code></li>
-<li><code><a title="py_client.client.Client.logout" href="#py_client.client.Client.logout">logout</a></code></li>
-<li><code><a title="py_client.client.Client.holdings" href="#py_client.client.Client.holdings">holdings</a></code></li>
-<li><code><a title="py_client.client.Client.limits" href="#py_client.client.Client.limits">limits</a></code></li>
-<li><code><a title="py_client.client.Client.ws" href="#py_client.client.Client.ws">ws</a></code></li>
-<li><code><a title="py_client.client.Client.users" href="#py_client.client.Client.users">users</a></code></li>
-<li><code><a title="py_client.client.Client.watchlists" href="#py_client.client.Client.watchlists">watchlists</a></code></li>
-<li><code><a title="py_client.client.Client.orders" href="#py_client.client.Client.orders">orders</a></code></li>
-<li><code><a title="py_client.client.Client.markets" href="#py_client.client.Client.markets">markets</a></code></li>
 <li><code><a title="py_client.client.Client.alerts" href="#py_client.client.Client.alerts">alerts</a></code></li>
 <li><code><a title="py_client.client.Client.funds" href="#py_client.client.Client.funds">funds</a></code></li>
+<li><code><a title="py_client.client.Client.holdings" href="#py_client.client.Client.holdings">holdings</a></code></li>
+<li><code><a title="py_client.client.Client.limits" href="#py_client.client.Client.limits">limits</a></code></li>
+<li><code><a title="py_client.client.Client.login" href="#py_client.client.Client.login">login</a></code></li>
+<li><code><a title="py_client.client.Client.logout" href="#py_client.client.Client.logout">logout</a></code></li>
+<li><code><a title="py_client.client.Client.markets" href="#py_client.client.Client.markets">markets</a></code></li>
+<li><code><a title="py_client.client.Client.orders" href="#py_client.client.Client.orders">orders</a></code></li>
 <li><code><a title="py_client.client.Client.state" href="#py_client.client.Client.state">state</a></code></li>
+<li><code><a title="py_client.client.Client.users" href="#py_client.client.Client.users">users</a></code></li>
+<li><code><a title="py_client.client.Client.watchlists" href="#py_client.client.Client.watchlists">watchlists</a></code></li>
+<li><code><a title="py_client.client.Client.ws" href="#py_client.client.Client.ws">ws</a></code></li>
 </ul>
 </li>
 </ul>

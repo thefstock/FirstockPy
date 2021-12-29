@@ -19,8 +19,8 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   User Id
+    `Config`
+    :   model configuration
 
     `oldpwd: pydantic.types.SecretStr`
     :   The old password
@@ -28,8 +28,8 @@ Classes
     `pwd: str`
     :   The new password
 
-    `Config`
-    :   model configuration
+    `uid: str`
+    :   User Id
 
 `ChangePasswordResponseModel(**data: Any)`
 :   The response model for change password endpoint
@@ -45,11 +45,8 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   Password change success or failure status
-
-    `request_time: datetime.datetime`
-    :   Response recieved time
+    `Config`
+    :   model configuration
 
     `dmsg: Optional[str]`
     :   This will be present only in case of success. Number of days to expiry will be present in same.
@@ -57,5 +54,8 @@ Classes
     `emsg: Optional[str]`
     :   Error message if password change failed
 
-    `Config`
-    :   model configuration
+    `request_time: datetime.datetime`
+    :   Response recieved time
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   Password change success or failure status

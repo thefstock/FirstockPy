@@ -19,23 +19,23 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
-    `exch: str`
-    :   Exchange
-
-    `token: str`
-    :   Token
-
-    `st: datetime.datetime`
-    :   Start time
+    `Config`
+    :   model configuration
 
     `et: datetime.datetime`
     :   End Time
 
-    `Config`
-    :   model configuration
+    `exch: str`
+    :   Exchange
+
+    `st: datetime.datetime`
+    :   Start time
+
+    `token: str`
+    :   Token
+
+    `uid: str`
+    :   The user id of the login user
 
 `TimePriceSeriesResponseModel(**data: Any)`
 :   The response model for time price series endpoint
@@ -51,17 +51,14 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The time price series success or failure status
+    `Config`
+    :   model configuration
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `emsg: Optional[str]`
+    :   Error message if the request failed
 
-    `time: Optional[datetime.datetime]`
-    :   DD/MM/CCYY hh:mm:ss
-
-    `into: Optional[str]`
-    :   Interval open
+    `intc: Optional[str]`
+    :   Interval close
 
     `inth: Optional[str]`
     :   Interval high
@@ -69,26 +66,29 @@ Classes
     `intl: Optional[str]`
     :   Interval low
 
-    `intc: Optional[str]`
-    :   Interval close
-
-    `intvwap: Optional[str]`
-    :   Interval vwap
-
-    `intv: Optional[str]`
-    :   Interval volume
-
-    `v: Optional[str]`
-    :   volume
+    `into: Optional[str]`
+    :   Interval open
 
     `intoi: Optional[str]`
     :   Interval io change
 
+    `intv: Optional[str]`
+    :   Interval volume
+
+    `intvwap: Optional[str]`
+    :   Interval vwap
+
     `oi: Optional[str]`
     :   oi
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The time price series success or failure status
+
+    `time: Optional[datetime.datetime]`
+    :   DD/MM/CCYY hh:mm:ss
+
+    `v: Optional[str]`
+    :   volume

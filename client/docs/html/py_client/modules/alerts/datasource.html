@@ -432,43 +432,6 @@ class AlertsDataSource(NorenRestDataSource):
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.set_alert"><code class="name flex">
-<span>def <span class="ident">set_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel" href="models/set_alert.html#py_client.modules.alerts.models.set_alert.SetAlertRequestModel">SetAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel" href="models/set_alert.html#py_client.modules.alerts.models.set_alert.SetAlertResponseModel">SetAlertResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set alert</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>SetAlertRequestMode l</code></dt>
-<dd>The data to be send as SetAlertRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>SetAlertResponseModel</code></dt>
-<dd>The response as SetAlertResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def set_alert(self, model: SetAlertRequestModel, key: str = None) -&gt; SetAlertResponseModel:
-  &#34;&#34;&#34;
-  Set alert
-
-  Args:
-    model (SetAlertRequestMode l): The data to be send as SetAlertRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    SetAlertResponseModel: The response as SetAlertResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.SET_ALERT, key)
-  # convert the request to response model
-  return SetAlertResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
 <dt id="py_client.modules.alerts.datasource.AlertsDataSource.cancel_alert"><code class="name flex">
 <span>def <span class="ident">cancel_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel" href="models/cancel_alert.html#py_client.modules.alerts.models.cancel_alert.CancelAlertRequestModel">CancelAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel" href="models/cancel_alert.html#py_client.modules.alerts.models.cancel_alert.CancelAlertResponseModel">CancelAlertResponseModel</a></span>
 </code></dt>
@@ -504,195 +467,6 @@ class AlertsDataSource(NorenRestDataSource):
   response_json = self._run_request(model, endpoints.CANCEL_ALERT, key)
   # convert the request to response model
   return CancelAlertResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.modify_alert"><code class="name flex">
-<span>def <span class="ident">modify_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel" href="models/modify_alert.html#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel">ModifyAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel" href="models/modify_alert.html#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel">ModifyAlertResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Modify alert</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ModifyAlertRequestModel</code></dt>
-<dd>The data to be send as ModifyAlertRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ModifyAlertResponseModel</code></dt>
-<dd>The response as ModifyAlertResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def modify_alert(self, model: ModifyAlertRequestModel, key: str = None) -&gt; ModifyAlertResponseModel:
-  &#34;&#34;&#34;
-  Modify alert
-
-  Args:
-    model (ModifyAlertRequestModel): The data to be send as ModifyAlertRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    ModifyAlertResponseModel: The response as ModifyAlertResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(model, endpoints.MODIFY_ALERT, key)
-  # convert the request to response model
-  return ModifyAlertResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert"><code class="name flex">
-<span>def <span class="ident">get_pending_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertRequestModel" href="models/get_pending_alert.html#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertRequestModel">GetPendingAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel" href="models/get_pending_alert.html#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel">GetPendingAlertResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get pending alert</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetPendingAlertRequestModel</code></dt>
-<dd>The data to be send as GetPendingAlertRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetPendingAlertResponseModel</code></dt>
-<dd>The response as GetPendingAlertResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_pending_alert(self, model: GetPendingAlertRequestModel, key: str = None) -&gt; GetPendingAlertResponseModel:
-  &#34;&#34;&#34;
-  Get pending alert
-
-  Args:
-    model (GetPendingAlertRequestModel): The data to be send as GetPendingAlertRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetPendingAlertResponseModel: The response as GetPendingAlertResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(
-      model, endpoints.GET_PENDING_ALERT, key)
-  # convert the request to response model
-  return GetPendingAlertResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types"><code class="name flex">
-<span>def <span class="ident">get_enabled_alert_types</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesRequestModel" href="models/get_enabled_alert_types.html#py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesRequestModel">GetEnabledAlertTypesRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel" href="models/get_enabled_alert_types.html#py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel">GetEnabledAlertTypesResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get enabled alert types</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetEnabledAlertTypesRequestModel</code></dt>
-<dd>The data to be send as GetEnabledAlertTypesRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>GetEnabledAlertTypesResponseModel</code></dt>
-<dd>The response as GetEnabledAlertTypesResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_enabled_alert_types(self, model: GetEnabledAlertTypesRequestModel, key: str = None) -&gt; GetEnabledAlertTypesResponseModel:
-  &#34;&#34;&#34;
-  Get enabled alert types
-
-  Args:
-    model (GetEnabledAlertTypesRequestModel): The data to be send as GetEnabledAlertTypesRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    GetEnabledAlertTypesResponseModel: The response as GetEnabledAlertTypesResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(
-      model, endpoints.GET_ENABLED_ALERT_TYPES, key)
-  # convert the request to response model
-  return GetEnabledAlertTypesResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order"><code class="name flex">
-<span>def <span class="ident">place_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel" href="models/place_gtt_order.html#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel">PlaceGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel" href="models/place_gtt_order.html#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel">PlaceGttOrderResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Place GTT order</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>PlaceGttOrderRequestModel</code></dt>
-<dd>The data to be send as PlaceGttOrderRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>PlaceGttOrderResponseModel</code></dt>
-<dd>The response as PlaceGttOrderResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def place_gtt_order(self, model: PlaceGttOrderRequestModel, key: str = None) -&gt; PlaceGttOrderResponseModel:
-  &#34;&#34;&#34;
-  Place GTT order
-
-  Args:
-    model (PlaceGttOrderRequestModel): The data to be send as PlaceGttOrderRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    PlaceGttOrderResponseModel: The response as PlaceGttOrderResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(
-      model, endpoints.PLACE_GTT_ORDER, key)
-  # convert the request to response model
-  return PlaceGttOrderResponseModel.parse_raw(response_json)</code></pre>
-</details>
-</dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order"><code class="name flex">
-<span>def <span class="ident">modify_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderRequestModel" href="models/modify_gtt_order.html#py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderRequestModel">ModifyGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderResponseModel" href="models/modify_gtt_order.html#py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderResponseModel">ModifyGttOrderResponseModel</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Modify GTT order</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>ModifyGttOrderRequestModel</code></dt>
-<dd>The data to be send as ModifyGttOrderRequestModel.</dd>
-<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>ModifyGttOrderResponseModel</code></dt>
-<dd>The response as ModifyGttOrderResponseModel.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def modify_gtt_order(self, model: ModifyGttOrderRequestModel, key: str = None) -&gt; ModifyGttOrderResponseModel:
-  &#34;&#34;&#34;
-  Modify GTT order
-
-  Args:
-    model (ModifyGttOrderRequestModel): The data to be send as ModifyGttOrderRequestModel.
-    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
-
-  Returns:
-    ModifyGttOrderResponseModel: The response as ModifyGttOrderResponseModel.
-  &#34;&#34;&#34;
-  response_json = self._run_request(
-      model, endpoints.MODIFY_GTT_ORDER, key)
-  # convert the request to response model
-  return ModifyGttOrderResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.alerts.datasource.AlertsDataSource.cancel_gtt_order"><code class="name flex">
@@ -733,42 +507,42 @@ class AlertsDataSource(NorenRestDataSource):
   return CancelGttOrderResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
-<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order"><code class="name flex">
-<span>def <span class="ident">get_pending_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderRequestModel" href="models/get_pending_gtt_order.html#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderRequestModel">GetPendingGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel" href="models/get_pending_gtt_order.html#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel">GetPendingGttOrderResponseModel</a></span>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types"><code class="name flex">
+<span>def <span class="ident">get_enabled_alert_types</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesRequestModel" href="models/get_enabled_alert_types.html#py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesRequestModel">GetEnabledAlertTypesRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel" href="models/get_enabled_alert_types.html#py_client.modules.alerts.models.get_enabled_alert_types.GetEnabledAlertTypesResponseModel">GetEnabledAlertTypesResponseModel</a></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get pending GTT order</p>
+<div class="desc"><p>Get enabled alert types</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>model</code></strong> :&ensp;<code>GetPendingGttOrderRequestModel</code></dt>
-<dd>The data to be send as GetPendingGttOrderRequestModel.</dd>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetEnabledAlertTypesRequestModel</code></dt>
+<dd>The data to be send as GetEnabledAlertTypesRequestModel.</dd>
 <dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>GetPendingGttOrderResponseModel</code></dt>
-<dd>The response as GetPendingGttOrderResponseModel.</dd>
+<dt><code>GetEnabledAlertTypesResponseModel</code></dt>
+<dd>The response as GetEnabledAlertTypesResponseModel.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_pending_gtt_order(self, model: GetPendingGttOrderRequestModel, key: str = None) -&gt; GetPendingGttOrderResponseModel:
+<pre><code class="python">def get_enabled_alert_types(self, model: GetEnabledAlertTypesRequestModel, key: str = None) -&gt; GetEnabledAlertTypesResponseModel:
   &#34;&#34;&#34;
-  Get pending GTT order
+  Get enabled alert types
 
   Args:
-    model (GetPendingGttOrderRequestModel): The data to be send as GetPendingGttOrderRequestModel.
+    model (GetEnabledAlertTypesRequestModel): The data to be send as GetEnabledAlertTypesRequestModel.
     key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
 
   Returns:
-    GetPendingGttOrderResponseModel: The response as GetPendingGttOrderResponseModel.
+    GetEnabledAlertTypesResponseModel: The response as GetEnabledAlertTypesResponseModel.
   &#34;&#34;&#34;
   response_json = self._run_request(
-      model, endpoints.GET_PENDING_GTT_ORDER, key)
+      model, endpoints.GET_ENABLED_ALERT_TYPES, key)
   # convert the request to response model
-  return GetPendingGttOrderResponseModel.parse_raw(response_json)</code></pre>
+  return GetEnabledAlertTypesResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
 <dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_gtts"><code class="name flex">
@@ -809,6 +583,82 @@ class AlertsDataSource(NorenRestDataSource):
   return GetEnabledGttsResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert"><code class="name flex">
+<span>def <span class="ident">get_pending_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertRequestModel" href="models/get_pending_alert.html#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertRequestModel">GetPendingAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel" href="models/get_pending_alert.html#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel">GetPendingAlertResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get pending alert</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetPendingAlertRequestModel</code></dt>
+<dd>The data to be send as GetPendingAlertRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetPendingAlertResponseModel</code></dt>
+<dd>The response as GetPendingAlertResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pending_alert(self, model: GetPendingAlertRequestModel, key: str = None) -&gt; GetPendingAlertResponseModel:
+  &#34;&#34;&#34;
+  Get pending alert
+
+  Args:
+    model (GetPendingAlertRequestModel): The data to be send as GetPendingAlertRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetPendingAlertResponseModel: The response as GetPendingAlertResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(
+      model, endpoints.GET_PENDING_ALERT, key)
+  # convert the request to response model
+  return GetPendingAlertResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order"><code class="name flex">
+<span>def <span class="ident">get_pending_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderRequestModel" href="models/get_pending_gtt_order.html#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderRequestModel">GetPendingGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel" href="models/get_pending_gtt_order.html#py_client.modules.alerts.models.get_pending_gtt_order.GetPendingGttOrderResponseModel">GetPendingGttOrderResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get pending GTT order</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>GetPendingGttOrderRequestModel</code></dt>
+<dd>The data to be send as GetPendingGttOrderRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GetPendingGttOrderResponseModel</code></dt>
+<dd>The response as GetPendingGttOrderResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pending_gtt_order(self, model: GetPendingGttOrderRequestModel, key: str = None) -&gt; GetPendingGttOrderResponseModel:
+  &#34;&#34;&#34;
+  Get pending GTT order
+
+  Args:
+    model (GetPendingGttOrderRequestModel): The data to be send as GetPendingGttOrderRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    GetPendingGttOrderResponseModel: The response as GetPendingGttOrderResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(
+      model, endpoints.GET_PENDING_GTT_ORDER, key)
+  # convert the request to response model
+  return GetPendingGttOrderResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
 <dt id="py_client.modules.alerts.datasource.AlertsDataSource.get_unsettled_trading_date"><code class="name flex">
 <span>def <span class="ident">get_unsettled_trading_date</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.get_unsettled_trading_date.GetUnsettledTradingDateRequestModel" href="models/get_unsettled_trading_date.html#py_client.modules.alerts.models.get_unsettled_trading_date.GetUnsettledTradingDateRequestModel">GetUnsettledTradingDateRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.get_unsettled_trading_date.GetUnsettledTradingDateResponseModel" href="models/get_unsettled_trading_date.html#py_client.modules.alerts.models.get_unsettled_trading_date.GetUnsettledTradingDateResponseModel">GetUnsettledTradingDateResponseModel</a></span>
 </code></dt>
@@ -847,6 +697,156 @@ class AlertsDataSource(NorenRestDataSource):
   return GetUnsettledTradingDateResponseModel.parse_raw(response_json)</code></pre>
 </details>
 </dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.modify_alert"><code class="name flex">
+<span>def <span class="ident">modify_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel" href="models/modify_alert.html#py_client.modules.alerts.models.modify_alert.ModifyAlertRequestModel">ModifyAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel" href="models/modify_alert.html#py_client.modules.alerts.models.modify_alert.ModifyAlertResponseModel">ModifyAlertResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Modify alert</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ModifyAlertRequestModel</code></dt>
+<dd>The data to be send as ModifyAlertRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ModifyAlertResponseModel</code></dt>
+<dd>The response as ModifyAlertResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def modify_alert(self, model: ModifyAlertRequestModel, key: str = None) -&gt; ModifyAlertResponseModel:
+  &#34;&#34;&#34;
+  Modify alert
+
+  Args:
+    model (ModifyAlertRequestModel): The data to be send as ModifyAlertRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    ModifyAlertResponseModel: The response as ModifyAlertResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.MODIFY_ALERT, key)
+  # convert the request to response model
+  return ModifyAlertResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order"><code class="name flex">
+<span>def <span class="ident">modify_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderRequestModel" href="models/modify_gtt_order.html#py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderRequestModel">ModifyGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderResponseModel" href="models/modify_gtt_order.html#py_client.modules.alerts.models.modify_gtt_order.ModifyGttOrderResponseModel">ModifyGttOrderResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Modify GTT order</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>ModifyGttOrderRequestModel</code></dt>
+<dd>The data to be send as ModifyGttOrderRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ModifyGttOrderResponseModel</code></dt>
+<dd>The response as ModifyGttOrderResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def modify_gtt_order(self, model: ModifyGttOrderRequestModel, key: str = None) -&gt; ModifyGttOrderResponseModel:
+  &#34;&#34;&#34;
+  Modify GTT order
+
+  Args:
+    model (ModifyGttOrderRequestModel): The data to be send as ModifyGttOrderRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    ModifyGttOrderResponseModel: The response as ModifyGttOrderResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(
+      model, endpoints.MODIFY_GTT_ORDER, key)
+  # convert the request to response model
+  return ModifyGttOrderResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order"><code class="name flex">
+<span>def <span class="ident">place_gtt_order</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel" href="models/place_gtt_order.html#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderRequestModel">PlaceGttOrderRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel" href="models/place_gtt_order.html#py_client.modules.alerts.models.place_gtt_order.PlaceGttOrderResponseModel">PlaceGttOrderResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Place GTT order</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>PlaceGttOrderRequestModel</code></dt>
+<dd>The data to be send as PlaceGttOrderRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>PlaceGttOrderResponseModel</code></dt>
+<dd>The response as PlaceGttOrderResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def place_gtt_order(self, model: PlaceGttOrderRequestModel, key: str = None) -&gt; PlaceGttOrderResponseModel:
+  &#34;&#34;&#34;
+  Place GTT order
+
+  Args:
+    model (PlaceGttOrderRequestModel): The data to be send as PlaceGttOrderRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    PlaceGttOrderResponseModel: The response as PlaceGttOrderResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(
+      model, endpoints.PLACE_GTT_ORDER, key)
+  # convert the request to response model
+  return PlaceGttOrderResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
+<dt id="py_client.modules.alerts.datasource.AlertsDataSource.set_alert"><code class="name flex">
+<span>def <span class="ident">set_alert</span></span>(<span>self, model: <a title="py_client.modules.alerts.models.set_alert.SetAlertRequestModel" href="models/set_alert.html#py_client.modules.alerts.models.set_alert.SetAlertRequestModel">SetAlertRequestModel</a>, key: str = None) ‑> <a title="py_client.modules.alerts.models.set_alert.SetAlertResponseModel" href="models/set_alert.html#py_client.modules.alerts.models.set_alert.SetAlertResponseModel">SetAlertResponseModel</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set alert</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>SetAlertRequestMode l</code></dt>
+<dd>The data to be send as SetAlertRequestModel.</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The key obtained on login success. Uses the token in the state if not passed explicitly.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>SetAlertResponseModel</code></dt>
+<dd>The response as SetAlertResponseModel.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_alert(self, model: SetAlertRequestModel, key: str = None) -&gt; SetAlertResponseModel:
+  &#34;&#34;&#34;
+  Set alert
+
+  Args:
+    model (SetAlertRequestMode l): The data to be send as SetAlertRequestModel.
+    key (str, optional): The key obtained on login success. Uses the token in the state if not passed explicitly.
+
+  Returns:
+    SetAlertResponseModel: The response as SetAlertResponseModel.
+  &#34;&#34;&#34;
+  response_json = self._run_request(model, endpoints.SET_ALERT, key)
+  # convert the request to response model
+  return SetAlertResponseModel.parse_raw(response_json)</code></pre>
+</details>
+</dd>
 </dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -879,17 +879,17 @@ class AlertsDataSource(NorenRestDataSource):
 <li>
 <h4><code><a title="py_client.modules.alerts.datasource.AlertsDataSource" href="#py_client.modules.alerts.datasource.AlertsDataSource">AlertsDataSource</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.set_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.set_alert">set_alert</a></code></li>
 <li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.cancel_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.cancel_alert">cancel_alert</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.modify_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.modify_alert">modify_alert</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert">get_pending_alert</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types">get_enabled_alert_types</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order">place_gtt_order</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order">modify_gtt_order</a></code></li>
 <li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.cancel_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.cancel_gtt_order">cancel_gtt_order</a></code></li>
-<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order">get_pending_gtt_order</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_alert_types">get_enabled_alert_types</a></code></li>
 <li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_gtts" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_enabled_gtts">get_enabled_gtts</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_pending_alert">get_pending_alert</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_pending_gtt_order">get_pending_gtt_order</a></code></li>
 <li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.get_unsettled_trading_date" href="#py_client.modules.alerts.datasource.AlertsDataSource.get_unsettled_trading_date">get_unsettled_trading_date</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.modify_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.modify_alert">modify_alert</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.modify_gtt_order">modify_gtt_order</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order" href="#py_client.modules.alerts.datasource.AlertsDataSource.place_gtt_order">place_gtt_order</a></code></li>
+<li><code><a title="py_client.modules.alerts.datasource.AlertsDataSource.set_alert" href="#py_client.modules.alerts.datasource.AlertsDataSource.set_alert">set_alert</a></code></li>
 </ul>
 </li>
 </ul>

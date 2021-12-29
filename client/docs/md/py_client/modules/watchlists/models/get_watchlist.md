@@ -39,17 +39,17 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get watchlist success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `values: List[py_client.common.models.Scrip]`
-    :   Watch List names as a json array of strings.
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get watchlist success or failure status
+
+    `values: List[py_client.common.models.Scrip]`
+    :   Watch List names as a json array of strings.

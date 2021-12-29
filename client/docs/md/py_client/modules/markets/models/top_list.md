@@ -19,8 +19,11 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
+    `bskt: str`
+    :   Basket name
+
+    `crt: str`
+    :   Criteria
 
     `exch: str`
     :   Exchange
@@ -28,11 +31,8 @@ Classes
     `tb: str`
     :   T or B Top or Bottom
 
-    `bskt: str`
-    :   Basket name
-
-    `crt: str`
-    :   Criteria
+    `uid: str`
+    :   The user id of the login user
 
 `TopListResponseModel(**data: Any)`
 :   The response model for top list endpoint
@@ -48,17 +48,17 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The top list success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `values: Optional[List[py_client.common.models.TBContract]]`
-    :   Array of top / bottom contracts object
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The top list success or failure status
+
+    `values: Optional[List[py_client.common.models.TBContract]]`
+    :   Array of top / bottom contracts object

@@ -19,17 +19,17 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
-    `exch: str`
-    :   Exchange Name
+    `basket: Optional[str]`
+    :   Basket Name
 
     `condition_name: str`
     :   Condition list
 
-    `basket: Optional[str]`
-    :   Basket Name
+    `exch: str`
+    :   Exchange Name
+
+    `uid: str`
+    :   The user id of the login user
 
 `GetContentListResponseModel(**data: Any)`
 :   The response model for get content list endpoint
@@ -45,20 +45,17 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get content list success or failure status
+    `Config`
+    :   model configuration
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `tsym: Optional[str]`
-    :   Trading symbol
-
-    `lp: Optional[float]`
-    :   LTP
+    `ap: Optional[float]`
+    :   Average trade price
 
     `c: Optional[float]`
     :   Close price
+
+    `emsg: Optional[str]`
+    :   Error message if the request failed
 
     `h: Optional[float]`
     :   High price
@@ -66,11 +63,8 @@ Classes
     `l: Optional[float]`
     :   Low price
 
-    `ap: Optional[float]`
-    :   Average trade price
-
-    `v: Optional[float]`
-    :   Volume
+    `lp: Optional[float]`
+    :   LTP
 
     `ltt: Optional[str]`
     :   Last trade time
@@ -78,8 +72,14 @@ Classes
     `pc: Optional[float]`
     :   Percentage change
 
-    `emsg: Optional[str]`
-    :   Error message if the request failed
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
 
-    `Config`
-    :   model configuration
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get content list success or failure status
+
+    `tsym: Optional[str]`
+    :   Trading symbol
+
+    `v: Optional[float]`
+    :   Volume

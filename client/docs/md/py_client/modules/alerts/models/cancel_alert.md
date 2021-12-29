@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
     `al_id: str`
     :   Alert Id
+
+    `uid: str`
+    :   The user id of the login user
 
 `CancelAlertResponseModel(**data: Any)`
 :   The response model for cancel alert endpoint
@@ -39,11 +39,8 @@ Classes
 
     ### Class variables
 
-    `stat: Union[py_client.common.enums.ResponseStatus, str]`
-    :   The cancel alert success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `Config`
+    :   model configuration
 
     `al_id: Optional[str]`
     :   Alert Id
@@ -51,5 +48,8 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: Union[py_client.common.enums.ResponseStatus, str]`
+    :   The cancel alert success or failure status

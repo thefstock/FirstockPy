@@ -19,14 +19,14 @@ Classes
 
     ### Class variables
 
-    `t: py_client.websocket.enums.MessageTopic`
-    :   Always 'd' for depth task
+    `Config`
+    :   The model config
 
     `k: List[str]`
     :   One or more scriplist for subscription
 
-    `Config`
-    :   The model config
+    `t: py_client.websocket.enums.MessageTopic`
+    :   Always 'd' for depth task
 
 `DepthUnsubscribeModel(**data: Any)`
 :   The depth subscription request model
@@ -42,11 +42,11 @@ Classes
 
     ### Class variables
 
-    `t: py_client.websocket.enums.MessageTopic`
-    :   Always 'ud' for unsubscribe depth task
+    `Config`
+    :   The model config
 
     `k: List[str]`
     :   One or more scriplist for unsubscription
 
-    `Config`
-    :   The model config
+    `t: py_client.websocket.enums.MessageTopic`
+    :   Always 'ud' for unsubscribe depth task

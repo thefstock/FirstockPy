@@ -197,105 +197,105 @@ class PlaceOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Logged in User Id</p></div>
-</dd>
 <dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.actid"><code class="name">var <span class="ident">actid</span> : str</code></dt>
 <dd>
 <div class="desc"><p>Login users account ID</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Exchange (Select from ‘exarr’ Array provided in User Details response)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty"><code class="name">var <span class="ident">qty</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Order Quantity</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
-<dd>
-<div class="desc"><p>Order Price</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Only to be sent in case of SL / SL-M order.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Disclosed quantity (Max 10% for NSE, and 50% for MCX)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
-<dd>
-<div class="desc"><p>C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype"><code class="name">var <span class="ident">trantype</span> : <a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a></code></dt>
-<dd>
-<div class="desc"><p>B / S B -&gt; BUY, S -&gt; SELL</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
-<dd>
-<div class="desc"><p>LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
-<dd>
-<div class="desc"><p>DAY / EOS / IOC Retention type (Show options as per allowed exchanges) remarks Any tag by user to mark order.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource"><code class="name">var <span class="ident">ordersource</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>MOB / WEB / TT Used to generate exchange info fields.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.amo"><code class="name">var <span class="ident">amo</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Yes , If not sent, of Not “Yes”, will be treated as Regular order.</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2"><code class="name">var <span class="ident">tsym2</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc"><code class="name">var <span class="ident">blprc</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Trading symbol of second leg, mandatory for price type 2L and 3L (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+<div class="desc"><p>Book loss Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2"><code class="name">var <span class="ident">trantype2</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc"><code class="name">var <span class="ident">bpprc</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Transaction type of second leg, mandatory for price type 2L and 3L</p></div>
+<div class="desc"><p>Book Profit Price applicable only if product is selected as B (Bracket order )</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2"><code class="name">var <span class="ident">qty2</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty"><code class="name">var <span class="ident">dscqty</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Quantity for second leg, mandatory for price type 2L and 3L</p></div>
+<div class="desc"><p>Disclosed quantity (Max 10% for NSE, and 50% for MCX)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch"><code class="name">var <span class="ident">exch</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Exchange (Select from ‘exarr’ Array provided in User Details response)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource"><code class="name">var <span class="ident">ordersource</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>MOB / WEB / TT Used to generate exchange info fields.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc"><code class="name">var <span class="ident">prc</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Order Price</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc2"><code class="name">var <span class="ident">prc2</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Price for second leg, mandatory for price type 2L and 3L</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3"><code class="name">var <span class="ident">tsym3</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc3"><code class="name">var <span class="ident">prc3</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Trading symbol of third leg, mandatory for price type 3L (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+<div class="desc"><p>Price for third leg, mandatory for price type 3L</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3"><code class="name">var <span class="ident">trantype3</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp"><code class="name">var <span class="ident">prctyp</span> : <a title="py_client.common.enums.PriceType" href="../../../common/enums.html#py_client.common.enums.PriceType">PriceType</a></code></dt>
 <dd>
-<div class="desc"><p>Transaction type of third leg, mandatory for price type 3L</p></div>
+<div class="desc"><p>LMT / MKT / SLLMT / SL-MKT / DS / 2L / 3L</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd"><code class="name">var <span class="ident">prd</span> : str</code></dt>
+<dd>
+<div class="desc"><p>C / M / H Product name (Select from ‘prarr’ Array provided in User Details response, and if same is allowed for selected, exchange. Show product display name, for user to select, and send corresponding prd in API call)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty"><code class="name">var <span class="ident">qty</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Order Quantity</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2"><code class="name">var <span class="ident">qty2</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Quantity for second leg, mandatory for price type 2L and 3L</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty3"><code class="name">var <span class="ident">qty3</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Quantity for third leg, mandatory for price type 3L</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc3"><code class="name">var <span class="ident">prc3</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret"><code class="name">var <span class="ident">ret</span> : <a title="py_client.common.enums.RetentionType" href="../../../common/enums.html#py_client.common.enums.RetentionType">RetentionType</a></code></dt>
 <dd>
-<div class="desc"><p>Price for third leg, mandatory for price type 3L</p></div>
+<div class="desc"><p>DAY / EOS / IOC Retention type (Show options as per allowed exchanges) remarks Any tag by user to mark order.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc"><code class="name">var <span class="ident">trailprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trailing Price applicable only if product is selected as H and B (High Leverage and Bracket order )</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype"><code class="name">var <span class="ident">trantype</span> : <a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a></code></dt>
+<dd>
+<div class="desc"><p>B / S B -&gt; BUY, S -&gt; SELL</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2"><code class="name">var <span class="ident">trantype2</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dd>
+<div class="desc"><p>Transaction type of second leg, mandatory for price type 2L and 3L</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3"><code class="name">var <span class="ident">trantype3</span> : Optional[<a title="py_client.common.enums.TransactionType" href="../../../common/enums.html#py_client.common.enums.TransactionType">TransactionType</a>]</code></dt>
+<dd>
+<div class="desc"><p>Transaction type of third leg, mandatory for price type 3L</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc"><code class="name">var <span class="ident">trgprc</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Only to be sent in case of SL / SL-M order.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym"><code class="name">var <span class="ident">tsym</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Unique id of contract on which order to be placed. (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2"><code class="name">var <span class="ident">tsym2</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol of second leg, mandatory for price type 2L and 3L (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3"><code class="name">var <span class="ident">tsym3</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol of third leg, mandatory for price type 3L (use url encoding to avoid special char error for symbols like M&amp;M)</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Logged in User Id</p></div>
 </dd>
 </dl>
 </dd>
@@ -336,25 +336,25 @@ class PlaceOrderResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The place order success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno"><code class="name">var <span class="ident">norenordno</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful Order placement to OMS.</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.emsg"><code class="name">var <span class="ident">emsg</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno"><code class="name">var <span class="ident">norenordno</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>It will be present only on successful Order placement to OMS.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The place order success or failure status</p></div>
 </dd>
 </dl>
 </dd>
@@ -377,41 +377,41 @@ class PlaceOrderResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel">PlaceOrderRequestModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid">uid</a></code></li>
 <li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.actid" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.actid">actid</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch">exch</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty">qty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc">prc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc">trgprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty">dscqty</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd">prd</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype">trantype</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp">prctyp</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret">ret</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource">ordersource</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc">bpprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc">blprc</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc">trailprc</a></code></li>
 <li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.amo" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.amo">amo</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2">tsym2</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2">trantype2</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2">qty2</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.blprc">blprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.bpprc">bpprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.dscqty">dscqty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ordersource">ordersource</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc">prc</a></code></li>
 <li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc2">prc2</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3">tsym3</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3">trantype3</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty3">qty3</a></code></li>
 <li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prc3">prc3</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prctyp">prctyp</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.prd">prd</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty">qty</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty2">qty2</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.qty3">qty3</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.ret">ret</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trailprc">trailprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype">trantype</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype2">trantype2</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trantype3">trantype3</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.trgprc">trgprc</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym2">tsym2</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.tsym3">tsym3</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid" href="#py_client.modules.orders.models.place_order.PlaceOrderRequestModel.uid">uid</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel">PlaceOrderResponseModel</a></code></h4>
 <ul class="">
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno">norenordno</a></code></li>
-<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.emsg" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.emsg">emsg</a></code></li>
 <li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.Config" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.emsg" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.emsg">emsg</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.norenordno">norenordno</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat" href="#py_client.modules.orders.models.place_order.PlaceOrderResponseModel.stat">stat</a></code></li>
 </ul>
 </li>
 </ul>

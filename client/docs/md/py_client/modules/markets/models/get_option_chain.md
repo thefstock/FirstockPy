@@ -19,12 +19,9 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
-    `tsym: str`
-    :   Trading symbol of any of the option or future. Option chain for that underlying will be returned.
-        (use url encoding to avoid special char error for symbols like M&M)
+    `cnt: str`
+    :   Number of strike to return on one side of the mid price for PUT and CALL. 
+        (example cnt is 4, total 16 contracts will be returned, if cnt is is 5 total 20 contract will be returned)
 
     `exch: str`
     :   Exchange
@@ -32,9 +29,12 @@ Classes
     `strprc: str`
     :   Mid price for option chain selection
 
-    `cnt: str`
-    :   Number of strike to return on one side of the mid price for PUT and CALL. 
-        (example cnt is 4, total 16 contracts will be returned, if cnt is is 5 total 20 contract will be returned)
+    `tsym: str`
+    :   Trading symbol of any of the option or future. Option chain for that underlying will be returned.
+        (use url encoding to avoid special char error for symbols like M&M)
+
+    `uid: str`
+    :   The user id of the login user
 
 `GetOptionChainResponseModel(**data: Any)`
 :   The response model for get option chain endpoint
@@ -50,20 +50,20 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get option chain success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `values: Optional[List[py_client.modules.markets.models.get_option_chain.MarketOptionChain]]`
-    :   List of items
+    `Config`
+    :   model configuration
 
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get option chain success or failure status
+
+    `values: Optional[List[py_client.modules.markets.models.get_option_chain.MarketOptionChain]]`
+    :   List of items
 
 `MarketOptionChain(**data: Any)`
 :   Market option chain
@@ -82,23 +82,23 @@ Classes
     `exch: Optional[str]`
     :   Exchange
 
-    `tsym: Optional[str]`
-    :   Trading symbol of the scrip (contract)
-
-    `token: Optional[str]`
-    :   Token of the scrip (contract)
+    `ls: Optional[str]`
+    :   Lot size
 
     `optt: Optional[str]`
     :   Option Type
 
-    `strprc: Optional[str]`
-    :   Strike price
-
     `pp: Optional[str]`
     :   Price precision
+
+    `strprc: Optional[str]`
+    :   Strike price
 
     `ti: Optional[str]`
     :   Tick size
 
-    `ls: Optional[str]`
-    :   Lot size
+    `token: Optional[str]`
+    :   Token of the scrip (contract)
+
+    `tsym: Optional[str]`
+    :   Trading symbol of the scrip (contract)

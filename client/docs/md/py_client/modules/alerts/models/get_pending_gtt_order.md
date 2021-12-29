@@ -36,17 +36,11 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get pending gtt order success or failure status
+    `Config`
+    :   model configuration
 
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
-
-    `tsym: Optional[str]`
-    :   Trading symbol
-
-    `exch: Optional[str]`
-    :   Exchange Segment
+    `actid: Optional[str]`
+    :   Login user account id
 
     `ai_t: Optional[str]`
     :   Alert Type
@@ -54,38 +48,8 @@ Classes
     `al_id: Optional[str]`
     :   Alert id
 
-    `token: Optional[str]`
-    :   Contract token
-
-    `validity: Optional[py_client.common.enums.AlertValidity]`
-    :   DAY or GTT Validity
-
-    `remarks: Optional[str]`
-    :   Any message Entered during order entry.
-
     `d: Optional[str]`
     :   Data to be compared with LTP
-
-    `trantype: Optional[py_client.common.enums.TransactionType]`
-    :   Transaction type
-
-    `prctyp: Optional[py_client.common.enums.PriceType]`
-    :   Price type
-
-    `prd: Optional[str]`
-    :   The product name
-
-    `ret: Optional[py_client.common.enums.RetentionType]`
-    :   Retention type
-
-    `actid: Optional[str]`
-    :   Login user account id
-
-    `prc: Optional[str]`
-    :   Order price
-
-    `qty: Optional[str]`
-    :   Order quantity
 
     `dscqty: Optional[str]`
     :   Disclosed quantity (Max 10% for NSE, and 50% for MCX)
@@ -93,5 +57,41 @@ Classes
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `exch: Optional[str]`
+    :   Exchange Segment
+
+    `prc: Optional[str]`
+    :   Order price
+
+    `prctyp: Optional[py_client.common.enums.PriceType]`
+    :   Price type
+
+    `prd: Optional[str]`
+    :   The product name
+
+    `qty: Optional[str]`
+    :   Order quantity
+
+    `remarks: Optional[str]`
+    :   Any message Entered during order entry.
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `ret: Optional[py_client.common.enums.RetentionType]`
+    :   Retention type
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get pending gtt order success or failure status
+
+    `token: Optional[str]`
+    :   Contract token
+
+    `trantype: Optional[py_client.common.enums.TransactionType]`
+    :   Transaction type
+
+    `tsym: Optional[str]`
+    :   Trading symbol
+
+    `validity: Optional[py_client.common.enums.AlertValidity]`
+    :   DAY or GTT Validity

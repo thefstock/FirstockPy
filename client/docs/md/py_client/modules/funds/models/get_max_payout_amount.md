@@ -19,11 +19,11 @@ Classes
 
     ### Class variables
 
-    `uid: str`
-    :   The user id of the login user
-
     `actid: str`
     :   The account id
+
+    `uid: str`
+    :   The user id of the login user
 
 `GetMaxPayoutAmountResponseModel(**data: Any)`
 :   The response model for get max payout amount endpoint
@@ -39,20 +39,20 @@ Classes
 
     ### Class variables
 
-    `stat: py_client.common.enums.ResponseStatus`
-    :   The get max payout amount success or failure status
-
-    `request_time: Optional[datetime.datetime]`
-    :   It will be present only on successful response.
+    `Config`
+    :   model configuration
 
     `actid: Optional[str]`
     :   Account Id
 
-    `payout: Optional[float]`
-    :   Maximum payout amount
-
     `emsg: Optional[str]`
     :   Error message if the request failed
 
-    `Config`
-    :   model configuration
+    `payout: Optional[float]`
+    :   Maximum payout amount
+
+    `request_time: Optional[datetime.datetime]`
+    :   It will be present only on successful response.
+
+    `stat: py_client.common.enums.ResponseStatus`
+    :   The get max payout amount success or failure status

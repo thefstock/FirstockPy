@@ -173,41 +173,17 @@ class GetPendingAlertResponseModel(BaseModel):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
 <dd>
-<div class="desc"><p>The get pending alert success or failure status</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
-<dd>
-<div class="desc"><p>It will be present only on successful response.</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>The id of the alert to modify</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Trading symbol</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Exchange Segment</p></div>
+<div class="desc"><p>model configuration</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.ai_t"><code class="name">var <span class="ident">ai_t</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"><p>Alert Type</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id"><code class="name">var <span class="ident">al_id</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>Contract token</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
-<dd>
-<div class="desc"><p>DAY or GTT Validity</p></div>
-</dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"><p>Any message Entered during order entry.</p></div>
+<div class="desc"><p>The id of the alert to modify</p></div>
 </dd>
 <dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.d"><code class="name">var <span class="ident">d</span> : Optional[str]</code></dt>
 <dd>
@@ -217,9 +193,33 @@ class GetPendingAlertResponseModel(BaseModel):
 <dd>
 <div class="desc"><p>Error message if the request failed</p></div>
 </dd>
-<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config"><code class="name">var <span class="ident">Config</span></code></dt>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch"><code class="name">var <span class="ident">exch</span> : Optional[str]</code></dt>
 <dd>
-<div class="desc"><p>model configuration</p></div>
+<div class="desc"><p>Exchange Segment</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks"><code class="name">var <span class="ident">remarks</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Any message Entered during order entry.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time"><code class="name">var <span class="ident">request_time</span> : Optional[datetime.datetime]</code></dt>
+<dd>
+<div class="desc"><p>It will be present only on successful response.</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat"><code class="name">var <span class="ident">stat</span> : <a title="py_client.common.enums.ResponseStatus" href="../../../common/enums.html#py_client.common.enums.ResponseStatus">ResponseStatus</a></code></dt>
+<dd>
+<div class="desc"><p>The get pending alert success or failure status</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token"><code class="name">var <span class="ident">token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Contract token</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym"><code class="name">var <span class="ident">tsym</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p>Trading symbol</p></div>
+</dd>
+<dt id="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity"><code class="name">var <span class="ident">validity</span> : <a title="py_client.common.enums.AlertValidity" href="../../../common/enums.html#py_client.common.enums.AlertValidity">AlertValidity</a></code></dt>
+<dd>
+<div class="desc"><p>DAY or GTT Validity</p></div>
 </dd>
 </dl>
 </dd>
@@ -248,18 +248,18 @@ class GetPendingAlertResponseModel(BaseModel):
 <li>
 <h4><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel">GetPendingAlertResponseModel</a></code></h4>
 <ul class="two-column">
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat">stat</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time">request_time</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id">al_id</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym">tsym</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config">Config</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.ai_t" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.ai_t">ai_t</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token">token</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity">validity</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.al_id">al_id</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.d" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.d">d</a></code></li>
 <li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.emsg" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.emsg">emsg</a></code></li>
-<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.Config">Config</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.exch">exch</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.remarks">remarks</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.request_time">request_time</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.stat">stat</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.token">token</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.tsym">tsym</a></code></li>
+<li><code><a title="py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity" href="#py_client.modules.alerts.models.get_pending_alert.GetPendingAlertResponseModel.validity">validity</a></code></li>
 </ul>
 </li>
 </ul>
