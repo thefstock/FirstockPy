@@ -58,7 +58,7 @@ class LoginRequestModel(BaseModel):
   vc: str
   &#34;&#34;&#34;Vendor code&#34;&#34;&#34;
   appkey: str
-  &#34;&#34;&#34;Sha256 of uid|vendor_key&#34;&#34;&#34;
+  &#34;&#34;&#34;The APP Key or the API Key or the Vendor key&#34;&#34;&#34;
   imei: str
   &#34;&#34;&#34;IMEI for mobile (If desktop it takes the MAC address)&#34;&#34;&#34;
   addldivinf: Optional[str]
@@ -167,7 +167,7 @@ class LoginResponseModel(BaseModel):
   vc: str
   &#34;&#34;&#34;Vendor code&#34;&#34;&#34;
   appkey: str
-  &#34;&#34;&#34;Sha256 of uid|vendor_key&#34;&#34;&#34;
+  &#34;&#34;&#34;The APP Key or the API Key or the Vendor key&#34;&#34;&#34;
   imei: str
   &#34;&#34;&#34;IMEI for mobile (If desktop it takes the MAC address)&#34;&#34;&#34;
   addldivinf: Optional[str]
@@ -235,7 +235,7 @@ class LoginResponseModel(BaseModel):
 </dd>
 <dt id="py_client.modules.users.models.login.LoginRequestModel.appkey"><code class="name">var <span class="ident">appkey</span> : str</code></dt>
 <dd>
-<div class="desc"><p>Sha256 of uid|vendor_key</p></div>
+<div class="desc"><p>The APP Key or the API Key or the Vendor key</p></div>
 </dd>
 <dt id="py_client.modules.users.models.login.LoginRequestModel.imei"><code class="name">var <span class="ident">imei</span> : str</code></dt>
 <dd>

@@ -1,9 +1,10 @@
 """
 The data source for all login/logout and user requests
 """
-
+import copy
 from ...utils.datasources import NorenRestDataSource
 from . import endpoints
+from hashlib import sha256
 
 from .models import *
 
@@ -24,10 +25,17 @@ class UserDataSource(NorenRestDataSource):
     Returns:
       LoginResponseModel: The response from login request as LoginResponseModel.
     """
+    request_model = copy.deepcopy(model)
+
+    app_key = request_model.uid + "|" + request_model.appkey
+    hash_fn = sha256()
+    hash_fn.update(app_key.encode())
+    request_model.appkey = hash_fn.hexdigest()
+
     # convert request model to json string
-    request_json = model.json(exclude_unset=True)
+    request_json = request_model.json(exclude_unset=True)
     # get the endpint based on secret provided
-    url = endpoints.LOGIN if model.pwd is not None else endpoints.LOGIN_WITH_DPIN
+    url = endpoints.LOGIN if request_model.pwd is not None else endpoints.LOGIN_WITH_DPIN
     # send the post request to get the json response
     response_json = self.post(url, f"jData={request_json}")
     # convert the request to response model
