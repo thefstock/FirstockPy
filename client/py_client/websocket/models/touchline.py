@@ -25,9 +25,9 @@ class TouchlineSubscribeModel(BaseModel):
 
 class TouchlineUnsubscribeModel(BaseModel):
   """
-  The touchline subscription request model
+  The touchline un-subscribe request model
   """
-  t: MessageTopic = MessageTopic.TOUCHLINE_SUB
+  t: MessageTopic = MessageTopic.TOUCHLINE_UNSUB
   """Always 'u' for unsubscribe touchline task"""
   k: List[str] = []
   """One or more scriplist for unsubscription"""
