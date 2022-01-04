@@ -27,7 +27,7 @@ class HoldingsResponseModel(BaseModel):
   """
   The response model for holdings endpoint
   """
-  stat: ResponseStatus
+  stat: Optional[ResponseStatus]
   """The holdings success or failure status"""
   request_time: Optional[datetime]
   """It will be present only on successful response."""
