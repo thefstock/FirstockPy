@@ -1,5 +1,5 @@
 """
-Example usage of logout request
+Example of Order Book API usage
 """
 from py_client import OrderBookRequestModel
 from argparse import ArgumentParser
